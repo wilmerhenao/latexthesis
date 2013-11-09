@@ -1,30 +1,63 @@
-\begin{thebibliography}{3}
+\begin{thebibliography}{9}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Arnold et~al.(1998)Arnold, Wilson, and Boshier]{Reference3}
-A.~S. Arnold, J.~S. Wilson, and M.~G. Boshier.
-\newblock A simple extended-cavity diode laser.
-\newblock \emph{Review of Scientific Instruments}, 69\penalty0 (3):\penalty0
-  1236--1239, March 1998.
-\newblock URL \url{http://link.aip.org/link/?RSI/69/1236/1}.
+\bibitem[Dennis and Schnabel(1983, 1993)]{unconstrained}
+J.E. Dennis and R.B. Schnabel.
+\newblock \emph{Numerical Methods for Unconstrained Optimization and Nonlinear
+  Equations}.
+\newblock Prentice Hall, SIAM Publications, Englewood Cliffs, NJ, 1983, 1993.
 
-\bibitem[Wieman and Hollberg(1991)]{Reference2}
-Carl~E. Wieman and Leo Hollberg.
-\newblock Using diode lasers for atomic physics.
-\newblock \emph{Review of Scientific Instruments}, 62\penalty0 (1):\penalty0
-  1--20, January 1991.
-\newblock URL \url{http://link.aip.org/link/?RSI/62/1/1}.
+\bibitem[Kiwiel(1985)]{kiwiel85}
+Krzysztof~C. Kiwiel.
+\newblock \emph{Methods of Descent for Nondiferentiable Optimization}.
+\newblock Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.
 
-\bibitem[Hawthorn et~al.(2001)Hawthorn, Weber, and Scholten]{Reference1}
-C.~J. Hawthorn, K.~P. Weber, and R.~E. Scholten.
-\newblock Littrow configuration tunable external cavity diode laser with fixed
-  direction output beam.
-\newblock \emph{Review of Scientific Instruments}, 72\penalty0 (12):\penalty0
-  4477--4479, December 2001.
-\newblock URL \url{http://link.aip.org/link/?RSI/72/4477/1}.
+\bibitem[Nocedal(1992)]{selfcorrecting}
+Jorge Nocedal.
+\newblock Theory of algorithms for unconstrained optimization.
+\newblock \emph{Acta Numerica}, 1:\penalty0 199--242, January 1992.
+
+\bibitem[Jorge~Nocedal(2006)]{nocedal}
+Stephen J.~Wright Jorge~Nocedal.
+\newblock \emph{Numerical Optimization}.
+\newblock Springer Series in Operations Research, 2nd edition, 2006.
+
+\bibitem[Fletcher et~al.(1996)Fletcher, Grothey, and
+  Leyffer]{Fletcher96computingsparse}
+Roger Fletcher, Andreas Grothey, and Sven Leyffer.
+\newblock Computing sparse hessian and jacobian approximations with optimal
+  hereditary properties.
+\newblock Technical report, Large-Scale Optimization with Applications, Part
+  II: Optimal Design and Control, 1996.
+
+\bibitem[Fletcher(1995)]{sparse}
+R.~Fletcher.
+\newblock An optimal positive definite update for sparse hessian matrices.
+\newblock \emph{SIAM Journal on Optimization}, 5:\penalty0 192--218, 1995.
+
+\bibitem[Dr. A. R.~Conn(1992)]{lancelot}
+Prof. Dr. Ph. L.~Toint Dr. A. R.~Conn, Dr. N. I. M.~Gould.
+\newblock \emph{LANCELOT: A fortran package for large-scale nonlinear
+  optimization (Release A)}.
+\newblock Springer Series in Computational Mathematics, Berlin Heidelberg,
+  1992.
+
+\bibitem[Kaku(2011)]{kaku}
+Allan Kaku.
+\newblock Implementation of high-precision arithmetic in the bfgs method for
+  nonsmooth optimization.
+\newblock Master's thesis, New York University, Courant Institute of
+  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
+\newblock URL \url{http://cims.nyu.edu/~aak357/}.
+
+\bibitem[Skaaja(2010)]{skaaja}
+Anders Skaaja.
+\newblock Limited memory bfgs for nonsmooth optimization.
+\newblock Master's thesis, New York University, Courant Institute of
+  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
 
 \end{thebibliography}

@@ -1,0 +1,50 @@
+\documentclass[11pt, a4paper, oneside]{Thesis} % Paper size, default font size and one-sided paper
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
+\hypersetup{urlcolor=blue, colorlinks=true} % Colors hyperlinks in blue - change to black if annoying
+\title{\ttitle} % Defines the thesis title - don't touch this
+
+\begin{document}
+% Chapter 1
+
+\chapter{Introduction} % Main chapter title
+
+\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+
+\lhead{Chapter 1. \emph{Introduction}} % This is for the header on each page - perhaps a shortened title
+
+%----------------------------------------------------------------------------------------
+%\DeclareMathOperator*{\Min}{Min}
+The most important goal in this thesis is to find a solution of the minimization problem 
+\begin{equation*}
+  \begin{aligned}
+    & \underset{x \in \mathbb{R}^n}{\text{min}}
+    & & f(x) \\
+    & \text{s.t.}
+    & & l_i \leq x_i \leq u_i , \; \\
+    & & & i = 1, \ldots, n.
+  \end{aligned}
+\end{equation*}
+
+where $f \colon \mathbb{R}^n \to \mathbb{R}$.  And $l_i$ and $u_i \in \mathbb{R}$
+
+In the particular case when $n = 0$, the problem would be called "unconstrained" and several techniques have already been developed to handle this type of problems \citep{unconstrained}.  In our particular cases $n$ is supposed to be finite but very large, so storing and calculating a Hessian matrix is prohibitively expensive.  In this thesis $f(x)$ is a nonsmooth function, that is, the function $f(x)$ itself is continuous but its gradient $\nabla f(x)$ is not.
+
+For the particular case when $n$ is a small number, several methods have been developed in order to solve optimization problems of nondifferentiable functions in lower dimensions \citep{kiwiel85}.  In the case of smooth functions, it is possible to use Newton iteration algorithms and achieve quadratic convergence, the problem with Newton algorithms is that they require second derivatives to be provided\footnote{the main issue with the second derivative is that it requires a total of $n \times n$ partial derivatives.  Which is totally impractical for medium and for some small-size problems}.  In the 1950's and several years after that, several quasi-newton methods were proposed where the second derivative Hessian matrix is "approximated" step by step \citep{unconstrained}.  These approximations or "updates" are updated after every iteration and the way in which this update is calculated defines a new method depending on the particular needs.  This thesis will only be concerned with the $BFGS$.  \footnote{BFGS stands for the last names of its authors Broyden, Fletcher, Goldfarb and Shanno} which can achieve super linear convergence, has proven to work in most practical purposes and posseses very nice self-correcting features \citep{selfcorrecting}, in other words, it doesn't matter that one update incorrectly estimates the curvature in the objective function,  It will always correct itself in just a few steps.  This self-correcting property is very desired in the nonsmooth case, since changes in curvature could be large near the optimal point.   $BFGS$ is not the only update method available, there are many more updates typically used.  In particular we have the SR1(Symmetric Rank-1), which has the problem that it may not maintain a positive definiteness of the Hessian in the case when f is convex, although it otherwise generates "good Hessian approximations"\citep{nocedal} Another update worth mentioning is the $DFP$\footnote{DFP also stands for its authors Davidon, Fletcher and Powell.  Davidon is credited with the first quasi-newton algorithm while he was working at Argonne National Laboratories} which together with BFGS spans the Broyden class of updates.
+
+Finally, this thesis will also assume that the Hessian matrix is not sparse.  In this case, there are other algorithms that may be more suitable \citep{Fletcher96computingsparse, sparse}, some of them have even been implemented in fortran \citep{lancelot}.
+
+In this sense chapter \ref{ChapterBFGS} will extend on $BFGS$ and on the basic reasons and steps to move into a large scale $L-BFGS$.  During the solution of an unconstrained problem, a template version of $C++$ code was created which enhances the code originally written by Allan Kaku and Anders Skaaja \citep{kaku} while maintaining Allan's high-precision libraries.  A link to this $BFGS L-BFGS$ software is provided in the thesis website
+
+The next chapter is chapter \ref{ChapterConstraints} and this chapter introduces the algorithm by Nocedal, and what changes were introduced into the code in order to produce a better and stable version in the nonsmooth case.  The website also contains a $FORTRAN$ implementation derived from the original implementation by Nocedal.
+
+\chapter{BFGS & L-BFGS and implementations}
+\label{ChapterBFGS} % For referencing the chapter elsewhere, use \ref{ChapterBFGS} 
+The $BFGS$ update method
+
+\chapter{Constraints & L-BFGS-B: Algorithm and implementations}
+\label{ChapterConstraints} % For referencing the chapter elsewhere, use \ref{ChapterConstraints} 
+
+\end{document}
