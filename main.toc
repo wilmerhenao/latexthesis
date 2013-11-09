@@ -12,8 +12,8 @@
 \contentsline {chapter}{Symbols}{ix}{dummy.16}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
-\contentsline {chapter}{\numberline {2}BFGS & L-BFGS and implementations}{3}{chapter.23}
-\contentsline {chapter}{\numberline {3}Constraints & L-BFGS-B: Algorithm and implementations}{4}{chapter.24}
+\contentsline {chapter}{\numberline {2}BFGS and L-BFGS and implementations}{3}{chapter.23}
+\contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{4}{chapter.24}
 \vspace {2em}
 \contentsline {chapter}{\numberline {A}Appendix Title Here}{5}{appendix.25}
 \vspace {2em}

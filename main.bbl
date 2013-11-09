@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,12 +52,5 @@ Allan Kaku.
   nonsmooth optimization.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
-\newblock URL \url{http://cims.nyu.edu/~aak357/}.
-
-\bibitem[Skaaja(2010)]{skaaja}
-Anders Skaaja.
-\newblock Limited memory bfgs for nonsmooth optimization.
-\newblock Master's thesis, New York University, Courant Institute of
-  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
 
 \end{thebibliography}
