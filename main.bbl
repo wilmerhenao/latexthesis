@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -52,5 +52,16 @@ Allan Kaku.
   nonsmooth optimization.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
+
+\bibitem[Zoutendijk(1970)]{zoutendijk}
+G.~Zoutendijk.
+\newblock \emph{Integer and Nonlinear Programming}, chapter Nonlinear
+  Programming, computational methods, pages 37--86.
+\newblock In  \citet{Abadie}, 1970.
+
+\bibitem[Abadie(1970)]{Abadie}
+J.~Abadie.
+\newblock \emph{Integer and Nonlinear Programming}.
+\newblock North-Holland Publishing company, Amsterdam-London, 1970.
 
 \end{thebibliography}
