@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -55,13 +55,36 @@ Allan Kaku.
 
 \bibitem[Zoutendijk(1970)]{zoutendijk}
 G.~Zoutendijk.
-\newblock \emph{Integer and Nonlinear Programming}, chapter Nonlinear
-  Programming, computational methods, pages 37--86.
+\newblock \emph{Nonlinear Programming, computational methods}, pages 37--86.
 \newblock In  \citet{Abadie}, 1970.
 
 \bibitem[Abadie(1970)]{Abadie}
 J.~Abadie.
 \newblock \emph{Integer and Nonlinear Programming}.
 \newblock North-Holland Publishing company, Amsterdam-London, 1970.
+
+\bibitem[Skaaja(2010)]{skaaja}
+Anders Skaaja.
+\newblock Limited memory bfgs for nonsmooth optimization.
+\newblock Master's thesis, New York University, Courant Institute of
+  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
+
+\bibitem[R.H.~Byrd(1995)]{mainpaper}
+J.~Nocedal R.H.~Byrd, P.~Lu.
+\newblock A limited memory algorithm for bound constrained optimization.
+\newblock \emph{SIAM Journal on Scientific and Statistical Computing},
+  16\penalty0 (5):\penalty0 1190--1208, 1995.
+
+\bibitem[A.R.~Conn(1988)]{gradproj1}
+PH.L.Toint A.R.~Conn, N.I.M.~Gould.
+\newblock Global convergence of a class of trust region algorithms for
+  optimization with simple bounds.
+\newblock \emph{SIAM Journal of Numerical Analysis}, 25:\penalty0 433--460,
+  1988.
+
+\bibitem[J.J.~More(1989)]{gradproj2}
+G.~Toraldo J.J.~More.
+\newblock Algorithms for bound constrained quadratic programming problems.
+\newblock \emph{Numerical Math.}, 55:\penalty0 377--400, 1989.
 
 \end{thebibliography}

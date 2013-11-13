@@ -9,7 +9,7 @@
 %----------------------------------------------------------------------------------------
 %\DeclareMathOperator*{\Min}{Min}
 The most important goal in this thesis is to find a solution of the minimization problem 
-\begin{equation}
+\begin{equation} \label{mainproblem}
   \begin{aligned}
     & \underset{x \in \mathbb{R}^n}{\text{min}}
     & & f(x) \\
@@ -230,3 +230,228 @@ This weak wolfe condition should be better for the nonsmooth case.
 
 \chapter{Constraints and L-BFGS-B: Algorithm and implementations}
 \label{ChapterConstraints} % For referencing the chapter elsewhere, use \ref{ChapterConstraints} 
+
+In this chapter the algorithm to handle the constrained case is presented.  The original algorithm \citep{mainpaper} has an accompanying software written on $FORTRAN$ and this thesis builds upon that software by making sufficient changes to make it applied to the nonsmooth case.
+
+The original problem was stated in equation \ref{mainproblem}.  In this case an optimizer was created for the case when $n$ is large and $f$ is nonsmooth.  The method is based on a gradient projection method similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are bound at a certain step.  
+
+The active set at $x^*$:
+
+\begin{equation}
+  \begin{aligned}
+    \mathcal{A}(x^*) = \{ i \in \{1 \ldots n\} |  x^*_i = l_i \vee  x^*_i = u_i\}
+  \end{aligned}
+\end{equation}
+
+It seems like working on this active set  is efficient in large problems and according to previous research its properties are theoretically good \ref{nocedal}.  The most important reason in theory is that the gradient projection step is able to find most of the active set variables in a single stroke.  Usually, while performing quadratic optimizations, the active set changes by one variable at a time during the line search step \footnote{the line search is cut short immediately after the first bound is hit, so only one active constraint will change at every step... that is, unless the line search hits several constraints at the same time by coincidence, which is very unlikely}.  So, if $1$ million constraints are active at the nondenerage solution, at least $1$ million iterations will be needed.   Gradient projection gets rid of that problem, diminishing the number of iterations, and at the same reducing the number of variables for the next step.
+
+Just like its unconstrained counterparty $L-BFGS$, $L-BFGS-B$ does not require a Hessian matrix to be provided and instead the Hessian is approximated.  Following some simple computational techniques that will all be explained, the number of computations and the storage required, are all kept in the order of $n$.
+
+\subsection{Overview of the Algorithm}
+
+At the beginning of the $k^{th}$ step, the function $f(x)$ is approximated by a second-order Taylor expansion around $x_k$.  This approximation will be refered to as "the model".
+
+\begin{equation} \label{themodel}
+  \begin{aligned}
+    m_k(x) = f(x_k) + \nabla f(x_k)^T ( x - x_k) + \frac{(x - x_k)^T B_k (x - x_k) }{2}
+  \end{aligned}
+\end{equation}
+
+In this model it is important to point out that the gradient $\nabla f$ is provided, however $B_k$ will be a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$ and will not be calculated explicitly.  The algorithm assumes that the function is similar to the quadratic model at least in a neighborhood of $k$, therefore, the first step will be to try and minimize the model \ref{themodel} subject to the constraints $l_i < x_{k, i} < u_i$ via the gradient projection method.
+
+On each iteration of the gradient projection algorithm there will be two stages, a cauchy point computation and a subspace minimization.  In the first stage the algorithm starts on the current point $x_k$ searching on the direction of $-\nabla f(x_k)$.  Now, whenever this search direction encounters one of the constraints, the search direction turns on the boundaries in order to remain feasible.  The path is nothing but the feasible piecewise projection of the steepest descent search direction on the contraint "box" determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$.  At the end of this stage, the value of $x$ that minimizes $m_k(x)$ on this piecewise gradient projection path is known as the "Cauchy point" $x^c$.
+
+For stage two, define the working set as the active set defined on the cauchy point $\mathcal{A}(x^c)$.  In order to do this, solve the quadratic subproblem in which all values of the working set $\mathcal{A}(x^c)$ are fixed at the values corresponding to $x^c$
+
+\subsubsection{Generalized Cauchy Point Calculation}
+
+The generalized cauchy point that minimizes \ref{themodel} and lies along the gradient projection path can be calculated by a simple algorithm.  First of all, any point on the space can be projected on the feasible region by the following formula: 
+
+\begin{equation}
+  \begin{aligned}
+    \mathcal{P}(x, \vec{l}, \vec{u}) = 
+    \begin{cases}
+      l_i, & \text{if } x_i < l_i \\
+      x_i, & \text{if } x_i \in [l_i, u_i] \\
+      u_i, & \text{if } x_i > u_i
+    \end{cases}
+  \end{aligned}
+\end{equation}
+
+The piecewise linear path that starts on $x_k$ and goes on the projected direction of the negative gradient at $x_k$ can be parameterized by $t$ as:
+
+\begin{equation}
+  \begin{aligned}
+    x(t) = \mathcal{P}(x_k - t \nabla f(x_k), \vec{l}, \vec{u})
+  \end{aligned}
+\end{equation}
+
+With this definition the $k^{th}$ Generalized Cauchy point is the first local minimizer of the function $m_k(x(t))$ where $t > 0$.  The minimizer is obtained by examining each of the different segments one by one in order.  In order to do this, it is important to find out the elements at which the breakpoints occur.  These elements are characteristized disorderly by:
+
+\begin{equation} 
+  \begin{aligned} \label{findingt}
+    \hat{t_i} = 
+    \begin{cases}
+      \frac{x_{i,k} - u_i}{\nabla f(x_k)_i}, & \text{if } \nabla f(x_k)_i < 0 \\
+      \frac{x_{i,k} - l_i}{\nabla f(x_k)_i}, & \text{if } \nabla f(x_k)_i > 0 \\
+      \infty, & \text{otherwise}
+    \end{cases}
+  \end{aligned}
+\end{equation}
+
+where $x_{i,k}$ represents the $i^{th}$ coordinate of $x_k$ and $\nabla f(x_k)_i$ stands for the $i^{th}$ coordinate of the gradient.  It is therefore very important to find a piecewise representation of the components of $x(t)$ which is piecewise defined as
+
+\begin{equation}
+  \begin{aligned}
+    x_i(t) = 
+    \begin{cases}
+      x_{i,k} - t \nabla f(x_k)_i, & \text{if } t \leq \hat{t_i} \\
+      x_{i,k} - \hat{t_i} \nabla f(x_k)_i, & \text{otherwise}
+    \end{cases}
+  \end{aligned}
+\end{equation}
+
+Now, in order to iterate in order through the different $\hat{t_i}$ values.  It is necessary to sort the values with a heapsort algorithm \footnote{several algorithms can be chosen in this situation} which can do the job in $O(n \log{(n)})$.  Eliminating repeated and zero values of $\hat{t_i}$, this ordering defines the intervals $[0, t_1]$, $[t_1, t_2]$, $\ldots$ \footnote{Notice that the $\hat{hat}$ represents the unordered breakpoints, whereas the lack of represents the ordered breakpoints}.
+
+When this algorithm is run, the intervals are analysed one by one starting with $[0, t_1]$.  If the optimal is found in this interval, the algorithm stops.  If it has not been found the algorithm continues to the next interval and so on.  Assuming that the algorithm has not found a solution until $t_{j-1}$, and the point $x(t_{j-1})$ has been found and the direction of the projected gradient is given by
+
+\begin{equation}
+  \begin{aligned}
+    d_i^{j-1} = 
+    \begin{cases}
+      -\nabla f(x_k)_i, & \text{if } t_{j-1} < \hat{t_i} \\
+      0, & \text{otherwise}
+    \end{cases}
+  \end{aligned}
+\end{equation}
+
+the model \ref{themodel} on the next line segment will be
+
+\begin{equation} \label{modelonpath}
+  \begin{aligned}
+    \begin{split}
+    m_k(x) & = f(x_k) + \nabla f(x_k)^T ( x_{j-1} - x_k + \Delta t d^{j-1}) + \\
+     & \quad \frac{( x_{j-1} - x_k + \Delta t d^{j-1})^T B_k ( x_{j-1} - x_k + \Delta t d^{j-1})}{2}
+    \end{split}
+  \end{aligned}
+\end{equation}
+
+where
+
+\begin{equation*}
+  \begin{aligned}
+    \Delta t = t - t^{j-1}
+  \end{aligned}
+\end{equation*}
+
+With this equation it is now possible to obtain a formula for the optimal $\Delta t$.  All there is to do is to group the terms in powers of $\Delta t$, derive, equate to zero and obtain the optimal values. Grouping the terms from \ref{modelonpath}
+
+\begin{equation} \label{cauchyterms}
+  \begin{aligned}
+    m_k(x) & = f(x_k) + \nabla f(x_k)^T ( x_{j-1} - x_k) + 
+    \frac{1}{2} ( x_{j-1} - x_k)^T B_k ( x_{j-1} - x_k) + \\
+    & \quad \left( \nabla f(x_k)^T d^{j-1} + d^{{j-1}^T} B_k (x_{j-1} - x_k) 
+    \right) \Delta t + \\
+    & \quad \left( \frac{d^{{j-1}^T} B_k d^{j-1}}{2} \right) \Delta t^2
+  \end{aligned}
+\end{equation}
+
+And defining the corresponding terms to be
+
+\begin{align} \label{cauchydefinitions}
+  f_{j-1} & := f(x_k) + \nabla f(x_k)^T ( x_{j-1} - x_k) + \frac{1}{2} ( x_{j-1} - x_k)^T B_k ( x_{j-1} - x_k) \\
+  f'_{j-1} & := \nabla f(x_k)^T d^{j-1} + d^{{j-1}^T} B_k (x_{j-1} - x_k) \\
+  f''_{j-1} & := d^{{j-1}^T} B_k d^{j-1}
+\end{array}
+
+The optimal value will be $\Delta t^* = \frac{-f'_{j-1}}{f''_{j-1}}$ as long as this $\Delta t^*$ is located within the interval $[0, t_j - t_{j-1}]$.  If it is not, there are two other alternatives.  Either $f'_{j-1} \geq 0$ in which case the optimal cauchy point is located right at the breakpoint $x_{j-1}$, or $f'_{j-1} < 0$ in which case the algorithm Or finishes at $t_j$ if this was the last interval, or it moves over to the interval $[t_j, t_{j+1}]$, replacing
+
+\begin{align}
+  x_j = x_{j-1} + \Delta t^{j-1} d^{j-1}, \text{ where} & 
+  \Delta t^{j-1} = \hat{t_j} - \hat{t_{j-1}}
+\end{align}
+
+and of course, replacing the search direction $d^j$ by cancelling the corresponding coordinate to $0$ zero.  That is, 
+
+\begin{equation}
+  \begin{aligned}
+    d^j = d^{j-1} + \nabla f(x_k)_b e_b
+  \end{aligned}
+\end{equation}
+
+Where $b$ represents the variable that becomes active at $\hat{t_j}$
+
+A more surprising result \citep{mainpaper} not demonstrated here is that it is possible to calculate $f'_j$ and $f''_j$ using the $L-BFGS$ formulae recursively as 
+
+\begin{align} \label{cauchydeflbfgs}
+  \begin{split}
+  f'_j & = f'_{j-1} + \Delta t^{j-1} f''_{j-1} + (\nabla f(x_k)_b)^2 + \theta \nabla f(x_k)_b (x_j - x_k)_b - \\
+  & \quad \nabla f(x_k)_b w_b^T MW^T (x_j - x_k) \\
+  f''_j & = f''_{j-1} + 2 \theta \nabla f(x_k)_b^2 - 2 \nabla f(x_k) w_b^T M W^T d^{j-1} + \theta (\nabla f(x_k)_b)^2 - \\
+  & \quad \nabla f(x_k)_b^2 w_b^T M w_b
+  \end{split}
+\end{align}
+
+which is very cheap to calculate since it only implies an $O(n)$ calculations, coming from the the matrix products $W^T(x_j - x_k)$ and $W^Td^j$.  Looking closely however, these values are updated everytime just one iteration.  So it makes sense to store the vectors and update them everytime.
+
+\begin{align} \label{cp}
+  p_j & := W^Td^j = W^T(d^{j-1} + \nabla f(x_k)_b e_b) = p_{j-1} + \nabla f(x_k)_b w_b \\
+  c_j & := W^T(x_j - x_k) = W^T(x_{j-1} - x_k + \Delta t^{j-1} d^{j-1}) = c_{j-1} + \Delta t^{j-1} p_{j-1}
+\end{align}
+
+which brings the order of calculation updates down to $O(m^2)$.  Since only the first iteration requires a total calculation of the order of $O(n)$, the algorithm is very cheap to calculate
+
+In synthesis the algorithm works like this, there is an initialization phase that works for the first segment and an iteration phase that works for the other segments.
+
+\linesnumbered
+\begin{algorithm}[H]
+ \SetLine % For v3.9
+ %\SetAlgoLined % For previous releases [?]
+ \KwData{x, \vec{l}, \vec{u}, \nabla f(x_k), and B_k}
+ \KwResult{The Generalized Cauchy Point}
+ 
+ \For {i \in 1, \ldots, n}{
+   \text{Calculate } \vec{t_i} \text{according to } \ref{findingt} \\
+   \text{Calculate } d_i \text{based on \vec{t_i}}
+ }
+ initialization \\
+ \mathcal{F} := \{i: \vec{t_i} > 0\} \\
+ p := W^Td \\
+ c := 0 \\
+ f' := -d^Td \\
+ f'' := - \theta f' - p^TMp \\
+ \Delta t^* := \frac{-f'}{f''} \\
+ t_{old} := 0 \\
+ t := min\{t_i: i \in \mathcal{F} \} \\
+ b := i \text{s.t. } t_i = t \text{the boundary just hit} \\
+ \text{remove b from } \mathcal{F} \\
+ \Delta t := t - 0 \\
+ 
+ Subsequent \\
+ 
+ While{\Delta t^* \geq \Delta t}{ \\
+   x_b^{cp} := u_b \text{ or } l_b \text{ Depending on what boundary was hit} \\
+   z_b := x_b^{cp} - x_b \\ 
+   c := c + \Delta t p \\
+   f' := f' + \Delta t f'' + (\nabla f_b)^2 + \theta \nabla f_b z_b - \nabla f_bw_b^TMc \\
+   f'' := f'' - \theta (\nabla f_b)^2 - 2 \nabla f_bw_b^TMp - (\nabla f_b)^2 w_b^T M w_b \\
+   p := p + \nabla f_b w_b \\
+   d_b := 0 \\
+   \Delta t^* := -frac{f'}{f''} \\
+   t_{old} := t \\
+   t := min \{ t_i : i \in \mathcal{F}\} \\
+   b := i \text{s.t.} t_i = t \\
+   \Delta t := t - t_{old} \\
+ }
+ \Delta t^* := max \{ \Delta t^*, 0\}
+ t_{old} := t_{old} + \Delta t^*
+ x_i^{cp} := x_i + t_{old}d_i, \text{ whenever } t_i \geq t
+ \forall i \in \mathcal{F} \text{ with } t_i \text{ remove i from the set \mathcal{F}}
+ c := c + \Delta t^* p
+ \caption{Generalized Cauchy Point\label{CPalgo}}
+
+\end{algorithm}
+
+Overall, the major cost of the algorithm is the heapsort step for $t_i$, which is run in $O(n \log(n)$
+
+\subsubsection{Subspace Minimization}

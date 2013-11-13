@@ -6,20 +6,19 @@
     address   = {Berlin, Heidelberg, New York, Tokyo}
 }
 
-@inbook{zoutendijk,
-author = {G. Zoutendijk},
-chapter = {Nonlinear Programming, computational methods},
-pages = {37-86},
-crossref = {Abadie}
-}
-
 @book{Abadie,
-author={J. Abadie},
-title={Integer and Nonlinear Programming},
-year={1970},
+author = {J. Abadie},
+title = {Integer and Nonlinear Programming},
+year = {1970},
 publisher = {North-Holland Publishing company},
 address = {Amsterdam-London}
 }
+
+@inbook{zoutendijk,
+author = {G. Zoutendijk},
+title = {Nonlinear Programming, computational methods},
+pages = {37-86},
+crossref = {Abadie}
 }
 
 @book{nocedal,
@@ -83,7 +82,42 @@ are discussed.},
 	Title = {An optimal positive definite update for sparse Hessian matrices},
 	Volume = {5},
 	Url = {},
-	Year = {1995}}
+	Year = {1995}
+}
+
+@article{gradproj1,
+       Abstract = {},
+Author = {A.R. Conn, N.I.M. Gould, PH.L.Toint},
+Journal = {SIAM Journal of Numerical Analysis},
+Month = {},
+Number = {},
+Pages = {433-460},
+Title = {Global Convergence of a Class of Trust Region Algorithms for Optimization with Simple Bounds},
+Volume = {25},
+Year = {1988}
+}
+
+@article{gradproj2,
+Abstract = {},
+Author = {J.J. More, G. Toraldo},
+Journal = {Numerical Math.},
+Year = {1989},
+Pages = {377-400},
+Volume = {55},
+Title = {Algorithms for Bound Constrained Quadratic Programming Problems}
+}
+
+@article{mainpaper,
+Astract = {An algorithm for solving large nonlinear optimization problems with simple bounds is described.  It is based on the gradient projection method and uses a limited memory BFGS matrix to approximate the Hessian of the objective function.  It is shown how to take advantage of the form of the limited memory approximation to implement the algorithm efficiently.  The results of numerical tests on a set of large problems are reported.},
+Author = {R.H. Byrd, P. Lu, J. Nocedal},
+Journal = {SIAM Journal on Scientific and Statistical Computing},
+Month = {},
+Pages = {1190-1208},
+Title = {A limited Memory Algorithm for Bound Constrained Optimization},
+Volume = {16},
+Year = {1995},
+Number = {5}
+}
 
 @article{selfcorrecting,
 	Abstract = {},
