@@ -28,6 +28,7 @@ CS = plt.contour(X, Y, Z)
 plt.arrow(-1.44,-1.44,1.43,1.43)
 plt.clabel(CS, inline=1, fontsize=10)
 plt.title('Steepest Descent in a nice situation')
+plt.savefig('Figures/steepestDescentNice.eps', format='eps', dpi=1000)
 plt.show()
 
 Z = 0.1*(0.3*(X-3)**2 + Y**2 + X*Y)
@@ -39,7 +40,18 @@ Z = sin(0.5 * X**2 - 0.25 * Y**2 + 3) * cos(2*X + 1 - exp(Y))
 plt.figure()
 U, V = np.gradient(Z)
 CS = plt.contour(X, Y, Z,32)
-plt.arrow(-0.25,0.33,0.3,-0.03)
+plt.arrow(-0.25,0.32,0.32,-0.03)
+plt.arrow(0.07,0.29,0.04,0.33)
+plt.arrow(0.11,0.62,0.09,-0.01)
+plt.arrow(0.2,0.61,0.02,0.11)
+plt.arrow(0.22,0.72,0.04,-0.01)
+plt.arrow(0.26,0.71,0.01,0.06)
+plt.arrow(0.27,0.77,0.04,-0.005)
+plt.arrow(0.31,0.765,0.005,0.02)
+plt.arrow(0.315,0.785,0.015,-0.005)
+plt.arrow(0.33,0.78,0.005,0.015)
+plt.arrow(0.335,0.795,0.005,-0.005)
+plt.arrow(0.34,0.79,0.005,0.02)
 plt.clabel(CS, inline=1, fontsize=10)
 plt.title('Steepest Descent in a bad situation')
 plt.show()
@@ -154,3 +166,38 @@ CB.ax.set_position([ll, b+0.1*h, ww, h*0.8])
 
 
 plt.show()
+
+
+# example of steepest descent
+
+# From calculation, we expect that the local minimum occurs at x=9/4
+ 
+x_old = 0
+x_new = -0.28 # The algorithm starts at x=6
+y_old = 0
+y_new = 0.315
+eps = 1.0 # step size
+precision = 0.00001
+ 
+
+Z = sin(0.5 * X**2 - 0.25 * Y**2 + 3) * cos(2*X + 1 - exp(Y))
+
+def x_prime(X, Y):
+    return X * cos(0.5 * X**2 - 0.25 * Y**2 + 3) * cos(2*X + 1 - exp(Y)) - 2 * sin(0.5 * X**2 - 0.25 * Y**2 + 3) * sin(2* X + 1 - exp(Y))
+
+def y_prime(X, Y):
+    return -0.5 * Y * cos(0.5 * X**2 - 0.25 * Y**2 + 3) * cos(2*X + 1 - exp(Y)) + exp(Y) * sin(0.5 * X**2 - 0.25 * Y**2 + 3) * sin(2* X + 1 - exp(Y))
+ 
+
+while abs(x_new - x_old) > precision:
+      x_old = x_new
+      y_old = y_new
+      x_new = x_old - eps * x_prime(x_old, y_old)
+      y_new = y_old - eps * y_prime(x_old, y_old)
+      print(x_new, y_new)
+
+while abs(x_new - x_old) > precision:
+    x_old = x_new
+    x_new = x_old - eps * f_prime(x_old)
+    print "new step", x_new
+print "Local minimum occurs at ", x_new
