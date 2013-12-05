@@ -40,20 +40,32 @@ Z = sin(0.5 * X**2 - 0.25 * Y**2 + 3) * cos(2*X + 1 - exp(Y))
 plt.figure()
 U, V = np.gradient(Z)
 CS = plt.contour(X, Y, Z,32)
-plt.arrow(-0.25,0.32,0.32,-0.03)
-plt.arrow(0.07,0.29,0.04,0.33)
-plt.arrow(0.11,0.62,0.09,-0.01)
-plt.arrow(0.2,0.61,0.02,0.11)
-plt.arrow(0.22,0.72,0.04,-0.01)
-plt.arrow(0.26,0.71,0.01,0.06)
-plt.arrow(0.27,0.77,0.04,-0.005)
-plt.arrow(0.31,0.765,0.005,0.02)
-plt.arrow(0.315,0.785,0.015,-0.005)
-plt.arrow(0.33,0.78,0.005,0.015)
-plt.arrow(0.335,0.795,0.005,-0.005)
-plt.arrow(0.34,0.79,0.005,0.02)
+plt.arrow(-0.25,0.32,0.32,-0.03, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.07,0.29,0.04,0.33, length_includes_head = True , fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.11,0.62,0.09,-0.01, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.2,0.61,0.02,0.11, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.22,0.72,0.04,-0.01, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.26,0.71,0.01,0.06, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.27,0.77,0.04,-0.005, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.31,0.765,0.005,0.02, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.315,0.785,0.015,-0.005, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.33,0.78,0.005,0.015, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.335,0.795,0.005,-0.005, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
+plt.arrow(0.34,0.79,0.005,0.02, length_includes_head = True, fc="k", ec="k",
+head_width=0.01, head_length=0.01)
 plt.clabel(CS, inline=1, fontsize=10)
-plt.title('Steepest Descent in a bad situation')
+plt.title('Steepest Descent in a bad situation: f(x, y) = 0.1(0.3*(x-3)^2 + y^2 + xy)')
 plt.show()
 
 # Internet examples

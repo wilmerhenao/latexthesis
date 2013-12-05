@@ -8,7 +8,8 @@
 
 %----------------------------------------------------------------------------------------
 %\DeclareMathOperator*{\Min}{Min}
-The most important goal in this thesis is to find a solution of the minimization problem 
+The most important goal in this thesis is to find a solution of the minimization problem
+
 \begin{equation} \label{mainproblem}
   \begin{aligned}
     & \underset{x \in \mathbb{R}^n}{\text{min}}
@@ -54,7 +55,7 @@ In general the search direction will have the form
 
 \begin{equation} \label{searchdirection}
     \begin{aligned}
-      $d_k = -B_k^{-1} \nabla f_k$
+      d_k = -B_{k}^{-1} \nabla f_k
     \end{aligned}
 \end{equation}
  
@@ -62,7 +63,7 @@ And the choice of matrix $B_k$ will define what type of method we are using.  Th
 
 \begin{equation} \label{Bposdef}
   \begin{aligned}
-    $-\nabla f_k B_k^{-1} \nabla f_k < 0$
+    -\nabla f_k B_k^{-1} \nabla f_k < 0
   \end{aligned}
 \end{equation}
 
@@ -80,9 +81,9 @@ If the condition of the function's Hessian matrix is low, then steepest descent 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics{Figures/steepestdescentnice.eps}
-  \rule{35em}{0.5pt}
-  \caption[step. Desc.]{Steepest Descent}
+  \includegraphics[width=2.5cm]{Figures/steepestDescentNice}
+  \rule{35em}{0.1pt}
+  \caption[step. Desc.]{Steepest Descent exampel}
   \label{fig:Electron}
 \end{figure}
 
@@ -122,9 +123,9 @@ Since Newton's method provides a desireable search direction, but its calculatio
   \end{aligned}
 \end{equation}
 
-In this method the practitioner supplies the identity matrix\footnote{It can be shown that other matrices might be more efficient at a starting point.  However, in this thesis, \mathbb{I} will do for simplicity} at the first iteration $B_k^{-1} = \mathbb{I}$, which is nothing but steepest descent for the first step.  And after that the matrix $B_k^{-1}$ is updated with the $BFGS$ update formula \footnote{As I already mentioned.  BFGS is not the only update available, but from now on, it is the only that is focused on in this thesis}
+In this method the practitioner supplies the identity matrix\footnote{It can be shown that other matrices might be more efficient at a starting point.  However, in this thesis, $\mathbb{I}$ will do for simplicity} at the first iteration $B_k^{-1} = \mathbb{I}$, which is nothing but steepest descent for the first step.  And after that the matrix $B_k^{-1}$ is updated with the $BFGS$ update formula \footnote{As I already mentioned.  BFGS is not the only update available, but from now on, it is the only that is focused on in this thesis}
 
-\begin{equation} \label{BFGSupdate}
+\begin{equation} \label{BFGSUpdate}
   \begin{aligned}
     B_{k+1} ^{-1} = (I - \rho_k s_k y_k^T) B_k^{-1} (I - \rho_k y_k s_k^T) + (\rho_k s_k s_k^T)
   \end{aligned}
@@ -151,19 +152,20 @@ The main idea of limited memory is that instead of building the whole matrix $B_
 
 \linesnumbered
 \begin{algorithm}[H]
- \SetLine % For v3.9
+ \SetAlgoLined % For v3.9
  %\SetAlgoLined % For previous releases [?]
- \KwData{y_k,s_k}
+ \KwData{$y_k$, $s_k$}
  \KwResult{The search direction }
- q \leftarrow \nabla f(x_k)\\
+ 
+ $q \leftarrow \nabla f(x_k)$\;
  \For{i = k-1, k-2, \ldots, k-m}{
-   \alpha_i \leftarrow \rho_i s_i^T q \\
-   q \leftarrow q - \alpha_i y_i \\
+   $\alpha_i \leftarrow \rho_i s_i^T q$\;
+   $q \leftarrow q - \alpha_i y_i$\;
  }
- r \leftarrow H_k^0q \\
+ $r \leftarrow H_k^0q$\;
  \For{i = k-m, k-m+1, \ldots, k-1}{
-   \beta \leftarrow \rho_i y_i^T r \\
-   r \leftarrow r + s_i (\alpha_i - \beta) \\
+   $\beta \leftarrow \rho_i y_i^T r$\;
+   $r \leftarrow r + s_i (\alpha_i - \beta)$\;
  }
  \caption{L-BFGS construction\label{LBFGSalgo}}
 \end{algorithm}
@@ -204,7 +206,7 @@ The first condition that is required is that the function decreases a little bit
   \end{aligned}
 \end{equation}
 
-where $0  < c_1 < 1$.  Notice that $\phi'(0) < 0$ because $d_k$ is a descent direction.  In practice this constant $c_1$ is chosen to be quite small;  in the order of $10^{-4}$.  However, this condition alone is not enough because there is always a very tiny $\alpha$ for which the condition is satisfied,  so it is desireable that the step length is something of substance.  The second condition that we want a \underlined{smooth function} to satisfy is that the step length shoul be long enough so that the gradient almost vanishes.  In other words, if the step length is short and the gradient's norm doesn't decrease enough, A longer step should be chosen,  The algorithm should do this until the benefits from increasing the step length are minimal.  This can be represented in the equation:
+where $0  < c_1 < 1$.  Notice that $\phi'(0) < 0$ because $d_k$ is a descent direction.  In practice this constant $c_1$ is chosen to be quite small;  in the order of $10^{-4}$.  However, this condition alone is not enough because there is always a very tiny $\alpha$ for which the condition is satisfied,  so it is desireable that the step length is something of substance.  The second condition that we want a \underline{smooth function} to satisfy is that the step length shoul be long enough so that the gradient almost vanishes.  In other words, if the step length is short and the gradient's norm doesn't decrease enough, A longer step should be chosen,  The algorithm should do this until the benefits from increasing the step length are minimal.  This can be represented in the equation:
 
 \begin{equation} \label{strongWolfe}
   \begin{aligned}
@@ -243,7 +245,7 @@ The active set at $x^*$:
   \end{aligned}
 \end{equation}
 
-It seems like working on this active set  is efficient in large problems and according to previous research its properties are theoretically good \ref{nocedal}.  The most important reason in theory is that the gradient projection step is able to find most of the active set variables in a single stroke.  Usually, while performing quadratic optimizations, the active set changes by one variable at a time during the line search step \footnote{the line search is cut short immediately after the first bound is hit, so only one active constraint will change at every step... that is, unless the line search hits several constraints at the same time by coincidence, which is very unlikely}.  So, if $1$ million constraints are active at the nondenerage solution, at least $1$ million iterations will be needed.   Gradient projection gets rid of that problem, diminishing the number of iterations, and at the same reducing the number of variables for the next step.
+It seems like working on this active set  is efficient in large problems and according to previous research its properties are theoretically good \citep{nocedal}.  The most important reason in theory is that the gradient projection step is able to find most of the active set variables in a single stroke.  Usually, while performing quadratic optimizations, the active set changes by one variable at a time during the line search step \footnote{the line search is cut short immediately after the first bound is hit, so only one active constraint will change at every step... that is, unless the line search hits several constraints at the same time by coincidence, which is very unlikely}.  So, if $1$ million constraints are active at the nondenerage solution, at least $1$ million iterations will be needed.   Gradient projection gets rid of that problem, diminishing the number of iterations, and at the same reducing the number of variables for the next step.
 
 Just like its unconstrained counterparty $L-BFGS$, $L-BFGS-B$ does not require a Hessian matrix to be provided and instead the Hessian is approximated.  Following some simple computational techniques that will all be explained, the number of computations and the storage required, are all kept in the order of $n$.
 
@@ -362,7 +364,7 @@ And defining the corresponding terms to be
   f_{j-1} & := f(x_k) + \nabla f(x_k)^T ( x_{j-1} - x_k) + \frac{1}{2} ( x_{j-1} - x_k)^T B_k ( x_{j-1} - x_k) \\
   f'_{j-1} & := \nabla f(x_k)^T d^{j-1} + d^{{j-1}^T} B_k (x_{j-1} - x_k) \\
   f''_{j-1} & := d^{{j-1}^T} B_k d^{j-1}
-\end{array}
+\end{align}
 
 The optimal value will be $\Delta t^* = \frac{-f'_{j-1}}{f''_{j-1}}$ as long as this $\Delta t^*$ is located within the interval $[0, t_j - t_{j-1}]$.  If it is not, there are two other alternatives.  Either $f'_{j-1} \geq 0$ in which case the optimal cauchy point is located right at the breakpoint $x_{j-1}$, or $f'_{j-1} < 0$ in which case the algorithm Or finishes at $t_j$ if this was the last interval, or it moves over to the interval $[t_j, t_{j+1}]$, replacing
 
@@ -407,49 +409,48 @@ In synthesis the algorithm works like this, there is an initialization phase tha
 \begin{algorithm}[H]
  \SetLine % For v3.9
  %\SetAlgoLined % For previous releases [?]
- \KwData{x, \vec{l}, \vec{u}, \nabla f(x_k), and B_k}
+ \KwData{$x$, $\vec{l}$, $\vec{u}$, $\nabla f(x_k)$, and $B_k$}
  \KwResult{The Generalized Cauchy Point}
  
  \For {i \in 1, \ldots, n}{
-   \text{Calculate } \vec{t_i} \text{according to } \ref{findingt} \\
-   \text{Calculate } d_i \text{based on \vec{t_i}}
+   \text{Calculate } $\vec{t_i}$ \text{according to } \ref{findingt}\;
+   $\text{Calculate } d_i \text{based on \vec{t_i}}$\;
  }
- initialization \\
- \mathcal{F} := \{i: \vec{t_i} > 0\} \\
- p := W^Td \\
- c := 0 \\
- f' := -d^Td \\
- f'' := - \theta f' - p^TMp \\
- \Delta t^* := \frac{-f'}{f''} \\
- t_{old} := 0 \\
- t := min\{t_i: i \in \mathcal{F} \} \\
- b := i \text{s.t. } t_i = t \text{the boundary just hit} \\
- \text{remove b from } \mathcal{F} \\
- \Delta t := t - 0 \\
+ initialization\;
+ $\mathcal{F} := \{i: \vec{t_i} > 0\}$\;
+ $p := W^Td$\;
+ $c := 0$\;
+ $f' := -d^Td$\;
+ $f'' := - \theta f' - p^TMp$\;
+ $\Delta t^* := \frac{-f'}{f''}$\;
+ $t_{old} := 0$\;
+ $t := min\{t_i: i \in \mathcal{F} \}$\;
+ $b := i \text{s.t. } t_i = t \text{the boundary just hit}$\;
+ $\text{remove b from } \mathcal{F}$\;
+ $\Delta t := t - 0$\;
  
- Subsequent \\
+ Subsequent\;
  
- While{\Delta t^* \geq \Delta t}{ \\
-   x_b^{cp} := u_b \text{ or } l_b \text{ Depending on what boundary was hit} \\
-   z_b := x_b^{cp} - x_b \\ 
-   c := c + \Delta t p \\
-   f' := f' + \Delta t f'' + (\nabla f_b)^2 + \theta \nabla f_b z_b - \nabla f_bw_b^TMc \\
-   f'' := f'' - \theta (\nabla f_b)^2 - 2 \nabla f_bw_b^TMp - (\nabla f_b)^2 w_b^T M w_b \\
-   p := p + \nabla f_b w_b \\
-   d_b := 0 \\
-   \Delta t^* := -frac{f'}{f''} \\
-   t_{old} := t \\
-   t := min \{ t_i : i \in \mathcal{F}\} \\
-   b := i \text{s.t.} t_i = t \\
-   \Delta t := t - t_{old} \\
+ While{$\Delta t^* \geq \Delta t$}{
+   $x_b^{cp} := u_b \text{ or } l_b \text{ Depending on what boundary was hit}$\;
+   $z_b := x_b^{cp} - x_b$\; 
+   $c := c + \Delta t p$\;
+   $f' := f' + \Delta t f'' + (\nabla f_b)^2 + \theta \nabla f_b z_b - \nabla f_bw_b^TMc$\;
+   $f'' := f'' - \theta (\nabla f_b)^2 - 2 \nabla f_bw_b^TMp - (\nabla f_b)^2 w_b^T M w_b$\;
+   $p := p + \nabla f_b w_b$\;
+   $d_b := 0$\;
+   $\Delta t^* := -frac{f'}{f''}$\;
+   $t_{old} := t$\;
+   $t := min \{ t_i : i \in \mathcal{F}\}$\;
+   $b := i \text{s.t.} t_i = t$\;
+   $\Delta t := t - t_{old}$\;
  }
- \Delta t^* := max \{ \Delta t^*, 0\}
- t_{old} := t_{old} + \Delta t^*
- x_i^{cp} := x_i + t_{old}d_i, \text{ whenever } t_i \geq t
- \forall i \in \mathcal{F} \text{ with } t_i \text{ remove i from the set \mathcal{F}}
- c := c + \Delta t^* p
+ $\Delta t^* := max \{ \Delta t^*, 0\}$\;
+ $t_{old} := t_{old} + \Delta t^*$\;
+ $x_i^{cp} := x_i + t_{old}d_i, \text{ whenever } t_i \geq t$\;
+ $\forall i \in \mathcal{F}$ \text{ with } $t_i$ \text{ remove i from the set} $\mathcal{F}$\;
+ $c := c + \Delta t^* p$\;
  \caption{Generalized Cauchy Point\label{CPalgo}}
-
 \end{algorithm}
 
 Overall, the major cost of the algorithm is the heapsort step for $t_i$, which is run in $O(n \log(n)$

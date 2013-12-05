@@ -16,16 +16,17 @@
 \contentsline {section}{\numberline {2.1}Line Search Methods:}{3}{section.25}
 \contentsline {subsection}{\numberline {2.1.1}Steepest Descent}{4}{subsection.29}
 \contentsline {subsection}{\numberline {2.1.2}Newton's Method}{4}{subsection.31}
-\contentsline {subsection}{\numberline {2.1.3}quasinewton methods}{6}{subsection.34}
-\contentsline {subsection}{\numberline {2.1.4}Limited Memory Quasinewton methods: L-BFGS }{7}{subsection.39}
-\contentsline {subsection}{\numberline {2.1.5}Convergence of search direction methods}{8}{subsection.42}
-\contentsline {subsection}{\numberline {2.1.6}step length and wolfe conditions}{8}{subsection.43}
-\contentsline {subsubsection}{\numberline {2.1.6.1}Armijo and Strong Wolfe Conditions}{8}{subsubsection.45}
-\contentsline {subsubsection}{\numberline {2.1.6.2}The Nonsmooth case and Weak Wolfe Conditions}{9}{subsubsection.48}
-\contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{11}{chapter.50}
-\contentsline {subsection}{\numberline {3.0.7}Overview of the Algorithm}{12}{subsection.53}
-\contentsline {subsubsection}{\numberline {3.0.7.1}Generalized Cauchy Point Calculation}{12}{subsubsection.55}
+\contentsline {subsection}{\numberline {2.1.3}quasinewton methods}{5}{subsection.34}
+\contentsline {subsection}{\numberline {2.1.4}Limited Memory Quasinewton methods: L-BFGS }{6}{subsection.39}
+\contentsline {subsection}{\numberline {2.1.5}Convergence of search direction methods}{7}{subsection.52}
+\contentsline {subsection}{\numberline {2.1.6}step length and wolfe conditions}{8}{subsection.53}
+\contentsline {subsubsection}{\numberline {2.1.6.1}Armijo and Strong Wolfe Conditions}{8}{subsubsection.55}
+\contentsline {subsubsection}{\numberline {2.1.6.2}The Nonsmooth case and Weak Wolfe Conditions}{9}{subsubsection.58}
+\contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{10}{chapter.60}
+\contentsline {subsection}{\numberline {3.0.7}Overview of the Algorithm}{11}{subsection.63}
+\contentsline {subsubsection}{\numberline {3.0.7.1}Generalized Cauchy Point Calculation}{11}{subsubsection.65}
+\contentsline {subsubsection}{\numberline {3.0.7.2}Subspace Minimization}{16}{subsubsection.120}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.75}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.121}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{18}{dummy.76}
+\contentsline {chapter}{Bibliography}{18}{dummy.122}
