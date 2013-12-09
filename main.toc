@@ -23,10 +23,10 @@
 \contentsline {subsubsection}{\numberline {2.1.6.1}Armijo and Strong Wolfe Conditions}{8}{subsubsection.55}
 \contentsline {subsubsection}{\numberline {2.1.6.2}The Nonsmooth case and Weak Wolfe Conditions}{9}{subsubsection.58}
 \contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{10}{chapter.60}
-\contentsline {subsection}{\numberline {3.0.7}Overview of the Algorithm}{11}{subsection.63}
-\contentsline {subsubsection}{\numberline {3.0.7.1}Generalized Cauchy Point Calculation}{11}{subsubsection.65}
-\contentsline {subsubsection}{\numberline {3.0.7.2}Subspace Minimization}{16}{subsubsection.120}
+\contentsline {section}{\numberline {3.1}Overview of the Algorithm}{11}{section.63}
+\contentsline {subsection}{\numberline {3.1.1}Generalized Cauchy Point Calculation}{11}{subsection.65}
+\contentsline {subsection}{\numberline {3.1.2}Subspace Minimization}{16}{subsection.121}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.121}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.122}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{18}{dummy.122}
+\contentsline {chapter}{Bibliography}{18}{dummy.123}
