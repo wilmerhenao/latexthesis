@@ -474,7 +474,7 @@ The starting point for this new problem will be the previously found cauchy poin
 
 Under this equation and replacing in \ref{themodel}, it's obtained
 
-\begin{equation} \lable{themodelrestr}
+\begin{equation} \label{themodelrestr}
   \begin{aligned}
     m_k(x) = \hat{d}^T\hat{r}^c + \frac{1}{2} \hat{d}^T \hat{B}_k \hat{d} + \gamma
   \end{aligned}
@@ -484,10 +484,14 @@ where $\gamma$ is a constant and $\hat{B}_k = Z_k^T B_k Z_k$, or the Hessian res
 
 \begin{equation} \label{subproblem}
   \begin{aligned}
-    & \underset{x \in \mathbb{R}^n}{\text{min}}
-    & & f(x) \\
+    & \underset{\hat{d} \in \mathbb{R}^t}{\text{min}} 
+    & & \hat{m}_k(\hat{d}) = \hat{d}^T\hat{r}^c + \frac{1}{2} \hat{d}^T\hat{B}_k\hat{d} + \gamma \\
     & \text{s.t.}
-    & & l_i \leq x_i \leq u_i , \; \\
-    & & & i = 1, \ldots, n.
+    & & l_i - x_i^c \leq \hat{d}_i \leq u_i - x_i^c , \; \\
+    & & & i \in \mathcal{F}
   \end{aligned}
 \end{equation}
+
+And the solution is simply $\hat{d}^u = -\hat{B}_k^{-1}\hat{r}^c$\footnote{Notice that this implies the inversion of $\hat{B}_k$.  However there is a numerical trick explained in \citep{nocedal}, that makes this operation trivial, since $\hat{B}_k$ is a small-rank correction of a diagonal matrix and its inverse can be computed by the Sherman-Morrison-Woodbury formula}.  Now the step length should be $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ is chosen so that the new point $\bar{x}_i$ stays within the constraints originally imposed.
+
+\chapter{Modifications to the original algorithm}

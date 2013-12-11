@@ -27,6 +27,6 @@
 \contentsline {subsection}{\numberline {3.1.1}Generalized Cauchy Point Calculation}{11}{subsection.65}
 \contentsline {subsection}{\numberline {3.1.2}Subspace Minimization}{16}{subsection.121}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{17}{appendix.122}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{18}{appendix.126}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{18}{dummy.123}
+\contentsline {chapter}{Bibliography}{19}{dummy.127}
