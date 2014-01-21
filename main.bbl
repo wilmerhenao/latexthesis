@@ -1,4 +1,4 @@
-\begin{thebibliography}{14}
+\begin{thebibliography}{15}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -86,5 +86,14 @@ PH.L.Toint A.R.~Conn, N.I.M.~Gould.
 G.~Toraldo J.J.~More.
 \newblock Algorithms for bound constrained quadratic programming problems.
 \newblock \emph{Numerical Math.}, 55:\penalty0 377--400, 1989.
+
+\bibitem[Lewis and Overton(2013)]{overtonlewis}
+AdrianS. Lewis and MichaelL. Overton.
+\newblock Nonsmooth optimization via quasi-newton methods.
+\newblock \emph{Mathematical Programming}, 141\penalty0 (1-2):\penalty0
+  135--163, 2013.
+\newblock ISSN 0025-5610.
+\newblock \doi{10.1007/s10107-012-0514-2}.
+\newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
 
 \end{thebibliography}

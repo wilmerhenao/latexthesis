@@ -61,7 +61,7 @@ In general the search direction will have the form
     \end{aligned}
 \end{equation}
  
-And the choice of matrix $B_k$ will define what type of method we are using.  This implies that together with the search direction condition with  $d_k^T \nabla f_k < 0$ we need that:
+And the choice of matrix $B_k$ will define what type of method we are using.  This means that together with the search direction condition $d_k^T \nabla f_k < 0$ we need that:
 
 \begin{equation} \label{Bposdef}
   \begin{aligned}
@@ -71,7 +71,7 @@ And the choice of matrix $B_k$ will define what type of method we are using.  Th
 
 And this would require that $B_k$ be positive definite.
 
-Other conditions that are of the utmost importance in this thesis are the conditions on step length.  These conditions are so important in this thesis that they will be reviewed in a separate chapter.  
+Other conditions that are of the utmost importance in this thesis are the conditions on step length.  These conditions will be reviewed in a separate section.  
  
 Next a presentation of some  of the most important line search methods
 
@@ -83,10 +83,19 @@ If the condition of the function's Hessian matrix is low, then steepest descent 
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=2.5cm]{Figures/steepestDescentNice}
+  \includegraphics[width=8.5cm]{Figures/steepestDescentUgly}
   \rule{35em}{0.1pt}
-  \caption[step. Desc.]{Steepest Descent exampel}
+  \caption[step. Desc.]{Steepest Descent example.  NOTE: This figure will be replaced by good graphical examples that show disadvantages of steepest descent. Rosenbrock???}
   \label{fig:steepestdescent}
+\end{figure}
+
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=5.5cm]{Figures/steepestDescentNice}
+  \rule{35em}{0.1pt}
+  \caption[step. Desc.]{Steepest Descent example.  }
+  \label{fig:steepestdescentugly}
 \end{figure}
 
 \subsection{Newton's Method}
@@ -111,13 +120,13 @@ This new search direction stablishes a change in the metric by means of the Hess
 
 Not only that, but the newton direction $d_k^N$ is exactly the length necessary to minimize the model on equation \ref{secondorderTaylor}.  Which is great news because under regular assumptions a step size of $1$, $\alpha_k = 1$ is all we need to achieve a good convergence and most times we don't need to use an independent algorithm to calculate $\alpha_k$.  This change is excellent in terms of convergence.  When the method is within a neighborhood of the solution, the convergence is very fast.  Indeed, the convergence is quadratic under regular assumptions\citep{nocedal}.
 
-Besides that, there are a few big problems with Newton's method.  First of all a Hessian has to be provided for each iteration which makes the method impractical for medium and large size problems.  Second, even if the Hessian is provided, the inversion operation to go from $\nabla^2 f_k$ to $\left(\nabla^2 f_k \right)^{-1}$ requires operations in the order of $O(n^3)$ which is very expensive when n is large.
+Besides that, there are a few big problems with Newton's method.  First of all a Hessian has to be provided for each iteration and this makes the method impractical for medium and large size problems.  Second, even if the Hessian is provided, the inversion operation to go from $\nabla^2 f_k$ to $\left(\nabla^2 f_k \right)^{-1}$ requires operations in the order of $O(n^3)$ which is very expensive when n is large.
 
 Given these problems the newton method is ideal for small problems, but it's nearly useless for the large scale problems that are the scope of this thesis.
 
 \subsection{quasinewton methods}
 
-Since Newton's method provides a desireable search direction, but its calculation is so expensive, It is logical that some middle ground solution must be found.  In this sense quasinewton methods try to approximate the inverse of the Hessian matrix $\nabla^2 f_k$ saving the algorithm from having to calculate an inverse matrix everytime.  And also, approximating $\nabla^2 f_k$ means that it is not necessary to provide a Hessian matrix everytime.
+Newton's method provides a desireable search direction, but its calculation is very expensive, It is logical that some middle ground solution must be found.  In this sense quasinewton methods try to approximate the inverse of the Hessian matrix $\nabla^2 f_k$ saving the algorithm from having to calculate an inverse and to have to provide the hessian matrix everytime.
 
 \begin{equation}
   \begin{aligned}
@@ -125,7 +134,7 @@ Since Newton's method provides a desireable search direction, but its calculatio
   \end{aligned}
 \end{equation}
 
-In this method the practitioner supplies the identity matrix\footnote{It can be shown that other matrices might be more efficient at a starting point.  However, in this thesis, $\mathbb{I}$ will do for simplicity} at the first iteration $B_k^{-1} = \mathbb{I}$, which is nothing but steepest descent for the first step.  And after that the matrix $B_k^{-1}$ is updated with the $BFGS$ update formula \footnote{As I already mentioned.  BFGS is not the only update available, but from now on, it is the only that is focused on in this thesis}
+In this method the identity matrix\footnote{It can be shown that other matrices might be more efficient at a starting point.  However, in this thesis, $\mathbb{I}$ will do for simplicity} is supplied at the first iteration $B_k^{-1} = \mathbb{I}$, which is nothing but steepest descent for the first step.  After that, the matrix $B_k^{-1}$ is updated with the $BFGS$ update formula \footnote{As I already mentioned.  BFGS is not the only update available, but from now on, it is the only that is focused on in this thesis}
 
 \begin{equation} \label{BFGSUpdate}
   \begin{aligned}
@@ -143,9 +152,9 @@ where:
   \end{aligned}
 \end{equation*} 
 
-For the smooth case it can be proven that the algorithm achieves superlinear convergence after it is in a neighborhood of the solution.  It also improves on the speed of convergence because it saves the practitioner from having to perform an inverse matrix operation at the cost of $O(n^3)$ operations at the end of every step.  Finally, as already mentioned, no Hessian matrix has to be provided, so the $BFGS$ method is the right choice for medium to large size problems.
+For the smooth case it can be proven that the algorithm achieves superlinear convergence after it is in a neighborhood of the solution.  It also improves on the speed of convergence because it is not necessary to perform an inverse matrix operation at the cost of $O(n^3)$ operations at the end of every step.  Finally, as already mentioned, no Hessian matrix has to be provided, so the $BFGS$ method is the right choice for medium to large size problems.
 
-Unfortunately, the method still requires to store a matrix of size $n^2$ and this could be a problem when dealing several thousands variables.  In this sense an improvement is suggested
+Unfortunately, the method still requires to store a matrix of size $n^2$ and this could be a problem when dealing with several thousands of variables.  In this sense an improvement is suggested
 
 \subsection{Limited Memory Quasinewton methods: L-BFGS }
 
@@ -154,8 +163,7 @@ The main idea of limited memory is that instead of building the whole matrix $B_
 
 \linesnumbered
 \begin{algorithm}[H]
- \SetAlgoLined % For v3.9
- %\SetAlgoLined % For previous releases [?]
+ \SetAlgoLined 
  \KwData{$y_k$, $s_k$}
  \KwResult{The search direction }
  
@@ -186,9 +194,9 @@ While these methods are well studied and they work well for the smooth case, the
 
 \subsection{step length and wolfe conditions}
 
-The methods so far suggested give the direction on which to move.  All of them will be descent directions given that some conditions are satisfied.  But let's remember that according to equation \ref{basiclinesearch} a constant $\alpha_k$ has to be determined.  How much to move in each direction is a different kind of problem and solving is just as important as finding the direction $d_k$.
+The methods so far suggested give the direction on which to move.  All of them will be descent directions given that some conditions are satisfied.  But let's remember that according to equation \ref{basiclinesearch} a constant $\alpha_k$ has to be determined.  How much to move in each direction is a different kind of problem and solving it is just as important as finding the direction $d_k$.
 
-In this sense it's required in line search algorithm to satisfy at least two conditions.  The first one is to guarantee that there is some descent in the direction.  It is given already that since $d_k$ is a search direction there exists at least some $\epsilon > 0$ s. t. $\forall \alpha < \epsilon$ $f(x_k + \alpha d_k) < f(x_k)$.  However, this only implies the existence.  If an optimal level of decrease is to be found, better criteria need to be applied.  This is where the Armijo and the Wolfe conditions enter into play.
+In this sense it's required in line search algorithms to satisfy at least two conditions.  The first one is to guarantee that there is some descent in the direction.  It is given already that since $d_k$ is a search direction there exists at least some $\epsilon > 0$ s. t. $\forall \alpha < \epsilon$ $f(x_k + \alpha d_k) < f(x_k)$.  However, this only implies the existence.  If an optimal level of decrease is to be found, better criteria need to be applied.  This is where the Armijo and the Wolfe conditions enter into play.
 
 In the rest of this section, $x_k$ and $d_k$ are already being given and it's therefore simpler to focus on the variable $\alpha$.  For this reason, the variable $\phi$ is introduced:
 
@@ -222,7 +230,7 @@ Several things can be said about the Stronge Wolfe conditions; first of all, the
 
 \subsubsection{The Nonsmooth case and Weak Wolfe Conditions}
 
-Of course the main problem with nonsmooth functions is that Zoutendijk's theorem does not apply anymore and therefore there is no guarantee that a step that satisfies both strong Wolfe conditions can be found.  A good example of this situation is presented in \citep{skaaja}  It is therefore possible to relax the strong Wolfe condition and to not impose an upper bound.  on the new derivative.  Therefore the new weak Wolfe condition that should apply better for the nonsmooth case is: 
+Of course the main problem with nonsmooth functions is that Zoutendijk's theorem does not apply anymore and therefore there is no guarantee that a step that satisfies both strong Wolfe conditions can be found.  A good example of this situation is presented in \citep{skaaja}  It is therefore possible to relax the strong Wolfe condition and to not impose an upper bound on the new derivative.  Therefore the new weak Wolfe condition that should apply better for the nonsmooth case is: 
 
 \begin{equation} \label{weakWolfe}
   \begin{aligned}
@@ -248,6 +256,8 @@ The active set at $x^*$:
 \end{equation}
 
 It seems like working on this active set  is efficient in large problems and according to previous research its properties are theoretically good \citep{nocedal}.  The most important reason in theory is that the gradient projection step is able to find most of the active set variables in a single stroke.  Usually, while performing quadratic optimizations, the active set changes by one variable at a time during the line search step \footnote{the line search is cut short immediately after the first bound is hit, so only one active constraint will change at every step... that is, unless the line search hits several constraints at the same time by coincidence, which is very unlikely}.  So, if $1$ million constraints are active at the nondenerage solution, at least $1$ million iterations will be needed.   Gradient projection gets rid of that problem, diminishing the number of iterations, and at the same reducing the number of variables for the next step.
+
+[Try to introduce a graphic of gradient projection here]
 
 Just like its unconstrained counterparty $L-BFGS$, $L-BFGS-B$ does not require a Hessian matrix to be provided and instead the Hessian is approximated.  Following some simple computational techniques that will all be explained, the number of computations and the storage required, are all kept in the order of $n$.
 
@@ -368,7 +378,7 @@ And defining the corresponding terms to be
   f''_{j-1} & := d^{{j-1}^T} B_k d^{j-1}
 \end{align}
 
-The optimal value will be $\Delta t^* = \frac{-f'_{j-1}}{f''_{j-1}}$ as long as this $\Delta t^*$ is located within the interval $[0, t_j - t_{j-1}]$.  If it is not, there are two other alternatives.  Either $f'_{j-1} \geq 0$ in which case the optimal cauchy point is located right at the breakpoint $x_{j-1}$, or $f'_{j-1} < 0$ in which case the algorithm Or finishes at $t_j$ if this was the last interval, or it moves over to the interval $[t_j, t_{j+1}]$, replacing
+The optimal value will be $\Delta t^* = \frac{-f'_{j-1}}{f''_{j-1}}$ as long as this $\Delta t^*$ is located within the interval $[0, t_j - t_{j-1}]$.  If it is not, there are two other alternatives.  Either $f'_{j-1} \geq 0$ in which case the optimal cauchy point is located right at the breakpoint $x_{j-1}$, or $f'_{j-1} < 0$ in which case the solution is not in the current interval, or finishes at $t_j$ if this was the last interval analysed, or it moves over to the interval $[t_j, t_{j+1}]$, replacing
 
 \begin{align}
   x_j = x_{j-1} + \Delta t^{j-1} d^{j-1}, \text{ where} & 
@@ -495,3 +505,24 @@ where $\gamma$ is a constant and $\hat{B}_k = Z_k^T B_k Z_k$, or the Hessian res
 And the solution is simply $\hat{d}^u = -\hat{B}_k^{-1}\hat{r}^c$\footnote{Notice that this implies the inversion of $\hat{B}_k$.  However there is a numerical trick explained in \citep{nocedal}, that makes this operation trivial, since $\hat{B}_k$ is a small-rank correction of a diagonal matrix and its inverse can be computed by the Sherman-Morrison-Woodbury formula}.  Now the step length should be $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ is chosen so that the new point $\bar{x}_i$ stays within the constraints originally imposed.
 
 \chapter{Modifications to the original algorithm}
+
+\section{Convex Hull and termination conditions}
+
+The most important requirement of a practical algorithm is that it ends in a finite time. For the case of smooth functions, the formal way to do this is to check whether the gradient has dimension zero $0$ wherever the constraints are not at bound. In the case of nonsmooth functions however, this is not necessarily true and the function at the minimum, may have a kink. In this kink the gradient may not vanish.  Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the gradients corresponding to this sequence of points might be completely different from the gradients associated to a sequence gradients associated to a sequence of points that approaches the optimum from the left. In other cases, the optimum might be located right at one of the boundaries, In this case the gradient does not necessarily vanish.
+
+Given this set of conditions, there is the need for a special set of rules to establish the finalization of each optimization.
+
+Since BFGS approximations typically converge to Clarke-Stationary points. The right methodology is to calculate the subgradient. One particular methodology that guarantees an end to the algorithm is suggested in \citep{overtonlewis}.  In order to make sure that the gradient zero $\vec{0}$ is part of the subgradient calculated over a neighbourhood of the optimum.
+The algorithm keeps a record of the latest gradient vectors in a small neighbourhood of the point that we suspect is the optimum, This collection is called $G_k$ in \citep{overtonlewis}, This collection of gradients spans an associated convex hull of gradients. If this convex hull contains at least one vector of dimension smaller than a tiny number $\tau_k$, the algorithm ends.
+
+Of course the best way to find a vector with such properties is to find the vector with the minimal norm that resides in the convex hull generated by $G_k$
+
+\subsubsection{minimization of the quadratic program}
+
+This solution is brilliant because the user is guaranteed to end up at a local optimum.  However, one subalgorithm needs to be solved in order for this algorithm to make sense.
+
+\section{cubic interpolation replaced with line search}
+
+The original paper by Nocedal\citep{Nocedal}, included a cubic line search.
+
+\section{Weak wolfe conditions}

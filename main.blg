@@ -5,45 +5,45 @@ The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
 Warning--empty volume in zoutendijk's crossref of Abadie
 Warning--need editor, key, or series for zoutendijk to crossref Abadie
-You've used 14 entries,
+You've used 15 entries,
             2481 wiz_defined-function locations,
-            634 strings with 6456 characters,
-and the built_in function-call counts, 4267 in all, are:
-= -- 375
-> -- 120
-< -- 14
-+ -- 62
-- -- 34
-* -- 254
-:= -- 694
-add.period$ -- 42
-call.type$ -- 14
-change.case$ -- 24
-chr.to.int$ -- 14
-cite$ -- 16
-duplicate$ -- 256
-empty$ -- 440
-format.name$ -- 50
-if$ -- 919
+            646 strings with 6697 characters,
+and the built_in function-call counts, 4690 in all, are:
+= -- 418
+> -- 135
+< -- 15
++ -- 68
+- -- 38
+* -- 289
+:= -- 761
+add.period$ -- 48
+call.type$ -- 15
+change.case$ -- 26
+chr.to.int$ -- 15
+cite$ -- 17
+duplicate$ -- 275
+empty$ -- 478
+format.name$ -- 57
+if$ -- 1012
 int.to.chr$ -- 1
-int.to.str$ -- 15
-missing$ -- 17
-newline$ -- 78
-num.names$ -- 42
-pop$ -- 116
+int.to.str$ -- 16
+missing$ -- 18
+newline$ -- 86
+num.names$ -- 45
+pop$ -- 120
 preamble$ -- 1
-purify$ -- 14
+purify$ -- 15
 quote$ -- 0
-skip$ -- 154
+skip$ -- 166
 stack$ -- 0
-substring$ -- 159
-swap$ -- 33
+substring$ -- 182
+swap$ -- 35
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
+type$ -- 87
 warning$ -- 2
-while$ -- 35
+while$ -- 38
 width$ -- 0
-write$ -- 191
+write$ -- 210
 (There were 2 warnings)

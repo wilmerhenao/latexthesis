@@ -66,6 +66,7 @@ plt.arrow(0.34,0.79,0.005,0.02, length_includes_head = True, fc="k", ec="k",
 head_width=0.01, head_length=0.01)
 plt.clabel(CS, inline=1, fontsize=10)
 plt.title('Steepest Descent in a bad situation: f(x, y) = 0.1(0.3*(x-3)^2 + y^2 + xy)')
+plt.savefig('Figures/steepestDescentUgly.eps', format='eps', dpi=1000)
 plt.show()
 
 # Internet examples

@@ -1,9 +1,13 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=latex 2013.6.22)  10 DEC 2013 23:27
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.22)  12 DEC 2013 00:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**\nonstopmode\input main.tex
-(./main.tex (./Thesis.cls
+**main.tex
+(./main.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, lo
+aded.
+(./Thesis.cls
 Document Class: Thesis 2007/22/02 v1.0 LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
 Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
@@ -384,10 +388,18 @@ Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
 File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
-Package graphics Info: Driver file: dvips.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvips.def
-File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count103
 ))
 \Gin@req@height=\dimen123
 \Gin@req@width=\dimen124
@@ -398,18 +410,12 @@ Package: epstopdf 2010/02/09 v2.5 Conversion with epstopdf on the fly (HO)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
 Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-
-(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)))
+))
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
 Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
 
@@ -434,17 +440,23 @@ Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is not detected.
+Package ifpdf Info: pdfTeX in PDF mode is detected.
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-Package pdftexcmds Info: \pdfdraftmode is ignored in DVI mode.
+Package pdftexcmds Info: \pdfdraftmode found.
 )
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
 
-Package epstopdf Warning: Drivers other than `pdftex.def' are not supported.
-
-)) (/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+)))
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigtopskip=\skip58
 \subfigcapskip=\skip59
@@ -452,10 +464,10 @@ Package: subfigure 2002/03/15 v2.1.5 subfigure package
 \subfigbottomskip=\skip60
 \subfigcapmargin=\dimen126
 \subfiglabelskip=\skip61
-\c@subfigure=\count103
-\c@lofdepth=\count104
-\c@subtable=\count105
-\c@lotdepth=\count106
+\c@subfigure=\count104
+\c@lofdepth=\count105
+\c@subtable=\count106
+\c@lotdepth=\count107
 
 ****************************************
 * Local config file subfigure.cfg used *
@@ -476,12 +488,12 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen134
 \cmidrulekern=\dimen135
 \defaultaddspace=\dimen136
-\@cmidla=\count107
-\@cmidlb=\count108
+\@cmidla=\count108
+\@cmidlb=\count109
 \@aboverulesep=\dimen137
 \@belowrulesep=\dimen138
-\@thisruleclass=\count109
-\@lastruleclass=\count110
+\@thisruleclass=\count110
+\@lastruleclass=\count111
 \@thisrulewidth=\dimen139
 )
 (/usr/share/texlive/texmf-dist/tex/latex/rotating/rotating.sty
@@ -490,24 +502,24 @@ Package: rotating 2009/03/28 v2.16a rotated objects in LaTeX
 (/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\c@r@tfl@t=\count111
+\c@r@tfl@t=\count112
 \rotFPtop=\skip64
 \rotFPbot=\skip65
 \rot@float@box=\box28
 \rot@mess@toks=\toks29
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count112
+\lst@mode=\count113
 \lst@gtempboxa=\box29
 \lst@token=\toks30
-\lst@length=\count113
+\lst@length=\count114
 \lst@currlwidth=\dimen140
-\lst@column=\count114
-\lst@pos=\count115
+\lst@column=\count115
+\lst@pos=\count116
 \lst@lostspace=\dimen141
 \lst@width=\dimen142
-\lst@newlines=\count116
-\lst@lineno=\count117
+\lst@newlines=\count117
+\lst@lineno=\count118
 \lst@maxwidth=\dimen143
  (./lstpatch.sty
 
@@ -520,8 +532,8 @@ Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count118
-\lst@skipnumbers=\count119
+\c@lstnumber=\count119
+\lst@skipnumbers=\count120
 \lst@framebox=\box30
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -579,15 +591,15 @@ Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
 \@linkdim=\dimen144
-\Hy@linkcounter=\count120
-\Hy@pagecounter=\count121
+\Hy@linkcounter=\count121
+\Hy@pagecounter=\count122
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
 File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count122
+\Hy@SavedSpaceFactor=\count123
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
@@ -613,14 +625,14 @@ Package hyperref Info: Plain pages OFF on input line 4077.
 Package hyperref Info: Backreferencing OFF on input line 4082.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4300.
-\c@Hy@tempcnt=\count123
+\c@Hy@tempcnt=\count124
 
 (/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4653.
-\Fld@menulength=\count124
+\Fld@menulength=\count125
 \Field@Width=\dimen145
 \Fld@charsize=\dimen146
 Package hyperref Info: Hyper figures OFF on input line 5773.
@@ -632,38 +644,26 @@ Package hyperref Info: Link coloring with OCG OFF on input line 5798.
 Package hyperref Info: PDF/A mode OFF on input line 5803.
 LaTeX Info: Redefining \ref on input line 5843.
 LaTeX Info: Redefining \pageref on input line 5847.
-\Hy@abspage=\count125
-\c@Item=\count126
-\c@Hfootnote=\count127
+\Hy@abspage=\count126
+\c@Item=\count127
+\c@Hfootnote=\count128
 )
 
-Package hyperref Message: Driver (default): hdvips.
+Package hyperref Message: Driver (autodetected): hpdftex.
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hdvips.def
-File: hdvips.def 2012/05/13 v6.82q Hyperref driver for dvips
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+\Fld@listcount=\count129
+\c@bookmark@seq@number=\count130
 
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pdfmark.def
-File: pdfmark.def 2012/05/13 v6.82q Hyperref definitions for pdfmark specials
-
-
-Package hyperref Warning: You have enabled option `breaklinks'.
-(hyperref)                But driver `hdvips.def' does not suppport this.
-(hyperref)                Expect trouble with the link areas of broken links.
-
-\pdf@docset=\toks31
-\pdf@box=\box31
-\pdf@toks=\toks32
-\pdf@defaulttoks=\toks33
-\Fld@listcount=\count128
-\c@bookmark@seq@number=\count129
 (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
 Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
 \Hy@SectionHShift=\skip66
-))
-\c@dummy=\count130
+)
+\c@dummy=\count131
 
 (/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
@@ -671,28 +671,28 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTright=\skip68
 \LTpre=\skip69
 \LTpost=\skip70
-\LTchunksize=\count131
+\LTchunksize=\count132
 \LTcapwidth=\dimen147
-\LT@head=\box32
-\LT@firsthead=\box33
-\LT@foot=\box34
-\LT@lastfoot=\box35
-\LT@cols=\count132
-\LT@rows=\count133
-\c@LT@tables=\count134
-\c@LT@chunks=\count135
-\LT@p@ftn=\toks34
+\LT@head=\box31
+\LT@firsthead=\box32
+\LT@foot=\box33
+\LT@lastfoot=\box34
+\LT@cols=\count133
+\LT@rows=\count134
+\c@LT@tables=\count135
+\c@LT@chunks=\count136
+\LT@p@ftn=\toks31
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip71
 \bibsep=\skip72
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count136
+\c@NAT@ctr=\count137
 )
 (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
 Package: algorithm2e 2008/00/00 v3.10 algorithms environments
-\c@AlgoLine=\count137
+\c@AlgoLine=\count138
 
 ********************************************************
 Package `algorithm2e' Release 4.01 -- december 14 2009 --
@@ -715,22 +715,22 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \interspacetitleruled=\dimen151
 \interspacealgoruled=\dimen152
 \interspacetitleboxruled=\dimen153
-\algocf@inoutbox=\box36
-\algocf@inputbox=\box37
+\algocf@inoutbox=\box35
+\algocf@inputbox=\box36
 \AlCapSkip=\skip81
 \AlCapHSkip=\skip82
-\algocf@nlbox=\box38
-\algocf@hangingbox=\box39
-\algocf@capbox=\box40
+\algocf@nlbox=\box37
+\algocf@hangingbox=\box38
+\algocf@capbox=\box39
 \algoheightruledefault=\skip83
 \algoheightrule=\skip84
 \algotitleheightruledefault=\skip85
 \algotitleheightrule=\skip86
-\c@algocfline=\count138
-\c@algocfproc=\count139
-\c@algocf=\count140
-\algocf@algoframe=\box41
-\algocf@algobox=\box42
+\c@algocfline=\count139
+\c@algocfproc=\count140
+\c@algocf=\count141
+\algocf@algoframe=\box40
+\algocf@algobox=\box41
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 34.
  (./main.aux)
@@ -762,20 +762,31 @@ Package: ltcaption 2011/09/12 v1.3 longtable captions (AR)
 Package caption Info: rotating package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count141
-\AtBeginShipoutBox=\box43
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count142
+\scratchdimen=\dimen154
+\scratchbox=\box42
+\nofMPsegments=\count143
+\nofMParguments=\count144
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count145
+\MPscratchDim=\dimen155
+\MPnumerator=\count146
+\makeMPintoPDFobject=\count147
+\everyMPtoPDFconversion=\toks33
+)
+\c@lstlisting=\count148
+\AtBeginShipoutBox=\box43
+ (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package color Info: Driver file: dvips.def on input line 130.
-
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/dvipsnam.def
-File: dvipsnam.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
-))
+Package color Info: Driver file: pdftex.def on input line 130.
+)
 Package hyperref Info: Link coloring ON on input line 37.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
@@ -784,7 +795,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count142
+\c@section@level=\count149
 )
 LaTeX Info: Redefining \ref on input line 37.
 LaTeX Info: Redefining \pageref on input line 37.
@@ -807,7 +818,7 @@ File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 
 
 
-]
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 ------------------------------------------------------------------------------
  Declaration of Authorship
 ------------------------------------------------------------------------------
@@ -908,8 +919,52 @@ Chapter 2.
 [3
 
 ]
-File: Figures/steepestDescentNice.eps Graphic file (type eps)
- <Figures/steepestDescentNice.eps> [4] [5] [6] [7] [8] [9]
+Package epstopdf Info: Source file: <Figures/steepestDescentUgly.eps>
+(epstopdf)                    date: 2013-12-11 23:51:54
+(epstopdf)                    size: 68174 bytes
+(epstopdf)             Output file: <Figures/steepestDescentUgly-eps-converted-
+to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=Figures/steepestDescentUgl
+y-eps-converted-to.pdf Figures/steepestDescentUgly.eps>
+(epstopdf)             \includegraphics on input line 86.
+runsystem(repstopdf --outfile=Figures/steepestDescentUgly-eps-converted-to.pdf 
+Figures/steepestDescentUgly.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <Figures/steepestDescentUgly-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2013-12-12 00:28:17
+(epstopdf)                    size: 30696 bytes.
+
+<Figures/steepestDescentUgly-eps-converted-to.pdf, id=282, 578.16pt x 433.62pt>
+File: Figures/steepestDescentUgly-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/steepestDescentUgly-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/steepestDescentUgly-eps-converted-to.pdf used 
+on input line 86.
+(pdftex.def)             Requested size: 241.84842pt x 181.38472pt.
+Package epstopdf Info: Source file: <Figures/steepestDescentNice.eps>
+(epstopdf)                    date: 2013-12-11 23:51:52
+(epstopdf)                    size: 66765 bytes
+(epstopdf)             Output file: <Figures/steepestDescentNice-eps-converted-
+to.pdf>
+(epstopdf)             Command: <repstopdf --outfile=Figures/steepestDescentNic
+e-eps-converted-to.pdf Figures/steepestDescentNice.eps>
+(epstopdf)             \includegraphics on input line 95.
+runsystem(repstopdf --outfile=Figures/steepestDescentNice-eps-converted-to.pdf 
+Figures/steepestDescentNice.eps)...executed safely (allowed).
+
+Package epstopdf Info: Result file: <Figures/steepestDescentNice-eps-converted-
+to.pdf>
+(epstopdf)                    date: 2013-12-12 00:28:17
+(epstopdf)                    size: 29107 bytes.
+
+<Figures/steepestDescentNice-eps-converted-to.pdf, id=283, 578.16pt x 433.62pt>
+File: Figures/steepestDescentNice-eps-converted-to.pdf Graphic file (type pdf)
+<use Figures/steepestDescentNice-eps-converted-to.pdf>
+Package pdftex.def Info: Figures/steepestDescentNice-eps-converted-to.pdf used 
+on input line 95.
+(pdftex.def)             Requested size: 156.49014pt x 117.36346pt.
+ [4 <./Figures/steepestDescentUgly-eps-converted-to.pdf>] [5 <./Figures/steepes
+tDescentNice-eps-converted-to.pdf>] [6] [7] [8] [9]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Constraints and L-BFGS-B: Algorithm and implementations
@@ -920,38 +975,78 @@ Chapter 3.
 Overfull \vbox (49.16135pt too high) has occurred while \output is active []
 
 
-[15]) [16] (./Appendices/AppendixA.tex [17]
+[15] [16] [17]
+Chapter 4.
+------------------------------------------------------------------------------
+ 4 Modifications to the original algorithm
+------------------------------------------------------------------------------
+[18
+
+]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 536.
+
+) (./Appendices/AppendixA.tex [19]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [18
+) [20
 
 ]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./main.bbl [19
+(./main.bbl [21
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
- [20]
+ [22]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
  (./main.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 307.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 2F703953403EDFD4192FB8DEC4EAE836;5055.
+(rerunfilecheck)             Checksum: 043A1AA8C65B6794823FAE7FAA61AF0F;6097.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
  ) 
 Here is how much of TeX's memory you used:
- 11931 strings out of 495060
- 165593 string characters out of 3182053
- 284783 words of memory out of 3000000
- 14920 multiletter control sequences out of 15000+200000
- 16113 words of font info for 59 fonts, out of 3000000 for 9000
+ 12467 strings out of 495059
+ 172278 string characters out of 3182030
+ 291673 words of memory out of 3000000
+ 15242 multiletter control sequences out of 15000+200000
+ 16281 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,15n,45p,2273b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,15n,45p,2252b,450s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
+s/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msbm10.pfb>
+Output written on main.pdf (34 pages, 401565 bytes).
+PDF statistics:
+ 700 PDF objects out of 1000 (max. 8388607)
+ 569 compressed objects within 6 object streams
+ 195 named destinations out of 1000 (max. 500000)
+ 251 words of extra memory for PDF output out of 10000 (max. 10000000)
 
-Output written on main.dvi (32 pages, 126576 bytes).
