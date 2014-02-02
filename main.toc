@@ -31,8 +31,8 @@
 \contentsline {subsubsection}{\numberline {4.1.0.1}minimization of the quadratic program}{19}{subsubsection.129}
 \contentsline {section}{\numberline {4.2}cubic interpolation replaced with line search}{19}{section.130}
 \contentsline {section}{\numberline {4.3}the functions to be tested}{19}{section.131}
-\contentsline {section}{\numberline {4.4}Weak wolfe conditions}{19}{section.134}
+\contentsline {section}{\numberline {4.4}Weak wolfe conditions}{20}{section.134}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{20}{appendix.135}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{21}{appendix.135}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{21}{dummy.136}
+\contentsline {chapter}{Bibliography}{22}{dummy.136}

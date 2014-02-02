@@ -519,7 +519,9 @@ Of course the best way to find a vector with such properties is to find the vect
 
 \subsubsection{minimization of the quadratic program}
 
-This solution is brilliant because the user is guaranteed to end up at a local optimum.  However, one subalgorithm needs to be solved in order for this algorithm to make sense.
+This solution is guarantees to end up at a local optimum. However, one subalgorithm needs to be solved. This algorithm is a practical primal-dual algorithm. In this case in particular the best solution is to implement a variation of Mehrotra's Predictor-Corrector algorithm applied to quadratic programming. The primal dual method requires the solution of a system in order to calculate the search direction. The most expensive part of this solution is the calculation of the cholesky decomposition. Mehrotra's algorithm uses the same cholesky decomposition to calculate both directions. the predictor, and the corrector.
+
+Currently there is not a theoretical calculation of the complexity of this algorithm but it is very used in practice. The implementation here is exactly the one on \citep{Nocedal}. It was implemented in fortran as part of the optimizer.
 
 \section{cubic interpolation replaced with line search}
 
@@ -530,7 +532,7 @@ The original paper by Nocedal\citep{Nocedal}, included a cubic line search.
 In order to make some tests, a few functions will be evaluated. The most important function to test this non-smooth optimizer is a modified version of rosenbrock's:
 
 \begin{equation}
-    f(x) = (x_1 - 1)^2 + \Sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
+    f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
 \end{equation}
 
 Where the value of $p$ changes the behaviour of the optimizer. This function can be proven to be lipschitz continuous whenever $p > 1$ if restricted to the domain defined by 
@@ -545,10 +547,8 @@ Where the value of $p$ changes the behaviour of the optimizer. This function can
   \end{aligned}
 \end{equation}
 
-because whenever $p > 1$ we have that the function $f(z) = |z|^p$ is zero $0$ around zero because the derivative $p |z| ^{p-1}$ is zero whenever $z$ tends to zero from the right. (from the left also because it is an even function). However the second derivative will not be as nice.
+and in fact, whenever the function is restricted to a finite domain.  Because whenever $p > 1$ we have that the function $f(z) = |z|^p$ is zero $0$ around zero because the derivative $p |z| ^{p-1}$ is zero whenever $z$ tends to zero from the right. (from the left also because it is an even function). However the second derivative will not be as nice.
 
-For the case when $p \leq 1$ we have that the second derivative tends to infinity. $\lim_{x \rightarrow 0^+} f' = \infty$. Which is already well known given the "heavyside" look of $f(z) = |z|$.
-
-The results.
+For the case when $p \leq 1$ we have that the second derivative tends to infinity. $\displaystyle \lim_{x \to 0^+} {f' = \infty}$. Which is already well known given the "heavyside" look of $f(z) = |z|$.
 
 \section{Weak wolfe conditions}

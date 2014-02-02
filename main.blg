@@ -1,6 +1,11 @@
-This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
+Case mismatch error between cite keys Nocedal and nocedal
+---line 130 of file main.aux
+ : \citation{Nocedal
+ :                  }
+I'm skipping whatever remains of this command
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
 Warning--empty volume in zoutendijk's crossref of Abadie
@@ -46,4 +51,4 @@ warning$ -- 2
 while$ -- 38
 width$ -- 0
 write$ -- 210
-(There were 2 warnings)
+(There was 1 error message)
