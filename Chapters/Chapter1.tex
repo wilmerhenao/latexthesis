@@ -525,7 +525,9 @@ Currently there is not a theoretical calculation of the complexity of this algor
 
 \section{cubic interpolation replaced with line search}
 
-The original paper by Nocedal\citep{Nocedal}, included a cubic line search.
+The original software by Nocedal\citep{Nocedal}, included a cubic line search. The idea of a cubic interpolation line search is to take advantage of the smooth properties of functions and take advantage of the curvature properties. It is debatable to see which one works better whether a simple line search or a cubic interpolation. However, In the case of nonsmooth functions, this line search does not serve our purpose and therefore a more typical line search that implements a bisection was used.
+
+In general, a step length is selected. If this step length does not satisfy the sufficient decrease and curvature conditions, then a step length of half or double the size is selected. the algorithm is guaranteed to converge under a careful selection of the parameters, however, in case this does not happen, the software will stop with a warning. 
 
 \section{the functions to be tested}
 
@@ -551,4 +553,39 @@ and in fact, whenever the function is restricted to a finite domain.  Because wh
 
 For the case when $p \leq 1$ we have that the second derivative tends to infinity. $\displaystyle \lim_{x \to 0^+} {f' = \infty}$. Which is already well known given the "heavyside" look of $f(z) = |z|$.
 
+The convergence of the algorithm smoothly descends to the objective 
+\centering
+\includegraphics[scale=0.3]{Figures/convergence.png}
+
+The converge is adversely affected by the selection of $p$ as one would expect. Values of $p$ descending to $1$ make the function less "smooth" and have the adverse effect of making the convergence much more difficult. In this exercise it is noticeable how slow the convergence becomes for a few specific values of $p$. In particular for $1.0001$
+
+\centering
+\includegraphics[scale=0.3]{Figures/hist3dmpniter.png}
+
 \section{Weak wolfe conditions}
+
+Probably the most important change made to the original code was the change in the curvature condition.  Originally there are two Wolfe conditions, one of them is the Armijo condition, also known as the sufficient decrease conditions.
+
+\begin{equation}
+  \begin{aligned}
+    f(x_k + \alpha_kp_k) \leq f(x_k) + c_1 \alpha _k p_k^T\nabla f(x_k)
+  \end{aligned}
+\end{equation}
+
+and the other one is the curvature condition, of which the most popular version is the strong wolfe curvature condition:
+
+\begin{equation}
+  \begin{aligned}
+    |p_k^T \nabla f(x_k + \alpha _k p_k)| \leq |p_k^T \nabla f(x_k)|
+  \end{aligned}
+\end{equation}
+
+The strong wolfe is a more natural way to see and achieve convergence, but the problem is that it does not work well for the nonsmooth case. This is because near the minimal points, there maybe abrupt changes in curvature, in these cases there is no other option but to relax the curvature condition as long as the sufficient decrease condition is satisfied.  The suggested new decrease condition is this.
+
+\begin{equation}
+  \begin{aligned}
+    p_k^T \nabla f(x_k + \alpha _k p_k) \geq p_k^T \nabla f(x_k)
+  \end{aligned}
+\end{equation}
+
+It is noticeable that with this new condition the algorithm does not crash, as opposed to when the hard wolfe condition is used.
