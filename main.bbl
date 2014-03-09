@@ -1,9 +1,14 @@
-\begin{thebibliography}{15}
+\begin{thebibliography}{13}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Kiwiel(1985)]{kiwiel85}
+Krzysztof~C. Kiwiel.
+\newblock \emph{Methods of Descent for Nondiferentiable Optimization}.
+\newblock Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.
 
 \bibitem[Dennis and Schnabel(1983, 1993)]{unconstrained}
 J.E. Dennis and R.B. Schnabel.
@@ -11,20 +16,10 @@ J.E. Dennis and R.B. Schnabel.
   Equations}.
 \newblock Prentice Hall, SIAM Publications, Englewood Cliffs, NJ, 1983, 1993.
 
-\bibitem[Kiwiel(1985)]{kiwiel85}
-Krzysztof~C. Kiwiel.
-\newblock \emph{Methods of Descent for Nondiferentiable Optimization}.
-\newblock Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.
-
 \bibitem[Nocedal(1992)]{selfcorrecting}
 Jorge Nocedal.
 \newblock Theory of algorithms for unconstrained optimization.
 \newblock \emph{Acta Numerica}, 1:\penalty0 199--242, January 1992.
-
-\bibitem[Jorge~Nocedal(2006)]{nocedal}
-Stephen J.~Wright Jorge~Nocedal.
-\newblock \emph{Numerical Optimization}.
-\newblock Springer Series in Operations Research, 2nd edition, 2006.
 
 \bibitem[Fletcher et~al.(1996)Fletcher, Grothey, and
   Leyffer]{Fletcher96computingsparse}
@@ -46,28 +41,10 @@ Prof. Dr. Ph. L.~Toint Dr. A. R.~Conn, Dr. N. I. M.~Gould.
 \newblock Springer Series in Computational Mathematics, Berlin Heidelberg,
   1992.
 
-\bibitem[Kaku(2011)]{kaku}
-Allan Kaku.
-\newblock Implementation of high-precision arithmetic in the bfgs method for
-  nonsmooth optimization.
-\newblock Master's thesis, New York University, Courant Institute of
-  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
-
-\bibitem[Zoutendijk(1970)]{zoutendijk}
-G.~Zoutendijk.
-\newblock \emph{Nonlinear Programming, computational methods}, pages 37--86.
-\newblock In  \citet{Abadie}, 1970.
-
-\bibitem[Abadie(1970)]{Abadie}
-J.~Abadie.
-\newblock \emph{Integer and Nonlinear Programming}.
-\newblock North-Holland Publishing company, Amsterdam-London, 1970.
-
-\bibitem[Skaaja(2010)]{skaaja}
-Anders Skaaja.
-\newblock Limited memory bfgs for nonsmooth optimization.
-\newblock Master's thesis, New York University, Courant Institute of
-  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
+\bibitem[Wright(2011)]{lbfgsbsoftware}
+J.~Nocedal;~S. Wright.
+\newblock Lbfgsb 3.0.
+\newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
 
 \bibitem[R.H.~Byrd(1995)]{mainpaper}
 J.~Nocedal R.H.~Byrd, P.~Lu.
@@ -87,6 +64,11 @@ G.~Toraldo J.J.~More.
 \newblock Algorithms for bound constrained quadratic programming problems.
 \newblock \emph{Numerical Math.}, 55:\penalty0 377--400, 1989.
 
+\bibitem[Jorge~Nocedal(2006)]{nocedal}
+Stephen J.~Wright Jorge~Nocedal.
+\newblock \emph{Numerical Optimization}.
+\newblock Springer Series in Operations Research, 2nd edition, 2006.
+
 \bibitem[Lewis and Overton(2013)]{overtonlewis}
 AdrianS. Lewis and MichaelL. Overton.
 \newblock Nonsmooth optimization via quasi-newton methods.
@@ -95,5 +77,10 @@ AdrianS. Lewis and MichaelL. Overton.
 \newblock ISSN 0025-5610.
 \newblock \doi{10.1007/s10107-012-0514-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
+
+\bibitem[Abadie(1970)]{Abadie}
+J.~Abadie.
+\newblock \emph{Integer and Nonlinear Programming}.
+\newblock North-Holland Publishing company, Amsterdam-London, 1970.
 
 \end{thebibliography}
