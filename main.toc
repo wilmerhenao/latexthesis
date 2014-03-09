@@ -12,27 +12,27 @@
 \contentsline {chapter}{Symbols}{x}{dummy.16}
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
-\contentsline {chapter}{\numberline {2}BFGS and L-BFGS and implementations in the unconstrained case}{3}{chapter.24}
-\contentsline {section}{\numberline {2.1}Line Search Methods:}{3}{section.25}
-\contentsline {subsection}{\numberline {2.1.1}Steepest Descent}{4}{subsection.29}
-\contentsline {subsection}{\numberline {2.1.2}Newton's Method}{5}{subsection.32}
-\contentsline {subsection}{\numberline {2.1.3}quasinewton methods}{6}{subsection.35}
-\contentsline {subsection}{\numberline {2.1.4}Limited Memory Quasinewton methods: L-BFGS }{7}{subsection.40}
-\contentsline {subsection}{\numberline {2.1.5}Convergence of search direction methods}{7}{subsection.53}
-\contentsline {subsection}{\numberline {2.1.6}step length and wolfe conditions}{8}{subsection.54}
-\contentsline {subsubsection}{\numberline {2.1.6.1}Armijo and Strong Wolfe Conditions}{8}{subsubsection.56}
-\contentsline {subsubsection}{\numberline {2.1.6.2}The Nonsmooth case and Weak Wolfe Conditions}{9}{subsubsection.59}
-\contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{10}{chapter.61}
-\contentsline {section}{\numberline {3.1}Overview of the Algorithm}{11}{section.64}
-\contentsline {subsection}{\numberline {3.1.1}Generalized Cauchy Point Calculation}{11}{subsection.66}
-\contentsline {subsection}{\numberline {3.1.2}Subspace Minimization}{16}{subsection.122}
-\contentsline {chapter}{\numberline {4}Modifications to the original algorithm}{18}{chapter.127}
-\contentsline {section}{\numberline {4.1}Convex Hull and termination conditions}{18}{section.128}
-\contentsline {subsubsection}{\numberline {4.1.0.1}minimization of the quadratic program}{19}{subsubsection.129}
-\contentsline {section}{\numberline {4.2}cubic interpolation replaced with line search}{19}{section.130}
-\contentsline {section}{\numberline {4.3}the functions to be tested}{19}{section.131}
-\contentsline {section}{\numberline {4.4}Weak wolfe conditions}{21}{section.134}
+\contentsline {chapter}{\numberline {2}BFGS and L-BFGS and implementations in the unconstrained case}{3}{chapter.23}
+\contentsline {section}{\numberline {2.1}Line Search Methods:}{3}{section.24}
+\contentsline {subsection}{\numberline {2.1.1}Steepest Descent}{4}{subsection.28}
+\contentsline {subsection}{\numberline {2.1.2}Newton's Method}{5}{subsection.31}
+\contentsline {subsection}{\numberline {2.1.3}quasinewton methods}{6}{subsection.34}
+\contentsline {subsection}{\numberline {2.1.4}Limited Memory Quasinewton methods: L-BFGS }{7}{subsection.39}
+\contentsline {subsection}{\numberline {2.1.5}Convergence of search direction methods}{7}{subsection.52}
+\contentsline {subsection}{\numberline {2.1.6}step length and wolfe conditions}{8}{subsection.53}
+\contentsline {subsubsection}{\numberline {2.1.6.1}Armijo and Strong Wolfe Conditions}{8}{subsubsection.55}
+\contentsline {subsubsection}{\numberline {2.1.6.2}The Nonsmooth case and Weak Wolfe Conditions}{9}{subsubsection.58}
+\contentsline {chapter}{\numberline {3}Constraints and L-BFGS-B: Algorithm and implementations}{10}{chapter.60}
+\contentsline {section}{\numberline {3.1}Overview of the Algorithm}{11}{section.63}
+\contentsline {subsection}{\numberline {3.1.1}Generalized Cauchy Point Calculation}{11}{subsection.65}
+\contentsline {subsection}{\numberline {3.1.2}Subspace Minimization}{16}{subsection.121}
+\contentsline {chapter}{\numberline {4}Modifications to the original algorithm}{18}{chapter.126}
+\contentsline {section}{\numberline {4.1}Convex Hull and termination conditions}{18}{section.127}
+\contentsline {subsubsection}{\numberline {4.1.0.1}minimization of the quadratic program}{19}{subsubsection.128}
+\contentsline {section}{\numberline {4.2}cubic interpolation replaced with line search}{19}{section.129}
+\contentsline {section}{\numberline {4.3}the functions to be tested}{19}{section.130}
+\contentsline {section}{\numberline {4.4}Weak wolfe conditions}{21}{section.133}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{23}{appendix.138}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{23}{appendix.137}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{24}{dummy.139}
+\contentsline {chapter}{Bibliography}{24}{dummy.138}
