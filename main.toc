@@ -13,16 +13,15 @@
 \vspace {2em}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
 \contentsline {chapter}{\numberline {2}Original algorithm}{3}{chapter.23}
-\contentsline {section}{\numberline {2.1}Overview of the Algorithm}{4}{section.26}
-\contentsline {subsection}{\numberline {2.1.1}Generalized Cauchy Point Calculation}{4}{subsection.28}
-\contentsline {subsection}{\numberline {2.1.2}Subspace Minimization}{9}{subsection.84}
-\contentsline {chapter}{\numberline {3}Modifications to the original algorithm}{11}{chapter.89}
-\contentsline {section}{\numberline {3.1}Convex Hull and termination conditions}{11}{section.90}
-\contentsline {subsubsection}{\numberline {3.1.0.1}minimization of the quadratic program}{12}{subsubsection.91}
-\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{12}{section.92}
-\contentsline {section}{\numberline {3.3}the functions to be tested}{12}{section.93}
-\contentsline {section}{\numberline {3.4}Weak wolfe conditions}{14}{section.96}
+\contentsline {section}{\numberline {2.1}Gradient Projection}{3}{section.24}
+\contentsline {subsection}{\numberline {2.1.1}Subspace Minimization}{4}{subsection.28}
+\contentsline {chapter}{\numberline {3}Modifications to the original algorithm}{5}{chapter.29}
+\contentsline {section}{\numberline {3.1}Convex Hull and termination conditions}{5}{section.30}
+\contentsline {subsubsection}{\numberline {3.1.0.1}minimization of the quadratic program}{6}{subsubsection.31}
+\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{6}{section.32}
+\contentsline {section}{\numberline {3.3}the functions to be tested}{6}{section.33}
+\contentsline {section}{\numberline {3.4}Weak wolfe conditions}{8}{section.36}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{16}{appendix.100}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.40}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{17}{dummy.101}
+\contentsline {chapter}{Bibliography}{11}{dummy.41}

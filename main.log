@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.22)  9 MAR 2014 15:49
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2013.6.22)  9 MAR 2014 16:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -907,73 +907,60 @@ Chapter 1.
 
 
 
-]
-
-Package natbib Warning: Citation `lbfgsbsoftware' on page 2 undefined on input 
-line 33.
-
-[2]
+] [2]
 Chapter 2.
 ------------------------------------------------------------------------------
  2 Original algorithm
 ------------------------------------------------------------------------------
-
-Package natbib Warning: Citation `lbfgsbsoftware' on page 3 undefined on input 
-line 40.
-
 [3
 
-] [4] [5] [6] [7]
-Overfull \vbox (49.16135pt too high) has occurred while \output is active []
-
-
-[8] [9] [10]
+] [4]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Modifications to the original algorithm
 ------------------------------------------------------------------------------
-[11
+[5
 
 ]
 
 Package hyperref Warning: Difference (2) between bookmark levels is greater 
-(hyperref)                than one, level fixed on input line 314.
+(hyperref)                than one, level fixed on input line 89.
 
 
-Package natbib Warning: Citation `Nocedal' on page 12 undefined on input line 3
-18.
+Package natbib Warning: Citation `Nocedal' on page 6 undefined on input line 93
+.
 
 
-Package natbib Warning: Citation `Nocedal' on page 12 undefined on input line 3
-22.
+Package natbib Warning: Citation `Nocedal' on page 6 undefined on input line 97
+.
 
-[12]
-Overfull \hbox (2.44238pt too wide) in paragraph at lines 348--349
+[6]
+Overfull \hbox (2.44238pt too wide) in paragraph at lines 123--124
 []\OT1/cmr/m/n/10.95 For the case when $\OML/cmm/m/it/10.95 p \OMS/cmsy/m/n/10.
 95 ^^T \OT1/cmr/m/n/10.95 1$ we have that the sec-ond deriva-tive tends to in-f
 in-ity. $[] []$.
  []
 
-<Figures/convergence.png, id=356, 650.43pt x 653.44125pt>
+<Figures/convergence.png, id=255, 650.43pt x 653.44125pt>
 File: Figures/convergence.png Graphic file (type png)
 
 <use Figures/convergence.png>
-Package pdftex.def Info: Figures/convergence.png used on input line 352.
+Package pdftex.def Info: Figures/convergence.png used on input line 127.
 (pdftex.def)             Requested size: 195.1305pt x 196.03387pt.
 
-<Figures/hist3dmpniter.png, id=357, 671.50874pt x 669.50125pt>
+<Figures/hist3dmpniter.png, id=256, 671.50874pt x 669.50125pt>
 File: Figures/hist3dmpniter.png Graphic file (type png)
 
 <use Figures/hist3dmpniter.png>
-Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 357.
+Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 132.
 (pdftex.def)             Requested size: 201.45418pt x 200.85191pt.
- [13 <./Figures/convergence.png>])
-(./Appendices/AppendixA.tex [14 <./Figures/hist3dmpniter.png>] [15]
+ [7 <./Figures/convergence.png>])
+(./Appendices/AppendixA.tex [8 <./Figures/hist3dmpniter.png>] [9]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [16
+) [10
 
 ]
 ------------------------------------------------------------------------------
@@ -985,7 +972,7 @@ Underfull \hbox (badness 1242) in paragraph at lines 45--48
 0.95 http : / / www . ece . northwestern . edu /
  []
 
-[17
+[11
 
 
 ])
@@ -993,18 +980,13 @@ Underfull \hbox (badness 1242) in paragraph at lines 45--48
 Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 307.
-[18]
+[12]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 307.
- (./main.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 307.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 307.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 98458209AD1FD3694E20AC62C07AA718;3811.
+(rerunfilecheck)             Checksum: 96095BED51A3008E28D91620A6769FC8;3493.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
@@ -1012,40 +994,38 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 307.
  ) 
 Here is how much of TeX's memory you used:
- 12378 strings out of 495059
- 170990 string characters out of 3182030
- 290843 words of memory out of 3000000
- 15215 multiletter control sequences out of 15000+200000
- 15980 words of font info for 59 fonts, out of 3000000 for 9000
+ 12296 strings out of 495059
+ 170098 string characters out of 3182030
+ 276183 words of memory out of 3000000
+ 15200 multiletter control sequences out of 15000+200000
+ 15671 words of font info for 58 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 49i,15n,45p,1777b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 49i,15n,45p,1777b,454s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
-nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbol
-s/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
-msbm10.pfb>
-Output written on main.pdf (30 pages, 434809 bytes).
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/t
+exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/symbols/msbm10.pfb>
+Output written on main.pdf (24 pages, 389401 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 443 compressed objects within 5 object streams
- 146 named destinations out of 1000 (max. 500000)
- 187 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 332 compressed objects within 4 object streams
+ 80 named destinations out of 1000 (max. 500000)
+ 179 words of extra memory for PDF output out of 10000 (max. 10000000)
 
