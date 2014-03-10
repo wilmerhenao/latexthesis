@@ -78,9 +78,10 @@ AdrianS. Lewis and MichaelL. Overton.
 \newblock \doi{10.1007/s10107-012-0514-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
 
-\bibitem[Abadie(1970)]{Abadie}
-J.~Abadie.
-\newblock \emph{Integer and Nonlinear Programming}.
-\newblock North-Holland Publishing company, Amsterdam-London, 1970.
+\bibitem[Skaaja(2010)]{skaaja}
+Anders Skaaja.
+\newblock Limited memory bfgs for nonsmooth optimization.
+\newblock Master's thesis, New York University, Courant Institute of
+  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
 
 \end{thebibliography}

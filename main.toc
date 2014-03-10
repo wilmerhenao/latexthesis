@@ -16,11 +16,11 @@
 \contentsline {section}{\numberline {2.1}Gradient Projection}{3}{section.24}
 \contentsline {subsection}{\numberline {2.1.1}Subspace Minimization}{4}{subsection.28}
 \contentsline {chapter}{\numberline {3}Modifications to the original algorithm}{5}{chapter.29}
-\contentsline {section}{\numberline {3.1}Convex Hull and termination conditions}{5}{section.30}
-\contentsline {subsubsection}{\numberline {3.1.0.1}minimization of the quadratic program}{6}{subsubsection.31}
-\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{6}{section.32}
-\contentsline {section}{\numberline {3.3}the functions to be tested}{6}{section.33}
-\contentsline {section}{\numberline {3.4}Weak wolfe conditions}{8}{section.36}
+\contentsline {section}{\numberline {3.1}Wolfe conditions}{5}{section.30}
+\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{6}{section.33}
+\contentsline {section}{\numberline {3.3}Convex Hull and termination conditions}{6}{section.34}
+\contentsline {subsection}{\numberline {3.3.1}minimization of the quadratic program}{7}{subsection.35}
+\contentsline {chapter}{\numberline {4}the functions to be tested}{8}{chapter.36}
 \vspace {2em}
 \contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.40}
 \vspace {2em}

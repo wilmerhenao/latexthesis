@@ -1,57 +1,46 @@
 This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
 Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
-Case mismatch error between cite keys Nocedal and nocedal
----line 96 of file main.aux
- : \citation{Nocedal
- :                  }
-I'm skipping whatever remains of this command
-Case mismatch error between cite keys Nocedal and nocedal
----line 97 of file main.aux
- : \citation{Nocedal
- :                  }
-I'm skipping whatever remains of this command
 The style file: unsrtnat.bst
 Database file #1: Bibliography.bib
 You've used 13 entries,
             2481 wiz_defined-function locations,
-            637 strings with 6456 characters,
-and the built_in function-call counts, 4068 in all, are:
-= -- 356
+            636 strings with 6519 characters,
+and the built_in function-call counts, 4044 in all, are:
+= -- 359
 > -- 121
 < -- 12
 + -- 60
 - -- 34
-* -- 247
-:= -- 656
+* -- 246
+:= -- 658
 add.period$ -- 42
 call.type$ -- 13
-change.case$ -- 23
+change.case$ -- 24
 chr.to.int$ -- 13
 cite$ -- 13
-duplicate$ -- 237
-empty$ -- 428
+duplicate$ -- 232
+empty$ -- 418
 format.name$ -- 51
-if$ -- 880
+if$ -- 871
 int.to.chr$ -- 1
 int.to.str$ -- 14
-missing$ -- 16
+missing$ -- 14
 newline$ -- 76
 num.names$ -- 39
-pop$ -- 112
+pop$ -- 106
 preamble$ -- 1
 purify$ -- 13
 quote$ -- 0
 skip$ -- 137
 stack$ -- 0
 substring$ -- 158
-swap$ -- 26
+swap$ -- 25
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 76
+type$ -- 79
 warning$ -- 0
 while$ -- 32
 width$ -- 0
-write$ -- 181
-(There were 2 error messages)
+write$ -- 182
