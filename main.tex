@@ -52,7 +52,7 @@
 % Definitions
 
 \def \univname {New York University}
-\def \ttitle {A Large-Scale Constrained Optimizer for NonSmooth Functions}
+\def \ttitle {Implementation of an L-BFGS-B  Optimizer applied to NonSmooth Functions and some experimentations}
 \def \authornames {Wilmer Henao}
 \def \supname {Michael L. Overton}
 \def \degreename {Master of Science in Scientific Computing}
@@ -174,7 +174,9 @@ The Thesis Abstract is written here \ldots
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 I would like to than my advisor Michael Overton for all the hours of hard work and for all the great recommendations and changes that suggested for the creation of this thesis.
 
-I also would like to thank Allan Kaku and Anders Skaaja for earlier contributions to other versions of the code.\ldots
+I also would like to thank Allan Kaku and Anders Skaaja for earlier contributions to other versions of the code.
+
+Finally, I would like to thank High Performance Computing at NYU.
 }
 \clearpage % Start a new page
 
@@ -188,10 +190,10 @@ I also would like to thank Allan Kaku and Anders Skaaja for earlier contribution
 \tableofcontents % Write out the Table of Contents
 
 \lhead{\emph{List of Figures}} % Set the left side page header to "List of Figures"
-\listoffigures % Write out the List of Figures
+%\listoffigures % Write out the List of Figures
 
 \lhead{\emph{List of Tables}} % Set the left side page header to "List of Tables"
-\listoftables % Write out the List of Tables
+%\listoftables % Write out the List of Tables
 
 %----------------------------------------------------------------------------------------
 %	ABBREVIATIONS
@@ -202,45 +204,12 @@ I also would like to thank Allan Kaku and Anders Skaaja for earlier contribution
 \setstretch{1.5} % Set the line spacing to 1.5, this makes the following tables easier to read
 
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
-\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
+%\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
 \textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 %\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
 }
 
-%----------------------------------------------------------------------------------------
-%	PHYSICAL CONSTANTS/OTHER DEFINITIONS
-%----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
-\lhead{\emph{Physical Constants}} % Set the left side page header to "Physical Constants"
-
-\listofconstants{lrcl} % Include a list of Physical Constants (a four column table)
-{
-Speed of Light & $c$ & $=$ & $2.997\ 924\ 58\times10^{8}\ \mbox{ms}^{-\mbox{s}}$ (exact)\\
-% Constant Name & Symbol & = & Constant Value (with units) \\
-}
-
-%----------------------------------------------------------------------------------------
-%	SYMBOLS
-%----------------------------------------------------------------------------------------
-
-\clearpage % Start a new page
-
-\lhead{\emph{Symbols}} % Set the left side page header to "Symbols"
-
-\listofnomenclature{lll} % Include a list of Symbols (a three column table)
-{
-$a$ & distance & m \\
-$P$ & power & W (Js$^{-1}$) \\
-% Symbol & Name & Unit \\
-
-& & \\ % Gap to separate the Roman symbols from the Greek
-
-$\omega$ & angular frequency & rads$^{-1}$ \\
-% Symbol & Name & Unit \\
-}
 
 %----------------------------------------------------------------------------------------
 %	DEDICATION

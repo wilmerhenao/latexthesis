@@ -5,23 +5,18 @@
 \contentsline {chapter}{Acknowledgements}{iii}{dummy.3}
 \vspace {1em}
 \contentsline {chapter}{Contents}{iv}{dummy.4}
-\contentsline {chapter}{List of Figures}{vi}{dummy.6}
-\contentsline {chapter}{List of Tables}{vii}{dummy.8}
-\contentsline {chapter}{Abbreviations}{viii}{dummy.10}
-\contentsline {chapter}{Physical Constants}{ix}{dummy.13}
-\contentsline {chapter}{Symbols}{x}{dummy.16}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.19}
-\contentsline {chapter}{\numberline {2}Original algorithm}{3}{chapter.23}
-\contentsline {section}{\numberline {2.1}Gradient Projection}{3}{section.24}
-\contentsline {subsection}{\numberline {2.1.1}Subspace Minimization}{4}{subsection.28}
-\contentsline {chapter}{\numberline {3}Modifications to the original algorithm}{5}{chapter.29}
-\contentsline {section}{\numberline {3.1}Wolfe conditions}{5}{section.30}
-\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{6}{section.33}
-\contentsline {section}{\numberline {3.3}Convex Hull and termination conditions}{6}{section.34}
-\contentsline {subsection}{\numberline {3.3.1}minimization of the quadratic program}{7}{subsection.35}
-\contentsline {chapter}{\numberline {4}the functions to be tested}{8}{chapter.36}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}
+\contentsline {chapter}{\numberline {2}Original algorithm}{3}{chapter.10}
+\contentsline {section}{\numberline {2.1}Gradient Projection}{3}{section.11}
+\contentsline {subsection}{\numberline {2.1.1}Subspace Minimization}{4}{subsection.15}
+\contentsline {chapter}{\numberline {3}Modifications to the original algorithm}{5}{chapter.16}
+\contentsline {section}{\numberline {3.1}Wolfe conditions}{5}{section.17}
+\contentsline {section}{\numberline {3.2}cubic interpolation replaced with line search}{6}{section.20}
+\contentsline {section}{\numberline {3.3}Convex Hull and termination conditions}{6}{section.21}
+\contentsline {subsection}{\numberline {3.3.1}minimization of the quadratic program}{7}{subsection.22}
+\contentsline {chapter}{\numberline {4}the functions to be tested}{8}{chapter.23}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.40}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{10}{appendix.27}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{11}{dummy.41}
+\contentsline {chapter}{Bibliography}{11}{dummy.28}
