@@ -8,7 +8,7 @@
 
 %----------------------------------------------------------------------------------------
 %\DeclareMathOperator*{\Min}{Min}
-The goal in this thesis is to find a solution of the nonsmooth minimization problem
+The problem addressed is to find a local minimizer of the nonsmooth minimization problem
 
 \begin{equation} \label{mainproblem}
   \begin{aligned}
@@ -20,7 +20,38 @@ The goal in this thesis is to find a solution of the nonsmooth minimization prob
   \end{aligned}
 \end{equation}
 
-where $f \colon \mathbb{R}^n \to \mathbb{R}$, $n$ is a very large but finite number. And $l_i$ and $u_i \in \mathbb{R}$
+where $f \colon \mathbb{R}^n \to \mathbb{R}$, is continuous but not differentiable everywhere and $n$ is a very large but finite number.
+
+The $L-BFGS-B$ algorithm \citep{lbfgsboriginal} is a standard method for solving large instances of \ref{mainproblem} when $f$ is a smooth function. The original name of $BFGS$ stands for Broyden, Fletcher, Goldfarb and Shanno, the authors
+of the original "BFGS" quasi-Newton algorithm for unconstrained
+optimization discovered and published
+independently by them in 1970 [give the 4 references here].
+This method requires storing and updating a matrix which 
+approximates the inverse of the Hessian matrix $\nabla^2 f(x)$ and
+hence requires $O(n^2)$ operations per iteration.  
+The $L-BFGS$ variant [give reference] is based on BFGS
+but requires only $O(mn)$ operations per iteration: thus,
+the L stands for Large.  Finally, the last letter B in 
+$L-BFGS-B$ stands for bounds, meaning the lower and upper
+bounds $l_i$ and $u_i$ in \ref{mainproblem}.  $The L-BFGS-B$ algorithm
+is implemented in a well known $FORTRAN$ software package
+by the same name [give reference].
+
+In this thesis, there is a brief description of the $L-BFGS-B$ algorithm
+at a high level and then explain how the modified algorithm
+is more suitable for functions $f$ which may not be
+differentiable at their local or global optimizers.  
+We call the new algorithm L-BFGS-B-NS where NS stands for
+Non-Smooth.  We implemented these changes in a modified version 
+of the Fortran code [ref] which is can be downloaded from the website
+for this thesis [give URL].  We report on some numerical experiments 
+that strongly suggest that the new code should be useful for the
+nonsmooth bound-constrained optimization problem (1.1).
+
+We are grateful to Jorge Nocedal and his coauthors for allowing us 
+to modify the L-BFGS-B code and post the modified version.  
+
+\chapter{deleted chapter}
 
 Larger problems not only mean that their solution will take a longer time to solve. But storing and calculating a the necessary matrices depends on the capabilities of the machine used to solve the problem and this might be prohibitively expensive. There a few large scale optimization techniques that have already been developed for the case when $n$ is very large. Also, several techniques have already been developed to handle this type of problems as long as the function $f$ is smooth. But there is not much out there about large scale problems with nonsmooth $f$
 
@@ -38,7 +69,7 @@ This thesis builds upon the original $L-BFGS-B$ code \citep{lbfgsbsoftware} that
 
 Nocedal's original algorithm consists of $2$ steps. In the first step or gradient projection, most of the dimensions in the problem should be removed, making the problem a lot simpler. In the second step there is some fine tuning to guarantee better than just linear speed of convergence.
 
-\chapter{Original algorithm}
+\chapter{L-BFGS-B}
 \label{ChapterConstraints} % For referencing the chapter elsewhere, use \ref{ChapterConstraints} 
 
 The original algorithm \citep{mainpaper} has an accompanying $FORTRAN$ sortware \citep{lbfgsbsoftware} and this thesis builds upon that software by making sufficient changes to make it apply to the nonsmooth case.
@@ -79,11 +110,11 @@ The idea at a higher level is to solve the constrained problem \ref{themodel}, b
 
 The algorithm will move in the direction set forth by $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ is chosen so that the new point $\bar{x}_i$ satisfies some descent and curvature conditions, and stays within the constraints originally imposed. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails, this algorithm updates the matrix and goes back to the first step of gradient projection.
 
-\chapter{Modifications to the original algorithm}
+\chapter{Modifications to the L-BFGS-B algorithm}
 
 As it was mentioned earlier there were three main changes in the original code by Nocedal\citep{lbfgsbsoftware}. They were the line search Wolfe conditions, the line search methodology, and the termination condition.
 
-\section{Wolfe conditions}
+\section{The Wolfe conditions}
 
 Probably the most important change made to the original code was the change in the curvature condition. Originally there are two Wolfe conditions, one of them is the Armijo condition, also known as the sufficient decrease requirement. The other one is the curvature condition, of which the most popular version is the strong wolfe curvature condition:
 
@@ -103,13 +134,13 @@ The strong wolfe is a more natural way to see and achieve convergence, but the p
 
 It is noticeable that with this new condition the algorithm does not crash in the problems tested, as opposed to when the hard wolfe condition is used.
 
-\section{cubic interpolation replaced with line search}
+\section{The line search}
 
 The original software by Nocedal\citep{lbfgsbsoftware}, included a cubic line search. The idea of a cubic interpolation line search is to take advantage of the smooth properties of function $f$ in order to find a more convenient point. But in the case of nonsmooth functions, this line search does not serve our purposes and therefore a more typical line search that implements a bisection has to be used.
 
 In general, a step length is selected. If this step length does not satisfy the sufficient decrease and curvature conditions then a step length of half or double the size is selected. the algorithm is guaranteed to converge under a careful selection of the parameters. However, in case this does not happen, the software will stop with a warning.
 
-\section{Convex Hull and termination conditions}
+\section{The termination condition}
 
 The most important requirement of a practical algorithm is that it ends in a finite time. For the case of smooth functions, the formal way to check whether the algorithm has finished, is to check whether the projected gradient has norm zero $0$ wherever the constraints are not at bound. In the case of nonsmooth functions however, this is not necessarily true and the function at the minimum, may have a kink. In this kink the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from the left.
 
@@ -119,13 +150,13 @@ Since BFGS approximations typically converge to Clarke-Stationary points. The ri
 
 Of course the best way to find a vector with such properties is to find the vector with the minimal norm that resides in the convex hull.
 
-\subsection{minimization of the quadratic program}
+\subsection{The Solution of the quadratic program}
 
 The termination condition is guaranteed to end up at a local optimum. However in order to find the vector with the minimal norm one subalgorithm needs to be solved. This subalgorithm is a practical primal-dual algorithm implemented in \citep{skaaja}. In this case in particular the best solution is to implement a variation of Mehrotra's Predictor-Corrector algorithm applied to quadratic programming. The primal dual method requires the solution of a system in order to calculate the search direction. The most expensive part of this solution is the calculation of the cholesky decomposition. Mehrotra's algorithm uses the same cholesky decomposition to calculate both directions. the predictor, and the corrector.
 
 Currently there is not a theoretical calculation of the complexity of this algorithm but it is widely used in practice with great results. The implementation on \citep{skaaja} is is exactly the one on \citep{nocedal}. In this thesis it was implemented in $FORTRAN$ as part of the optimizer.
 
-\chapter{the functions to be tested}
+\chapter{the solution test functions}
 
 In order to make some tests, a few functions will be evaluated. The most important function to test this non-smooth optimizer is a modified version of rosenbrock's:
 
