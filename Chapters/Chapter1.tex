@@ -51,31 +51,36 @@ nonsmooth bound-constrained optimization problem (1.1).
 We are grateful to Jorge Nocedal and his coauthors for allowing us 
 to modify the L-BFGS-B code and post the modified version.  
 
-\chapter{deleted chapter}
+%\chapter{deleted chapter}
 
-Larger problems not only mean that their solution will take a longer time to solve. But storing and calculating a the necessary matrices depends on the capabilities of the machine used to solve the problem and this might be prohibitively expensive. There a few large scale optimization techniques that have already been developed for the case when $n$ is very large. Also, several techniques have already been developed to handle this type of problems as long as the function $f$ is smooth. But there is not much out there about large scale problems with nonsmooth $f$
+%Larger problems not only mean that their solution will take a longer time to solve. But storing and calculating a the necessary matrices depends on the capabilities of the machine used to solve the problem and this might be prohibitively expensive. There a few large scale optimization techniques that have already been developed for the case when $n$ is very large. Also, several techniques have already been developed to handle this type of problems as long as the function $f$ is smooth. But there is not much out there about large scale problems with nonsmooth $f$
 
-In this thesis $f(x)$ is a nonsmooth function. This small change will require a few changes in the solution algorithm.
+%In this thesis $f(x)$ is a nonsmooth function. This small change will require a few changes in the solution algorithm.
 
-For the particular case when $n$ is a small number, several methods that solve optimization problems of nondifferentiable functions in lower dimensions \citep{kiwiel85} have been developed. This thesis will try to see if it is possible to bring some of those concepts to large scale optimization. 
+%For the particular case when $n$ is a small number, several methods that solve optimization problems of nondifferentiable functions in lower dimensions \citep{kiwiel85} have been developed. This thesis will try to see if it is possible to bring some of those concepts to large scale optimization. 
 
-In the case of smooth functions, it is possible to use Newton iteration algorithms and achieve quadratic convergence, the problem with Newton algorithms is that they require second derivatives to be provided\footnote{the main issue with the second derivative is that it requires a total of $n \times n$ partial derivatives. Which is impractical for medium and for some small-size problems}. In the 1950's and several years after that, several "quasi-newton" methods were proposed where the second derivative Hessian matrix is approximated step by step \citep{unconstrained}. These approximations or "updates" are calculated after every iteration of the original algorithm and the way in which this update is found defines a new method depending on the particular needs. This thesis will only be concerned with the $BFGS$. \footnote{BFGS stands for the last names of its authors Broyden, Fletcher, Goldfarb and Shanno} which can achieve super linear convergence, has proven to work in most practical purposes and posseses very nice self correcting features \citep{selfcorrecting}. In $BFGS$, it doesn't matter that one update incorrectly estimates the curvature in the objective function, $BFGS$ will always correct itself in just a few steps. This self-correcting property is very desired in the nonsmooth case, since changes in curvature could be abrupt near the optimal point. 
+%In the case of smooth functions, it is possible to use Newton iteration algorithms and achieve quadratic convergence, the problem with Newton algorithms is that they require second derivatives to be provided\footnote{the main issue with the second derivative is that it requires a total of $n \times n$ partial derivatives. Which is impractical for medium and for some small-size problems}. In the 1950's and several years after that, several "quasi-newton" methods were proposed where the second derivative Hessian matrix is approximated step by step \citep{unconstrained}. These approximations or "updates" are calculated after every iteration of the original algorithm and the way in which this update is found defines a new method depending on the particular needs. This thesis will only be concerned with the $BFGS$. \footnote{BFGS stands for the last names of its authors Broyden, Fletcher, Goldfarb and Shanno} which can achieve super linear convergence, has proven to work in most practical purposes and posseses very nice self correcting features \citep{selfcorrecting}. In $BFGS$, it doesn't matter that one update incorrectly estimates the curvature in the objective function, $BFGS$ will always correct itself in just a few steps. This self-correcting property is very desired in the nonsmooth case, since changes in curvature could be abrupt near the optimal point. 
 
-$BFGS$ was originally developed for small to medium sized problems, and it is not the right tool for large scale optimization and therefore an $L-BFGS$ adaptation is needed to solve large scale problems\ref{mainproblem}. 
+%$BFGS$ was originally developed for small to medium sized problems, and it is not the right tool for large scale optimization and therefore an $L-BFGS$ adaptation is needed to solve large scale problems\ref{mainproblem}. 
 
-A final assumption in this thesis is that the Hessian matrix is not sparse. In this case, there are other algorithms that may be more suitable \citep{Fletcher96computingsparse, sparse}, some of them have even been implemented in fortran \citep{lancelot}.
+%A final assumption in this thesis is that the Hessian matrix is not sparse. In this case, there are other algorithms that may be more suitable \citep{Fletcher96computingsparse, sparse}, some of them have even been implemented in fortran \citep{lancelot}.
 
-This thesis builds upon the original $L-BFGS-B$ code \citep{lbfgsbsoftware} that solves smooth problems of $f$. There were three main changes in the code. The first one is the line search descent and curvature conditions which required a weaker version of the curvature in order to satisfy the different structure that a nonsmooth function requires. The second one is the line search methodology which was changed from a cubic interpolation to a bisection algorithm and last change in the thesis was the termination condition.
+%This thesis builds upon the original $L-BFGS-B$ code \citep{lbfgsbsoftware} that solves smooth problems of $f$. There were three main changes in the code. The first one is the line search descent and curvature conditions which required a weaker version of the curvature in order to satisfy the different structure that a nonsmooth function requires. The second one is the line search methodology which was changed from a cubic interpolation to a bisection algorithm and last change in the thesis was the termination condition.
 
-Nocedal's original algorithm consists of $2$ steps. In the first step or gradient projection, most of the dimensions in the problem should be removed, making the problem a lot simpler. In the second step there is some fine tuning to guarantee better than just linear speed of convergence.
+%Nocedal's original algorithm consists of $2$ steps. In the first step or gradient projection, most of the dimensions in the problem should be removed, making the problem a lot simpler. In the second step there is some fine tuning to guarantee better than just linear speed of convergence.
 
 \chapter{L-BFGS-B}
 \label{ChapterConstraints} % For referencing the chapter elsewhere, use \ref{ChapterConstraints} 
 
-The original algorithm \citep{mainpaper} has an accompanying $FORTRAN$ sortware \citep{lbfgsbsoftware} and this thesis builds upon that software by making sufficient changes to make it apply to the nonsmooth case.
+This section is a description of the original $L-BFGS-B$ code at a very high level \citep{lbfgsbsoftware}. The original software is intended to work well with smooth functions. This thesis discusses how to modify the algorithm for Non-Smooth functions.
+
+\section{BFGS}
+
+$BFGS$ is a standard tool for optimization of smooth functions. It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This approximation is calculated via the $BFGS$ formula
+
+
 
 \section{Gradient Projection}
-
 The original algorithm was created for the case when $n$ is large and $f$ is nonsmooth. Its first step is a gradient projection similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are bound at each step. The active set defined at point $x^*$ is:
 
 \begin{equation}
