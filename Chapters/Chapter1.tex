@@ -28,9 +28,9 @@ optimization discovered and published
 independently by them in 1970 [give the 4 references here].
 This method requires storing and updating a matrix which 
 approximates the inverse of the Hessian matrix $\nabla^2 f(x)$ and
-hence requires $O(n^2)$ operations per iteration.  
+hence requires $\mathcal{O}(n^2)$ operations per iteration.  
 The $L-BFGS$ variant [give reference] is based on BFGS
-but requires only $O(mn)$ operations per iteration: thus,
+but requires only $\mathcal{O}(mn)$ operations per iteration: thus,
 the L stands for Large.  Finally, the last letter B in 
 $L-BFGS-B$ stands for bounds, meaning the lower and upper
 bounds $l_i$ and $u_i$ in \ref{mainproblem}.  $The L-BFGS-B$ algorithm
@@ -76,12 +76,30 @@ This section is a description of the original $L-BFGS-B$ code at a very high lev
 
 \section{BFGS}
 
-$BFGS$ is a standard tool for optimization of smooth functions. It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This approximation is calculated via the $BFGS$ formula
+$BFGS$ is a standard tool for optimization of smooth functions. It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the $BFGS$ formula
 
+\begin{equation} \label{bfgsupdate}
+  \begin{aligned}
+    B_{k+1} = \left(I - \frac{s_ky_k^T}{y_k^Ts_k} B_{k} \left( I - \frac{y_ks_k^T}{y_k^Ts_k} \right) + \frac{s_k s_k^T}{y_k^T s_k}\right)
+  \end{aligned}
+\end{equation}
 
+where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis.  $BFGS$ exhibits superlinear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration. \citep{nocedal}
 
-\section{Gradient Projection}
-The original algorithm was created for the case when $n$ is large and $f$ is nonsmooth. Its first step is a gradient projection similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are bound at each step. The active set defined at point $x^*$ is:
+In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This is partly because $BFGS$ has some nice self-correcting properties, however this requires some modifications of the line search conditions. This change to the line search conditions is known as the weak Wolfe line search and it will be explained later in this thesis.
+
+\section{L-BFGS}
+
+$L-BFGS$ stands for Limited-memory $BFGS$. This algorithm approximates $BFGS$ using only a limited amout of computer memory to approximate the inverse of the Hessian $B$. So Instead of storing a dense $n \times n$ matrix, $L-BFGS$ keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand. \footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priori what choice of $m$ will provide the best results} It is for this reason that during the first $m$ iterations, $BFGS$ and $L-BFGS$ produce exactly the same search directions.
+
+Because of this construction, the $L-BFGS$ algorithm is less computationally intensive and it only requires $\mathcal{O}(mn)$ iterations. So it is much better suited for problems where the number of dimensions $n$ is large. For this reason it is the algorithm of choice in this thesis.
+
+\section{L-BFGS-B}
+
+Finally $L-BFGS-B$ comes naturally as an extension of $L-BFGS$. The $B$ stands for the inclusion of Boundaries.  $L-BFGS-B$ requires two extra steps on top of $L-BFGS$. First, a gradient projection that reduces the dimensionality of the problem. Depending on the problem, the gradient projection could potentially save a lot of iterations by eliminating those variables that are at bound at the optimum. After that, the subspace minimization; here, during the search step phase the step length is restricted as much as necessary in order to remain within the box defined by \ref{mainproblem}.
+
+\subsection{Gradient Projection}
+The original algorithm was created for the case when $n$ is large and $f$ is smooth. Its first step is a gradient projection similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are on either their lower or upper bounds. The active set defined at point $x^*$ is:
 
 \begin{equation}
   \begin{aligned}
@@ -89,19 +107,17 @@ The original algorithm was created for the case when $n$ is large and $f$ is non
   \end{aligned}
 \end{equation}
 
-It seems like working on this active set is efficient in large scale problems and according to previous research \citep{nocedal} the gradient projection step is able to find most of the active set variables in a single stroke. 
-
-In fact, The reason why a projected gradient step is taken, is because a line search usually changes the active set by one variable at a time during the line search step \footnote{the line search is cut short immediately after the first bound is hit, so only one active constraint will change at every step. Unless the line search hits several constraints at the same time by coincidence, which is very unlikely}. So, if $1$ million constraints are active at a nondegenerate solution, at least $1$ million iterations will be needed just to get to that point.  Gradient projection gets rid of that problem, diminishing the number of iterations, and at the same reducing the number of variables for the next step.
+Working with this active set is efficient in large scale problems. A pure line search algorithm would have to choose a step length short enough to remain within the box defined by $u_i$ and $l_i$. So if at the optimum, a large number $\mathcal{B}$ of variables are either on the lower or the upper bound. At least a large number $\mathcal{B}$ of iterations will be needed. Gradient projection tries to reduce this number of iterations. In the best case, only $1$ iteration is needed instead of $\mathcal{B}$.
 
 Gradient projection works on the approximation model:
 
 \begin{equation} \label{themodel}
   \begin{aligned}
-    m_k(x) = f(x_k) + \nabla f(x_k)^T ( x - x_k) + \frac{(x - x_k)^T B_k (x - x_k) }{2}
+    m_k(x) = f(x_k) + \nabla f(x_k)^T ( x - x_k) + \frac{(x - x_k)^T H_k (x - x_k) }{2}
   \end{aligned}
 \end{equation}
 
-Where $B_k$ will be a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$
+where $H_k$ is a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$ stored in the implicit way necessary for $L-BFGS$.
 
 In this first stage the algorithm starts on the current point $x_k$ searching on the direction $-\nabla f(x_k)$. Whenever this search direction encounters one of the constraints, the search direction turns on the boundaries in order to remain feasible. The path is nothing but the feasible piecewise projection of the steepest descent search direction on the constraint "box" determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ on this piecewise gradient projection path is known as the "Cauchy point" $x^c$.
 
