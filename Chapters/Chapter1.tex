@@ -131,29 +131,29 @@ The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where 
 
 \chapter{Modifications to the L-BFGS-B algorithm}
 
-As it was mentioned earlier there were three main changes in the original code by Nocedal\citep{lbfgsbsoftware}. They were the line search Wolfe conditions, the line search methodology, and the termination condition.
+We made three main changes to the original $L-BFGS-B$ algorithm. They concern the line search Wolfe conditions, the line search methodology, and the termination condition.
 
 \section{The Wolfe conditions}
 
-Probably the most important change made to the original code was the change in the curvature condition. Originally there are two Wolfe conditions, one of them is the Armijo condition, also known as the sufficient decrease requirement. The other one is the curvature condition, of which the most popular version is the strong wolfe curvature condition:
+Probably the most important change made to the original code was the change in the curvature condition. It is accepted that the Wolfe conditions work very well whenever the function $f$ is smooth \citep{MR1855221}. Originally there are two Wolfe conditions: one of them is the Armijo condition, also known as the sufficient decrease requirement. The other one is the curvature condition, of which the most popular version is the ``strong Wolfe'' curvature condition:
 
 \begin{equation}
   \begin{aligned}
-    |p_k^T \nabla f(x_k + \alpha _k p_k)| \leq |p_k^T \nabla f(x_k)|
+    |d_k^T \nabla f(x_k + \alpha _k d_k)| \leq |d_k^T \nabla f(x_k)|
   \end{aligned}
 \end{equation}
 
-The strong wolfe is a more natural way to see and achieve convergence, but the problem is that it does not work well for the nonsmooth case. This is because near the minimal points, there may be abrupt changes in curvature. In these cases there is no other option but to relax the curvature condition as long as the sufficient decrease condition is satisfied. The suggested new decrease condition is this one:
+Where $d_k$ represents the search direction. The strong Wolfe condition is natural for smooth optimization. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'', but the problem is that it does not work well for the Non-Smooth case. This is because near the minimal points, there may be abrupt changes in the gradient. For example the curvature condition can never be satisfied when $f(x) = |x|$, because the slope never becomes flat. The ``weak wolfe'' condition
 
 \begin{equation}
   \begin{aligned}
-    p_k^T \nabla f(x_k + \alpha _k p_k) \geq p_k^T \nabla f(x_k)
+    d_k^T \nabla f(x_k + \alpha _k d_k) \geq d_k^T \nabla f(x_k)
   \end{aligned}
 \end{equation}
 
-It is noticeable that with this new condition the algorithm does not crash in the problems tested, as opposed to when the hard wolfe condition is used.
+is all that is needed to guarantee that the $BFGS$ update is positive definite \citep{reviewthis} does not suffer from this disadvantage.
 
-\section{The line search}
+\section{The line search methodology}
 
 The original software by Nocedal\citep{lbfgsbsoftware}, included a cubic line search. The idea of a cubic interpolation line search is to take advantage of the smooth properties of function $f$ in order to find a more convenient point. But in the case of nonsmooth functions, this line search does not serve our purposes and therefore a more typical line search that implements a bisection has to be used.
 
