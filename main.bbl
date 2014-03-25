@@ -1,79 +1,66 @@
-\begin{thebibliography}{13}
+\begin{thebibliography}{8}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
   \providecommand{\doi}[1]{doi: #1}\else
   \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
 
-\bibitem[Kiwiel(1985)]{kiwiel85}
-Krzysztof~C. Kiwiel.
-\newblock \emph{Methods of Descent for Nondiferentiable Optimization}.
-\newblock Springer-Verlag, Berlin, Heidelberg, New York, Tokyo, 1985.
+\bibitem[Byrd et~al.(1995)Byrd, Lu, Nocedal, and Zhu]{lbfgsboriginal}
+Richard~H. Byrd, Peihuang Lu, Jorge Nocedal, and Ci~You Zhu.
+\newblock A limited memory algorithm for bound constrained optimization.
+\newblock \emph{SIAM J. Sci. Comput.}, 16\penalty0 (5):\penalty0 1190--1208,
+  1995.
+\newblock ISSN 1064-8275.
+\newblock \doi{10.1137/0916069}.
+\newblock URL \url{http://dx.doi.org/10.1137/0916069}.
 
-\bibitem[Dennis and Schnabel(1983, 1993)]{unconstrained}
-J.E. Dennis and R.B. Schnabel.
-\newblock \emph{Numerical Methods for Unconstrained Optimization and Nonlinear
-  Equations}.
-\newblock Prentice Hall, SIAM Publications, Englewood Cliffs, NJ, 1983, 1993.
-
-\bibitem[Nocedal(1992)]{selfcorrecting}
-Jorge Nocedal.
-\newblock Theory of algorithms for unconstrained optimization.
-\newblock \emph{Acta Numerica}, 1:\penalty0 199--242, January 1992.
-
-\bibitem[Fletcher et~al.(1996)Fletcher, Grothey, and
-  Leyffer]{Fletcher96computingsparse}
-Roger Fletcher, Andreas Grothey, and Sven Leyffer.
-\newblock Computing sparse hessian and jacobian approximations with optimal
-  hereditary properties.
-\newblock Technical report, Large-Scale Optimization with Applications, Part
-  II: Optimal Design and Control, 1996.
-
-\bibitem[Fletcher(1995)]{sparse}
-R.~Fletcher.
-\newblock An optimal positive definite update for sparse hessian matrices.
-\newblock \emph{SIAM Journal on Optimization}, 5:\penalty0 192--218, 1995.
-
-\bibitem[Dr. A. R.~Conn(1992)]{lancelot}
-Prof. Dr. Ph. L.~Toint Dr. A. R.~Conn, Dr. N. I. M.~Gould.
-\newblock \emph{LANCELOT: A fortran package for large-scale nonlinear
-  optimization (Release A)}.
-\newblock Springer Series in Computational Mathematics, Berlin Heidelberg,
-  1992.
-
-\bibitem[Wright(2011)]{lbfgsbsoftware}
-J.~Nocedal;~S. Wright.
+\bibitem[Zhu et~al.(2011)Zhu, Byrd, Nocedal, and Morales]{lbfgsbsoftware}
+Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
 \newblock Lbfgsb 3.0.
 \newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
 
-\bibitem[R.H.~Byrd(1995)]{mainpaper}
-J.~Nocedal R.H.~Byrd, P.~Lu.
-\newblock A limited memory algorithm for bound constrained optimization.
-\newblock \emph{SIAM Journal on Scientific and Statistical Computing},
-  16\penalty0 (5):\penalty0 1190--1208, 1995.
+\bibitem[Nocedal and Wright(1999)]{nocedal}
+Jorge Nocedal and Stephen~J. Wright.
+\newblock \emph{Numerical optimization}.
+\newblock Springer Series in Operations Research. Springer-Verlag, New York,
+  1999.
+\newblock ISBN 0-387-98793-2.
+\newblock \doi{10.1007/b98874}.
+\newblock URL \url{http://dx.doi.org/10.1007/b98874}.
 
-\bibitem[A.R.~Conn(1988)]{gradproj1}
-PH.L.Toint A.R.~Conn, N.I.M.~Gould.
+\bibitem[Conn et~al.(1988)Conn, Gould, and Toint]{gradproj1}
+A.~R. Conn, N.~I.~M. Gould, and Ph.~L. Toint.
 \newblock Global convergence of a class of trust region algorithms for
   optimization with simple bounds.
-\newblock \emph{SIAM Journal of Numerical Analysis}, 25:\penalty0 433--460,
+\newblock \emph{SIAM J. Numer. Anal.}, 25\penalty0 (2):\penalty0 433--460,
   1988.
+\newblock ISSN 0036-1429.
+\newblock \doi{10.1137/0725029}.
+\newblock URL \url{http://dx.doi.org/10.1137/0725029}.
 
-\bibitem[J.J.~More(1989)]{gradproj2}
-G.~Toraldo J.J.~More.
+\bibitem[Mor{\'e} and Toraldo(1989)]{gradproj2}
+Jorge~J. Mor{\'e} and Gerardo Toraldo.
 \newblock Algorithms for bound constrained quadratic programming problems.
-\newblock \emph{Numerical Math.}, 55:\penalty0 377--400, 1989.
+\newblock \emph{Numer. Math.}, 55\penalty0 (4):\penalty0 377--400, 1989.
+\newblock ISSN 0029-599X.
+\newblock \doi{10.1007/BF01396045}.
+\newblock URL \url{http://dx.doi.org/10.1007/BF01396045}.
 
-\bibitem[Jorge~Nocedal(2006)]{nocedal}
-Stephen J.~Wright Jorge~Nocedal.
-\newblock \emph{Numerical Optimization}.
-\newblock Springer Series in Operations Research, 2nd edition, 2006.
+\bibitem[Li and Fukushima(2001)]{MR1855221}
+Dong-Hui Li and Masao Fukushima.
+\newblock On the global convergence of the {BFGS} method for nonconvex
+  unconstrained optimization problems.
+\newblock \emph{SIAM J. Optim.}, 11\penalty0 (4):\penalty0 1054--1064
+  (electronic), 2001.
+\newblock ISSN 1052-6234.
+\newblock \doi{10.1137/S1052623499354242}.
+\newblock URL \url{http://dx.doi.org/10.1137/S1052623499354242}.
 
 \bibitem[Lewis and Overton(2013)]{overtonlewis}
-AdrianS. Lewis and MichaelL. Overton.
-\newblock Nonsmooth optimization via quasi-newton methods.
-\newblock \emph{Mathematical Programming}, 141\penalty0 (1-2):\penalty0
-  135--163, 2013.
+Adrian~S. Lewis and Michael~L. Overton.
+\newblock Nonsmooth optimization via quasi-{N}ewton methods.
+\newblock \emph{Math. Program.}, 141\penalty0 (1-2, Ser. A):\penalty0 135--163,
+  2013.
 \newblock ISSN 0025-5610.
 \newblock \doi{10.1007/s10107-012-0514-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
