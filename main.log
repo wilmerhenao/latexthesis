@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  25 MAR 2014 01:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  26 MAR 2014 01:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -891,42 +891,74 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 L-BFGS-B
 ------------------------------------------------------------------------------
+! Missing } inserted.
+<inserted text> 
+                }
+l.83 ...right) + \frac{s_k s_k^T}{y_k^T s_k}\right
+                                                  )
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Extra \right.
+l.83 ...ight) + \frac{s_k s_k^T}{y_k^T s_k}\right)
+                                                  
+I'm ignoring a \right that had no matching \left.
+
+! Missing { inserted.
+<inserted text> 
+                {
+l.84   \end{aligned}
+                    
+I've put in what seems to be necessary to fix
+the current column of the current alignment.
+Try to go on, since this might almost work.
+
 [3
 
-] [4] [5]
+] [4] <Figures/cajapresentation2.png, id=189, 903.375pt x 702.625pt>
+File: Figures/cajapresentation2.png Graphic file (type png)
+
+<use Figures/cajapresentation2.png>
+Package pdftex.def Info: Figures/cajapresentation2.png used on input line 123.
+(pdftex.def)             Requested size: 271.01459pt x 210.78912pt.
+ [5 <./Figures/cajapresentation2.png>]
+[6]
 Chapter 3.
 ------------------------------------------------------------------------------
  3 Modifications to the L-BFGS-B algorithm
 ------------------------------------------------------------------------------
-[6
+[7
 
-] [7] [8]
+] [8] [9]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 the solution test functions
 ------------------------------------------------------------------------------
-<Figures/convergence.png, id=220, 650.43pt x 653.44125pt>
+<Figures/convergence.png, id=227, 650.43pt x 653.44125pt>
 File: Figures/convergence.png Graphic file (type png)
 
 <use Figures/convergence.png>
-Package pdftex.def Info: Figures/convergence.png used on input line 205.
+Package pdftex.def Info: Figures/convergence.png used on input line 209.
 (pdftex.def)             Requested size: 195.1305pt x 196.03387pt.
- [9
+ [10
 
 ]
-<Figures/hist3dmpniter.png, id=227, 671.50874pt x 669.50125pt>
+<Figures/hist3dmpniter.png, id=234, 671.50874pt x 669.50125pt>
 File: Figures/hist3dmpniter.png Graphic file (type png)
 
 <use Figures/hist3dmpniter.png>
-Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 211.
+Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 215.
 (pdftex.def)             Requested size: 201.45418pt x 200.85191pt.
-) (./Appendices/AppendixA.tex [10 <./Figures/convergence.png> <./Figures/hist3d
+) (./Appendices/AppendixA.tex [11 <./Figures/convergence.png> <./Figures/hist3d
 mpniter.png>]
 Appendix A.
 ------------------------------------------------------------------------------
  A Appendix Title Here
 ------------------------------------------------------------------------------
-) [11
+) [12
 
 ]
 ------------------------------------------------------------------------------
@@ -934,7 +966,7 @@ Appendix A.
 ------------------------------------------------------------------------------
 (./main.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
- [12
+ [13
 
 
 ]
@@ -947,10 +979,10 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
  ) 
 Here is how much of TeX's memory you used:
- 14705 strings out of 493307
- 205741 string characters out of 6139906
+ 14710 strings out of 493307
+ 205894 string characters out of 6139906
  305806 words of memory out of 5000000
- 17905 multiletter control sequences out of 15000+600000
+ 17908 multiletter control sequences out of 15000+600000
  15671 words of font info for 58 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,45p,1436b,401s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -974,10 +1006,10 @@ onts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/t
 ype1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
 ublic/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (18 pages, 386559 bytes).
+Output written on main.pdf (19 pages, 458116 bytes).
 PDF statistics:
- 335 PDF objects out of 1000 (max. 8388607)
- 289 compressed objects within 3 object streams
- 60 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 344 PDF objects out of 1000 (max. 8388607)
+ 295 compressed objects within 3 object streams
+ 61 named destinations out of 1000 (max. 500000)
+ 168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

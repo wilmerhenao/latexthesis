@@ -80,7 +80,7 @@ $BFGS$ is a standard tool for optimization of smooth functions. It is a line sea
 
 \begin{equation} \label{bfgsupdate}
   \begin{aligned}
-    B_{k+1} = \left(I - \frac{s_ky_k^T}{y_k^Ts_k} B_{k} \left( I - \frac{y_ks_k^T}{y_k^Ts_k} \right) + \frac{s_k s_k^T}{y_k^T s_k}\right)
+    B_{k+1} = \left(I - \frac{s_ky_k^T}{y_k^Ts_k} \right) B_{k} \left( I - \frac{y_ks_k^T}{y_k^Ts_k} \right) + \frac{s_k s_k^T}{y_k^T s_k}\right)
   \end{aligned}
 \end{equation}
 
@@ -118,6 +118,10 @@ Gradient projection works on the approximation model:
 \end{equation}
 
 where $H_k$ is a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$ stored in the implicit way defined by $L-BFGS$.
+
+\begin{center}
+\includegraphics[scale=0.3]{Figures/cajapresentation2.png}
+\end{center}
 
 In this first stage of the algorithm a piecewise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piecewise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piecewise gradient projection path is known as the 'Cauchy point' $x^c$.
 
