@@ -76,7 +76,7 @@ This section is a description of the original $L-BFGS-B$ code at a very high lev
 
 \section{BFGS}
 
-$BFGS$ is a standard tool for optimization of smooth functions. It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the $BFGS$ formula
+$BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the $BFGS$ formula
 
 \begin{equation} \label{bfgsupdate}
   \begin{aligned}
@@ -86,13 +86,13 @@ $BFGS$ is a standard tool for optimization of smooth functions. It is a line sea
 
 where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis.  $BFGS$ exhibits superlinear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration. \citep{nocedal}
 
-In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This is partly because $BFGS$ has some nice self-correcting properties, however this requires some modifications of the line search conditions. This change to the line search conditions is known as the weak Wolfe line search and it will be explained later in this thesis.
+In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This however requires some modifications of the line search conditions. This line search conditions is known as the weak Wolfe line search and it will be explained later in this thesis.
 
 \section{L-BFGS}
 
-$L-BFGS$ stands for Limited-memory $BFGS$. This algorithm approximates $BFGS$ using only a limited amout of computer memory to approximate the inverse of the Hessian $B$. So Instead of storing a dense $n \times n$ matrix, $L-BFGS$ keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand. \footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priori what choice of $m$ will provide the best results} It is for this reason that during the first $m$ iterations, $BFGS$ and $L-BFGS$ produce exactly the same search directions.
+$L-BFGS$ stands for Limited-memory $BFGS$. This algorithm approximates $BFGS$ using only a limited amout of computer memory to approximate the inverse of the Hessian $B$. So instead of storing a dense $n \times n$ matrix, $L-BFGS$ keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand. \footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priori what choice of $m$ will provide the best results} It is for this reason that during the first $m$ iterations, $BFGS$ and $L-BFGS$ produce exactly the same search directions.
 
-Because of this construction, the $L-BFGS$ algorithm is less computationally intensive and it only requires $\mathcal{O}(mn)$ iterations. So it is much better suited for problems where the number of dimensions $n$ is large. For this reason it is the algorithm of choice in this thesis.
+Because of this construction, the $L-BFGS$ algorithm is less computationally intensive and it only requires $\mathcal{O}(mn)$ operations per iteration. So it is much better suited for problems where the number of dimensions $n$ is large. For this reason it is the algorithm of choice in this thesis.
 
 \section{L-BFGS-B}
 
@@ -155,29 +155,69 @@ Where $d_k$ represents the search direction. The strong Wolfe condition is natur
   \end{aligned}
 \end{equation}
 
-is all that is needed to guarantee that the $BFGS$ updated inverse Hessian approximation is positive definite \citep{overtonlewis}. This weak version is the one that will be used in this thesis.
+is all that is needed to guarantee that the $BFGS$ updated inverse Hessian approximation is positive definite \citep{overtonlewis}. This weak version is the one that will be used in this thesis. It was changed inside of the line search algorithm explained in the next section.
 
 \section{The line search methodology}
 
-\emph{The original software by Nocedal\citep{lbfgsbsoftware}, included a cubic line search. The idea of a cubic interpolation line search is to take advantage of the smooth properties of function $f$ in order to find a more convenient point. But in the case of nonsmooth functions, this line search does not serve our purposes and therefore a more typical line search that implements a bisection has to be used.}
+The original $FORTRAN$ code \citep{lbfgsbsoftware} contains a line search subroutine. This subroutine first establishes a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$. This step maximum is defined in between lines $2607$ and $2633$ of the lbfgsnomessages.f90 file. This part of the line search was not changed in this thesis. The next part of the line search is finding a step length that satisfies a decrease and a curvature condition (aka. Armijo and Wolfe conditions). The next procedure was completely changed for the purpose of this thesis. and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ of lbfgsnomessages.f90 and it has been left commented out in order to show how this call was before the modifications.
 
-A step length is selected. If this step length does not satisfy the sufficient decrease and curvature conditions then a step length of half or double the size is selected. The algorithm is guaranteed to converge under a careful selection of the parameters.
+The original line search was a two stage process. In the first stage the interval was chosen so that it contains a minimizer of the modified function, which is nothing but a modification of the Armijo condition.
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - $c1$ \alpha_k d_k^T  \nabla f(x_k)
+  \end{aligned}
+\end{equation} 
+
+If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval is chosen so that it contains a minimizer of f. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$
+
+The second stage was called on line $3713$ and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function (as opposed to the modified from stage 1) $f$. Both stage 1 and stage 2 called the subroutine $dcstep$. The subroutine still exists on file $lbfgsbnomessages.f90$ for illustration. Although it is never called in this thesis.
+
+But there is a problem with the function $dcstep$. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The code takes advantage of quadratic and cubic approximations to the function in order to calculate the next points that satisfy armijo and wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it was formulated. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of $lbfgsbnomessages.f90$.
+
+The approach to this issue is to use a line search similar to the one in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated (while the decresing conditions has not been satisfied). And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered as a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution. This version of the bisection and expansion is found in between lines $4425$ and $4454$ of $lbfgsbnomessages.f90$
+
 
 \section{The termination condition}
 
-One important requirement of a practical algorithm is that it ends in a finite time. For the case of smooth functions, the usuall way to check whether the algorithm has converged, is by using the projected gradient which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm the algorithm has converged. In the case of nonsmooth functions however, this is not necessarily true and the function at the minimum, may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from the left.
+One important requirement of a practical algorithm is that it ends in a finite time. For the case of smooth functions, the usual way to check whether the algorithm has converged, is by using the projected gradient which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm the algorithm has converged. In the case of nonsmooth functions however, this is not necessarily true and the function at the minimum, may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from the left.
 
 Given this set of conditions, there is the need for a special set of rules to establish the finalization of each optimization.
 
-The best practical methodology should be to calculate wheter zero $0$ or a very small number is the norm of a vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$ \citep{overtonlewis}. In order to make sure that the gradient zero $\vec{0}$ or a vector with a very small norm is part of the convex hull calculated near a neighbourhood of the optimum, the algorithm keeps a record of the latest gradient vectors in this small neighbourhood of the point where it suspect that the optimum is located.
+\subsection{Description of the Solution}
 
-If there exists a vector with such a small norm, the algorithm ends. The best way to find a vector with such properties is to find the vector with the minimal norm that resides in the convex hull. If the minimum such norm is larger than the tolerance, the algorithm must continue to the following iteration and not terminate.
+Overton and Lewis formulate an algorithm that gives a practical solution to this problem on section $6.3$ \citep{overtonlewis}
+The best practical methodology should be to calculate wheter zero $0$ or a very small number is the norm of a vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$. In order to make sure that the gradient zero $\vec{0}$ or a vector with a very small norm smaller than a very tiny tolerance $\tau_d > 0$ is part of the convex hull calculated near a neighbourhood of the optimum. The algorithm needs to keep a record of the latest gradient vectors in this small neighbourhood of the point where it is suspected that the optimum is located. The neighborhood is defined as those points with a distance to $x$ smaller than a small tolerance $\tau_x > 0$ and no more than $J \in \mathbb{N}$ iterations back.  This list of gradients is referred to as the set $\mathcal{G}$ \citep{overtonlewis}
 
-\subsection{The Solution of the quadratic program}
+With this list $\mathcal{G}$ of gradients at hand. The next step is to solve a quadratic program that locates the vector with the minimal norm that lives in the convex hull of these gradients.  If the norm of this vector has a norm smaller than $\tau_d$ , the algorithm ends with a message of convergence success. If the minimum such norm is larger than the tolerance, the algorithm must continue to the following iteration and not terminate.
 
-Practical experience has shown that the termination condition is able to show when the function has converged to a local optimum. However in order to find the vector with the minimal norm one subalgorithm needs to be solved. This subalgorithm is a practical primal-dual algorithm implemented in \citep{skaaja}. In this case in particular the best solution is to implement a variation of Mehrotra's Predictor-Corrector algorithm applied to quadratic programming. 
+Every vector in the convex hull can be expressed as a nonnegative linear combination $Gz$ of those vectors in $\mathcal{G}$. Where $G$ is the matrix with columns made up of gradients in $\mathcal{G}$; and $z$ is such that $\sum_{i=1}^n z_i = 1$ and $z_i \geq 0$.
 
-The algorithm is widely used in practice with great results. The implementation on \citep{skaaja} is is exactly the one on \citep{nocedal}. In this thesis it was implemented in $FORTRAN$ as part of the optimizer.
+In other words the objective is to find the right combination of $z$ that minimizes the norm $||Gz||_2$.  This is equivalent to solving the optimization problem
+
+\begin{equation} \label{quadraticproblem}
+  \begin{aligned}
+    & {\text{min}}
+    & & q(z) = ||G z ||_2^2 = z^TG^TGz \\
+    & \text{s.t.}
+    & & \sum_{i = 1} ^J z_i = 1 \; \\
+    & & & z_i >= 0.
+  \end{aligned}
+\end{equation}
+
+The solution to this problem $z^*$ has the associated vector $Gz^*$. And if $||Gz^*|| < \tau_d$ the algorithm converges.
+
+\subsection{The Solution of the Quadratic Program}
+
+The solution of \ref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skaaja} in his thesis. His code qpspecial was implemented in $FORTRAN$ and is part of $lbfgsbnomessages.f90$. The solution is a typical Mehrotra's Predictor-Corrector algorithm applied to quadratic programming.
+
+This algorithm initially tries to solve the $KKT$ conditions. The $KKT$ is a system of equations whose solution identifies the solution of \ref{quadraticproblem}. 
+
+In order to solve this system of equations a variant of Newton's method is used. This Newton's method as usual, provides a search direction which requires a corresponding step length.  Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.
+
+The problem is that the step length is usually very small because otherwise the condition of $z > 0$ or $s > 0$ where $s$ is the slackness variable is violated. The method by itself approaches the solution very close to the boundaries of the feasible set. Not close to the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster.  It is for this reason that a centering of the path is performed. This first step is known as the ``predictor'' step.
+
+Besides the centering; Mehrotra proposed a ``correction'' step which pushes the solution closer to the central path by taking into account the curvature of the approaching \emph{central path}. This step is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage.
 
 \chapter{the solution test functions}
 
