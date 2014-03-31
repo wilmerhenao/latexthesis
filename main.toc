@@ -12,14 +12,15 @@
 \contentsline {section}{\numberline {2.2}L-BFGS}{4}{section.13}
 \contentsline {section}{\numberline {2.3}L-BFGS-B}{4}{section.15}
 \contentsline {subsection}{\numberline {2.3.1}Gradient Projection}{4}{subsection.16}
-\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.19}
-\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.20}
-\contentsline {section}{\numberline {3.1}The Wolfe conditions}{7}{section.21}
-\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.24}
-\contentsline {section}{\numberline {3.3}The termination condition}{9}{section.26}
-\contentsline {subsection}{\numberline {3.3.1}The Solution of the quadratic program}{10}{subsection.28}
-\contentsline {chapter}{\numberline {4}the solution test functions}{12}{chapter.29}
+\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.20}
+\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.21}
+\contentsline {section}{\numberline {3.1}The Wolfe conditions}{7}{section.22}
+\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.25}
+\contentsline {section}{\numberline {3.3}The termination condition}{9}{section.27}
+\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{9}{subsection.28}
+\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{10}{subsection.30}
+\contentsline {chapter}{\numberline {4}the solution test functions}{12}{chapter.32}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{14}{appendix.33}
+\contentsline {chapter}{\numberline {A}Appendix Title Here}{14}{appendix.36}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{15}{dummy.34}
+\contentsline {chapter}{Bibliography}{15}{dummy.37}

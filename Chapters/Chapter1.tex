@@ -119,11 +119,14 @@ Gradient projection works on the approximation model:
 
 where $H_k$ is a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$ stored in the implicit way defined by $L-BFGS$.
 
-\begin{center}
-\includegraphics[scale=0.3]{Figures/cajapresentation2.png}
-\end{center}
-
 In this first stage of the algorithm a piecewise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piecewise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piecewise gradient projection path is known as the 'Cauchy point' $x^c$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{Figures/cajapresentation2.png}
+\caption[graph1]{The arrow represents the direction of the gradient. The dotted path represents the projected gradient path from the gradient and onto the box. The region represents the level sets of the model. The optimal point (in red) is the Cauchy point $x^c$}
+\end{center}
+\end{figure}
 
 \subsection{Subspace Minimization}
 
@@ -218,6 +221,13 @@ In order to solve this system of equations a variant of Newton's method is used.
 The problem is that the step length is usually very small because otherwise the condition of $z > 0$ or $s > 0$ where $s$ is the slackness variable is violated. The method by itself approaches the solution very close to the boundaries of the feasible set. Not close to the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster.  It is for this reason that a centering of the path is performed. This first step is known as the ``predictor'' step.
 
 Besides the centering; Mehrotra proposed a ``correction'' step which pushes the solution closer to the central path by taking into account the curvature of the approaching \emph{central path}. This step is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.3]{Figures/CentralPath.png}
+\caption{The central path $\mathcal{C}$ is approached from a current and noncentral point on the tangent path $\mathcal{H}$}
+\end{center}
+\end{figure}
 
 \chapter{the solution test functions}
 

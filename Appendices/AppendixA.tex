@@ -6,4 +6,50 @@
 
 \lhead{Appendix A. \emph{Appendix Title Here}} % This is for the header on each page - perhaps a shortened title
 
-Write your Appendix content here.
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\lstset{
+backgroundcolor=\color{lbcolor},
+tabsize=4,    
+%   rulecolor=,
+language=fortran,
+basicstyle=\scriptsize,
+upquote=true,
+aboveskip={1.5\baselineskip},
+columns=fixed,
+showstringspaces=false,
+extendedchars=false,
+breaklines=true,
+prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+frame=single,
+numbers=left,
+showtabs=false,
+showspaces=false,
+showstringspaces=false,
+identifierstyle=\ttfamily,
+keywordstyle=\color[rgb]{0,0,1},
+commentstyle=\color[rgb]{0.026,0.112,0.095},
+stringstyle=\color[rgb]{0.627,0.126,0.941},
+numberstyle=\color[rgb]{0.205, 0.142, 0.73},
+%        \lstdefinestyle{C++}{language=C++,style=numbers}’.
+}
+
+subroutine checkifxbelongs(n, m, x, matX, j, closee, taux)
+  implicit none
+  integer n, m, j
+  double precision, dimension(n)    :: x
+  double precision, dimension(n, m) :: matX
+  logical closee
+  double precision :: sumd=0.0d0, taux
+  integer i
+  ! debugging
+  
+  ! calculate the distance from x to the corresponding j vector
+  sumd = sum((x - matX(:,j))**2)
+  sumd = sqrt(sumd)
+  !write(*, *) 'sumd', sumd
+  if(sumd < taux) then
+     closee = .true.
+  endif
+end subroutine checkifxbelongs
+
