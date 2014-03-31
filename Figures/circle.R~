@@ -1,0 +1,6 @@
+library(ggplot2)
+library(reshape2) # for melt
+M=melt(volcano)
+head(M)
+M$Var1 <- M$Var1 / 10
+M$Var2 <- M$Var2 / 10
