@@ -21,6 +21,10 @@
 \contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{10}{subsection.30}
 \contentsline {chapter}{\numberline {4}the solution test functions}{12}{chapter.32}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendix Title Here}{14}{appendix.36}
+\contentsline {chapter}{\numberline {A}Appendices: }{14}{appendix.36}
+\contentsline {section}{\numberline {A.1}Ignoring old code}{14}{section.37}
+\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{14}{section.43}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{15}{section.68}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{15}{section.92}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{15}{dummy.37}
+\contentsline {chapter}{Bibliography}{17}{dummy.126}

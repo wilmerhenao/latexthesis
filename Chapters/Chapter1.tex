@@ -80,7 +80,7 @@ $BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} I
 
 \begin{equation} \label{bfgsupdate}
   \begin{aligned}
-    B_{k+1} = \left(I - \frac{s_ky_k^T}{y_k^Ts_k} \right) B_{k} \left( I - \frac{y_ks_k^T}{y_k^Ts_k} \right) + \frac{s_k s_k^T}{y_k^T s_k}\right)
+    B_{k+1} = \left(I - \frac{s_ky_k^T}{y_k^Ts_k} \right) B_k \left( I - \frac{y_ks_k^T}{y_k^Ts_k} \right) + \frac{s_k s_k^T}{y_k^T s_k}
   \end{aligned}
 \end{equation}
 
@@ -162,23 +162,25 @@ is all that is needed to guarantee that the $BFGS$ updated inverse Hessian appro
 
 \section{The line search methodology}
 
-The original $FORTRAN$ code \citep{lbfgsbsoftware} contains a line search subroutine. This subroutine first establishes a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$. This step maximum is defined in between lines $2607$ and $2633$ of the $lbfgsnomessages.f90$ file \citep{lbfgsbNS} . This part of the line search was not changed in this thesis. The next part of the line search is finding a step length that satisfies a decrease and a curvature condition (aka. Armijo and Wolfe conditions). The next procedure was completely changed for the purpose of this thesis. and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ of lbfgsnomessages.f90 and it has been left commented out in order to show how this call was before the modifications.
+The original $FORTRAN$ code \citep{lbfgsbsoftware} contains a line search subroutine. This subroutine first establishes a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$. This part of the line search was not changed in this thesis. The next part of the line search is finding a step length that satisfies a decrease and a curvature condition (aka. Armijo and Wolfe conditions). The next procedure was completely changed for the purpose of this thesis. and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \ref{ignoredcode} of $lbfgsnomessages.f90$ and it has been left commented out in order to show how this call was before the modifications.
+
+From then on, the line search required a lot of modifications. This new code is available online \citep{lbfgsbNS}
 
 The original line search was a two stage process. In the first stage the interval was chosen so that it contains a minimizer of the modified function, which is nothing but a modification of the Armijo condition.
 
 \begin{equation*}
   \begin{aligned}
-    \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - $c1$ \alpha_k d_k^T  \nabla f(x_k)
+    \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - c1 \alpha_k d_k^T  \nabla f(x_k)
   \end{aligned}
-\end{equation} 
+\end{equation*} 
 
-If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval is chosen so that it contains a minimizer of f. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$
+If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval is chosen so that it contains a minimizer of f. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ \ref{stage1}
 
 The second stage was called on line $3713$ and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function (as opposed to the modified from stage 1) $f$. Both stage 1 and stage 2 called the subroutine $dcstep$. The subroutine still exists on file $lbfgsbnomessages.f90$ for illustration. Although it is never called in this thesis.
 
-But there is a problem with the function $dcstep$. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The code takes advantage of quadratic and cubic approximations to the function in order to calculate the next points that satisfy armijo and wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it was formulated. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of $lbfgsbnomessages.f90$.
+But there is a problem with the function $dcstep$. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The code takes advantage of quadratic and cubic approximations to the function in order to calculate the next points that satisfy armijo and wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it was formulated. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ \ref{nsnowork} of $lbfgsbnomessages.f90$.
 
-The approach to this issue is to use a line search similar to the one in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated (while the decresing conditions has not been satisfied). And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered as a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution. This version of the bisection and expansion is found in between lines $4425$ and $4454$ of $lbfgsbnomessages.f90$
+The approach to this issue is to use a line search similar to the one in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated (while the decresing conditions has not been satisfied). And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered as a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution. This version of the bisection and expansion is found in between lines $4425$ and $4456$ \ref{linesww} of $lbfgsbnomessages.f90$
 
 
 \section{The termination condition}

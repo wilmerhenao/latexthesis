@@ -1,4 +1,4 @@
-\begin{thebibliography}{9}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -65,8 +65,13 @@ Adrian~S. Lewis and Michael~L. Overton.
 \newblock \doi{10.1007/s10107-012-0514-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
 
-\bibitem[Overton(2012)]{hanso}
-Michael Overton.
+\bibitem[Henao(2014)]{lbfgsbNS}
+Wilmer Henao.
+\newblock lbfgsbns.
+\newblock \url{https://github.com/wilmerhenao/lbfgsbNS}, 2014.
+
+\bibitem[Overton et~al.(2012)Overton, Burke, and Skajaa]{hanso}
+Michael Overton, James Burke, and Anders Skajaa.
 \newblock Hanso 2.02.
 \newblock \url{http://www.cs.nyu.edu/faculty/overton/software/hanso/}, 2012.
 

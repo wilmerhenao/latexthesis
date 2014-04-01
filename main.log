@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  31 MAR 2014 01:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  1 APR 2014 01:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -736,32 +736,49 @@ subscribe by emailing sympa@lirmm.fr with 'subscribe <list> <firstname name>'
 \c@algocf=\count141
 \algocf@algoframe=\box41
 \algocf@algobox=\box42
+) (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 34.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
+Package xcolor Info: Model `RGB' extended on input line 1353.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 36.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 37.
-LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 39.
+LaTeX Font Info:    ... okay on input line 39.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
 Package caption Info: longtable package is loaded.
- (/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty
 Package: ltcaption 2013/02/03 v1.3-62 longtable captions (AR)
 )
 Package caption Info: rotating package is loaded.
@@ -784,17 +801,8 @@ Package caption Info: End \AtBeginDocument code.
 )
 \c@lstlisting=\count148
 \AtBeginShipoutBox=\box44
- (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
-
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
-)
-Package color Info: Driver file: pdftex.def on input line 130.
-)
-Package hyperref Info: Link coloring ON on input line 37.
-
-(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package hyperref Info: Link coloring ON on input line 39.
+ (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -802,20 +810,20 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count149
 )
-LaTeX Info: Redefining \ref on input line 37.
-LaTeX Info: Redefining \pageref on input line 37.
-LaTeX Info: Redefining \nameref on input line 37.
+LaTeX Info: Redefining \ref on input line 39.
+LaTeX Info: Redefining \pageref on input line 39.
+LaTeX Info: Redefining \nameref on input line 39.
 
 (./main.out) (./main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 88.
+LaTeX Font Info:    Try loading font information for U+msa on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 88.
+LaTeX Font Info:    Try loading font information for U+msb on input line 90.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -828,7 +836,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  Declaration of Authorship
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 133--133
+Underfull \hbox (badness 10000) in paragraph at lines 135--135
 
  []
 
@@ -848,16 +856,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 133--133
 ------------------------------------------------------------------------------
  Table of Contents
 ------------------------------------------------------------------------------
-(./main.toc)
+(./main.toc [4
+
+
+])
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [4
-
-
-]
+ [5]
 ! Misplaced alignment tab character &.
-l.209 \textbf{LAH} &
+l.211 \textbf{LAH} &
                      \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -867,14 +875,14 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 209--212
+Underfull \hbox (badness 10000) in paragraph at lines 211--214
 
  []
 
 ------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[5
+[6
 
 
 ] (./Chapters/Chapter1.tex
@@ -891,34 +899,9 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 L-BFGS-B
 ------------------------------------------------------------------------------
-! Missing } inserted.
-<inserted text> 
-                }
-l.83 ...right) + \frac{s_k s_k^T}{y_k^T s_k}\right
-                                                  )
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Extra \right.
-l.83 ...ight) + \frac{s_k s_k^T}{y_k^T s_k}\right)
-                                                  
-I'm ignoring a \right that had no matching \left.
-
-! Missing { inserted.
-<inserted text> 
-                {
-l.84   \end{aligned}
-                    
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
 [3
 
-] [4] <Figures/cajapresentation2.png, id=195, 903.375pt x 702.625pt>
+] [4] <Figures/cajapresentation2.png, id=219, 903.375pt x 702.625pt>
 File: Figures/cajapresentation2.png Graphic file (type png)
 
 <use Figures/cajapresentation2.png>
@@ -936,106 +919,75 @@ Chapter 3.
 ------------------------------------------------------------------------------
 [7
 
-]
-! Missing } inserted.
-<inserted text> 
-                }
-l.171 ...a_k) = f(x_k + \alpha_k d_k) - f(x_k) - $
-                                                  c1$ \alpha_k d_k^T  \nabla...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing { inserted.
-<inserted text> 
-                {
-l.172   \end{aligned}
-                     
-I've put in what seems to be necessary to fix
-the current column of the current alignment.
-Try to go on, since this might almost work.
-
-
-! LaTeX Error: \begin{equation*} on input line 169 ended by \end{equation}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.173 \end{equation}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[8] [9] [10] <Figures/CentralPath.png, id=245, 844.15375pt x 514.92375pt>
+] [8] [9] [10] <Figures/CentralPath.png, id=275, 844.15375pt x 514.92375pt>
 File: Figures/CentralPath.png Graphic file (type png)
 
 <use Figures/CentralPath.png>
-Package pdftex.def Info: Figures/CentralPath.png used on input line 227.
+Package pdftex.def Info: Figures/CentralPath.png used on input line 229.
 (pdftex.def)             Requested size: 253.24808pt x 154.4783pt.
  [11 <./Figures/CentralPath.png>]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 the solution test functions
 ------------------------------------------------------------------------------
-<Figures/convergence.png, id=251, 650.43pt x 653.44125pt>
+<Figures/convergence.png, id=281, 650.43pt x 653.44125pt>
 File: Figures/convergence.png Graphic file (type png)
 
 <use Figures/convergence.png>
-Package pdftex.def Info: Figures/convergence.png used on input line 259.
+Package pdftex.def Info: Figures/convergence.png used on input line 261.
 (pdftex.def)             Requested size: 195.1305pt x 196.03387pt.
  [12
 
 ]
-<Figures/hist3dmpniter.png, id=258, 671.50874pt x 669.50125pt>
+<Figures/hist3dmpniter.png, id=289, 671.50874pt x 669.50125pt>
 File: Figures/hist3dmpniter.png Graphic file (type png)
 
 <use Figures/hist3dmpniter.png>
-Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 265.
+Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 267.
 (pdftex.def)             Requested size: 201.45418pt x 200.85191pt.
 ) (./Appendices/AppendixA.tex [13 <./Figures/convergence.png> <./Figures/hist3d
 mpniter.png>]
 Appendix A.
 ------------------------------------------------------------------------------
- A Appendix Title Here
+ A Appendices: 
 ------------------------------------------------------------------------------
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
+)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
 ) [14
 
-]
+] [15])
+[16]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./main.bbl
-Underfull \hbox (badness 1253) in paragraph at lines 69--72
-[]\OT1/cmr/m/n/10.95 Michael Over-ton.  Hanso 2.02.  [][]$\OT1/cmtt/m/n/10.95 h
-ttp : / / www . cs . nyu . edu / faculty / overton /
- []
-
-[15
+(./main.bbl [17
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 276.
- [16]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 276.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
+ [18]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 276.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 276.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: FFB76416819E10BC0B3BB653BBC9E8B1;3243.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 276.
+(rerunfilecheck)             Checksum: F4AF75D4388512F4D551AD9C2D7441FF;4216.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 278.
  ) 
 Here is how much of TeX's memory you used:
- 14739 strings out of 493307
- 206334 string characters out of 6139906
- 305887 words of memory out of 5000000
- 17927 multiletter control sequences out of 15000+600000
- 17026 words of font info for 64 fonts, out of 8000000 for 9000
+ 15741 strings out of 493307
+ 216837 string characters out of 6139906
+ 532294 words of memory out of 5000000
+ 18826 multiletter control sequences out of 15000+600000
+ 17194 words of font info for 65 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 49i,15n,45p,1436b,450s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 49i,15n,58p,1436b,1839s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -1055,12 +1007,13 @@ dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
-msfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 604812 bytes).
+msfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msbm10.pfb>
+Output written on main.pdf (25 pages, 625978 bytes).
 PDF statistics:
- 379 PDF objects out of 1000 (max. 8388607)
- 324 compressed objects within 4 object streams
- 70 named destinations out of 1000 (max. 500000)
- 181 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 468 compressed objects within 5 object streams
+ 162 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
