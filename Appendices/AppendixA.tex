@@ -1,6 +1,6 @@
 % Appendix A
 
-\chapter{Appendices: } % Main appendix title
+\chapter{Samples of Code} % Main appendix title
 
 \label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
 
@@ -18,7 +18,7 @@
   firstnumber = 2607
 }
 \section{Ignoring old code}
-All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also true for the code that is not being used anymore.
+All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also true for the code that is not being used anymore.  Here the old function dcsrch is commented out. lineww is replacing it instead
 \begin{lstlisting}
 
 !     call dcsrch(f,gd,stp,ftol,gtol,xtol,zero,stpmx,csave,isave,dsave)
@@ -27,15 +27,16 @@ All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also 
 \end{lstlisting}
 
 \lstset{
+  escapeinside={\%*}{*)},
   firstnumber = 3687
 }
 \section{Old Stage 1 of the line search}
-Stage 1 of the line search\citep{lbfgsbsoftware} \label{stage1}. This stage is not being run in the new code.
+Stage 1 of the line search\citep{lbfgsbsoftware} \label{stage1}. This stage is not being run in lbfgsbNS. But is kept there for comparisson. For the new line search that replaces it \ref{linesearchww}
 \begin{lstlisting}
       if (stage .eq. 1 .and. f .le. fx .and. f .gt. ftest) then
 
-!        Define the modified function and derivative values.
-
+!  Here we define the modified function and derivative values.
+!  This line search will only aim to satisfy the condition in (3.3) modified Armijo
          fm = f - stp*gtest
          fxm = fx - stx*gtest
          fym = fy - sty*gtest
@@ -43,8 +44,8 @@ Stage 1 of the line search\citep{lbfgsbsoftware} \label{stage1}. This stage is n
          gxm = gx - gtest
          gym = gy - gtest
 
-!        Call dcstep to update stx, sty, and to compute the new step.
-
+!  Call dcstep to update stx, sty, and to compute the new step.
+!
          call dcstep(stx,fxm,gxm,sty,fym,gym,stp,fm,gm,brackt,stmin,stmax)
 
 !        Reset the function and derivative values for f
@@ -58,7 +59,7 @@ Stage 1 of the line search\citep{lbfgsbsoftware} \label{stage1}. This stage is n
 \end{lstlisting}
 
 \section{Cubic and Quadratic line search sample}
-This code does not work in the cas when the function is Non-Smooth \label{nsnowork}
+This part of the code does not work in the case when the function is Non-Smooth \label{nsnowork}. For this reason it was eliminated from execution on lbfgsbNS and replaced with \ref{linesearchww}. stx in this case is a variable that represents the step with the minimum value so far.
 \lstset{
   firstnumber = 3881
 }
@@ -68,7 +69,7 @@ This code does not work in the cas when the function is Non-Smooth \label{nsnowo
 !     If the cubic step is closer to stx than the quadratic step, the 
 !     cubic step is taken, otherwise the average of the cubic and 
 !     quadratic steps is taken.
-      
+  ! theta, three, gamma are parameters
       if (fp .gt. fx) then
          theta = three*(fx - fp)/(stp - stx) + dx + dp
          s = max(abs(theta),abs(dx),abs(dp))
@@ -77,9 +78,9 @@ This code does not work in the cas when the function is Non-Smooth \label{nsnowo
          p = (gamma - dx) + theta
          q = ((gamma - dx) + gamma) + dp
          r = p/q
-         stpc = stx + r*(stp - stx)
+         stpc = stx + r*(stp - stx) !quadratic step
          stpq = stx + ((dx/((fx - fp)/(stp - stx) + dx))/two)* &
-                                                            (stp - stx)
+                                                            (stp - stx) !The cubic step
          if (abs(stpc-stx) .lt. abs(stpq-stx)) then
             stpf = stpc
          else
@@ -88,8 +89,8 @@ This code does not work in the cas when the function is Non-Smooth \label{nsnowo
          brackt = .true.
 \end{lstlisting}
 
-\section{Line Search Enforcing Weak Wolfe Conditions}
-This is the implementation of the line search that enforces the weak Wolfe conditions. Bisections and expansions of the step length \label{linesww}
+\section{Line Search Enforcing Weak Wolfe Conditions}\label{linesearchww}
+This is the implementation of the line search that enforces the weak Wolfe conditions. Bisections and expansions (as long as it doesn't mean leaving the bounding box) of the step length. This version tries to be as similar as possible to the interior of the while loop in qpspecial.m at hanso \citep{hanso}
 \lstset{
   firstnumber = 4425
 }
@@ -127,4 +128,85 @@ This is the implementation of the line search that enforces the weak Wolfe condi
       endif
       return
       end
+\end{lstlisting}
+
+\chapter{Automation}
+
+This appendix includes some of the files that were used to run examples in parallel at the High Performance Clusters at NYU.  All of these files can be found in the repository \citep{lbfgsbNS}
+
+\section{Script Generator} \label{pbsgenerator}
+
+This is a sample of the script generator that creates pbs files to be sent to the High Performance Machines. The value ``i'' creates a different set of files, in this case one file for each value of $p$ that we want to test. To see a result of running this script look at \ref{pbsfile}. 
+\lstset{
+  language=sh,
+  firstnumber = 1
+}
+
+\begin{lstlisting}
+#!/bin/bash
+
+for i in {0..20}
+do
+  cat > pbs.script.rosenbrock.$i <<EOF
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8,walltime=48:00:00
+#PBS -m abe
+#PBS -M weh227@nyu.edu
+#PBS -N rosenbrockHD$((i))
+
+module load gcc/4.7.3
+
+cd /scratch/weh227/rosenbrock/
+p=$(bc -l <<< "1+10 ^(-$((i)))")
+for n in 1000 100000 1000000 10000000 100000000
+do
+   echo 10 \$n \$p
+   ~/Documents/thesis/lbfgsfortran/./rosenbrockp 10 \$n \$p >> outputrosenbrock$((i)).txt
+done
+
+exit 0;
+
+EOF
+done
+
+\end{lstlisting}
+After they are created I could fire all of the runs at once by using the command 
+
+\label{qsubfire}
+for i in {0..20}; do qsub pbs.script.rosenbrock.$\$i$ ; done
+
+
+\section{PBS File Sample} \label{pbsfile}
+This is a sample file general with \ref{pbsgenerator}. It runs a special value $p$.  These are the ones that get started with the the qsub command.
+
+Lines 4 to 5 provide the user with emails and critical information while running the process. Line 13 defines a run for different sizes of $n$. Line $16$ is the actual run that will be sent to an output file. In this case ``outputrosenbrock9.txt''
+\lstset{
+  language=sh,
+  firstnumber = 1
+}
+
+\begin{lstlisting}
+
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8,walltime=48:00:00
+#PBS -m abe
+#PBS -M weh227@nyu.edu
+#PBS -N rosenbrockHD9
+
+module load gcc/4.7.3
+
+cd /scratch/weh227/rosenbrock/
+p=1.00000000100000000000
+for n in 1000 100000 1000000 10000000 100000000
+do
+   echo 10 $n $p
+   ~/Documents/thesis/lbfgsfortran/./rosenbrockp 10 $n $p >> outputrosenbrock9.txt
+done
+
+exit 0;
+
+
+
 \end{lstlisting}

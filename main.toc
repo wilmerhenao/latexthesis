@@ -16,15 +16,18 @@
 \contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.21}
 \contentsline {section}{\numberline {3.1}The Wolfe conditions}{7}{section.22}
 \contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.25}
-\contentsline {section}{\numberline {3.3}The termination condition}{9}{section.27}
-\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{9}{subsection.28}
-\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{10}{subsection.30}
-\contentsline {chapter}{\numberline {4}the solution test functions}{12}{chapter.32}
+\contentsline {section}{\numberline {3.3}The termination condition}{9}{section.28}
+\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{9}{subsection.29}
+\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{10}{subsection.31}
+\contentsline {chapter}{\numberline {4}the solution test functions}{13}{chapter.34}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Appendices: }{14}{appendix.36}
-\contentsline {section}{\numberline {A.1}Ignoring old code}{14}{section.37}
-\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{14}{section.43}
-\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{15}{section.68}
-\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{15}{section.92}
+\contentsline {chapter}{\numberline {A}Samples of Code}{15}{appendix.38}
+\contentsline {section}{\numberline {A.1}Ignoring old code}{15}{section.39}
+\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{15}{section.45}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{16}{section.70}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{16}{section.94}
+\contentsline {chapter}{\numberline {B}Automation}{18}{appendix.128}
+\contentsline {section}{\numberline {B.1}Script Generator}{18}{section.129}
+\contentsline {section}{\numberline {B.2}PBS File Sample}{19}{section.158}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{17}{dummy.126}
+\contentsline {chapter}{Bibliography}{20}{dummy.182}

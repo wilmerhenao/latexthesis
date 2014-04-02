@@ -168,11 +168,11 @@ From then on, the line search required a lot of modifications. This new code is 
 
 The original line search was a two stage process. In the first stage the interval was chosen so that it contains a minimizer of the modified function, which is nothing but a modification of the Armijo condition.
 
-\begin{equation*}
+\begin{equation} \label{armijomod}
   \begin{aligned}
     \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - c1 \alpha_k d_k^T  \nabla f(x_k)
   \end{aligned}
-\end{equation*} 
+\end{equation} 
 
 If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval is chosen so that it contains a minimizer of f. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ \ref{stage1}
 
@@ -203,7 +203,7 @@ In other words the objective is to find the right combination of $z$ that minimi
 \begin{equation} \label{quadraticproblem}
   \begin{aligned}
     & {\text{min}}
-    & & q(z) = ||G z ||_2^2 = z^TG^TGz \\
+    & & q(z) = ||G z ||_2^2 = z^TG^TGz  \\
     & \text{s.t.}
     & & \sum_{i = 1} ^J z_i = 1 \; \\
     & & & z_i >= 0.
@@ -216,13 +216,26 @@ The solution to this problem $z^*$ has the associated vector $Gz^*$. And if $||G
 
 The solution of \ref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skaaja} in his thesis. His code qpspecial was implemented in $FORTRAN$ and is part of $lbfgsbnomessages.f90$. The solution is a typical Mehrotra's Predictor-Corrector algorithm applied to quadratic programming.
 
-This algorithm initially tries to solve the $KKT$ conditions. The $KKT$ is a system of equations whose solution identifies the solution of \ref{quadraticproblem}. 
+This algorithm initially tries to solve the Karush Kuhn Tucker $KKT$ conditions. The $KKT$ is a system of equations whose solution characterizes the solution of the original optimization problem. In \ref{quadraticproblem}. The Karush Kuhn Tucker equations are:
 
-In order to solve this system of equations a variant of Newton's method is used. This Newton's method as usual, provides a search direction which requires a corresponding step length.  Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.
+\begin{equation} \label{kkt}
+  \begin{aligned}
+    G^TGz - e^Ts
+    & = & 0 & \\
+    \sum_{i = 1}^J x - 1
+    & = & 0 & \\
+    z_is_i & = & 0 &; &i = 1,2, \dots, J\\
+    (s, z) & \geq & 0 &
+  \end{aligned}
+\end{equation}
 
-The problem is that the step length is usually very small because otherwise the condition of $z > 0$ or $s > 0$ where $s$ is the slackness variable is violated. The method by itself approaches the solution very close to the boundaries of the feasible set. Not close to the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster.  It is for this reason that a centering of the path is performed. This first step is known as the ``predictor'' step.
+Where $s$ is the variable of the dual problem.
 
-Besides the centering; Mehrotra proposed a ``correction'' step which pushes the solution closer to the central path by taking into account the curvature of the approaching \emph{central path}. This step is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage.
+In order to solve this system of equations a variant of Newton's method is used. This Newton's method as usual, provides a search direction which requires a corresponding step length.  Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.  In the best of cases, it would be nice to approach the solution through a \emph{central path} where the third equation in \ref{kkt} is allowed to take more relaxed values $z_is_i = \tau$, where $\tau \geq 0$. If the solution is approached through this \emph{central path}. The convergence will require fewer iterations.
+
+The problem is that the pure Newton's method solution is not close to this central path. The step length is usually very small because of the nature of the third and fourth equations. If the step length is too large, the condition of $z > 0$ or $s > 0$ will be violated. The method by itself approaches the solution very close to the boundaries of the feasible set. Not close to the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster.  It is for this reason that a centering of the path is performed. This first step is known as the ``predictor'' step.
+
+Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the solution closer to the central path by taking into account the curvature of the approaching \emph{central path}. This second stage is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage. The second stage is similar to the first stage in that it requires the solution of a new system of equations.
 
 \begin{figure}
 \begin{center}
@@ -230,6 +243,8 @@ Besides the centering; Mehrotra proposed a ``correction'' step which pushes the 
 \caption{The central path $\mathcal{C}$ is approached from a current and noncentral point on the tangent path $\mathcal{H}$}
 \end{center}
 \end{figure}
+
+The beauty of Mehrotra's algorithm, is that the Cholesky factorization required for the first stage is reused during the second stage, which improves performance.  This algorithm is widely used in optimizers.
 
 \chapter{the solution test functions}
 
