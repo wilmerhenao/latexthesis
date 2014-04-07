@@ -244,7 +244,7 @@ Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the
 \end{center}
 \end{figure}
 
-The beauty of Mehrotra's algorithm, is that the Cholesky factorization required for the first stage is reused during the second stage, which improves performance.  This algorithm is widely used in optimizers.
+Mehrotra's algorithm requires only one Cholesky factorization for the first stage. This factorization is reused during the second stage, by reusing the factorization, the performance is improved.  This algorithm is widely used in optimizers.
 
 \chapter{the solution test functions}
 
