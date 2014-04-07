@@ -180,7 +180,7 @@ The second stage was called on line $3713$ and its mission was to find the step 
 
 But there is a problem with the function $dcstep$. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The code takes advantage of quadratic and cubic approximations to the function in order to calculate the next points that satisfy armijo and wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it was formulated. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ \ref{nsnowork} of $lbfgsbnomessages.f90$.
 
-The approach to this issue is to use a line search similar to the one in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated (while the decresing conditions has not been satisfied). And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered as a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution. This version of the bisection and expansion is found in between lines $4425$ and $4456$ \ref{linesww} of $lbfgsbnomessages.f90$
+The approach to this issue is to use a line search similar to the one in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated (while the decresing conditions has not been satisfied). And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered as a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution. This version of the bisection and expansion is found in between lines $4425$ and $4456$ \ref{linesearchww} of $lbfgsbnomessages.f90$
 
 
 \section{The termination condition}
@@ -248,7 +248,9 @@ Mehrotra's algorithm requires only one Cholesky factorization for the first stag
 
 \chapter{the solution test functions}
 
-In order to make some tests, a few functions will be evaluated. The most important function to test this non-smooth optimizer is a modified version of rosenbrock's:
+There were some tests run on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files using a PBS generator script \ref{pbsgenerator}. This script generator created PBS files which in turn run bash scripts \ref{pbsfile}. The main reason to run scripts this way is that it achieves parallelism and the system sends confirmation e-mails about the different stages of the processes. 
+
+A few test functions were evaluated. The most important function to test this non-smooth optimizer is a modified version of the rosenbrock function:
 
 \begin{equation}
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p

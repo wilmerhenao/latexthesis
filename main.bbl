@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{11}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -18,6 +18,16 @@ Richard~H. Byrd, Peihuang Lu, Jorge Nocedal, and Ci~You Zhu.
 Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
 \newblock Lbfgsb 3.0.
 \newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
+
+\bibitem[Zhu et~al.(1997)Zhu, Byrd, Lu, and Nocedal]{codepaper}
+Ciyou Zhu, Richard~H. Byrd, Peihuang Lu, and Jorge Nocedal.
+\newblock Algorithm 778: {L}-{BFGS}-{B}: {F}ortran subroutines for large-scale
+  bound-constrained optimization.
+\newblock \emph{ACM Trans. Math. Software}, 23\penalty0 (4):\penalty0 550--560,
+  1997.
+\newblock ISSN 0098-3500.
+\newblock \doi{10.1145/279232.279236}.
+\newblock URL \url{http://dx.doi.org/10.1145/279232.279236}.
 
 \bibitem[Nocedal and Wright(1999)]{nocedal}
 Jorge Nocedal and Stephen~J. Wright.
