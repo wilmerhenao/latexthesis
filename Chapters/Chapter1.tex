@@ -25,26 +25,23 @@ where $f \colon \mathbb{R}^n \to \mathbb{R}$, is continuous but not differentiab
 The $L-BFGS-B$ algorithm \citep{lbfgsboriginal} is a standard method for solving large instances of \ref{mainproblem} when $f$ is a smooth function. The original name of $BFGS$ stands for Broyden, Fletcher, Goldfarb and Shanno, the authors
 of the original "BFGS" quasi-Newton algorithm for unconstrained
 optimization discovered and published
-independently by them in 1970 [give the 4 references here].
+independently by them in 1970 \citep{Broyden} \citep{Fletcher} \citep{Goldfarb} \citep{Shanno}.
 This method requires storing and updating a matrix which 
 approximates the inverse of the Hessian matrix $\nabla^2 f(x)$ and
 hence requires $\mathcal{O}(n^2)$ operations per iteration.  
-The $L-BFGS$ variant [give reference] is based on BFGS
-but requires only $\mathcal{O}(mn)$ operations per iteration: thus,
-the L stands for Large.  Finally, the last letter B in 
+The $L-BFGS$ variant \citep{MR572855} where the $L$ stands for ``Large'', is based on $BFGS$ but requires only $\mathcal{O}(mn)$ operations per iteration. And not only it requires less FLOPS, but it also requires much less memory. Instead of storing the $n \times n$ hessian approximations, $L-BFGS$ stores only $m$ vectors of dimension $n$, where $m$ is much smaller than $n$. Finally, the last letter B in 
 $L-BFGS-B$ stands for bounds, meaning the lower and upper
-bounds $l_i$ and $u_i$ in \ref{mainproblem}.  $The L-BFGS-B$ algorithm
-is implemented in a well known $FORTRAN$ software package
-by the same name [give reference].
+bounds $l_i$ and $u_i$ in \ref{mainproblem}.  The $L-BFGS-B$ algorithm
+is implemented in a well known \fortran software package
+by the same name \citep{lbfgsbsoftware}
 
 In this thesis, there is a brief description of the $L-BFGS-B$ algorithm
-at a high level and then explain how the modified algorithm
+at a high level and then an explanation of how the modified algorithm
 is more suitable for functions $f$ which may not be
 differentiable at their local or global optimizers.  
 We call the new algorithm L-BFGS-B-NS where NS stands for
-Non-Smooth.  We implemented these changes in a modified version 
-of the Fortran code [ref] which is can be downloaded from the website
-for this thesis [give URL].  We report on some numerical experiments 
+Non-Smooth.  These changes were implemented in a modified version 
+of the Fortran code \citep{lbfgsbNS} which can be downloaded from a web repository.  We report on some numerical experiments 
 that strongly suggest that the new code should be useful for the
 nonsmooth bound-constrained optimization problem (1.1).
 
@@ -76,7 +73,7 @@ This section is a description of the original $L-BFGS-B$ code at a very high lev
 
 \section{BFGS}
 
-$BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B$ is an approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the $BFGS$ formula
+$BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B_k \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B_k$ is the $k^{th}$ approximation to the inverse Hessian. \footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the $BFGS$ formula
 
 \begin{equation} \label{bfgsupdate}
   \begin{aligned}
@@ -84,19 +81,19 @@ $BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} I
   \end{aligned}
 \end{equation}
 
-where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis.  $BFGS$ exhibits superlinear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration. \citep{nocedal}
+where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis \footnote{a different starting matrix is suggested in Nocedal's book \citep{nocedal}}.  $BFGS$ exhibits superlinear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration. \citep{nocedal}
 
-In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This however requires some modifications of the line search conditions. This line search conditions is known as the weak Wolfe line search and it will be explained later in this thesis.
+In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This however requires some modifications of the line search conditions. This line search conditions are known as the Armijo and weak Wolfe line search conditions and they will be explained later in this thesis.
 
 \section{L-BFGS}
 
-$L-BFGS$ stands for Limited-memory $BFGS$. This algorithm approximates $BFGS$ using only a limited amout of computer memory to approximate the inverse of the Hessian $B$. So instead of storing a dense $n \times n$ matrix, $L-BFGS$ keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand. \footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priori what choice of $m$ will provide the best results} It is for this reason that during the first $m$ iterations, $BFGS$ and $L-BFGS$ produce exactly the same search directions.
+$L-BFGS$ stands for Limited-memory $BFGS$. This algorithm approximates $BFGS$ using only a limited amout of computer memory to approximate the inverse of the Hessian $B$. Instead of storing a dense $n \times n$ matrix, $L-BFGS$ keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand.\footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priori what choice of $m$ will provide the best results} It is for this reason that during the first $m$ iterations, $BFGS$ and $L-BFGS$ produce exactly the same search directions.
 
 Because of this construction, the $L-BFGS$ algorithm is less computationally intensive and it only requires $\mathcal{O}(mn)$ operations per iteration. So it is much better suited for problems where the number of dimensions $n$ is large. For this reason it is the algorithm of choice in this thesis.
 
 \section{L-BFGS-B}
 
-Finally $L-BFGS-B$ comes naturally as an extension of $L-BFGS$. The $B$ stands for the inclusion of Boundaries.  $L-BFGS-B$ requires two extra steps on top of $L-BFGS$. First, a gradient projection that reduces the dimensionality of the problem. Depending on the problem, the gradient projection could potentially save a lot of iterations by eliminating those variables that are at bound at the optimum. After that, the subspace minimization; here, during the search step phase the step length is restricted as much as necessary in order to remain within the box defined by \ref{mainproblem}.
+Finally $L-BFGS-B$ comes naturally as an extension of $L-BFGS$. The $B$ stands for the inclusion of Boundaries.  $L-BFGS-B$ requires two extra steps on top of $L-BFGS$. First, there is a step called \emph{gradient projection} that reduces the dimensionality of the problem. Depending on the problem, the gradient projection could potentially save a lot of iterations by eliminating those variables that are at bound at the optimum thus reducing the initial dimensionality of the problem and the number of iterations and running time. After this \emph{gradient projection} comes the second step or \emph{subspace minimization}. During the \emph{subspace minimization} phase, an approximate quadratic model of \ref{mainproblem} is solved iteratively in a similar way that the original $L-BFGS$ algorithm is solved. The only difference is that during the search step phase the step length is restricted as much as necessary in order to remain within the box defined by \ref{mainproblem}.
 
 \subsection{Gradient Projection}
 The original algorithm was created for the case when $n$ is large and $f$ is smooth. Its first step is a gradient projection similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are on either their lower or upper bounds. The active set defined at point $x^*$ is:
@@ -107,7 +104,7 @@ The original algorithm was created for the case when $n$ is large and $f$ is smo
   \end{aligned}
 \end{equation}
 
-Working with this active set is efficient in large scale problems. A pure line search algorithm would have to choose a step length short enough to remain within the box defined by $u_i$ and $l_i$. So if at the optimum, a large number $\mathcal{B}$ of variables are either on the lower or the upper bound. At least a number $\mathcal{B}$ of iterations might be needed. Gradient projection tries to reduce this number of iterations. In the best case, only $1$ iteration is needed instead of $\mathcal{B}$.
+Working with this active set is more efficient in large scale problems. A pure line search algorithm would have to choose a step length short enough to remain within the box defined by $u_i$ and $l_i$. So if at the optimum, a large number $\mathcal{B}$ of variables are either on the lower or the upper bound. At least a number $\mathcal{B}$ of iterations might be needed. Gradient projection tries to reduce this number of iterations. In the best case, only $1$ iteration is needed instead of $\mathcal{B}$.
 
 Gradient projection works on the approximation model:
 
@@ -119,7 +116,7 @@ Gradient projection works on the approximation model:
 
 where $H_k$ is a $L-BFGS-B$ approximation to the Hessian $\nabla^2 f$ stored in the implicit way defined by $L-BFGS$.
 
-In this first stage of the algorithm a piecewise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piecewise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piecewise gradient projection path is known as the 'Cauchy point' $x^c$.
+In this first stage of the algorithm a piecewise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piecewise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piecewise gradient projection path is known as the ``Cauchy point'' $x^c$.
 
 \begin{figure}
 \begin{center}
@@ -130,11 +127,11 @@ In this first stage of the algorithm a piecewise linear segment starts on the cu
 
 \subsection{Subspace Minimization}
 
-The problem with gradient projection is that its search direction does not take advantage of information provided implicitly by $H_k$, and therefore the speed of convergence is at best linear. It is for this reason that a stage two is necessary. Stage 2 or subspace minimization uses an $L-BFGS$ implicit approximation of the Inverse Hessian matrix restricted to the free variables that are not in the active set $\mathcal{A}(x^c)$.
+The problem with gradient projection is that its search direction does not take advantage of information provided implicitly by the Hessian $H_k$, and therefore the speed of convergence is at best linear. It is for this reason that a stage two is necessary. Stage 2 or subspace minimization uses an $L-BFGS$ implicit approximation of the Inverse Hessian matrix restricted to the free variables that are not in the active set $\mathcal{A}(x^c)$.
 
-The idea at a higher level is to solve the constrained problem \ref{themodel}, but only on those dimensions that are free. The starting point for this new problem will be the previously found Cauchy point $x^c$, the $L-BFGS$ approximation will provide a new search direction $\hat{d}^u$ that takes implicit advantage of second order approximations of the Hessian matrix.
+The idea at a higher level is to solve the constrained problem \ref{themodel}, but only on those dimensions that are free. The starting point for this new stage will be the previously found Cauchy point $x^c$, the $L-BFGS$ algorithm provides a new search direction $\hat{d}^u$ that takes implicit advantage of second order approximations of the Hessian matrix.
 
-The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ (the step length) is chosen so that the new point $\bar{x}_i$ satisfies weak wolfe descent and curvature conditions, A third restriction on the step length is added so that the next iteration stays feasible. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails a new gradient projection and subspace minimization will be needed.
+The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ (the step length) is chosen so that the new point $\bar{x}_i$ satisfies Armijo and weak wolfe descent and curvature conditions, A third restriction on the step length is added so that the next iteration stays feasible. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails a new gradient projection and subspace minimization will be needed.
 
 \chapter{Modifications to the L-BFGS-B algorithm}
 

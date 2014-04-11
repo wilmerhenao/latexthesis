@@ -1,4 +1,4 @@
-\begin{thebibliography}{11}
+\begin{thebibliography}{16}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -14,10 +14,50 @@ Richard~H. Byrd, Peihuang Lu, Jorge Nocedal, and Ci~You Zhu.
 \newblock \doi{10.1137/0916069}.
 \newblock URL \url{http://dx.doi.org/10.1137/0916069}.
 
+\bibitem[Broyden(1970)]{Broyden}
+C.~G. Broyden.
+\newblock The convergence of a class of double-rank minimization algorithms.
+  {II}. {T}he new algorithm.
+\newblock \emph{J. Inst. Math. Appl.}, 6:\penalty0 222--231, 1970.
+\newblock ISSN 0020-2932.
+
+\bibitem[Fletcher(1970)]{Fletcher}
+R.~Fletcher.
+\newblock A new approach to variable metric algorithms.
+\newblock \emph{The Computer Journal}, 13\penalty0 (3):\penalty0 317--322,
+  1970.
+\newblock \doi{10.1093/comjnl/13.3.317}.
+\newblock URL \url{http://comjnl.oxfordjournals.org/content/13/3/317.abstract}.
+
+\bibitem[Goldfarb(1970)]{Goldfarb}
+Donald Goldfarb.
+\newblock A family of variable-metric methods derived by variational means.
+\newblock \emph{Math. Comp.}, 24:\penalty0 23--26, 1970.
+\newblock ISSN 0025-5718.
+
+\bibitem[Shanno(1970)]{Shanno}
+D.~F. Shanno.
+\newblock Conditioning of quasi-{N}ewton methods for function minimization.
+\newblock \emph{Math. Comp.}, 24:\penalty0 647--656, 1970.
+\newblock ISSN 0025-5718.
+
+\bibitem[Nocedal(1980)]{MR572855}
+Jorge Nocedal.
+\newblock Updating quasi-{N}ewton matrices with limited storage.
+\newblock \emph{Math. Comp.}, 35\penalty0 (151):\penalty0 773--782, 1980.
+\newblock ISSN 0025-5718.
+\newblock \doi{10.2307/2006193}.
+\newblock URL \url{http://dx.doi.org/10.2307/2006193}.
+
 \bibitem[Zhu et~al.(2011)Zhu, Byrd, Nocedal, and Morales]{lbfgsbsoftware}
 Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
 \newblock Lbfgsb 3.0.
 \newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
+
+\bibitem[Henao(2014)]{lbfgsbNS}
+Wilmer Henao.
+\newblock lbfgsbns.
+\newblock \url{https://github.com/wilmerhenao/lbfgsbNS}, 2014.
 
 \bibitem[Zhu et~al.(1997)Zhu, Byrd, Lu, and Nocedal]{codepaper}
 Ciyou Zhu, Richard~H. Byrd, Peihuang Lu, and Jorge Nocedal.
@@ -74,11 +114,6 @@ Adrian~S. Lewis and Michael~L. Overton.
 \newblock ISSN 0025-5610.
 \newblock \doi{10.1007/s10107-012-0514-2}.
 \newblock URL \url{http://dx.doi.org/10.1007/s10107-012-0514-2}.
-
-\bibitem[Henao(2014)]{lbfgsbNS}
-Wilmer Henao.
-\newblock lbfgsbns.
-\newblock \url{https://github.com/wilmerhenao/lbfgsbNS}, 2014.
 
 \bibitem[Overton et~al.(2012)Overton, Burke, and Skajaa]{hanso}
 Michael Overton, James Burke, and Anders Skajaa.

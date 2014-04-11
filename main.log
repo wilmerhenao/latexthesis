@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  7 APR 2014 01:15
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  10 APR 2014 23:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,12 +818,12 @@ LaTeX Info: Redefining \nameref on input line 39.
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 90.
+LaTeX Font Info:    Try loading font information for U+msa on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 90.
+LaTeX Font Info:    Try loading font information for U+msb on input line 91.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -836,7 +836,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
  Declaration of Authorship
 ------------------------------------------------------------------------------
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--135
+Underfull \hbox (badness 10000) in paragraph at lines 136--136
 
  []
 
@@ -865,7 +865,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 135--135
 
  [5]
 ! Misplaced alignment tab character &.
-l.211 \textbf{LAH} &
+l.212 \textbf{LAH} &
                      \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -875,7 +875,7 @@ you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 211--214
+Underfull \hbox (badness 10000) in paragraph at lines 212--215
 
  []
 
@@ -890,6 +890,17 @@ Chapter 1.
 ------------------------------------------------------------------------------
  1 Introduction
 ------------------------------------------------------------------------------
+! Undefined control sequence.
+\fortran ->\proglang 
+                     {Fortran}
+l.35 is implemented in a well known \fortran
+                                             software package
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [1
 
 
@@ -901,14 +912,14 @@ Chapter 2.
 ------------------------------------------------------------------------------
 [3
 
-] [4] <Figures/cajapresentation2.png, id=236, 903.375pt x 702.625pt>
+] [4] <Figures/cajapresentation2.png, id=252, 903.375pt x 702.625pt>
 File: Figures/cajapresentation2.png Graphic file (type png)
 
 <use Figures/cajapresentation2.png>
-Package pdftex.def Info: Figures/cajapresentation2.png used on input line 126.
+Package pdftex.def Info: Figures/cajapresentation2.png used on input line 123.
 (pdftex.def)             Requested size: 451.6864pt x 351.31163pt.
 
-Overfull \hbox (34.21333pt too wide) in paragraph at lines 126--127
+Overfull \hbox (34.21333pt too wide) in paragraph at lines 123--124
  [] 
  []
 
@@ -919,11 +930,11 @@ Chapter 3.
 ------------------------------------------------------------------------------
 [7
 
-] [8] [9] [10] <Figures/CentralPath.png, id=294, 844.15375pt x 514.92375pt>
+] [8] [9] [10] <Figures/CentralPath.png, id=311, 844.15375pt x 514.92375pt>
 File: Figures/CentralPath.png Graphic file (type png)
 
 <use Figures/CentralPath.png>
-Package pdftex.def Info: Figures/CentralPath.png used on input line 242.
+Package pdftex.def Info: Figures/CentralPath.png used on input line 239.
 (pdftex.def)             Requested size: 253.24808pt x 154.4783pt.
  [11] [12 <./Figures/CentralPath.png>]
 Chapter 4.
@@ -932,18 +943,18 @@ Chapter 4.
 ------------------------------------------------------------------------------
 [13
 
-] <Figures/convergence.png, id=315, 650.43pt x 653.44125pt>
+] <Figures/convergence.png, id=331, 650.43pt x 653.44125pt>
 File: Figures/convergence.png Graphic file (type png)
 
 <use Figures/convergence.png>
-Package pdftex.def Info: Figures/convergence.png used on input line 278.
+Package pdftex.def Info: Figures/convergence.png used on input line 275.
 (pdftex.def)             Requested size: 195.1305pt x 196.03387pt.
 
-<Figures/hist3dmpniter.png, id=316, 671.50874pt x 669.50125pt>
+<Figures/hist3dmpniter.png, id=332, 671.50874pt x 669.50125pt>
 File: Figures/hist3dmpniter.png Graphic file (type png)
 
 <use Figures/hist3dmpniter.png>
-Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 284.
+Package pdftex.def Info: Figures/hist3dmpniter.png used on input line 281.
 (pdftex.def)             Requested size: 201.45418pt x 200.85191pt.
 ) (./Appendices/AppendixA.tex [14 <./Figures/convergence.png> <./Figures/hist3d
 mpniter.png>]
@@ -979,21 +990,21 @@ File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
 
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
  [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 22DB44FDC9B217D217E86429BFB944DC;4670.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 278.
+(rerunfilecheck)             Checksum: 55A83E50EF1DE84973EAD5DD6030BC7E;4670.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
  ) 
 Here is how much of TeX's memory you used:
- 15887 strings out of 493307
- 218565 string characters out of 6139906
- 513015 words of memory out of 5000000
- 18914 multiletter control sequences out of 15000+600000
+ 15910 strings out of 493307
+ 218886 string characters out of 6139906
+ 512163 words of memory out of 5000000
+ 18931 multiletter control sequences out of 15000+600000
  17194 words of font info for 65 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,58p,1436b,1886s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1019,10 +1030,10 @@ blic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
 /symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on main.pdf (28 pages, 640711 bytes).
+Output written on main.pdf (28 pages, 644138 bytes).
 PDF statistics:
- 631 PDF objects out of 1000 (max. 8388607)
- 567 compressed objects within 6 object streams
- 218 named destinations out of 1000 (max. 500000)
+ 651 PDF objects out of 1000 (max. 8388607)
+ 587 compressed objects within 6 object streams
+ 224 named destinations out of 1000 (max. 500000)
  237 words of extra memory for PDF output out of 10000 (max. 10000000)
 

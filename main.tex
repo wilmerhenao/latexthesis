@@ -28,7 +28,7 @@
 \documentclass[11pt, a4paper, oneside]{Thesis} % Paper size, default font size and one-sided paper
 
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-
+%\usepackage{minted}
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \usepackage[ruled, vlined, oldcommands, norelsize]{algorithm2e} % Use the algorithm package
 \usepackage{listings}
@@ -50,7 +50,7 @@
 \pagestyle{fancy} % Finally, use the "fancy" page style to implement the FancyHdr headers
 
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % New command to make the lines in the title page
-
+\newcommand{\fortran}{\proglang{Fortran}}
 % Definitions
 
 \def \univname {New York University}
@@ -61,6 +61,7 @@
 \def \groupname {Courant Institute of Mathematical Sciences}
 \def \deptname {Department of Mathematics}
 \def \subjectname {Optimization}
+
 
 % PDF meta-data
 \hypersetup{pdftitle={\ttitle}}
