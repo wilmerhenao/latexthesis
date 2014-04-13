@@ -5,29 +5,30 @@
 \contentsline {chapter}{Acknowledgements}{iii}{dummy.3}
 \vspace {1em}
 \contentsline {chapter}{Contents}{iv}{dummy.4}
+\contentsline {chapter}{List of Figures}{vi}{dummy.6}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.6}
-\contentsline {chapter}{\numberline {2}L-BFGS-B}{3}{chapter.8}
-\contentsline {section}{\numberline {2.1}BFGS}{3}{section.9}
-\contentsline {section}{\numberline {2.2}L-BFGS}{4}{section.14}
-\contentsline {section}{\numberline {2.3}L-BFGS-B}{4}{section.16}
-\contentsline {subsection}{\numberline {2.3.1}Gradient Projection}{4}{subsection.17}
-\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.21}
-\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.22}
-\contentsline {section}{\numberline {3.1}The Wolfe conditions}{7}{section.23}
-\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.28}
-\contentsline {section}{\numberline {3.3}The termination condition}{10}{section.31}
-\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{11}{subsection.32}
-\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{11}{subsection.34}
-\contentsline {chapter}{\numberline {4}the solution test functions}{14}{chapter.37}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.8}
+\contentsline {chapter}{\numberline {2}L-BFGS-B}{3}{chapter.10}
+\contentsline {section}{\numberline {2.1}BFGS}{3}{section.11}
+\contentsline {section}{\numberline {2.2}L-BFGS}{4}{section.16}
+\contentsline {section}{\numberline {2.3}L-BFGS-B}{4}{section.18}
+\contentsline {subsection}{\numberline {2.3.1}Gradient Projection}{4}{subsection.19}
+\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.23}
+\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.24}
+\contentsline {section}{\numberline {3.1}The Armijo and Wolfe conditions}{7}{section.25}
+\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.31}
+\contentsline {section}{\numberline {3.3}The Termination Condition}{10}{section.34}
+\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{11}{subsection.36}
+\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{12}{subsection.38}
+\contentsline {chapter}{\numberline {4}the solution test functions}{14}{chapter.43}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Samples of Code}{16}{appendix.41}
-\contentsline {section}{\numberline {A.1}Ignoring old code}{16}{section.42}
-\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{16}{section.48}
-\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{17}{section.73}
-\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{17}{section.97}
-\contentsline {chapter}{\numberline {B}Automation}{19}{appendix.131}
-\contentsline {section}{\numberline {B.1}Script Generator}{19}{section.132}
-\contentsline {section}{\numberline {B.2}PBS File Sample}{20}{section.161}
+\contentsline {chapter}{\numberline {A}Samples of Code}{16}{appendix.47}
+\contentsline {section}{\numberline {A.1}Ignoring old code}{16}{section.48}
+\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{16}{section.54}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{17}{section.79}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{17}{section.103}
+\contentsline {chapter}{\numberline {B}Automation}{19}{appendix.137}
+\contentsline {section}{\numberline {B.1}Script Generator}{19}{section.138}
+\contentsline {section}{\numberline {B.2}PBS File Sample}{20}{section.167}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{21}{dummy.185}
+\contentsline {chapter}{Bibliography}{21}{dummy.191}
