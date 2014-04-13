@@ -83,7 +83,7 @@ $BFGS$ is a standard tool for optimization of smooth functions.\citep{nocedal} I
 
 where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis \footnote{a different starting matrix is suggested in Nocedal's book \citep{nocedal}}.  $BFGS$ exhibits superlinear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration. \citep{nocedal}
 
-In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This however requires some modifications of the line search conditions. This line search conditions are known as the Armijo and weak Wolfe line search conditions and they will be explained later in this thesis.
+In the case of Non-Smooth functions. $BFGS$ typically succeeds in finding a local minimizer. This however requires some modifications of the line search conditions. This line search conditions are known as the Armijo and weak Wolfe line search conditions and they are a set of inequalities for computing an appropriate step length that reduces the objective function ``sufficiently''. These inequalities will be explained later in \ref{wolfeconditions}
 
 \section{L-BFGS}
 
@@ -137,31 +137,59 @@ The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where 
 
 We made three main changes to the original $L-BFGS-B$ algorithm. They concern the line search Wolfe conditions, the line search methodology, and the termination condition.
 
-\section{The Wolfe conditions}
+\section{The Wolfe conditions} \label{wolfeconditions}
 
-Probably the most important change made to the original code was the change in the curvature condition. It is accepted that the Wolfe conditions work very well whenever the function $f$ is smooth \citep{MR1855221}. Originally there are two Wolfe conditions: one of them is the Armijo condition, also known as the sufficient decrease requirement. The other one is the curvature condition, of which the most popular version is the ``strong Wolfe'' curvature condition:
+Probably the most important change made to the original code was the change in the curvature condition. It is accepted that the Armijo and Wolfe conditions work very well whenever the function $f$ is smooth \citep{MR1855221}. The Armijo condition, also known as the sufficient decrease requirement in the direction $d_k$ is defined as
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
-    |d_k^T \nabla f(x_k + \alpha _k d_k)| \leq |d_k^T \nabla f(x_k)|
+    f(x_k + \alpha_p d_k) \leq f(x_k) + c_1 \alpha_k d_k^T \nabla f(x_k)
+  \end{aligned}
+\end{equation*}
+
+where $0 < c_1 < 1$ is a constant usually $c_1 = 10^{-4}$\citep{nocedal}. This condition guarantees that the function continues decreasing and eventually reaches the optimum. It is possible to continue decreasing without ever reaching the optimum if the armijo condition is not required as is shown in figure~\ref{armijograph}
+
+\begin{figure} 
+\begin{center}
+\includegraphics[scale=0.5]{Figures/armijo.png}
+\caption[grapharmijo]{In this figure, the iterations always reduce the value of the function a little bit, but never enough to go below $12$}
+\label{armijograph}
+\end{center}
+\end{figure}
+
+The other condition and the one that was actually changed, is the curvature condition, of which the most popular version is the ``strong Wolfe'' curvature condition:
+
+\begin{equation} \label{strogwolfeq}
+  \begin{aligned}
+    |d_k^T \nabla f(x_k + \alpha _k d_k)| \leq c_2 |d_k^T \nabla f(x_k)|
   \end{aligned}
 \end{equation}
 
-Where $d_k$ represents the search direction. The strong Wolfe condition is natural for smooth optimization. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'', but the problem is that it does not work well for the Non-Smooth case. This is because near the minimal points, there may be abrupt changes in the gradient. For example the curvature condition can never be satisfied when $f(x) = |x|$, because the slope never becomes flat. The ``weak wolfe'' condition
+Where $d_k$ represents the search direction and $c_2$ is a constant such that $0 < c_1 < c_2 < 1$ and is usually $c_2 = 0.9$\citep{nocedal}. The strong Wolfe condition is a natural choice for optimization of smooth functions. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'' as illustrated in figure~\ref{wolfefigure}, but the problem is that the condition as it is, does not work well for the Non-Smooth case. This is because near the minimal points there may be abrupt changes in the gradient. a good example of this problem is the function $f(x) = |x|$, where the slope never becomes flat near the optimal point.
+
+\begin{figure} 
+\begin{center}
+\includegraphics[scale=0.65]{Figures/wolfe.png}
+\caption[graphwolfe]{The logic of Wolfe conditions is this. Starting at point A. Point B is a step in the right direction, however, point C offers a ``flatter'' tangent and should be closer to the optimum which has a tangent of zero (Smooth case)}
+\label{wolfefigure}
+\end{center}
+\end{figure}
+
+The weak Wolfe condition defined as
 
 \begin{equation}
   \begin{aligned}
-    d_k^T \nabla f(x_k + \alpha _k d_k) \geq d_k^T \nabla f(x_k)
+    d_k^T \nabla f(x_k + \alpha _k d_k) \geq c_2 d_k^T \nabla f(x_k)
   \end{aligned}
 \end{equation}
 
-is all that is needed to guarantee that the $BFGS$ updated inverse Hessian approximation is positive definite \citep{overtonlewis}. This weak version is the one that will be used in this thesis. It was changed inside of the line search algorithm explained in the next section.
+can be used in the Non-Smooth case. It is all that is needed to guarantee that the $BFGS$ updated inverse Hessian approximation is positive definite \citep{overtonlewis}. This weak version is suited for the problems in this thesis. It was changed inside of the line search algorithm explained in the next section.
 
 \section{The line search methodology}
 
-The original $FORTRAN$ code \citep{lbfgsbsoftware} contains a line search subroutine. This subroutine first establishes a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$. This part of the line search was not changed in this thesis. The next part of the line search is finding a step length that satisfies a decrease and a curvature condition (aka. Armijo and Wolfe conditions). The next procedure was completely changed for the purpose of this thesis. and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \ref{ignoredcode} of $lbfgsnomessages.f90$ and it has been left commented out in order to show how this call was before the modifications.
+The original $FORTRAN$ software\citep{lbfgsbsoftware} contains a line search subroutine. This subroutine first establishes a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$. This part of the line search was not changed in this thesis. The next part of the line search is finding a step length that satisfies a decrease and a curvature condition (the Armijo and Wolfe conditions from the previous section). The next procedure was completely changed for the purpose of this thesis. and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \ref{ignoredcode} of $lbfgsnomessages.f90$ and it has been left commented out in order to show how this call was before the modifications.
 
-From then on, the line search required a lot of modifications. This new code is available online \citep{lbfgsbNS}
+From then on, the line search required a lot of modifications. This new code is available online\citep{lbfgsbNS}
 
 The original line search was a two stage process. In the first stage the interval was chosen so that it contains a minimizer of the modified function, which is nothing but a modification of the Armijo condition.
 

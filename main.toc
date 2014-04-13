@@ -15,19 +15,19 @@
 \contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.21}
 \contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.22}
 \contentsline {section}{\numberline {3.1}The Wolfe conditions}{7}{section.23}
-\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.26}
-\contentsline {section}{\numberline {3.3}The termination condition}{9}{section.29}
-\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{9}{subsection.30}
-\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{10}{subsection.32}
-\contentsline {chapter}{\numberline {4}the solution test functions}{13}{chapter.35}
+\contentsline {section}{\numberline {3.2}The line search methodology}{8}{section.28}
+\contentsline {section}{\numberline {3.3}The termination condition}{10}{section.31}
+\contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{11}{subsection.32}
+\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{11}{subsection.34}
+\contentsline {chapter}{\numberline {4}the solution test functions}{14}{chapter.37}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Samples of Code}{15}{appendix.39}
-\contentsline {section}{\numberline {A.1}Ignoring old code}{15}{section.40}
-\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{15}{section.46}
-\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{16}{section.71}
-\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{16}{section.95}
-\contentsline {chapter}{\numberline {B}Automation}{18}{appendix.129}
-\contentsline {section}{\numberline {B.1}Script Generator}{18}{section.130}
-\contentsline {section}{\numberline {B.2}PBS File Sample}{19}{section.159}
+\contentsline {chapter}{\numberline {A}Samples of Code}{16}{appendix.41}
+\contentsline {section}{\numberline {A.1}Ignoring old code}{16}{section.42}
+\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{16}{section.48}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{17}{section.73}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{17}{section.97}
+\contentsline {chapter}{\numberline {B}Automation}{19}{appendix.131}
+\contentsline {section}{\numberline {B.1}Script Generator}{19}{section.132}
+\contentsline {section}{\numberline {B.2}PBS File Sample}{20}{section.161}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{20}{dummy.183}
+\contentsline {chapter}{Bibliography}{21}{dummy.185}
