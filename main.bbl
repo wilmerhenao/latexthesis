@@ -1,4 +1,4 @@
-\begin{thebibliography}{16}
+\begin{thebibliography}{17}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -125,5 +125,12 @@ Anders Skajaa.
 \newblock Limited memory bfgs for nonsmooth optimization.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
+
+\bibitem[Kaku(2011)]{kaku}
+Allan Kaku.
+\newblock Implementation of high-precision arithmetic in the bfgs method for
+  nonsmooth optimization.
+\newblock Master's thesis, New York University, Courant Institute of
+  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
 
 \end{thebibliography}

@@ -20,15 +20,19 @@
 \contentsline {section}{\numberline {3.3}The Termination Condition}{10}{section.34}
 \contentsline {subsection}{\numberline {3.3.1}Description of the Solution}{11}{subsection.36}
 \contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{12}{subsection.38}
-\contentsline {chapter}{\numberline {4}the solution test functions}{14}{chapter.43}
+\contentsline {chapter}{\numberline {4}Solution Tests}{14}{chapter.43}
+\contentsline {section}{\numberline {4.1}Exit Conditions}{14}{section.44}
+\contentsline {section}{\numberline {4.2}Modified Rosenbrock Function}{15}{section.46}
+\contentsline {section}{\numberline {4.3}Nesterov's Chebyshev-Rosenbrock Modified function}{19}{section.57}
+\contentsline {chapter}{\numberline {5}Conclusions}{21}{chapter.62}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Samples of Code}{16}{appendix.47}
-\contentsline {section}{\numberline {A.1}Ignoring old code}{16}{section.48}
-\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{16}{section.54}
-\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{17}{section.79}
-\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{17}{section.103}
-\contentsline {chapter}{\numberline {B}Automation}{19}{appendix.137}
-\contentsline {section}{\numberline {B.1}Script Generator}{19}{section.138}
-\contentsline {section}{\numberline {B.2}PBS File Sample}{20}{section.167}
+\contentsline {chapter}{\numberline {A}Samples of Code}{23}{appendix.64}
+\contentsline {section}{\numberline {A.1}Ignoring old code}{23}{section.65}
+\contentsline {section}{\numberline {A.2}Old Stage 1 of the line search}{23}{section.71}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic line search sample}{24}{section.96}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{24}{section.120}
+\contentsline {chapter}{\numberline {B}Automation}{26}{appendix.154}
+\contentsline {section}{\numberline {B.1}Script Generator}{26}{section.155}
+\contentsline {section}{\numberline {B.2}PBS File Sample}{27}{section.184}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{21}{dummy.191}
+\contentsline {chapter}{Bibliography}{28}{dummy.208}

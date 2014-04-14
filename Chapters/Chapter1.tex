@@ -210,7 +210,7 @@ Those three steps make up the original subroutine. But there is a problem with t
 
 The solution to this particular issue is to use a line search similar to the one implemented in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated. And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times \footnote{for all practical purposes this is considered a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution (the maximum stablished in the first step of the original line search). This version of the bisection and expansion is found in between lines $4425$ and $4456$ of \texttt{lbfgsbnomessages.f90}\ref{linesearchww} 
 
-\section{The Termination Condition}
+\section{The Termination Condition} \label{terminator}
 
 One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, $L-BFGS-B$'s way to check whether the algorithm has converged, is by using the \emph{projected gradient} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from the left.
 
@@ -273,17 +273,46 @@ Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the
 
 And this is very important, because both steps require a solution of a system of equations and part of this solution can be recycled. Mehrotra's algorithm requires only one Cholesky factorization for the first stage. This factorization is reused during the second stage. By reusing the factorization, the performance is improved.
 
-\chapter{the solution test functions}
+\chapter{Solution Tests}
 
-The implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files using a PBS generator script \ref{pbsgenerator}. This script generators created PBS files which in turn run bash scripts \ref{pbsfile}. The main reason to run scripts this way is that it achieves parallelism and the system sends confirmation e-mails and statistics about the different stages of the processes.
+The implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files using a PBS generator script \ref{pbsgenerator}. This script generator created PBS files which in turn run bash scripts \ref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original $L-BFGS-B$ optimizer displays different messages depending on the initial condition that triggered the exit.  
 
-First of all, several functions were evaluated. The most important function to test this non-Smooth optimizer is a modified version of the rosenbrock function:
+\section{Exit Conditions}
 
-\begin{equation}
+The following is a list of some of the other most common exit messages in the original $L-BFGS-B$ optimizer.
+
+\begin{itemize}
+
+\item 'ABNORMAL\_TERMINATION\_IN\_LNSRCH' This message means that there was a problem and a premature exit was required. It is typically found in Non-Smooth functions where the cubic interpolation is impossible. But the message is also symptomatic of other problems.
+
+\item 'CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL': Means that convergence was achieved because the norm of the projected gradient is small enough. Notice that this convergence message does not apply to $L-BFGS-B-NS$ because of particular requirements for Non-Smooth functions involving the convex hull instead\ref{terminator}.
+\item 'CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH': This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times machine $\epsilon$.
+
+\item 'ERROR: N .LE. 0': This is one of many error checks performed at the beginning of the execution.
+
+\item 'ERROR: NO FEASIBLE SOLUTION': An error condition for those cases when the solution is not feasible. This is because the original $L-BFGS-B$ optimizer allows oppen boxes of type [$l$, $\infty$[, ]$-\infty$, $u$] and ]$-\infty$, $\infty$[
+
+\item 'WARNING: ROUNDING ERRORS PREVENT PROGRESS': If there is a rounding error issue
+
+\end{itemize}
+
+on top of these messages, $L-BFGS-B-NS$ introduced a new message for a succesful exit from its termination condition\ref{terminator}
+
+\begin{itemize}
+\item 'CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL' What this means is that all termination conditions\ref{terminator} were satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to finish the execution of the algorithm}.
+\end{itemize}
+
+\section{Modified Rosenbrock Function}
+
+With those tools in hand, it is possible to run a few tests of the algorithm. Several functions were evaluated. One of them is a modified version of the Rosenbrock function problem\footnote{rosenbrock}:
+
+\begin{equation} \label{modifiedrosenbrock}
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
 \end{equation}
 
-Where the value of $p$ changes the behaviour of the optimizer. This function can be proven to be lipschitz continuous whenever $p > 1$ if restricted to the domain defined by  
+Here, the properties of the function depend on the value of $p$\footnote{The original Rosenbrock function would have a value of $p = 2$}. This function can be proven to be locally lipschitz continuous whenever $p \geq 1$. In particular it is Locally Lipschitz continuous if restricted to a finite domain of the type $l$, $u$, similar to the one defined on\ref{mainproblem}.
+
+The region to be tested is defined by the ``box'' with boundaries
 
 \begin{equation}
   \begin{aligned}
@@ -295,6 +324,99 @@ Where the value of $p$ changes the behaviour of the optimizer. This function can
   \end{aligned}
 \end{equation}
 
+And the initial point was chosen to be the midpoint of the box, plus a small perturbation chosen so that the search direction does not reach the boundary of several dimensions in one stroke.
+
+\begin{equation}
+  \begin{aligned}
+    x_i = \frac{u_i - l_i}{2} - (1 - 2^{1 - i})
+  \end{aligned}
+\end{equation}
+
+The problem is smooth for values of $p$ close to $2$, but as the values of $p$ approach $1$, the original $L-BFGS-B$ optimizer should start to have problems. In order to check for that, we plug the Modified Rosenbrock function into the original $L-BFGS-B$ optimizer with $p$ parameters varying between $2$ and $1$. 
+
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.58]{Figures/Nocedalp2.png}
+\caption[Modified Rosenbrock with $p = 2$]{Satisfactory results for the original algorithm $L-BFGS-B$ applied to the Modified Rosenbrock function with $p = 2$}
+\label{pequal2}
+\end{center}
+\end{figure}
+
+
+For a value of $p = 2$, the original $L-BFGS-B$ optimizer does not have too many problems and it yields good results as seen on the resulting table\ref{pequal2}.
+
+This exercise tested three different values of $m$, where $m$ stands for the steps in memory of $L-BFGS$. The steps that were tested are $5$, $10$ and $20$, because they cover more or less the set of recommended values. The number of dimensions in this exercise in particular ranges from $2$ to $1000$ and covering many values in between. The column $nfg$ stands for the number of iterations taken in order to finish the algorithm and $f$ stands for the optimal value that was achieved during the optimization. The two last columns stand for the norm of the projected gradient and the final message when the algorithm finished.
+
+In all cases the projected gradient has a very small norm. When this norm is tiniest the convergence is achieved because the norm of the projected gradient is smaller than the threshold. In other cases, the program exits succesfully after a relative reduction in the size of the function. In other cases, an abnormal termination message is sent to the output.
+
+Notice that in \ref{pequal2} the program sometimes sends a warning message even though the function has converged to a value that more or less is very close to the optimal expected value.  This is because the Rosenbrock function is designed to be very difficult to solve.  Its minimum is located in a banana shaped valley. This valley is very flat and causes a lot of trouble to even the best optimizers.
+
+The overall conclusion from this exercise is that the original $L-BFGS-B$ optimizer works well, for the smooth Rosenbrock case\footnote{The original algorithm solves a modified version of this function \ref{modifiedrosenbrock}, so it is to be expected that the performance is good}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.75]{Figures/abnormalNocedal.png}
+\caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm $L-BFGS-B$ applied to the Modified Rosenbrock function with $p = 1$}
+\label{pequal1}
+\end{center}
+\end{figure}
+
+On the other hand, the value of $p = 1$ has an abnormal line search termination in all of the cases presented. The projected gradient values are always far away from zero. The memory length $m$ of $L-BFGS$, does not have an impact in the final value $f$ of the optimization, but this is because all cases crashed before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same in this table.
+
+By the same token several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ give the most problems to the original algorithm. When $p=1$ the algorithm does not work as seen in \ref{pequal1}\footnote{This is expected because the algorithm is originally designed to handle only smooth functions}.
+
+For intermediate values, the new changes seem to provide better values of $f$. Here is a simple comparison of the algorithm running on $m = 5,10$ for selected values of $p$ \ref{pcomp}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.75]{Figures/ComparisonNewOld.PNG}
+\caption[Comparison of selected values of the Modified Rosenbrock function]{Comparison of the performance of $L-BFGS-B-NS$ vs. the Original version of $L-BFGS-B$ applied to the Modified Rosenbrock function with selected values of p in 1.000 dimensions}
+\label{pcomp}
+\end{center}
+\end{figure}
+
+These are typical values of optimizations for intermediate values of $p$. In the bar graph it is possible to see that values generated via $L-BFGS-B-NS$ are a little better for values of $p$ closer to $1$.
+
+\section{Nesterov's Chebyshev-Rosenbrock Modified function}
+
+This function is a Non-Smooth variation of \texttt{NCR-NS1} which was first introduced in the thesis by Kaku\citep{kaku}. The function is defined very similar to \ref{modifiedrosenbrock}.
+
+\begin{equation} \label{modifiedyurirosen}
+    f(x) = \frac{(x_1 - 1)^2}{4} + \sum_{i = 1}^{n-1} |x_{i+1} - 2x_{i}^2 + 1|^p
+\end{equation}
+
+Where the $p$ is also assigned as a control variable for the Lipschitz Continuity of the function. The problem as stated in Kaku's thesis, is that the manifold defined by the term inside the sum, also known as:
+
+\begin{equation} \label{kakumanifold}
+    M = \{x: x_{i+1} - 2x_i^2 + 1 = 0, i = 1, \hdots, n-1 \}
+\end{equation}
+
+is highly oscillatory in nature, and therefore $BFGS$ methods require many iterations to converge. In particular, the next table tries to slice the number of iterations required to finish the algorithm given different combinations of $p$ and $n$, the number of dimensions\ref{yuripn}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.6]{Figures/yurirosenpn.PNG}
+\caption[Comparison of selected values of the Modified NCR-NS1 function sliced by p and n]{Comparison of the number of iterations in order to converge for the Modified NCR-NS1 functions sliced by the number of dimensions $n$ and the $p$ parameter that controls the Smoothness of the function}
+\label{yuripn}
+\end{center}
+\end{figure} 
+
+The results show that the number of iterations increases significatively with smaller values of $p$, and in general with larger values of the dimension $n$.
+
+This table was also sliced with the parameters $n$ and $m$ in figure \ref{yurimn}.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.9]{Figures/yurirosenmn.PNG}
+\caption[Comparison of selected values of the Modified NCR-NS1 function sliced by m and n]{Comparison of the number of iterations in order to converge for the Modified NCR-NS1 functions sliced by the number of dimensions $n$ and the memory lag $m$}
+\label{yurimn}
+\end{center}
+\end{figure} 
+
+\chapter{Conclusions}
+
+%-------------------------------------------------------------------------
 and in fact, whenever the function is restricted to a finite domain this function will be lipschitz continuous for $p > 1$. Whenever $p > 1$ the function $f(z) = |z|^p$ is zero $0$ around zero because the derivative $p |z| ^{p-1}$ is zero whenever $z$ tends to zero from the right. (this is also the case from the left because it is an even function). However the second derivative will not be as nice.
 
 For the case when $p \leq 1$ the second derivative tends to infinity. $\displaystyle \lim_{x \to 0^+} {f' = \infty}$. Which is already well known given the "heavyside" look of $f(z) = |z|$.

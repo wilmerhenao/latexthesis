@@ -1,0 +1,2844 @@
+5 2 2
+ final results yurirosen run:           5           2   2.0000000000000000                1           2   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 2
+ final results yurirosen run:          10           2   2.0000000000000000                1           2   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 2
+ final results yurirosen run:          20           2   2.0000000000000000                1           2   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.1
+ final results yurirosen run:           5           2   1.1000000000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.1
+ final results yurirosen run:          10           2   1.1000000000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.1
+ final results yurirosen run:          20           2   1.1000000000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.01
+ final results yurirosen run:           5           2   1.0100000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.01
+ final results yurirosen run:          10           2   1.0100000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.01
+ final results yurirosen run:          20           2   1.0100000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.001
+ final results yurirosen run:           5           2   1.0009999999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.001
+ final results yurirosen run:          10           2   1.0009999999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.001
+ final results yurirosen run:          20           2   1.0009999999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.0001
+ final results yurirosen run:           5           2   1.0001000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.0001
+ final results yurirosen run:          10           2   1.0001000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.0001
+ final results yurirosen run:          20           2   1.0001000000000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.00001
+ final results yurirosen run:           5           2   1.0000100000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.00001
+ final results yurirosen run:          10           2   1.0000100000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.00001
+ final results yurirosen run:          20           2   1.0000100000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.000001
+ final results yurirosen run:           5           2   1.0000009999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.000001
+ final results yurirosen run:          10           2   1.0000009999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.000001
+ final results yurirosen run:          20           2   1.0000009999999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.0000001
+ final results yurirosen run:           5           2   1.0000001000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.0000001
+ final results yurirosen run:          10           2   1.0000001000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.0000001
+ final results yurirosen run:          20           2   1.0000001000000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.00000001
+ final results yurirosen run:           5           2   1.0000000099999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.00000001
+ final results yurirosen run:          10           2   1.0000000099999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.00000001
+ final results yurirosen run:          20           2   1.0000000099999999                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.000000001
+ final results yurirosen run:           5           2   1.0000000010000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.000000001
+ final results yurirosen run:          10           2   1.0000000010000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.000000001
+ final results yurirosen run:          20           2   1.0000000010000001                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.0000000001
+ final results yurirosen run:           5           2   1.0000000001000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.0000000001
+ final results yurirosen run:          10           2   1.0000000001000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.0000000001
+ final results yurirosen run:          20           2   1.0000000001000000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 2 1.00000000001
+ final results yurirosen run:           5           2   1.0000000000100000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+10 2 1.00000000001
+ final results yurirosen run:          10           2   1.0000000000100000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+20 2 1.00000000001
+ final results yurirosen run:          20           2   1.0000000000100000                2           3   81.000000000000000        0.0000000000000000        0.0000000000000000      CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+ Final X=
+   1.0000D+01  1.0000D+02
+ Final G=
+   1.8000D+01  0.0000D+00
+5 4 2
+ final results yurirosen run:           5           4   2.0000000000000000               17          22   9305.9334781010330        4.6041684100828206E-006   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  6.6204D-07 -4.6042D-06 -1.0501D+00
+10 4 2
+ final results yurirosen run:          10           4   2.0000000000000000               17          22   9305.9334781010311        1.6402792368808150E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -1.5212D-07 -1.6403D-07 -1.0501D+00
+20 4 2
+ final results yurirosen run:          20           4   2.0000000000000000               17          23   9305.9334781010311        1.3422614021152413E-005   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -3.3575D-06 -1.3423D-05 -1.0501D+00
+5 4 1.1
+ final results yurirosen run:           5           4   1.1000000000000001               41         115   233.98506052791063        5.2942591049958354E-002   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  5.2943D-02  9.2805D-01 -6.0559D-02
+10 4 1.1
+ final results yurirosen run:          10           4   1.1000000000000001               40         108   233.98506052646303        2.9520868776611309E-005   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -2.9521D-05  8.4208D-01 -5.5842D-02
+20 4 1.1
+ final results yurirosen run:          20           4   1.1000000000000001               34          93   233.98506065601524       0.31855740045854319        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  3.1856D-01  1.4434D+00 -8.8426D-02
+5 4 1.01
+ final results yurirosen run:           5           4   1.0100000000000000               44         108   182.36896488482546        3.5803865640689811        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  3.5804D+00 -7.3328D-01  0.0000D+00
+10 4 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0100000000000000               29        1162   182.36896498042543        4.3976514636247890        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  4.3977D+00 -8.6250D-01  0.0000D+00
+20 4 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0100000000000000               26        1143   182.36896802465876        4.5890771308912415        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  4.5891D+00 -8.9276D-01  0.0000D+00
+5 4 1.001
+ final results yurirosen run:           5           4   1.0009999999999999               49         133   178.28157890214757        7.1369747065213991        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01 -7.1370D+00  9.6946D-01  0.0000D+00
+10 4 1.001
+ final results yurirosen run:          10           4   1.0009999999999999               23        1140   178.28293062339270        5.2852520040627624        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1625D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.2853D+00 -9.9459D-01  0.0000D+00
+20 4 1.001
+ final results yurirosen run:          20           4   1.0009999999999999               23         100   178.28301264985481        5.2856530562605499        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1625D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.2857D+00  1.8418D+01 -9.7065D-01
+5 4 1.0001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0001000000000000               50         178   177.88201671201691        5.3041983911779926        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3042D+00 -9.9687D-01  0.0000D+00
+10 4 1.0001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0001000000000000               15          78   177.88777462995444        5.3236413641528646        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1634D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3236D+00  1.8944D+01 -9.9717D-01
+20 4 1.0001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0001000000000000               33        1207   177.88201671224849        5.3107230988356413        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3107D+00 -9.9790D-01  0.0000D+00
+5 4 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000100000000001               37         166   177.84215086558675        7.3226142043272997        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01 -7.3226D+00  9.9968D-01  0.0000D+00
+10 4 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000100000000001               41         191   177.84215086558672        7.3225265556632539        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01 -7.3225D+00  9.9967D-01  0.0000D+00
+20 4 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000100000000001               42        1243   177.84215086558672        5.3225381227235546        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3225D+00 -9.9969D-01  0.0000D+00
+5 4 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000009999999999               25        1148   177.83816522671245        5.3244499613373852        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3244D+00 -9.9998D-01  0.0000D+00
+10 4 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000009999999999               45         213   177.83816518329385        7.3243713589183548        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3244D+00  9.9997D-01  0.0000D+00
+20 4 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000009999999999               19          83   177.84117439296739        5.3256506370618952        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1628D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.8999D+01 -9.9997D-01
+5 4 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000001000000001               20          83   177.83782796825190        5.3245724120959128        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 4 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000001000000001               19          84   177.84084618428489        5.3257084605232201        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+20 4 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000001000000001               33        1198   177.83776663857708        5.3245440941098421        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3245D+00 -1.0000D+00  0.0000D+00
+5 4 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000000099999999               41         179   177.83772676825618        5.3245532815566943        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+10 4 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000000099999999               19          84   177.84081343531108        5.3257142553588590        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+20 4 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000000099999999               19          83   177.84081357513773        5.3257143078717100        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+5 4 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000000010000001               20          83   177.83779155068115        5.3245810920112975        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 4 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000000010000001               19          84   177.84081016103008        5.3257148349291414        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+20 4 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000000010000001               19          83   177.84081030085690        5.3257148874394646        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+5 4 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000000001000000               40         143   177.83772238411589        7.3245553014353044        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3246D+00  1.0000D+00  0.0000D+00
+10 4 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000000001000000               19          85   177.84080983355850        5.3257148928684241        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+20 4 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000000001000000               19          84   177.84080997338575        5.3257149453786585        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+5 4 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           4   1.0000000000100000               20          83   177.83779118654101        5.3245811781013668        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 4 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           4   1.0000000000100000               19          84   177.84080980081379        5.3257148986632377        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00  1.9000D+01 -1.0000D+00
+20 4 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           4   1.0000000000100000               19        1123   177.84080994064053        5.3257149511733095        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1629D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3257D+00 -1.0000D+00  0.0000D+00
+5 6 2
+ final results yurirosen run:           5           6   2.0000000000000000               18        1101   18531.143497015044        1.2828843125589628E-006   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -2.6422D-07  3.7976D+03  6.5070D-07 -1.2829D-06 -1.0501D+00
+10 6 2
+ final results yurirosen run:          10           6   2.0000000000000000               17          25   18531.143497015048        4.9012214731192216E-008   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  4.9012D-08  3.7976D+03  3.1438D-08  2.6517D-08 -1.0501D+00
+20 6 2
+ final results yurirosen run:          20           6   2.0000000000000000               18          26   18531.143497015048        8.1200823842664249E-011   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -8.1201D-11  3.7976D+03  7.1196D-11  1.1635D-11 -1.0501D+00
+5 6 1.1
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           6   1.1000000000000001               66         145   397.99607475365030        4.9182417960480507E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -2.4941D-07  3.4702D+01 -4.9182D-07  2.7651D-01  0.0000D+00
+10 6 1.1
+ final results yurirosen run:          10           6   1.1000000000000001               52         120   386.97012105297256        1.0062415104908018E-002   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  1.0062D-02  3.4479D+01 -1.4346D-03  1.4374D+00 -8.5599D-02
+20 6 1.1
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.1000000000000001               39         142   387.44314801742320        4.8462627088400891        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.2067D+00  1.0000D+01  3.2342D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2754D+01  4.4805D+00  3.3784D+01  4.8463D+00  2.3378D-01 -6.2582D-02
+5 6 1.01
+ final results yurirosen run:           5           6   1.0100000000000000               67         192   290.42676738371426        3.7167651746641979        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9159D+01  3.6287D+00  2.1886D+01  3.7168D+00  1.4312D+01 -7.5333D-01
+10 6 1.01
+ final results yurirosen run:          10           6   1.0100000000000000               99         265   283.73792976965103        3.6953427808087613        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  3.6451D+00  2.0402D+01  3.6953D+00 -7.5145D-01  0.0000D+00
+20 6 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0100000000000000             1795        3657   283.73792976969230        6.0790092169928620        5.6664999574422836E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  3.7145D+00  2.0391D+01 -6.0790D+00  1.6468D+01 -7.8368D-01
+5 6 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           6   1.0009999999999999               89         232   275.56315780429571        7.1510205867636811        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01 -7.1510D+00  2.1083D+01  5.1489D+00 -9.7312D-01  0.0000D+00
+10 6 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           6   1.0009999999999999               41         116   275.56317275421532        7.2432719326055492        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01 -7.2433D+00  2.1098D+01  5.2563D+00  1.8423D+01 -9.7065D-01
+20 6 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0009999999999999               75         215   275.56315780461290        5.1891740905061106        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.1724D+00  1.9135D+01  5.1892D+00  1.8434D+01 -9.7065D-01
+5 6 1.0001
+ final results yurirosen run:           5           6   1.0001000000000000               15        1133   274.94536245280727        5.3896727973214578        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1953D+00  1.0000D+01  3.1631D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3897D+00  1.9011D+01  5.3230D+00 -9.9958D-01  0.0000D+00
+10 6 1.0001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           6   1.0001000000000000               14        1119   282.33144776862252        7.6528078680092566        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.3253D+00  1.0000D+01  3.1662D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  7.6528D+00  1.9011D+01  5.3301D+00 -9.9973D-01  0.0000D+00
+20 6 1.0001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0001000000000000               14        1119   282.19532248808235        7.6125853449472567        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.3052D+00  1.0000D+01  3.1694D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  7.6126D+00  1.9011D+01  5.3370D+00 -9.9979D-01  0.0000D+00
+5 6 1.00001
+ final results yurirosen run:           5           6   1.0000100000000001               58        1327   274.68430181398116        5.3235230920041161        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3235D+00  1.9001D+01  5.3235D+00 -9.9984D-01  0.0000D+00
+10 6 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           6   1.0000100000000001             1232        3604   274.68430173130071        7.3231663513272904        2.3333000019192696E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01 -7.3232D+00  2.1001D+01  5.3231D+00 -9.9978D-01  0.0000D+00
+20 6 1.00001
+ final results yurirosen run:          20           6   1.0000100000000001             1641        3339   274.68430174019056        5.3233711901029555        3.9999000728130341E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3234D+00  1.9001D+01  5.3233D+00  1.8994D+01 -9.9971D-01
+5 6 1.000001
+ final results yurirosen run:           5           6   1.0000009999999999             1659        3402   274.67633036658765        7.3243567965447500        1.6665000468492508E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  9.9997D-01  0.0000D+00
+10 6 1.000001
+ final results yurirosen run:          10           6   1.0000009999999999             3373        6791   274.67633036662534        5.3244039893234687        4.9998998641967773E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01  5.3244D+00  1.8999D+01 -9.9997D-01
+20 6 1.000001
+ final results yurirosen run:          20           6   1.0000009999999999             3622        7339   274.67633036658845        7.3243843499614805        9.3332000076770782E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.8999D+01 -9.9997D-01
+5 6 1.0000001
+ final results yurirosen run:           5           6   1.0000001000000001             1150        2363   274.67553324817356        5.3245363888420725        1.3333000242710114E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01  5.3245D+00 -1.0000D+00  0.0000D+00
+10 6 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           6   1.0000001000000001             2650        6418   274.67561895570122        7.3245345705133111        3.9997998625040054E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3245D+00  2.1000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+20 6 1.0000001
+ final results yurirosen run:          20           6   1.0000001000000001             3642        7416   274.67553324817715        7.3245381546362358        8.9997999370098114E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01 -1.0000D+00
+5 6 1.00000001
+ final results yurirosen run:           5           6   1.0000000099999999              758        1626   274.67545353651315        5.3245535642957993        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+10 6 1.00000001
+ final results yurirosen run:          10           6   1.0000000099999999             2119        4300   274.67545353652446        7.3245534895336748        2.9998999089002609E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+20 6 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0000000099999999               18        1126   286.75537408387663        8.6911316783332992        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.8456D+00  1.0000D+01  3.2150D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  8.6911D+00  1.9000D+01  5.4301D+00 -1.0000D+00  0.0000D+00
+5 6 1.000000001
+ final results yurirosen run:           5           6   1.0000000010000001              727        1569   274.67544556534847        7.3245551474353237        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  1.0000D+00  0.0000D+00
+10 6 1.000000001
+ final results yurirosen run:          10           6   1.0000000010000001             1747        4615   274.67550402395329        5.3245742703219250        2.6665000244975090E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+20 6 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0000000010000001               18        1126   286.75573697525272        8.6912086547547762        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.8456D+00  1.0000D+01  3.2150D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  8.6912D+00  1.9000D+01  5.4301D+00 -1.0000D+00  0.0000D+00
+5 6 1.0000000001
+ final results yurirosen run:           5           6   1.0000000001000000              714        1497   274.67544476823178        7.3245553013608129        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+10 6 1.0000000001
+ final results yurirosen run:          10           6   1.0000000001000000             1754        3578   274.67544476823207        7.3245553030241695        2.9998999089002609E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+20 6 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0000000001000000               18        1126   286.75577329484929        8.6912163586416966        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.8456D+00  1.0000D+01  3.2150D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  8.6912D+00  1.9000D+01  5.4301D+00 -1.0000D+00  0.0000D+00
+5 6 1.00000000001
+ final results yurirosen run:           5           6   1.0000000000100000              709        1522   274.67544468852054        5.3245553185203507        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+10 6 1.00000000001
+ final results yurirosen run:          10           6   1.0000000000100000             1711        3497   274.68047367467773        7.3241788436662310        2.3331999778747559E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1621D+00  1.0000D+01  3.1630D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3242D+00  2.1000D+01  5.3259D+00  1.9000D+01 -1.0000D+00
+20 6 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           6   1.0000000000100000               18        1126   286.75577692715268        8.6912171290995470        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.8456D+00  1.0000D+01  3.2150D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  8.6912D+00  1.9000D+01  5.4301D+00 -1.0000D+00  0.0000D+00
+5 8 2
+ final results yurirosen run:           5           8   2.0000000000000000               23          33   27756.353515929066        9.1563959614404666E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -5.3653D-07  3.7977D+03 -3.3492D-08  3.7976D+03  1.2499D-07
+   9.1564D-07 -1.0501D+00
+10 8 2
+ final results yurirosen run:          10           8   2.0000000000000000               22          29   27756.353515929062        8.4988135995445191E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -8.4988D-07  3.7977D+03 -1.0510D-07  3.7976D+03 -7.3227D-07
+   6.5381D-07 -1.0501D+00
+20 8 2
+ final results yurirosen run:          20           8   2.0000000000000000               23        1105   27756.353515929062        1.9868979563852918E-006   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -1.9869D-06  3.7977D+03 -9.6627D-07  3.7976D+03 -8.9723D-07
+   1.7722D-06 -1.0501D+00
+5 8 1.1
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           8   1.1000000000000001               67         153   539.95518157939398        3.1320057660098044E-003   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  1.0393D-03  3.4481D+01 -4.5632D-04  3.4481D+01 -3.1320D-03
+   1.2547D+00 -7.6449D-02
+10 8 1.1
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           8   1.1000000000000001               70         153   550.98113528012050        2.9160049187295645E-003   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  9.2073D-04  3.4701D+01  2.9160D-03  3.5033D+01  5.0356D-04
+   1.7116D+00 -9.9324D-02
+20 8 1.1
+ final results yurirosen run:          20           8   1.1000000000000001               65         154   539.95518172194852       0.32805556142151082        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -1.8024D-02  3.4484D+01  3.5243D-02  3.4475D+01  3.2806D-01
+   1.2459D+00 -7.8627D-02
+5 8 1.01
+ final results yurirosen run:           5           8   1.0100000000000000               70         172   487.42182875278951        5.8468882004801781        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2676D+00
+ Final G=
+   3.9145D+01  3.7234D+00  2.0389D+01 -5.8469D+00  2.1903D+01  3.6705D+00
+   2.0400D+01 -1.0574D+00
+10 8 1.01
+ final results yurirosen run:          10           8   1.0100000000000000              110         297   391.79573226853967        5.7199708910129115        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.9159D+01  3.6445D+00  2.1889D+01  3.7269D+00  2.0389D+01 -5.7200D+00
+   7.3724D-01  0.0000D+00
+20 8 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0100000000000000              184        1527   385.10689465451077        5.8092725114463128        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01 -5.8093D+00  2.1897D+01  3.8478D+00  2.0370D+01  3.9834D+00
+  -7.9700D-01  0.0000D+00
+5 8 1.001
+ final results yurirosen run:           5           8   1.0009999999999999               69         165   471.04512382802466        5.1385616472223692        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2486D+00
+ Final G=
+   3.8112D+01  5.1386D+00  1.9140D+01  5.1357D+00  1.9141D+01  5.1349D+00
+   1.9141D+01 -1.0056D+00
+10 8 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           8   1.0009999999999999              102         283   372.84473670644292        7.1391620085529777        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.1423D+00  1.9140D+01 -7.1392D+00  2.1082D+01  5.1322D+00
+  -9.7048D-01  0.0000D+00
+20 8 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0009999999999999               52        1225   372.84479841198731        7.2707992240739685        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01 -7.2708D+00  2.1102D+01  5.2506D+00  1.9123D+01  5.2589D+00
+  -9.9050D-01  0.0000D+00
+5 8 1.0001
+ final results yurirosen run:           5           8   1.0001000000000000               94         256   371.64605013605171        7.3076967163745428        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3064D+00  1.9014D+01 -7.3077D+00  2.1008D+01 -7.3074D+00
+   9.9719D-01  0.0000D+00
+10 8 1.0001
+ final results yurirosen run:          10           8   1.0001000000000000               99        1305   371.64605013605188        5.3069849779220952        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01  5.3070D+00  1.9014D+01  5.3064D+00  1.9014D+01  5.3066D+00
+  -9.9725D-01  0.0000D+00
+20 8 1.0001
+ final results yurirosen run:          20           8   1.0001000000000000               99        1356   371.64605013605143        7.3072330884312366        1.3333000242710114E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01 -7.3072D+00  2.1008D+01  5.3052D+00  1.9014D+01  5.3056D+00
+   1.8948D+01 -9.9725D-01
+5 8 1.00001
+ final results yurirosen run:           5           8   1.0000100000000001               62         146   469.24126866158764        7.3228712053723548        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2897D+00
+ Final G=
+   3.8001D+01 -7.3227D+00  2.1001D+01 -7.3229D+00  2.1001D+01  5.3229D+00
+   1.9001D+01 -1.0001D+00
+10 8 1.00001
+ final results yurirosen run:          10           8   1.0000100000000001              182         455   371.52645259676029        5.3226818746971150        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3224D+00  1.9001D+01  5.3225D+00  1.9001D+01  5.3227D+00
+   1.8994D+01 -9.9970D-01
+20 8 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000100000000001             2972        6009   371.52645269178066        5.3234976664486924        9.3332000076770782E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3234D+00  1.9001D+01  5.3235D+00  1.9001D+01  5.3235D+00
+   1.8995D+01 -9.9973D-01
+5 8 1.000001
+ final results yurirosen run:           5           8   1.0000009999999999               68         212   469.22534424079674        7.3243798846317647        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2896D+00
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01 -1.0000D+00
+10 8 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10           8   1.0000009999999999               92         282   371.51449554988164        7.3243790048303969        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3243D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+  -9.9997D-01  0.0000D+00
+20 8 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000009999999999              490        1074   371.51449554988278        7.3243801263570356        2.3333000019192696E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.0999D+01 -9.9997D-01
+5 8 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:           5           8   1.0000001000000001               97         282   371.51329987226086        7.3245378163220964        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+  -1.0000D+00  0.0000D+00
+10 8 1.0000001
+ final results yurirosen run:          10           8   1.0000001000000001              107         323   371.51329987226046        7.3245376790388512        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   1.0000D+00  0.0000D+00
+20 8 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000001000000001               33         112   375.57163154496618        7.2335645296513418        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1168D+00  1.0000D+01  3.7882D+00  1.0000D+01  3.1628D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.2336D+00  2.1000D+01  6.5764D+00  1.9000D+01  5.3255D+00
+   1.9000D+01 -1.0000D+00
+5 8 1.00000001
+ final results yurirosen run:           5           8   1.0000000099999999               54         131   469.22359522106456        7.3245535971008264        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2896D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+10 8 1.00000001
+ final results yurirosen run:          10           8   1.0000000099999999               93         276   377.83773597960044        5.3245536634564257        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  2.1000D+01  5.3246D+00
+  -1.0000D+00  0.0000D+00
+20 8 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000000099999999               33        1146   375.57151504650381        7.2335622364720189        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1168D+00  1.0000D+01  3.7882D+00  1.0000D+01  3.1628D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.2336D+00  2.1000D+01  6.5764D+00  1.9000D+01  5.3255D+00
+  -1.0000D+00  0.0000D+00
+5 8 1.000000001
+ final results yurirosen run:           5           8   1.0000000010000001               50         135   469.22358067535083        7.3245551387224337        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2896D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 8 1.000000001
+ final results yurirosen run:          10           8   1.0000000010000001              108         327   377.83772370380922        5.3245551436972844        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  2.1000D+01  5.3246D+00
+  -1.0000D+00  0.0000D+00
+20 8 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000000010000001               33        1146   375.57150340822290        7.2335620147001478        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1168D+00  1.0000D+01  3.7882D+00  1.0000D+01  3.1628D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.2336D+00  2.1000D+01  6.5764D+00  1.9000D+01  5.3255D+00
+  -1.0000D+00  0.0000D+00
+5 8 1.0000000001
+ final results yurirosen run:           5           8   1.0000000001000000               64         157   469.22357907283163        7.3245553024806833        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2896D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+10 8 1.0000000001
+ final results yurirosen run:          10           8   1.0000000001000000               63         212   377.83772693861357        5.3245561762262419        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 8 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000000001000000               33         112   375.57150224453795        7.2335619925704240        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1168D+00  1.0000D+01  3.7882D+00  1.0000D+01  3.1628D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.2336D+00  2.1000D+01  6.5764D+00  1.9000D+01  5.3255D+00
+   1.9000D+01 -1.0000D+00
+5 8 1.00000000001
+ final results yurirosen run:           5           8   1.0000000000100000               59         202   469.22357890897638        7.3245553187571382        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.2896D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 8 1.00000000001
+ final results yurirosen run:          10           8   1.0000000000100000               88         265   377.83772235347237        7.3245553186342036        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+20 8 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20           8   1.0000000000100000               33        1146   375.57150212821170        7.2335619903462716        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1168D+00  1.0000D+01  3.7882D+00  1.0000D+01  3.1628D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.2336D+00  2.1000D+01  6.5764D+00  1.9000D+01  5.3255D+00
+  -1.0000D+00  0.0000D+00
+5 10 2
+ final results yurirosen run:           5          10   2.0000000000000000               23          32   36981.563534843088        2.5105182697160444E-005   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -6.6949D-06  3.7977D+03  2.1162D-06  3.7977D+03  3.2030D-06
+   3.7976D+03  4.4894D-07  2.5105D-05 -1.0501D+00
+10 10 2
+ final results yurirosen run:          10          10   2.0000000000000000               23          31   36981.563534843088        7.3864296439296595E-006   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  1.6156D-06  3.7977D+03 -1.2919D-06  3.7977D+03 -4.8732D-06
+   3.7976D+03 -7.3864D-06 -1.6270D-06 -1.0501D+00
+20 10 2
+ final results yurirosen run:          20          10   2.0000000000000000               26          35   36981.563534843081        2.5500349565277247E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5337D+00  1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -2.3115D-08  3.7977D+03  1.8258D-08  3.7977D+03  6.0506D-08
+   3.7976D+03  8.5582D-08  2.5500D-07 -1.0501D+00
+5 10 1.1
+ final results yurirosen run:           5          10   1.1000000000000001               93         193   692.94024210585440        1.5577681890599493E-003   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -1.3286D-03  3.4481D+01  4.1472D-04  3.4481D+01  8.6874D-04
+   3.4481D+01 -1.5578D-03  1.2227D+00 -7.4862D-02
+10 10 1.1
+ final results yurirosen run:          10          10   1.1000000000000001               70         172   692.94024210585223        1.2370240858405879E-004   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  3.5379D-05  3.4481D+01  1.2051D-04  3.4481D+01 -1.2370D-04
+   3.4481D+01 -5.5532D-06  1.1556D+00 -7.1520D-02
+20 10 1.1
+ final results yurirosen run:          20          10   1.1000000000000001               87         180   692.94024210585212        9.8659209180063101E-006   9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -5.4788D-06  3.4481D+01 -1.9775D-06  3.4481D+01  4.3920D-06
+   3.4481D+01  9.8659D-06  9.9990D-01 -6.3733D-02
+5 10 1.01
+ final results yurirosen run:           5          10   1.0100000000000000               81         178   588.90599449015156        5.8312852616686808        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1586D+00
+ Final G=
+   3.9145D+01 -5.8313D+00  2.1900D+01  3.7417D+00  2.0386D+01 -5.8056D+00
+   2.1896D+01  3.6897D+00  2.0397D+01 -1.0574D+00
+10 10 1.01
+ final results yurirosen run:          10          10   1.0100000000000000              154         393   486.47585953930280        5.6877631945579523        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  3.6904D+00  2.0395D+01 -5.6878D+00  2.1877D+01  3.6653D+00
+   2.0398D+01  3.8003D+00  1.4226D+01 -7.4968D-01
+20 10 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0100000000000000               37         137   486.80008933141085        7.2592609933658903        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.2008D+00  1.0000D+01  3.1501D+00  1.0000D+01  3.1636D+00
+   1.0000D+01  3.1679D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  5.3181D+00  2.0149D+01 -7.2593D+00  2.2130D+01  5.0367D+00
+   2.0182D+01  5.1325D+00  1.3946D+01 -7.4617D-01
+5 10 1.001
+ final results yurirosen run:           5          10   1.0009999999999999               82         165   568.42369622591320        7.1609013748862944        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1521D+00
+ Final G=
+   3.8112D+01 -7.1490D+00  2.1083D+01 -7.1558D+00  2.1084D+01  5.1518D+00
+   1.9138D+01 -7.1609D+00  2.1085D+01 -1.0056D+00
+10 10 1.001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0009999999999999              155         392   470.12631560859069        7.1534230987779308        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.1139D+00  1.9144D+01  5.1419D+00  1.9140D+01 -7.1448D+00
+   2.1082D+01 -7.1534D+00  9.7206D-01  0.0000D+00
+20 10 1.001
+ final results yurirosen run:          20          10   1.0009999999999999               96        1339   470.12631560961142        5.1905983199168393        1.3332000002264977E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8112D+01  5.1861D+00  1.9133D+01  5.1906D+00  1.9132D+01  5.1870D+00
+   1.9133D+01  5.1882D+00 -9.7932D-01  0.0000D+00
+5 10 1.0001
+ final results yurirosen run:           5          10   1.0001000000000000               76         218   566.42811592387261        5.3081975453515060        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1448D+00
+ Final G=
+   3.8011D+01  5.3060D+00  1.9014D+01  5.3082D+00  1.9014D+01  5.3061D+00
+   1.9014D+01  5.3064D+00  1.9014D+01 -1.0006D+00
+10 10 1.0001
+ final results yurirosen run:          10          10   1.0001000000000000              147         402   468.52806684806984        7.3085818421090751        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01 -7.3069D+00  2.1008D+01  5.3060D+00  1.9014D+01 -7.3086D+00
+   2.1009D+01  5.3056D+00 -9.9708D-01  0.0000D+00
+20 10 1.0001
+ final results yurirosen run:          20          10   1.0001000000000000              102         298   468.52806684808689        7.3084020238931204        1.3333000242710114E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8011D+01 -7.3084D+00  2.1009D+01  5.3084D+00  1.9014D+01  5.3089D+00
+   1.9014D+01 -7.3074D+00  9.9721D-01  0.0000D+00
+5 10 1.00001
+ final results yurirosen run:           5          10   1.0000100000000001               77         215   566.23112556904528        7.3227699848081818        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1420D+00
+ Final G=
+   3.8001D+01  5.3225D+00  1.9001D+01 -7.3228D+00  2.1001D+01 -7.3226D+00
+   2.1001D+01  5.3227D+00  1.9001D+01 -1.0001D+00
+10 10 1.00001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0000100000000001              150         435   468.36860346234766        5.3227367619016741        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01  5.3227D+00  1.9001D+01  5.3227D+00  1.9001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.8995D+01 -9.9972D-01
+20 10 1.00001
+ final results yurirosen run:          20          10   1.0000100000000001              501        1115   468.36860346325074        7.3232123681233743        2.3331999778747559E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8001D+01 -7.3231D+00  2.1001D+01  5.3232D+00  1.9001D+01 -7.3232D+00
+   2.1001D+01  5.3232D+00  1.8995D+01 -9.9972D-01
+5 10 1.000001
+ final results yurirosen run:           5          10   1.0000009999999999               66         165   566.21120578169541        7.3243925781712811        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1419D+00
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -1.0000D+00
+10 10 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0000009999999999               60         187   473.47976556650661        6.4904372831524064        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1883D+00  1.0000D+01  3.2822D+00  1.0000D+01  2.7452D+00
+   1.0000D+01  3.4227D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3765D+00  1.9000D+01  5.5643D+00  1.9000D+01 -6.4904D+00
+   2.1000D+01  5.8454D+00  1.8999D+01 -9.9997D-01
+20 10 1.000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000009999999999               28         128   474.30399173046754        7.1474253641288961        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5105D+00  1.0000D+01  3.3434D+00  1.0000D+01  3.0737D+00
+   1.0000D+01  3.5701D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.0210D+00  1.9000D+01  5.6869D+00  1.9000D+01 -7.1474D+00
+   2.1000D+01  6.1402D+00  1.8999D+01 -9.9997D-01
+5 10 1.0000001
+ final results yurirosen run:           5          10   1.0000001000000001               79         175   566.20915831973900        7.3245368211525390        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1420D+00
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01 -1.0000D+00
+10 10 1.0000001
+ final results yurirosen run:          10          10   1.0000001000000001               78         194   566.21151777689840        7.3245400063074797        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1396D+00
+ Final G=
+   3.8000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01 -1.0000D+00
+20 10 1.0000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000001000000001               28        1163   474.04687889220901        7.2273929114680486        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5516D+00  1.0000D+01  3.5160D+00  1.0000D+01  3.1137D+00
+   1.0000D+01  3.3631D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.1032D+00  1.9000D+01  6.0319D+00  1.9000D+01 -7.2274D+00
+   2.1000D+01  5.7261D+00 -1.0000D+00  0.0000D+00
+5 10 1.00000001
+ final results yurirosen run:           5          10   1.0000000099999999               63         182   566.20896117725135        7.3245539075877728        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1420D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 10 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0000000099999999              147         448   468.35090707302510        7.3245535123661343        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+20 10 1.00000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000000099999999               28        1163   474.06196551964911        7.2267735013234882        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5528D+00  1.0000D+01  3.5167D+00  1.0000D+01  3.1134D+00
+   1.0000D+01  3.3633D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.1056D+00  1.9000D+01  6.0333D+00  1.9000D+01 -7.2268D+00
+   2.1000D+01  5.7266D+00 -1.0000D+00  0.0000D+00
+5 10 1.000000001
+ final results yurirosen run:           5          10   1.0000000010000001              143         429   468.35089113069745        7.3245551501267157        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 10 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0000000010000001              151         386   468.35089113069699        7.3245551458850473        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+20 10 1.000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000000010000001               28        1163   474.06343827214198        7.2267117952656097        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5529D+00  1.0000D+01  3.5167D+00  1.0000D+01  3.1134D+00
+   1.0000D+01  3.3633D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.1059D+00  1.9000D+01  6.0334D+00  1.9000D+01 -7.2267D+00
+   2.1000D+01  5.7267D+00 -1.0000D+00  0.0000D+00
+5 10 1.0000000001
+ final results yurirosen run:           5          10   1.0000000001000000               66         152   566.20893966407709        7.3245553041299161        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1419D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -1.0000D+00
+10 10 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          10   1.0000000001000000              154         401   468.35088953646402        7.3245553029829749        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+20 10 1.0000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000000001000000               28        1163   474.06358520387948        7.2267056266136134        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5529D+00  1.0000D+01  3.5167D+00  1.0000D+01  3.1134D+00
+   1.0000D+01  3.3634D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.1059D+00  1.9000D+01  6.0335D+00  1.9000D+01 -7.2267D+00
+   2.1000D+01  5.7267D+00 -1.0000D+00  0.0000D+00
+5 10 1.00000000001
+ final results yurirosen run:           5          10   1.0000000000100000               58         209   566.20893946628132        7.3245553186037116        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  2.1419D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -1.0000D+00
+10 10 1.00000000001
+ final results yurirosen run:          10          10   1.0000000000100000              154         394   474.67544469773162        7.3245553184910950        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00 -1.0000D+00  0.0000D+00
+20 10 1.00000000001
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          10   1.0000000000100000               28        1163   474.06359989319424        7.2267050098125871        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.5529D+00  1.0000D+01  3.5167D+00  1.0000D+01  3.1134D+00
+   1.0000D+01  3.3634D+00  1.0000D+01  1.0000D+02
+ Final G=
+   3.8000D+01  6.1059D+00  1.9000D+01  6.0335D+00  1.9000D+01 -7.2267D+00
+   2.1000D+01  5.7267D+00 -1.0000D+00  0.0000D+00
+5 20 2
+ final results yurirosen run:           5          20   2.0000000000000000               18          29   83107.613629413157        3.5959276850405786E-005   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  1.1856D-05  3.7977D+03 -1.1836D-05  3.7977D+03  8.8749D-06
+   3.7977D+03  2.3165D-06  3.7977D+03 -2.4044D-07  3.7977D+03 -9.3963D-07
+   3.7977D+03 -1.1182D-06  3.7977D+03 -1.1631D-06  3.7976D+03 -1.7249D-05
+  -3.5959D-05 -1.0501D+00
+10 20 2
+ final results yurirosen run:          10          20   2.0000000000000000               19          28   83107.613629413157        1.6055778928603104E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -1.6056D-07  3.7977D+03 -1.1473D-07  3.7977D+03 -2.4070D-08
+   3.7977D+03  3.5008D-08  3.7977D+03  5.2627D-08  3.7977D+03  5.7215D-08
+   3.7977D+03  5.8374D-08  3.7977D+03  5.8664D-08  3.7976D+03  5.4564D-08
+   9.0503D-08 -1.0501D+00
+20 20 2
+ final results yurirosen run:          20          20   2.0000000000000000               17          25   83107.613629413172        6.6188112128884313E-006   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  1.4937D-06  3.7977D+03 -3.9534D-06  3.7977D+03 -3.3442D-06
+   3.7977D+03  2.6067D-07  3.7977D+03  1.4477D-06  3.7977D+03  1.7632D-06
+   3.7977D+03  1.8433D-06  3.7977D+03  1.8633D-06  3.7976D+03  7.1763D-07
+  -6.6188D-06 -1.0501D+00
+5 20 1.1
+ final results yurirosen run:           5          20   1.1000000000000001              115         226   1457.8655447453602        7.5903970801312726E-002   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -6.0270D-02  3.4491D+01 -1.9173D-02  3.4484D+01  1.2758D-03
+   3.4481D+01 -1.1910D-02  3.4483D+01  5.2274D-02  3.4473D+01  7.5904D-02
+   3.4469D+01 -3.6711D-02  3.4487D+01 -7.4110D-03  3.4482D+01  3.3835D-02
+   1.2593D+00 -7.6970D-02
+10 20 1.1
+ final results yurirosen run:          10          20   1.1000000000000001              131         259   1457.8655447384278        1.9982742352485650E-002   6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  2.1733D-03  3.4481D+01  4.3779D-03  3.4480D+01  8.8463D-03
+   3.4480D+01 -4.7402D-04  3.4481D+01 -9.5941D-03  3.4483D+01 -6.0017D-04
+   3.4481D+01 -1.9983D-02  3.4484D+01 -6.1486D-03  3.4482D+01  1.2800D-03
+   9.3622D-01 -6.0559D-02
+20 20 1.1
+ final results yurirosen run:          20          20   1.1000000000000001              167         336   1457.8655447381759        3.1636301304946990E-003   2.3333000019192696E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01  6.7080D-05  3.4481D+01  1.3999D-03  3.4481D+01 -2.2530D-03
+   3.4481D+01  9.8690D-04  3.4481D+01 -8.4188D-04  3.4481D+01 -3.1636D-03
+   3.4482D+01 -3.2838D-04  3.4481D+01  3.7619D-04  3.4481D+01  1.3196D-03
+   1.0302D+00 -6.5258D-02
+5 20 1.01
+ final results yurirosen run:           5          20   1.0100000000000000              100         195   1095.8362198561242        5.9305797371439315        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0779D+00
+ Final G=
+   3.9145D+01  3.8946D+00  2.0362D+01 -5.9306D+00  2.1916D+01  3.7424D+00
+   2.0386D+01 -5.8867D+00  2.1909D+01 -5.9075D+00  2.1912D+01  3.7940D+00
+   2.0378D+01  3.7717D+00  2.0382D+01 -5.8978D+00  2.1911D+01  3.8554D+00
+   2.0371D+01 -1.0574D+00
+10 20 1.01
+ final results yurirosen run:          10          20   1.0100000000000000              117         251   1095.8387719429406        5.9238174473078224        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0755D+00
+ Final G=
+   3.9145D+01 -5.9238D+00  2.1915D+01  3.8047D+00  2.0376D+01  3.7901D+00
+   2.0379D+01  3.7615D+00  2.0383D+01  3.7942D+00  2.0378D+01  3.7186D+00
+   2.0390D+01  3.7585D+00  2.0384D+01  3.8296D+00  2.0373D+01 -5.8290D+00
+   2.1902D+01 -1.0574D+00
+20 20 1.01
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          20          20   1.0100000000000000              259         683   993.32068396343084        5.8164331420848132        3.3332001417875290E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   3.9145D+01  3.6971D+00  2.0393D+01  3.5648D+00  2.0414D+01  3.7752D+00
+   2.0381D+01  3.7458D+00  2.0386D+01 -5.8164D+00  2.1898D+01  3.7441D+00
+   2.0386D+01  3.6705D+00  2.0398D+01  3.7422D+00  2.0386D+01 -5.7066D+00
+   7.3512D-01  0.0000D+00
+5 20 1.001
+ final results yurirosen run:           5          20   1.0009999999999999              103         195   1054.9343135822025        7.1535424791249840        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0500D+00
+ Final G=
+   3.8112D+01 -7.1525D+00  2.1084D+01  5.1343D+00  1.9141D+01 -7.1535D+00
+   2.1084D+01  5.1462D+00  1.9139D+01 -7.1534D+00  2.1084D+01  5.1331D+00
+   1.9141D+01  5.1428D+00  1.9140D+01  5.1463D+00  1.9139D+01  5.1351D+00
+   1.9141D+01 -1.0056D+00
+10 20 1.001
+ final results yurirosen run:          10          20   1.0009999999999999              112         246   1054.9331678696549        7.1544733477103559        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0511D+00
+ Final G=
+   3.8112D+01  5.1438D+00  1.9139D+01 -7.1507D+00  2.1083D+01 -7.1455D+00
+   2.1083D+01  5.1441D+00  1.9139D+01 -7.1522D+00  2.1084D+01  5.1434D+00
+   1.9140D+01  5.1379D+00  1.9140D+01  5.1441D+00  1.9139D+01 -7.1545D+00
+   2.1084D+01 -1.0056D+00
+20 20 1.001
+ final results yurirosen run:          20          20   1.0009999999999999              126         361   1054.9326250785634        7.1613332159552687        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0517D+00
+ Final G=
+   3.8112D+01  5.1497D+00  1.9139D+01  5.1574D+00  1.9137D+01 -7.1508D+00
+   2.1083D+01  5.1552D+00  1.9138D+01  5.1508D+00  1.9138D+01 -7.1606D+00
+   2.1085D+01  5.1585D+00  1.9137D+01  5.1351D+00  1.9141D+01 -7.1613D+00
+   2.1085D+01 -1.0056D+00
+5 20 1.0001
+ final results yurirosen run:           5          20   1.0001000000000000              105         189   1050.9374851808395        7.3083355644676109        0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0456D+00
+ Final G=
+   3.8011D+01 -7.3069D+00  2.1008D+01  5.3061D+00  1.9014D+01 -7.3074D+00
+   2.1008D+01  5.3060D+00  1.9014D+01  5.3053D+00  1.9014D+01 -7.3083D+00
+   2.1008D+01 -7.3081D+00  2.1008D+01  5.3072D+00  1.9014D+01  5.3071D+00
+   1.9014D+01 -1.0006D+00
+10 20 1.0001
+ final results yurirosen run:          10          20   1.0001000000000000              113         256   1050.9383226700534        7.3084840139907987        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0447D+00
+ Final G=
+   3.8011D+01  5.3066D+00  1.9014D+01 -7.3083D+00  2.1008D+01  5.3069D+00
+   1.9014D+01 -7.3085D+00  2.1009D+01 -7.3081D+00  2.1008D+01  5.3073D+00
+   1.9014D+01  5.3072D+00  1.9014D+01  5.3062D+00  1.9014D+01  5.3064D+00
+   1.9014D+01 -1.0006D+00
+20 20 1.0001
+ final results yurirosen run:          20          20   1.0001000000000000              132         374   1050.9357646455387        7.3077648947080958        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0473D+00
+ Final G=
+   3.8011D+01  5.3067D+00  1.9014D+01 -7.3078D+00  2.1008D+01 -7.3075D+00
+   2.1008D+01 -7.3074D+00  2.1008D+01  5.3073D+00  1.9014D+01  5.3074D+00
+   1.9014D+01  5.3077D+00  1.9014D+01  5.3074D+00  1.9014D+01  5.3058D+00
+   1.9014D+01 -1.0006D+00
+5 20 1.00001
+ final results yurirosen run:           5          20   1.0000100000000001              126         271   1050.5186256830709        7.3228861232449152        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0652D+00
+ Final G=
+   3.8001D+01 -7.3229D+00  2.1001D+01  5.3228D+00  1.9001D+01  5.3228D+00
+   1.9001D+01  5.3228D+00  1.9001D+01  5.3228D+00  1.9001D+01 -7.3229D+00
+   2.1001D+01  5.3227D+00  1.9001D+01  5.3227D+00  1.9001D+01 -7.3228D+00
+   2.1001D+01 -1.0001D+00
+10 20 1.00001
+ final results yurirosen run:          10          20   1.0000100000000001              121         268   1050.5300209021761        7.3228987138258024        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0538D+00
+ Final G=
+   3.8001D+01  5.3226D+00  1.9001D+01  5.3227D+00  1.9001D+01 -7.3227D+00
+   2.1001D+01  5.3228D+00  1.9001D+01 -7.3229D+00  2.1001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01 -7.3225D+00  2.1001D+01  5.3228D+00
+   1.9001D+01 -1.0001D+00
+20 20 1.00001
+ final results yurirosen run:          20          20   1.0000100000000001              128         344   1050.5277023176695        7.3230297101557804        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0561D+00
+ Final G=
+   3.8001D+01  5.3229D+00  1.9001D+01  5.3228D+00  1.9001D+01  5.3229D+00
+   1.9001D+01  5.3229D+00  1.9001D+01  5.3229D+00  1.9001D+01 -7.3230D+00
+   2.1001D+01  5.3229D+00  1.9001D+01  5.3230D+00  1.9001D+01  5.3229D+00
+   1.9001D+01 -1.0001D+00
+5 20 1.000001
+ final results yurirosen run:           5          20   1.0000009999999999              125         243   1050.4786320537385        7.3243816628398282        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0653D+00
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01 -1.0000D+00
+10 20 1.000001
+ final results yurirosen run:          10          20   1.0000009999999999              113         240   1050.4893796515801        7.3244069785231138        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0546D+00
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01 -1.0000D+00
+20 20 1.000001
+ final results yurirosen run:          20          20   1.0000009999999999              136         389   1050.4879720209440        7.3243861082665056        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01 -1.0000D+00
+5 20 1.0000001
+ final results yurirosen run:           5          20   1.0000001000000001              109         230   1050.4746852612143        7.3245397638573051        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0653D+00
+ Final G=
+   3.8000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -1.0000D+00
+10 20 1.0000001
+ final results yurirosen run:          10          20   1.0000001000000001              124         283   1050.4854123850394        7.3245385059805619        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0545D+00
+ Final G=
+   3.8000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -1.0000D+00
+20 20 1.0000001
+ final results yurirosen run:          20          20   1.0000001000000001              140         383   1050.4839493972963        7.3245393321780616        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -1.0000D+00
+5 20 1.00000001
+ final results yurirosen run:           5          20   1.0000000099999999              128         265   1050.4743503630293        7.3245536253665957        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0652D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 20 1.00000001
+ final results yurirosen run:          10          20   1.0000000099999999              111         260   1050.4850140458798        7.3245536160438842        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0545D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+20 20 1.00000001
+ final results yurirosen run:          20          20   1.0000000099999999              142         382   1050.4835585642923        7.3245536536307139        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 20 1.000000001
+ final results yurirosen run:           5          20   1.0000000010000001              133        1341   1050.4743109576468        7.3245551460924263        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0652D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+10 20 1.000000001
+ final results yurirosen run:          10          20   1.0000000010000001              124         280   1050.4849738729449        7.3245551442956058        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0545D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 20 1.000000001
+ final results yurirosen run:          20          20   1.0000000010000001              134         366   1050.4835175551350        7.3245551595180673        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 20 1.0000000001
+ final results yurirosen run:           5          20   1.0000000001000000              141         344   1050.4743068723237        7.3245553026244909        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0652D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 20 1.0000000001
+ final results yurirosen run:          10          20   1.0000000001000000              113         249   1050.4849699056097        7.3245553039134377        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0545D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 20 1.0000000001
+ final results yurirosen run:          20          20   1.0000000001000000              136         388   1050.4835135863702        7.3245553041542113        1.6666000708937645E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 20 1.00000000001
+ final results yurirosen run:           5          20   1.0000000000100000              123         243   1050.4743064410466        7.3245553185342702        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0652D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 20 1.00000000001
+ final results yurirosen run:          10          20   1.0000000000100000              115         251   1050.4849694999459        7.3245553187483878        3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0545D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+20 20 1.00000000001
+ final results yurirosen run:          20          20   1.0000000000100000              149         401   1050.4835131852094        7.3245553185706438        1.9998999312520027E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0560D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+5 50 2
+ final results yurirosen run:           5          50   2.0000000000000000               19        1103   221485.76391312340        1.5794332171026326E-006   3.3330000005662441E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  1.4891D-06  3.7977D+03 -5.4599D-07  3.7977D+03  6.9844D-09
+   3.7977D+03  2.6799D-07  3.7977D+03  3.4332D-07  3.7977D+03  3.6283D-07
+   3.7977D+03  3.6775D-07  3.7977D+03  3.6899D-07  3.7977D+03  3.6929D-07
+   3.7977D+03  3.6937D-07  3.7977D+03  3.6939D-07  3.7977D+03  3.6940D-07
+   3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07
+   3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07
+   3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07
+   3.7977D+03  3.6940D-07  3.7977D+03  3.6940D-07  3.7976D+03  1.5794D-06
+   1.2659D-06 -1.0501D+00
+10 50 2
+ final results yurirosen run:          10          50   2.0000000000000000               20          29   221485.76391312340        5.1951960848839462E-006   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03  1.1413D-06  3.7977D+03 -2.1303D-06  3.7977D+03 -2.0833D-06
+   3.7977D+03 -2.0001D-06  3.7977D+03 -1.9890D-06  3.7977D+03 -1.9870D-06
+   3.7977D+03 -1.9866D-06  3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06
+   3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06
+   3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06
+   3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06
+   3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06
+   3.7977D+03 -1.9865D-06  3.7977D+03 -1.9865D-06  3.7976D+03  1.3121D-06
+   5.1952D-06 -1.0501D+00
+20 50 2
+ final results yurirosen run:          20          50   2.0000000000000000               20          47   221485.76391312343        3.8352078490788699E-007   0.0000000000000000      CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00
+   1.0000D+01  4.5314D+00  1.0000D+01  4.5314D+00  1.0000D+01  4.5337D+00
+   1.0026D+01  1.0000D+02
+ Final G=
+   3.8367D+03 -3.8352D-07  3.7977D+03 -8.4671D-08  3.7977D+03 -4.8136D-08
+   3.7977D+03 -1.9390D-08  3.7977D+03 -1.0900D-08  3.7977D+03 -8.6972D-09
+   3.7977D+03 -8.1415D-09  3.7977D+03 -8.0022D-09  3.7977D+03 -7.9673D-09
+   3.7977D+03 -7.9586D-09  3.7977D+03 -7.9564D-09  3.7977D+03 -7.9558D-09
+   3.7977D+03 -7.9558D-09  3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09
+   3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09
+   3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09
+   3.7977D+03 -7.9557D-09  3.7977D+03 -7.9557D-09  3.7976D+03  1.4578D-08
+   1.2946D-07 -1.0501D+00
+5 50 1.1
+ final results yurirosen run:           5          50   1.1000000000000001              187         318   3763.6674063369542        3.1162440930910362E-002   6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -1.3051D-02  3.4704D+01 -1.3147D-03  3.5032D+01  1.4191D-02
+   3.4479D+01 -5.7666D-03  3.4482D+01  7.3520D-03  3.4480D+01 -3.6884D-04
+   3.4481D+01 -1.2643D-02  3.4483D+01 -2.8145D-02  3.4485D+01 -1.3278D-03
+   3.4481D+01 -1.0161D-02  3.4483D+01 -3.1162D-02  3.4486D+01 -2.8122D-04
+   3.4481D+01  1.3295D-02  3.4479D+01  4.9323D-05  3.4481D+01 -5.1069D-03
+   3.4482D+01 -4.8060D-03  3.4482D+01  6.0431D-03  3.4480D+01 -5.0305D-04
+   3.4481D+01 -1.0833D-03  3.4481D+01 -1.0255D-03  3.4481D+01 -9.8257D-04
+   3.4481D+01 -9.8590D-04  3.4481D+01 -9.8553D-04  3.4481D+01 -3.2277D-03
+   1.2970D+00 -7.8563D-02
+10 50 1.1
+  Positive dir derivative in projection 
+  Using the backtracking step 
+ final results yurirosen run:          10          50   1.1000000000000001              191         337   3763.6674063358400       0.27479133470729239        1.3332000002264977E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01 -3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -9.8234D-05  3.4481D+01  1.9098D-04  3.4481D+01 -3.9218D-04
+   3.4481D+01  1.9325D-04  3.4481D+01  7.7444D-04  3.4481D+01 -3.2095D-05
+   3.4481D+01  6.4330D-04  3.4481D+01  2.1256D-04  3.4481D+01  1.1339D-03
+   3.4701D+01  4.2775D-04  3.5032D+01  3.6844D-04  3.4481D+01 -5.9813D-05
+   3.4481D+01  2.9438D-04  3.4481D+01  8.1293D-04  3.4481D+01  1.9737D-05
+   3.4481D+01  1.4903D-04  3.4481D+01  3.9455D-04  3.4481D+01 -6.2576D-04
+   3.4481D+01 -2.3275D-04  3.4481D+01 -6.1651D-04  3.4481D+01 -4.2128D-05
+   3.4481D+01  4.8615D-05  3.4481D+01 -6.7431D-04  3.4481D+01  1.4369D-04
+  -2.7479D-01  0.0000D+00
+20 50 1.1
+ final results yurirosen run:          20          50   1.1000000000000001              207         402   3752.6414526351255        2.8556433029538475E-003   3.6665998399257660E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  1.0000D+02
+ Final G=
+   5.2756D+01 -1.1039D-04  3.4481D+01 -7.1258D-04  3.4481D+01  2.8556D-03
+   3.4481D+01  9.9477D-04  3.4481D+01 -1.4752D-03  3.4481D+01  1.2173D-04
+   3.4481D+01 -7.4487D-04  3.4481D+01  1.0181D-04  3.4481D+01 -2.6620D-04
+   3.4481D+01  5.1664D-04  3.4481D+01  2.1708D-03  3.4481D+01  3.7983D-04
+   3.4481D+01 -1.7731D-04  3.4481D+01  5.2697D-04  3.4481D+01  1.8943D-04
+   3.4481D+01 -1.5179D-03  3.4481D+01  1.5748D-04  3.4481D+01 -8.3436D-04
+   3.4481D+01 -3.9369D-04  3.4481D+01 -5.0623D-04  3.4481D+01 -3.1100D-04
+   3.4481D+01  4.2538D-04  3.4481D+01  4.7043D-04  3.4481D+01 -2.7292D-03
+   1.2969D+00 -7.8563D-02
+5 50 1.01
+ final results yurirosen run:           5          50   1.0100000000000000              189         301   2616.4248080392463        5.9657423399117420        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0267D+00
+ Final G=
+   3.9145D+01  3.8667D+00  2.0367D+01  3.8239D+00  2.0373D+01 -5.9490D+00
+   2.1919D+01  4.4174D+00  2.0280D+01  3.8578D+00  2.0368D+01 -5.8301D+00
+   2.1900D+01  3.8279D+00  2.0373D+01 -5.9037D+00  2.1911D+01 -5.9021D+00
+   2.1911D+01 -5.9069D+00  2.1912D+01 -5.9435D+00  2.1918D+01  3.8378D+00
+   2.0371D+01  3.8887D+00  2.0363D+01  3.8454D+00  2.0370D+01  3.7502D+00
+   2.0385D+01 -5.9255D+00  2.1915D+01  3.9078D+00  2.0360D+01 -5.9657D+00
+   2.1921D+01 -5.9431D+00  2.1918D+01  3.8347D+00  2.0372D+01  3.6416D+00
+   2.0402D+01  3.8452D+00  2.0370D+01  3.8453D+00  2.0370D+01  3.8453D+00
+   2.0372D+01 -1.0574D+00
+10 50 1.01
+ final results yurirosen run:          10          50   1.0100000000000000              120         249   2616.4142802221891        5.9037600515103321        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0366D+00
+ Final G=
+   3.9145D+01 -5.8349D+00  2.1901D+01  3.7558D+00  2.0384D+01 -5.8537D+00
+   2.1904D+01  3.7462D+00  2.0386D+01 -5.9038D+00  2.1911D+01  3.7787D+00
+   2.0381D+01  3.7618D+00  2.0383D+01  3.7522D+00  2.0385D+01  3.9863D+00
+   2.0348D+01  3.5921D+00  2.0410D+01 -5.8270D+00  2.1899D+01 -5.8647D+00
+   2.1905D+01  3.8345D+00  2.0372D+01  3.8279D+00  2.0373D+01 -5.8449D+00
+   2.1902D+01 -5.6878D+00  2.1877D+01  3.6055D+00  2.0408D+01  3.6583D+00
+   2.0400D+01  3.6607D+00  2.0399D+01  3.6607D+00  2.0399D+01  3.6607D+00
+   2.0399D+01  3.6607D+00  2.0399D+01  3.6607D+00  2.0399D+01  3.6607D+00
+   2.0402D+01 -1.0574D+00
+20 50 1.01
+ final results yurirosen run:          20          50   1.0100000000000000              144         397   2616.4141958061909        5.8827388291875984        2.3333000019192696E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0367D+00
+ Final G=
+   3.9145D+01 -5.6372D+00  2.1869D+01  3.7145D+00  2.0391D+01 -5.8744D+00
+   2.1907D+01  3.7665D+00  2.0382D+01  3.6904D+00  2.0395D+01  3.7404D+00
+   2.0387D+01  3.7168D+00  2.0390D+01 -5.8444D+00  2.1902D+01  3.7260D+00
+   2.0389D+01 -5.8560D+00  2.1904D+01 -5.8827D+00  2.1908D+01  3.7938D+00
+   2.0378D+01  3.7068D+00  2.0392D+01  3.7315D+00  2.0388D+01  3.7428D+00
+   2.0386D+01  3.7090D+00  2.0392D+01 -5.7562D+00  2.1888D+01  3.6734D+00
+   2.0397D+01  3.6451D+00  2.0402D+01  3.6543D+00  2.0400D+01  3.6543D+00
+   2.0400D+01  3.6543D+00  2.0400D+01  3.6543D+00  2.0400D+01  3.6499D+00
+   2.0403D+01 -1.0574D+00
+5 50 1.001
+ final results yurirosen run:           5          50   1.0009999999999999              173         309   2514.1856761737226        7.1555006299118213        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0225D+00
+ Final G=
+   3.8112D+01  5.1273D+00  1.9142D+01  5.1365D+00  1.9141D+01  5.2671D+00
+   1.9120D+01 -7.1503D+00  2.1083D+01  5.1410D+00  1.9140D+01 -7.1437D+00
+   2.1082D+01  5.1349D+00  1.9141D+01  5.1316D+00  1.9141D+01 -7.1555D+00
+   2.1084D+01  5.1351D+00  1.9141D+01 -7.1484D+00  2.1083D+01  5.1419D+00
+   1.9140D+01  5.1273D+00  1.9142D+01  5.1237D+00  1.9143D+01 -7.1492D+00
+   2.1083D+01 -7.1472D+00  2.1083D+01  5.1334D+00  1.9141D+01  5.1316D+00
+   1.9141D+01 -7.1496D+00  2.1083D+01 -7.1492D+00  2.1083D+01  5.1305D+00
+   1.9142D+01  5.1423D+00  1.9140D+01  5.1296D+00  1.9142D+01  5.1291D+00
+   1.9142D+01 -1.0056D+00
+10 50 1.001
+ final results yurirosen run:          10          50   1.0009999999999999              137         254   2514.1867029945588        7.1636087948971410        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0214D+00
+ Final G=
+   3.8112D+01  5.1421D+00  1.9140D+01 -7.1560D+00  2.1084D+01 -7.1506D+00
+   2.1083D+01  5.1478D+00  1.9139D+01  5.1484D+00  1.9139D+01  5.1483D+00
+   1.9139D+01  5.1382D+00  1.9140D+01  5.1473D+00  1.9139D+01 -7.1538D+00
+   2.1084D+01 -7.1550D+00  2.1084D+01  5.1500D+00  1.9138D+01  5.1501D+00
+   1.9138D+01 -7.1542D+00  2.1084D+01 -7.1507D+00  2.1083D+01  5.1473D+00
+   1.9139D+01  5.1424D+00  1.9140D+01  5.1408D+00  1.9140D+01 -7.1636D+00
+   2.1085D+01 -7.1450D+00  2.1082D+01  5.1459D+00  1.9139D+01  5.1343D+00
+   1.9141D+01  5.1469D+00  1.9139D+01  5.1372D+00  1.9140D+01  5.1139D+00
+   1.9144D+01 -1.0056D+00
+20 50 1.001
+ final results yurirosen run:          20          50   1.0009999999999999              147         420   2514.1853434824629        7.1631168708100965        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0228D+00
+ Final G=
+   3.8112D+01  5.1446D+00  1.9139D+01 -7.1631D+00  2.1085D+01  5.1526D+00
+   1.9138D+01  5.1398D+00  1.9140D+01  5.1291D+00  1.9142D+01  5.1527D+00
+   1.9138D+01  5.1488D+00  1.9139D+01  5.1441D+00  1.9139D+01 -7.1450D+00
+   2.1082D+01 -7.1551D+00  2.1084D+01  5.1472D+00  1.9139D+01  5.1430D+00
+   1.9140D+01  5.1343D+00  1.9141D+01 -7.1608D+00  2.1085D+01  5.1413D+00
+   1.9140D+01 -7.1630D+00  2.1085D+01  5.1518D+00  1.9138D+01  5.1654D+00
+   1.9136D+01 -7.1577D+00  2.1085D+01  5.1363D+00  1.9141D+01  5.1450D+00
+   1.9139D+01 -7.1523D+00  2.1084D+01  5.1383D+00  1.9140D+01  5.1334D+00
+   1.9141D+01 -1.0056D+00
+5 50 1.0001
+ final results yurirosen run:           5          50   1.0001000000000000              278        1530   2504.1982481692735        7.3078606426362178        1.9998999312520027E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0152D+00
+ Final G=
+   3.8011D+01  5.3056D+00  1.9014D+01  5.3066D+00  1.9014D+01  5.3067D+00
+   1.9014D+01  5.3055D+00  1.9014D+01  5.3052D+00  1.9014D+01  5.3064D+00
+   1.9014D+01 -7.3077D+00  2.1008D+01  5.3051D+00  1.9014D+01  5.3063D+00
+   1.9014D+01 -7.3075D+00  2.1008D+01 -7.3065D+00  2.1008D+01  5.3069D+00
+   1.9014D+01  5.3066D+00  1.9014D+01  5.3036D+00  1.9014D+01  5.3068D+00
+   1.9014D+01 -7.3079D+00  2.1008D+01  5.3062D+00  1.9014D+01  5.3191D+00
+   1.9012D+01  5.3064D+00  1.9014D+01 -7.3061D+00  2.1008D+01  5.3051D+00
+   1.9014D+01  5.3068D+00  1.9014D+01  5.3049D+00  1.9014D+01 -7.3067D+00
+   2.1008D+01 -1.0006D+00
+10 50 1.0001
+ final results yurirosen run:          10          50   1.0001000000000000              152         287   2504.1900575038781        7.3084629996689001        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0233D+00
+ Final G=
+   3.8011D+01  5.3062D+00  1.9014D+01  5.3066D+00  1.9014D+01 -7.3060D+00
+   2.1008D+01  5.3065D+00  1.9014D+01 -7.3073D+00  2.1008D+01 -7.3067D+00
+   2.1008D+01  5.3062D+00  1.9014D+01  5.3042D+00  1.9014D+01  5.3058D+00
+   1.9014D+01  5.3062D+00  1.9014D+01  5.3065D+00  1.9014D+01 -7.3077D+00
+   2.1008D+01  5.3049D+00  1.9014D+01  5.3058D+00  1.9014D+01 -7.3085D+00
+   2.1009D+01  5.3053D+00  1.9014D+01 -7.3071D+00  2.1008D+01  5.3066D+00
+   1.9014D+01  5.3063D+00  1.9014D+01  5.3049D+00  1.9014D+01  5.3054D+00
+   1.9014D+01 -7.3074D+00  2.1008D+01 -7.3058D+00  2.1008D+01  5.3056D+00
+   1.9014D+01 -1.0006D+00
+20 50 1.0001
+ final results yurirosen run:          20          50   1.0001000000000000              161         442   2504.1899998942040        7.3074705250932031        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0233D+00
+ Final G=
+   3.8011D+01  5.3057D+00  1.9014D+01  5.3042D+00  1.9014D+01 -7.3067D+00
+   2.1008D+01 -7.3074D+00  2.1008D+01 -7.3067D+00  2.1008D+01 -7.3063D+00
+   2.1008D+01  5.3054D+00  1.9014D+01  5.3055D+00  1.9014D+01 -7.3075D+00
+   2.1008D+01  5.3067D+00  1.9014D+01 -7.3043D+00  2.1008D+01  5.3064D+00
+   1.9014D+01  5.3061D+00  1.9014D+01  5.3059D+00  1.9014D+01  5.3062D+00
+   1.9014D+01  5.3062D+00  1.9014D+01 -7.3074D+00  2.1008D+01  5.3059D+00
+   1.9014D+01  5.3063D+00  1.9014D+01 -7.3062D+00  2.1008D+01 -7.3062D+00
+   2.1008D+01 -7.3052D+00  2.1008D+01 -7.3059D+00  2.1008D+01 -7.3066D+00
+   2.1008D+01 -1.0006D+00
+5 50 1.00001
+ final results yurirosen run:           5          50   1.0000100000000001              215         389   2503.1963324305329        7.3228183520446866        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0198D+00
+ Final G=
+   3.8001D+01 -7.3227D+00  2.1001D+01 -7.3228D+00  2.1001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01  5.3237D+00  1.9001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01  5.3229D+00  1.9001D+01  5.3225D+00
+   1.9001D+01  5.3226D+00  1.9001D+01  5.3226D+00  1.9001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01  5.3227D+00  1.9001D+01  5.3227D+00
+   1.9001D+01 -7.3228D+00  2.1001D+01  5.3227D+00  1.9001D+01 -7.3227D+00
+   2.1001D+01  5.3227D+00  1.9001D+01  5.3227D+00  1.9001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01  5.3226D+00  1.9001D+01  5.3226D+00
+   1.9001D+01 -1.0001D+00
+10 50 1.00001
+ final results yurirosen run:          10          50   1.0000100000000001              164         317   2503.1898481239396        7.3228362277390886        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0263D+00
+ Final G=
+   3.8001D+01 -7.3227D+00  2.1001D+01  5.3226D+00  1.9001D+01 -7.3228D+00
+   2.1001D+01  5.3227D+00  1.9001D+01 -7.3228D+00  2.1001D+01  5.3226D+00
+   1.9001D+01  5.3227D+00  1.9001D+01  5.3228D+00  1.9001D+01  5.3227D+00
+   1.9001D+01 -7.3228D+00  2.1001D+01  5.3228D+00  1.9001D+01  5.3226D+00
+   1.9001D+01 -7.3228D+00  2.1001D+01  5.3228D+00  1.9001D+01  5.3227D+00
+   1.9001D+01 -7.3228D+00  2.1001D+01 -7.3228D+00  2.1001D+01  5.3227D+00
+   1.9001D+01  5.3227D+00  1.9001D+01 -7.3228D+00  2.1001D+01  5.3227D+00
+   1.9001D+01 -7.3227D+00  2.1001D+01  5.3226D+00  1.9001D+01  5.3227D+00
+   1.9001D+01 -1.0001D+00
+20 50 1.00001
+ final results yurirosen run:          20          50   1.0000100000000001              164         458   2503.1869917596628        7.3228490014521981        2.9998999089002609E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8001D+01  5.3227D+00  1.9001D+01  5.3226D+00  1.9001D+01 -7.3228D+00
+   2.1001D+01  5.3226D+00  1.9001D+01  5.3227D+00  1.9001D+01  5.3227D+00
+   1.9001D+01  5.3226D+00  1.9001D+01 -7.3228D+00  2.1001D+01 -7.3227D+00
+   2.1001D+01 -7.3227D+00  2.1001D+01 -7.3228D+00  2.1001D+01 -7.3226D+00
+   2.1001D+01  5.3227D+00  1.9001D+01  5.3227D+00  1.9001D+01 -7.3227D+00
+   2.1001D+01 -7.3227D+00  2.1001D+01 -7.3228D+00  2.1001D+01  5.3225D+00
+   1.9001D+01 -7.3228D+00  2.1001D+01  5.3227D+00  1.9001D+01  5.3227D+00
+   1.9001D+01 -7.3227D+00  2.1001D+01  5.3226D+00  1.9001D+01  5.3226D+00
+   1.9001D+01 -1.0001D+00
+5 50 1.000001
+ final results yurirosen run:           5          50   1.0000009999999999              285         521   2503.1018657711070        7.3243991197734619        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0145D+00
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01 -1.0000D+00
+10 50 1.000001
+ final results yurirosen run:          10          50   1.0000009999999999              158         292   2503.0904215868404        7.3243805837399885        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01  5.3244D+00  1.9000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01  5.3244D+00  1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00
+   2.1000D+01 -1.0000D+00
+20 50 1.000001
+ final results yurirosen run:          20          50   1.0000009999999999              161         451   2503.0867992297999        7.3243867221984829        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0296D+00
+ Final G=
+   3.8000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3244D+00
+   1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00
+   2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00  1.9000D+01  5.3243D+00
+   1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01 -7.3244D+00  2.1000D+01 -7.3244D+00  2.1000D+01  5.3244D+00
+   1.9000D+01  5.3244D+00  1.9000D+01 -7.3244D+00  2.1000D+01  5.3243D+00
+   1.9000D+01 -1.0000D+00
+5 50 1.0000001
+ final results yurirosen run:           5          50   1.0000001000000001              275         494   2503.0910289015897        7.3245392679556494        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0154D+00
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01 -1.0000D+00
+10 50 1.0000001
+ final results yurirosen run:          10          50   1.0000001000000001              133         276   2503.0804563037077        7.3245392687321429        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -1.0000D+00
+20 50 1.0000001
+ final results yurirosen run:          20          50   1.0000001000000001              160         447   2503.0773487751885        7.3245388449238442        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01 -7.3245D+00
+   2.1000D+01 -7.3245D+00  2.1000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -7.3245D+00  2.1000D+01  5.3245D+00  1.9000D+01  5.3245D+00
+   1.9000D+01 -1.0000D+00
+5 50 1.00000001
+ final results yurirosen run:           5          50   1.0000000099999999              274         454   2503.0900624616488        7.3245536051053435        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0154D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+10 50 1.00000001
+ final results yurirosen run:          10          50   1.0000000099999999              182         331   2503.0794537390670        7.3245536263224640        1.3332000002264977E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+20 50 1.00000001
+ final results yurirosen run:          20          50   1.0000000099999999              142         394   2503.0763439792777        7.3245538110101220        2.3331999778747559E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 50 1.000000001
+ final results yurirosen run:           5          50   1.0000000010000001              252         424   2503.0898807134790        7.3245551419093999        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0155D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+10 50 1.000000001
+ final results yurirosen run:          10          50   1.0000000010000001              142         278   2503.0793459032420        7.3245551522956482        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 50 1.000000001
+ final results yurirosen run:          20          50   1.0000000010000001              163         450   2503.0762414195601        7.3245551618866207        2.9998999089002609E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 50 1.0000000001
+ final results yurirosen run:           5          50   1.0000000001000000              251         404   2503.0900047596483        7.3245553050467649        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0153D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 50 1.0000000001
+ final results yurirosen run:          10          50   1.0000000001000000              132         275   2503.0793359306822        7.3245553042984790        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 50 1.0000000001
+ final results yurirosen run:          20          50   1.0000000001000000              155         408   2503.0762315687380        7.3245553043874949        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+5 50 1.00000000001
+ final results yurirosen run:           5          50   1.0000000000100000              182         310   2503.0900093197529        7.3245553186331094        6.6660000011324883E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0153D+00
+ Final G=
+   3.8000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -1.0000D+00
+10 50 1.00000000001
+ final results yurirosen run:          10          50   1.0000000000100000              146         279   2503.0793349274645        7.3245553186257162        9.9989995360374451E-003 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0260D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
+20 50 1.00000000001
+ final results yurirosen run:          20          50   1.0000000000100000              140         388   2503.0762305821013        7.3245553188380290        2.6666000485420227E-002 CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ CONVERGENCE: REL_REDUCTION_OF_F_<=_FACTR*EPSMCH             
+ Final X=
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00  1.0000D+01  3.1623D+00
+   1.0000D+01  2.0291D+00
+ Final G=
+   3.8000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00
+   2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01 -7.3246D+00
+   2.1000D+01 -7.3246D+00  2.1000D+01 -7.3246D+00  2.1000D+01  5.3246D+00
+   1.9000D+01 -7.3246D+00  2.1000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00  1.9000D+01  5.3246D+00
+   1.9000D+01 -1.0000D+00
