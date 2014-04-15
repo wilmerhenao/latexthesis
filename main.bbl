@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -126,11 +126,28 @@ Anders Skajaa.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
 
+\bibitem[Rosenbrock(1960/1961)]{rosenbrock}
+H.~H. Rosenbrock.
+\newblock An automatic method for finding the greatest or least value of a
+  function.
+\newblock \emph{Comput. J.}, 3:\penalty0 175--184, 1960/1961.
+\newblock ISSN 0010-4620.
+
 \bibitem[Kaku(2011)]{kaku}
 Allan Kaku.
 \newblock Implementation of high-precision arithmetic in the bfgs method for
   nonsmooth optimization.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
+
+\bibitem[Steward et~al.(2012)Steward, Navon, Zupanski, and Karmitsa]{QJ:QJ935}
+J.~L. Steward, I.~M. Navon, M.~Zupanski, and N.~Karmitsa.
+\newblock Impact of non-smooth observation operators on variational and
+  sequential data assimilation for a limited-area shallow-water equation model.
+\newblock \emph{Quarterly Journal of the Royal Meteorological Society},
+  138\penalty0 (663):\penalty0 323--339, 2012.
+\newblock ISSN 1477-870X.
+\newblock \doi{10.1002/qj.935}.
+\newblock URL \url{http://dx.doi.org/10.1002/qj.935}.
 
 \end{thebibliography}

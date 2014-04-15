@@ -28,7 +28,7 @@
 \documentclass[11pt, a4paper, oneside]{Thesis} % Paper size, default font size and one-sided paper
 
 \graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
-%\usepackage{minted}
+\usepackage{subfigure}
 \usepackage[square, numbers, comma, sort&compress]{natbib} % Use the natbib reference package - read up on this to edit the reference style; if you want text (e.g. Smith et al., 2012) for the in-text references (instead of numbers), remove 'numbers' 
 \usepackage[ruled, vlined, oldcommands, norelsize]{algorithm2e} % Use the algorithm package
 \usepackage{listings}
@@ -177,7 +177,7 @@ The Thesis Abstract is written here \ldots
 \acknowledgements{\addtocontents{toc}{\vspace{1em}} % Add a gap in the Contents, for aesthetics
 I would like to thank my advisor Michael Overton for all the hours of hard work and for all the great recommendations and changes that led to this thesis.
 
-I also would like to thank Allan Kaku and Anders Skaaja for earlier contributions to other versions of the code and Ariana Promessi for contributing to the language in the final version.
+I also would like to thank Allan Kaku and Anders Skaaja for earlier contributions to other versions of the code.
 
 Finally, I would like to thank High Performance Computing at NYU for the computing tests and their helpful assistance.
 }
@@ -209,7 +209,7 @@ Finally, I would like to thank High Performance Computing at NYU for the computi
 \lhead{\emph{Abbreviations}} % Set the left side page header to "Abbreviations"
 %\listofsymbols{ll} % Include a list of Abbreviations (a table of two columns)
 {
-\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
+%\textbf{LAH} & \textbf{L}ist \textbf{A}bbreviations \textbf{H}ere \\
 %\textbf{Acronym} & \textbf{W}hat (it) \textbf{S}tands \textbf{F}or \\
 }
 

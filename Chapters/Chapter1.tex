@@ -200,7 +200,7 @@ The original \textsc{FORTRAN} software\citep{lbfgsbsoftware} contains a line sea
   \end{aligned}
 \end{equation} 
 
- which is nothing but a modification of the Armijo condition\ref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$\ref{stage1}.
+ which is nothing but a modification of the Armijo condition\ref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$\ref{stage2}.
 
 \item[Third] stage is the typical line search\citep{nocedal}. It was called on line $3713$ of \texttt{lbfgsbnomessages.f90} and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function $f$. Both steps 2 and step 3 are called on the subroutine $dcstep$. The subroutine still exists on file \texttt{lbfgsbnomessages.f90} for illustration. Although it is only commented out and never called in this thesis.
 
@@ -212,18 +212,18 @@ The solution to this particular issue is to use a line search similar to the one
 
 \section{The Termination Condition} \label{terminator}
 
-One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, $L-BFGS-B$'s way to check whether the algorithm has converged, is by using the \emph{projected gradient} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ from the right, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from the left.
+One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, $L-BFGS-B$ checks whether the algorithm has converged, by means of the \emph{projected gradient} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ in a direction \vec{p}, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from an opposite direction.
 
-Given this set of conditions, there is a need for a special set of rules to establish the finalization of the optimization, these rules have already been established in some works before\citep{overtonlewis} \citep{skajaa}.
+Given this set of conditions, there is a need for particular rules to establish the finalization of the optimization, these rules have already been established in some works before\citep{overtonlewis} \citep{skajaa}.
 
 \subsection{Description of the Solution}
-
+%Warning review
 Overton and Lewis formulate an algorithm that gives a practical solution to this problem on section $6.3$ \citep{overtonlewis}
-The best practical methodology should be to calculate wheter zero $0$ or a very small number is the norm of a vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$. In order to make sure that the gradient zero $\vec{0}$ or a vector with a very small norm smaller than a very tiny tolerance $\tau_d > 0$ is part of the convex hull calculated near a neighbourhood of the optimum, the algorithm  keeps a record of the latest gradient vectors in this small neighbourhood of the point where it is suspected that the optimum is located. The neighborhood is defined as those points with a distance to $x$ smaller than a small tolerance $\tau_x > 0$ and no more than $J \in \mathbb{N}$ iterations back.  This list of gradients is referred to as the set $\mathcal{G}$ \citep{overtonlewis}
+The best practical methodology should be to calculate wheter zero $0$ or a very small number is the norm of a vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$. The neighborhood is defined as those points with a distance to $x$ smaller than a small tolerance $\tau_x > 0$ and no more than $J \in \mathbb{N}$ iterations back. In order to make sure that the gradient zero $\vec{0}$ or a vector with a very small norm smaller than a very tiny tolerance $\tau_d > 0$ is part of the convex hull calculated near a neighbourhood of the optimum, the algorithm  keeps a record of the latest gradient vectors in this small neighbourhood of the point where the optimum is suspected to be located. This list of gradients is referred to as the set $\mathcal{G}$ \citep{overtonlewis}
 
-With this list $\mathcal{G}$ of gradients at hand. The next step is to solve a quadratic program that locates the vector with the minimal norm that lives in the convex hull of these gradients.  If the norm of this vector has a norm smaller than $\tau_d$ , the algorithm ends with a message of convergence success. If the minimum such norm is larger than the tolerance, the algorithm must continue to the following iteration and not terminate.
+With this list $\mathcal{G}$ of gradients at hand. The next step is to find the vector with the minimal norm contained in the convex hull of these gradients.  If the norm of this vector has a norm smaller than $\tau_d$ , the algorithm ends with a message of convergence success. If the minimum such norm is larger than the tolerance, the algorithm must continue to the following iteration and not terminate.
 
-Every vector in the convex hull can be expressed as a nonnegative linear combination $Gz$ of those vectors in $\mathcal{G}$. Where $G$ is the matrix with columns made up of gradients in $\mathcal{G}$; and $z$ is such that $\sum_{i=1}^n z_i = 1$ and $z_i \geq 0$.
+In order to find this vector, there is the need to solve a quadratic problem. Every vector in the convex hull can be expressed as a nonnegative linear combination $Gz$ of those vectors in $\mathcal{G}$. Where $G$ is the matrix with columns made up of gradients in $\mathcal{G}$; and $z$ is such that $\sum_{i=1}^n z_i = 1$ and $z_i \geq 0$.
 
 The objective is to find the right combination of $z$ that minimizes the norm $||Gz||_2$.  This is equivalent to solving the following optimization problem
 
@@ -233,7 +233,7 @@ The objective is to find the right combination of $z$ that minimizes the norm $|
     & & q(z) = ||G z ||_2^2 = z^TG^TGz  \\
     & \text{s.t.}
     & & \sum_{i = 1} ^J z_i = 1 \; \\
-    & & & z_i >= 0.
+    & & & z_i \geq 0.
   \end{aligned}
 \end{equation}
 
@@ -241,7 +241,7 @@ The solution to this problem $z^*$ has the associated vector $Gz^*$. And if $||G
 
 \subsection{The Solution of the Quadratic Program}
 
-The solution of \ref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is a typical Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming.
+The solution of \ref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming.
 
 This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions. The $KKT$ is a system of equations whose solution characterizes the solution of the original optimization problem. In \ref{quadraticproblem}, the Karush Kuhn Tucker equations are:
 
@@ -258,11 +258,11 @@ This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions.
 
 Where $s$ is the variable that represents the dual problem.
 
-In order to solve this system of equations a variant of Newton's method is used. Thmethod provides a search direction which requires a corresponding step length.  Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.  In the best of cases, it would be nice to approach the solution through a \emph{central path} where the third equation in \ref{kkt} is allowed to take more relaxed values $z_is_i = \tau$, where $\tau \geq 0$. If the solution is approached through this \emph{central path}. The convergence will require fewer iterations \footnote{The reason why the central path is so convenient is more thoroughly explained in Nocedal's text chapter $14$\citep{nocedal}}.
+In order to solve this system of equations a variant of Newton's method is used. The method provides a search direction and as usual for this type of methods, it  requires a corresponding step length. Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.  In the best of cases, it would be nice to approach the solution through a \emph{central path} defined as third equation in \ref{kkt} is allowed to take more relaxed values $z_is_i = \tau$, where $\tau \geq 0$. If the solution is approached through this \emph{central path}. The convergence will require fewer iterations \footnote{The reason why the central path is so convenient is more thoroughly explained in Nocedal's text chapter $14$\citep{nocedal}}.
 
-The problem is that a pure Newton's method solution is not close to this central path. The step length is usually very small because of the nature of the third and fourth equations. If the step length is too large, the condition of $z > 0$ or $s > 0$ will be violated and unfortunately, the pure method as it is does not allow reasonable step sizes in practice. The method approaches the solution very close to the boundaries of the feasible set and far away from the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster. It is for this reason that a \emph{centering} of the path is performed. This first step is known as the ``predictor'' step.
+The problem with a pure Newton's method is that it's solution is not close to this \emph{central path}. The step length is usually very small because of the nature of the third and fourth equations. For this reason, if the step length is too large, the condition of $z > 0$ or $s > 0$ will be violated and unfortunately, the pure method as it is does not allow reasonable step sizes in practice. The method approaches the solution very close to the boundaries of the feasible set and far away from the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster. It is for this reason that a \emph{centering} of the path is performed. This first step is known as the ``predictor'' step.
 
-Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the solution closer to the \emph{central path} by taking into account its curvature. This second stage is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage\footnote{These are some parameters that calibrate the speed at which the tangent path is pushed into the central path. This is also explained in chapter $14$\citep{nocedal}}. The second stage is similar to the first stage in that it requires the solution of a new system of equations.
+Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the solution even closer to the \emph{central path} by taking into account its curvature. This second stage is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage\footnote{These are some parameters that calibrate the speed at which the tangent path is pushed into the central path. This is also explained in chapter $14$\citep{nocedal}}. The second stage is similar to the first stage in that it requires the solution of a new system of equations.
 
 \begin{figure}
 \begin{center}
@@ -271,13 +271,13 @@ Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the
 \end{center}
 \end{figure}
 
-And this is very important, because both steps require a solution of a system of equations and part of this solution can be recycled. Mehrotra's algorithm requires only one Cholesky factorization for the first stage. This factorization is reused during the second stage. By reusing the factorization, the performance is improved.
+And this is very important, because both steps require a solution of a system of equations which in turn requires a matrix factorization. And this factorization can be recycled. Mehrotra's algorithm requires only one Cholesky factorization for the first stage. This factorization is reused during the second stage. By reusing the factorization, the performance is improved.
 
 \chapter{Solution Tests}
 
-The implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files using a PBS generator script \ref{pbsgenerator}. This script generator created PBS files which in turn run bash scripts \ref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original $L-BFGS-B$ optimizer displays different messages depending on the initial condition that triggered the exit.  
+The $L-BFGS-B$ implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files using a PBS generator script \ref{pbsgenerator}. This script generator created PBS files which in turn run bash scripts \ref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original $L-BFGS-B$ optimizer displays different messages depending on the initial condition that triggered the exit.  
 
-\section{Exit Conditions}
+\section{Exit Messages}
 
 The following is a list of some of the other most common exit messages in the original $L-BFGS-B$ optimizer.
 
@@ -302,9 +302,9 @@ on top of these messages, $L-BFGS-B-NS$ introduced a new message for a succesful
 \item 'CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL' What this means is that all termination conditions\ref{terminator} were satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to finish the execution of the algorithm}.
 \end{itemize}
 
-\section{Modified Rosenbrock Function}
+\section{Modified Rosenbrock Function} \label{ros}
 
-With those tools in hand, it is possible to run a few tests of the algorithm. Several functions were evaluated. One of them is a modified version of the Rosenbrock function problem\footnote{rosenbrock}:
+With those tools in hand, it is possible to run a few tests of the algorithm. Several functions were evaluated. One of them is a modified version of the Rosenbrock function problem\citep{rosenbrock}:
 
 \begin{equation} \label{modifiedrosenbrock}
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
@@ -350,14 +350,32 @@ This exercise tested three different values of $m$, where $m$ stands for the ste
 
 In all cases the projected gradient has a very small norm. When this norm is tiniest the convergence is achieved because the norm of the projected gradient is smaller than the threshold. In other cases, the program exits succesfully after a relative reduction in the size of the function. In other cases, an abnormal termination message is sent to the output.
 
-Notice that in \ref{pequal2} the program sometimes sends a warning message even though the function has converged to a value that more or less is very close to the optimal expected value.  This is because the Rosenbrock function is designed to be very difficult to solve.  Its minimum is located in a banana shaped valley. This valley is very flat and causes a lot of trouble to even the best optimizers.
+Notice that in \ref{pequal2} the program sometimes sends a warning message even though the function has converged to a value that more or less is very close to the optimal expected value.  This is because the original Rosenbrock function is designed to be very difficult to solve.  Its minimum is located in a banana shaped valley. This valley is very flat and is supposed to cause trouble to even the best optimizers as seen in figure \ref{dualgraph}
+
+\begin{figure}
+\centering
+\mbox{\subfigure{\includegraphics[scale = 0.4]{Figures/rosenbrock.PNG}} \quad
+\subfigure{\includegraphics[scale = 0.4]{Figures/FlatBottom.PNG} }}
+\caption[Original Rosenbrock Function Mesh]{The original Rosenbrock function $f(x,y) = (1 - x)^2 + 100(y - x^2)^2$ is designed to be a very difficult function to optimize. The global minimum is located along the very narrow, flat banana shaped valley\citep{rosenbrock}}
+\label{dualgraph}
+\end{figure}
+
+It is perhaps easier to see it all on the contour plot \ref{contourbanana}
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.5]{Figures/contour.PNG}
+\caption[Contour Plot of the Original Rosenbrock Function]{The contour plot shows the valley in red where the global optimum is located}
+\label{contourbanana}
+\end{center}
+\end{figure}
 
 The overall conclusion from this exercise is that the original $L-BFGS-B$ optimizer works well, for the smooth Rosenbrock case\footnote{The original algorithm solves a modified version of this function \ref{modifiedrosenbrock}, so it is to be expected that the performance is good}.
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.75]{Figures/abnormalNocedal.png}
-\caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm $L-BFGS-B$ applied to the Modified Rosenbrock function with $p = 1$}
+\includegraphics[scale=0.5]{Figures/abnormalNocedal.png}
+\caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm $L-BFGS-B$ applied to the Modified Rosenbrock function with $p = 1$, notice however that the two-dimensional case is succesful.  This is because the function is smooth in this particular case.}
 \label{pequal1}
 \end{center}
 \end{figure}
@@ -376,7 +394,15 @@ For intermediate values, the new changes seem to provide better values of $f$. H
 \end{center}
 \end{figure}
 
-These are typical values of optimizations for intermediate values of $p$. In the bar graph it is possible to see that values generated via $L-BFGS-B-NS$ are a little better for values of $p$ closer to $1$.
+These are typical values of optimizations for intermediate values of $p$. In the bar graph it is possible to see that values generated via $L-BFGS-B-NS$ are a little better for values of $p$ closer to $1$. Finally, there is a table with the number of evaluations performed sliced by $p$ and $m$ \ref{pmtable}. And just as it would be expected, the number of evaluations required is higher for values of $p$ close to $1$.
+
+\begin{figure}
+\begin{center}
+\includegraphics[scale=0.75]{Figures/Niterations.PNG}
+\caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of function evaluations for different values of $p$ and $m$. The number of function evaluations is a few times higher than the number of iterations because it iterations requires to evaluate the function a couple of times for the line search. Values of DC converged using other stopping criteria besides the termination condition \ref{terminator}}
+\label{pmtable}
+\end{center}
+\end{figure}
 
 \section{Nesterov's Chebyshev-Rosenbrock Modified function}
 
@@ -402,7 +428,7 @@ is highly oscillatory in nature, and therefore $BFGS$ methods require many itera
 \end{center}
 \end{figure} 
 
-The results show that the number of iterations increases significatively with smaller values of $p$, and in general with larger values of the dimension $n$.
+The results show that the number of iterations increases significatively with smaller values of $p$, and in general with larger values of the dimension $n$. The number of iterations is a lot larger than for the previous case \ref{ros} 
 
 This table was also sliced with the parameters $n$ and $m$ in figure \ref{yurimn}.
 
@@ -417,25 +443,17 @@ This table was also sliced with the parameters $n$ and $m$ in figure \ref{yurimn
 \chapter{Conclusions}
 
 %-------------------------------------------------------------------------
-and in fact, whenever the function is restricted to a finite domain this function will be lipschitz continuous for $p > 1$. Whenever $p > 1$ the function $f(z) = |z|^p$ is zero $0$ around zero because the derivative $p |z| ^{p-1}$ is zero whenever $z$ tends to zero from the right. (this is also the case from the left because it is an even function). However the second derivative will not be as nice.
+The need to build optimizers that work on a large number of variables quickly led us to the use of large scale quasi-Newton methodologies. These methodologies have been show to work very well for smooth functions and several implementations have been suggested in the literature and some implementations are already available.
 
-For the case when $p \leq 1$ the second derivative tends to infinity. $\displaystyle \lim_{x \to 0^+} {f' = \infty}$. Which is already well known given the "heavyside" look of $f(z) = |z|$.
+Implementing the changes proposed to the original $L-BFGS-B$ software like changing the Wolfe condition from the strong to the weak version and using a line search algorithm that does not require smoothness of the function at critical points, provides the capability to run optimizations on Non-Smooth functions on simply restricted domains.
 
-The convergence of the algorithm smoothly descends to the objective 
+With the new tool, which is called $L-BFGS-B-NS$, it is possible to run optimizations of problems that involve a few millions of variables for some complicated test functions. The software has been tested with very challenging functions and has performed well.
 
-\begin{center}
-\includegraphics[scale=0.3]{Figures/convergence.png}
-\end{center}
+The new methodology offered some challenges to the way in which the algorithm terminates and for this reason it was also necessary to implement termination conditions that take care of the wedges natural to Non-Smooth functions. The new termination conditions work fine for the problems tested.
 
-The converge is adversely affected by the selection of $p$ as one would expect. Values of $p$ descending to $1$ make the function less "smooth" and have the adverse effect of making the convergence much more difficult. In this exercise it is noticeable how slow the convergence becomes for a few specific values of $p$. In particular for $1.0001$
+After running the algorithm it seems like there is not a good rule to choose the number of memory step terms $m$ to keep in memory, but this is something that also happened in the case of smooth functions. Also, the test functions Modified Rosenbrock and Modified NCR-NS1, show that the most complicated and quasi-Non-Smooth a function becomes, the more iterations and function evaluations will be required for the function to converge.
 
-\begin{center}
-\includegraphics[scale=0.3]{Figures/hist3dmpniter.png}
-\end{center}
+Another conclusion, quite obvious, is that larger problems involve a greater number of ressources
 
-\begin{equation}
-  \begin{aligned}
-    f(x_k + \alpha_kp_k) \leq f(x_k) + c_1 \alpha _k p_k^T\nabla f(x_k)
-  \end{aligned}
-\end{equation}
+Future steps suggest the investigation of limited-memory bundled methods $LMBM$, how it compares with $L-BFGS-B-NS$ and how one could benefit from the other. Also, the study of the impact of the Lipschitz constant on the convergence of the $L-BFGS-B-NS$ algorithm\citep{QJ:QJ935}.
 

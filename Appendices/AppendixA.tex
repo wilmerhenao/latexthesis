@@ -17,7 +17,7 @@
   breaklines=true,
   firstnumber = 2607
 }
-\section{Ignoring old code}
+\section{Old Parts of the Code (Commented Out)}
 All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also true for the code that is not being used anymore.  Here the old function dcsrch is commented out. lineww is replacing it instead
 \begin{lstlisting}
 
@@ -30,8 +30,8 @@ All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also 
   escapeinside={\%*}{*)},
   firstnumber = 3687
 }
-\section{Old Stage 1 of the line search}
-Stage 1 of the line search\citep{lbfgsbsoftware} \label{stage1}. This stage is not being run in lbfgsbNS. But is kept there for comparisson. For the new line search that replaces it \ref{linesearchww}
+\section{Stage 2 of the Line Search}
+Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. But is kept there for comparisson. For the new line search that replaces it \ref{linesearchww}
 \begin{lstlisting}
       if (stage .eq. 1 .and. f .le. fx .and. f .gt. ftest) then
 
