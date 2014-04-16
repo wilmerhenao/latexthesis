@@ -31,7 +31,7 @@ All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. The older ver
   firstnumber = 3687
 }
 \section{Stage 2 of the Line Search}
-Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. It is kept there for comparison. For the new line search that replaces it. You can look at appendix \ref{linesearchww}
+Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. It is kept there for comparisson. For the new line search that replaces it. You can look at appendix \ref{linesearchww}
 \begin{lstlisting}
       if (stage .eq. 1 .and. f .le. fx .and. f .gt. ftest) then
 
@@ -174,7 +174,7 @@ done
 After they are created I could fire all of the runs at once by using the command 
 
 \label{qsubfire}
-\texttt{for i in {0..20}; do qsub pbs.script.rosenbrock.$\$i$ ; done}
+for i in {0..20}; do qsub pbs.script.rosenbrock.$\$i$ ; done
 
 
 \section{PBS File Sample} \label{pbsfile}
