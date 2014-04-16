@@ -18,7 +18,7 @@
   firstnumber = 2607
 }
 \section{Old Parts of the Code (Commented Out)}
-All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also true for the code that is not being used anymore.  Here the old function dcsrch is commented out. lineww is replacing it instead
+All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. The older version of the code was left untouched and simply was commented out. Here the old function dcsrch. lineww is replacing it instead
 \begin{lstlisting}
 
 !     call dcsrch(f,gd,stp,ftol,gtol,xtol,zero,stpmx,csave,isave,dsave)
@@ -31,7 +31,7 @@ All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. This is also 
   firstnumber = 3687
 }
 \section{Stage 2 of the Line Search}
-Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. But is kept there for comparisson. For the new line search that replaces it \ref{linesearchww}
+Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. It is kept there for comparisson. For the new line search that replaces it. You can look at appendix \ref{linesearchww}
 \begin{lstlisting}
       if (stage .eq. 1 .and. f .le. fx .and. f .gt. ftest) then
 
@@ -90,7 +90,7 @@ This part of the code does not work in the case when the function is Non-Smooth 
 \end{lstlisting}
 
 \section{Line Search Enforcing Weak Wolfe Conditions}\label{linesearchww}
-This is the implementation of the line search that enforces the weak Wolfe conditions. Bisections and expansions (as long as it doesn't mean leaving the bounding box) of the step length. This version tries to be as similar as possible to the interior of the while loop in qpspecial.m at hanso \citep{hanso}
+This is the implementation of the line search that enforces the weak Wolfe conditions. Bisections and expansions (as long as it doesn't mean leaving the bounding box) of the step length. The purpose of this version is to be as similar as possible to the interior of the while loop in qpspecial.m at hanso \citep{hanso}
 \lstset{
   firstnumber = 4425
 }
@@ -136,7 +136,7 @@ This appendix includes some of the files that were used to run examples in paral
 
 \section{Script Generator} \label{pbsgenerator}
 
-This is a sample of the script generator that creates pbs files to be sent to the High Performance Machines. The value ``i'' creates a different set of files, in this case one file for each value of $p$ that we want to test. To see a result of running this script look at \ref{pbsfile}. 
+This is a sample of the script generator that creates pbs files to be sent to the High Performance Machines. The value ``i'' creates a different set of files when it varies between $0$ and $20$, in this case one file for each value of the parameter $p$ from \ref{modifiedrosenbrock} that we want to test. To see one of the files resulting from running this script look at appendix \ref{pbsfile}. 
 \lstset{
   language=sh,
   firstnumber = 1
@@ -178,7 +178,7 @@ for i in {0..20}; do qsub pbs.script.rosenbrock.$\$i$ ; done
 
 
 \section{PBS File Sample} \label{pbsfile}
-This is a sample file general with \ref{pbsgenerator}. It runs a special value $p$.  These are the ones that get started with the the qsub command.
+This is one of the sample files that were generated via the generator on appendix  \ref{pbsgenerator}. It runs a special value $p$.  These are the ones that get started with the the qsub command.
 
 Lines 4 to 5 provide the user with emails and critical information while running the process. Line 13 defines a run for different sizes of $n$. Line $16$ is the actual run that will be sent to an output file. In this case ``outputrosenbrock9.txt''
 \lstset{
