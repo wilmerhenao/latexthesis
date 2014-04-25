@@ -2,7 +2,7 @@
 
 \chapter{Introduction} % Main chapter title
 
-\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1} 
+\label{Chapter1} % For referencing the chapter elsewhere, use \eqref{Chapter1} 
 
 \lhead{Chapter 1. \emph{Introduction}} % This is for the header on each page - perhaps a shortened title
 
@@ -20,21 +20,21 @@ The problem addressed is to find a local minimizer of the Non-Smooth minimizatio
   \end{aligned}
 \end{equation}
 
-where $f \colon \mathbb{R}^n \to \mathbb{R}$, is continuous but not differentiable everywhere and $n$ is a very large but finite number.
+where $f \colon \mathbb{R}^n \to \mathbb{R}$, is continuous but not differentiable everywhere and $n$ is large.
 
-The \texttt{L-BFGS-B} algorithm \citep{lbfgsboriginal} is a standard method for solving large instances of \ref{mainproblem} when $f$ is a smooth function. The original name of \texttt{BFGS} stands for Broyden, Fletcher, Goldfarb and Shanno, the authors
+The \texttt{L-BFGS-B} algorithm \citep{lbfgsboriginal} is a standard method for solving large instances of \eqref{mainproblem} when $f$ is a smooth function tipically, twice differentiable. The original name of \texttt{BFGS} stands for Broyden, Fletcher, Goldfarb and Shanno, the authors
 of the original \texttt{BFGS} quasi-Newton algorithm for unconstrained
 optimization discovered and published
 independently by them in 1970 \citep{Broyden, Fletcher, Goldfarb, Shanno}.
 This method requires storing and updating a matrix which 
 approximates the inverse of the Hessian $\nabla^2 f(x)$ and
 hence requires $\mathcal{O}(n^2)$ operations per iteration.  
-The \texttt{L-BFGS} variant \citep{MR572855} where the $L$ stands for ``Limited-Memory'' and also for ``Large'' problems, it is based on \texttt{BFGS} but requires only $\mathcal{O}(mn)$ operations per iteration. And not only it requires less FLOPS, but it also requires much less memory. Instead of storing the $n \times n$ Hessian approximations, \texttt{L-BFGS} stores only $m$ vectors of dimension $n$, where $m$ is a number much smaller than $n$. Finally, the last letter B in 
+The \texttt{L-BFGS} variant \citep{MR572855}, where the \texttt{L} stands for ``Limited-Memory'' and also for ``Large'' problems, is based on \texttt{BFGS} but requires only $\mathcal{O}(mn)$ operations per iteration, and requires less memory. Instead of storing the $n \times n$ Hessian approximations, \texttt{L-BFGS} stores only $m$ vectors of dimension $n$, where $m$ is a number much smaller than $n$. Finally, the last letter B in 
 \texttt{L-BFGS-B} stands for bounds, meaning the lower and upper
-bounds $l_i$ and $u_i$ in equation \ref{mainproblem}.  The \texttt{L-BFGS-B} algorithm is implemented in a FORTRAN software package \citep{lbfgsbsoftware}.
+bounds $l_i$ and $u_i$ in equation \eqref{mainproblem}.  The \texttt{L-BFGS-B} algorithm is implemented in a FORTRAN software package \citep{lbfgsbsoftware}.
 
-In this thesis, there is a brief description of the \texttt{L-BFGS-B} algorithm
-at a high level and there is an explanation of how the modified algorithm
+In this thesis, we first give a brief description of the \texttt{L-BFGS-B} algorithm
+at a high level and then we introduce a modified algorithm which
 is more suitable for functions $f$ which may not be
 differentiable at their local or global optimal points.  
 We call the new algorithm L-BFGS-B-NS where NS stands for
@@ -46,32 +46,14 @@ non-smooth bound-constrained optimization problem (1.1).
 We are grateful to Jorge Nocedal and his coauthors for allowing us 
 to modify the L-BFGS-B code and post the modified version.  
 
-%\chapter{deleted chapter}
-
-%Larger problems not only mean that their solution will take a longer time to solve. But storing and calculating a the necessary matrices depends on the capabilities of the machine used to solve the problem and this might be prohibitively expensive. There a few large scale optimization techniques that have already been developed for the case when $n$ is very large. Also, several techniques have already been developed to handle this type of problems as long as the function $f$ is smooth. But there is not much out there about large scale problems with nonsmooth $f$
-
-%In this thesis $f(x)$ is a nonsmooth function. This small change will require a few changes in the solution algorithm.
-
-%For the particular case when $n$ is a small number, several methods that solve optimization problems of nondifferentiable functions in lower dimensions \citep{kiwiel85} have been developed. This thesis will try to see if it is possible to bring some of those concepts to large scale optimization. 
-
-%In the case of smooth functions, it is possible to use Newton iteration algorithms and achieve quadratic convergence, the problem with Newton algorithms is that they require second derivatives to be provided\footnote{the main issue with the second derivative is that it requires a total of $n \times n$ partial derivatives. Which is impractical for medium and for some small-size problems}. In the 1950's and several years after that, several "quasi-newton" methods were proposed where the second derivative Hessian matrix is approximated step by step \citep{unconstrained}. These approximations or "updates" are calculated after every iteration of the original algorithm and the way in which this update is found defines a new method depending on the particular needs. This thesis will only be concerned with the \texttt{BFGS}. \footnote{BFGS stands for the last names of its authors Broyden, Fletcher, Goldfarb and Shanno} which can achieve super linear convergence, has proven to work in most practical purposes and posseses very nice self correcting features \citep{selfcorrecting}. In \texttt{BFGS}, it doesn't matter that one update incorrectly estimates the curvature in the objective function, \texttt{BFGS} will always correct itself in just a few steps. This self-correcting property is very desired in the nonsmooth case, since changes in curvature could be abrupt near the optimal point. 
-
-%\texttt{BFGS} was originally developed for small to medium sized problems, and it is not the right tool for large scale optimization and therefore an \texttt{L-BFGS} adaptation is needed to solve large scale problems\ref{mainproblem}. 
-
-%A final assumption in this thesis is that the Hessian matrix is not sparse. In this case, there are other algorithms that may be more suitable \citep{Fletcher96computingsparse, sparse}, some of them have even been implemented in fortran \citep{lancelot}.
-
-%This thesis builds upon the original \texttt{L-BFGS-B} code \citep{lbfgsbsoftware} that solves smooth problems of $f$. There were three main changes in the code. The first one is the line search descent and curvature conditions which required a weaker version of the curvature in order to satisfy the different structure that a nonsmooth function requires. The second one is the line search methodology which was changed from a cubic interpolation to a bisection algorithm and last change in the thesis was the termination condition.
-
-%Nocedal's original algorithm consists of $2$ steps. In the first step or gradient projection, most of the dimensions in the problem should be removed, making the problem a lot simpler. In the second step there is some fine tuning to guarantee better than just linear speed of convergence.
-
 \chapter{L-BFGS-B}
-\label{ChapterConstraints} % For referencing the chapter elsewhere, use \ref{ChapterConstraints} 
+\label{ChapterConstraints} % For referencing the chapter elsewhere, use \eqref{ChapterConstraints} 
 
-This section is a description of the original \texttt{L-BFGS-B} code at a very high level \citep{lbfgsbsoftware}. The original software is intended to work well with smooth functions. This thesis discusses how to modify the algorithm for Non-Smooth functions. The original \textsc{FORTRAN} code contains some documentation \citep{codepaper} about how the software was built.
+This section is a description of the original \texttt{L-BFGS-B} code \eqref{lbfgsbsoftware, codepaper} at a very high level. The original software is intended to find local minimizers of smooth functions. This thesis discusses how to modify the algorithm for Non-Smooth functions.
 
 \section{BFGS}
 
-\texttt{BFGS} is a standard tool for optimization of smooth functions\citep{nocedal}. It is a line search method and its goal is to find a search direction starting from its current position $x$. The search direction is of type $d = -B_k \nabla f$ \footnote{Notice that when $B$ is the identity, this is the same direction as steepest descent. Another common line search method of optimization} where $B_k$ is the $k^{th}$ approximation to the inverse Hessian.\footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the \texttt{BFGS} formula
+\texttt{BFGS} is a standard tool for optimization of smooth functions \citep{nocedal}. It is a line search method. The search direction is of type $d = -B_k \nabla f(x_k)$ where $B_k$ is the $k^{th}$ approximation to the inverse Hessian of $f$.\footnote{When it is exactly the inverse Hessian the method is known as Newton's method. Newton's method has quadratic convergence but requires the explicit calculation of the Hessian at every single step.} This $k^{th}$ step approximation is calculated via the \texttt{BFGS} formula
 
 \begin{equation} \label{bfgsupdate}
   \begin{aligned}
@@ -79,13 +61,13 @@ This section is a description of the original \texttt{L-BFGS-B} code at a very h
   \end{aligned}
 \end{equation}
 
-where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$ and where the first approximation of $B_0$ is assumed to be the the identity matrix $I$ in this thesis\footnote{A different starting matrix is suggested in Nocedal's book \citep{nocedal}}.  \texttt{BFGS} exhibits super-linear convergence but it also requires $\mathcal{O}(n^2)$ operations per iteration\citep{nocedal}.
+where $y_k = \nabla f(x_{k+1}) - \nabla f(x_k)$ and $s_k = x_{k+1} - x_k$.  \texttt{BFGS} exhibits super-linear convergence on generic problems but it requires $\mathcal{O}(n^2)$ operations per iteration \citep{nocedal}.
 
-In the case of Non-Smooth functions. \texttt{BFGS} typically succeeds in finding a local minimizer. However, this requires some modifications of the line search conditions. These conditions are known as the Armijo and weak Wolfe line search conditions and they are a set of inequalities used for the computation of an appropriate step length that reduces the objective function ``sufficiently''. These inequalities will be explained later in section \ref{Wolfeconditions}
+In the case of Non-Smooth functions, \texttt{BFGS} typically succeeds in finding a local minimizer \citep{overtonlewis}. However, this requires some attention to the line search conditions. These conditions are known as the Armijo and weak Wolfe line search conditions and they are a set of inequalities used for the computation of an appropriate step length that reduces the objective function ``sufficiently''. These inequalities will be explained later in section \eqref{Wolfeconditions}
 
 \section{L-BFGS}
 
-\texttt{L-BFGS} stands for Limited-memory \texttt{BFGS}. This algorithm approximates \texttt{BFGS} using only a limited amount of computer memory to update the inverse of the Hessian $B$. Instead of storing a dense $n \times n$ matrix, \texttt{L-BFGS} keeps a record of the last $m$ iterations where $m$ is a small number that is chosen according to the problem at hand\footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priory what choice of $m$ will provide the best results as will be illustrated later in this thesis}. For this reason the first $m$ iterations of \texttt{BFGS} and \texttt{L-BFGS} produce exactly the same search directions.
+\texttt{L-BFGS} stands for Limited-memory \texttt{BFGS}. This algorithm approximates \texttt{BFGS} using only a limited amount of computer memory to update the inverse of the Hessian of $f$. Instead of storing a dense $n \times n$ matrix, \texttt{L-BFGS} keeps an approximation to a record of the last $m$ iterations where $m$ is a small number that is chosen in advance\footnote{In this thesis $m < 20$, and in practice numbers between 5 and 10 are regularly used. There is no way of knowing a priory what choice of $m$ will provide the best results as will be illustrated later in this thesis}. For this reason the first $m$ iterations of \texttt{BFGS} and \texttt{L-BFGS} produce exactly the same search directions.
 
 Because of this construction, the \texttt{L-BFGS} algorithm is less computationally intensive and requires only $\mathcal{O}(mn)$ operations per iteration. So it is much better suited for problems where the number of dimensions $n$ is large. For this reason it is the algorithm of choice in this thesis.
 
@@ -93,7 +75,7 @@ Because of this construction, the \texttt{L-BFGS} algorithm is less computationa
 
 Finally \texttt{L-BFGS-B} comes naturally as an extension of \texttt{L-BFGS}. The $B$ stands for the inclusion of Boundaries.  \texttt{L-BFGS-B} requires two extra steps on top of \texttt{L-BFGS}. First, there is a step called \emph{gradient projection} that reduces the dimensionality of the problem. 
 
-Depending on the problem, the gradient projection could potentially save a lot of iterations by eliminating those variables that are at bound at the optimum reducing the initial dimensionality of the problem and the number of iterations and running time. After this \emph{gradient projection} comes the second step or \emph{subspace minimization}. During the \emph{subspace minimization} phase, an approximate quadratic model of \ref{mainproblem} is solved iteratively in a similar way that the original \texttt{L-BFGS} algorithm is solved. The only difference is that during the search step phase the step length is restricted as much as necessary in order to remain within the $lu$-box defined by equation \ref{mainproblem}.
+Depending on the problem, the gradient projection could potentially save a lot of iterations by eliminating those variables that are at bound at the optimum reducing the initial dimensionality of the problem and the number of iterations and running time. After this \emph{gradient projection} comes the second step or \emph{subspace minimization}. During the \emph{subspace minimization} phase, an approximate quadratic model of \eqref{mainproblem} is solved iteratively in a similar way that the original \texttt{L-BFGS} algorithm is solved. The only difference is that during the search step phase the step length is restricted as much as necessary in order to remain within the $lu$-box defined by equation \eqref{mainproblem}.
 
 \subsection{Gradient Projection} \label{gp}
 The original algorithm was created for the case when $n$ is large and $f$ is smooth. Its first step is the gradient projection similar to the one outlined in \citep{gradproj1, gradproj2} which is used to determine an active set corresponding to those variables that are on either their lower or upper bounds. The active set defined at point $x^*$ is:
@@ -116,7 +98,7 @@ Gradient projection works on the linear part of the approximation model:
 
 where $H_k$ is a \texttt{L-BFGS-B} approximation to the Hessian $\nabla^2 f$ stored in the implicit way defined by \texttt{L-BFGS}.
 
-In this first stage of the algorithm a piece-wise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piece-wise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piece-wise gradient projection path is known as the ``Cauchy point'' $x^c$. See figure \ref{caja}
+In this first stage of the algorithm a piece-wise linear segment starts on the current point $x_k$ in the direction $-\nabla f(x_k)$. Whenever this direction encounters one of the constraints, the line segment turns corners in order to remain feasible. The path is nothing but the feasible piece-wise projection of the negative gradient direction on the constraint box determined by the values $\overrightarrow{l}$ and $\overrightarrow{u}$. At the end of this stage, the value of $x$ that minimizes $m_k(x)$ restricted to this piece-wise gradient projection path is known as the ``Cauchy point'' $x^c$. See figure \eqref{caja}
 
 \begin{figure}
 \begin{center}
@@ -130,9 +112,9 @@ In this first stage of the algorithm a piece-wise linear segment starts on the c
 
 The problem with gradient projection is that its search direction does not take advantage of information provided implicitly by the Hessian $H_k$, and therefore the speed of convergence is at best linear. It is for this reason that a stage two is necessary. Stage 2 or subspace minimization uses an \texttt{L-BFGS} implicit approximation of the Inverse Hessian matrix restricted to the free variables that are not in the active set $\mathcal{A}(x^c)$.
 
-The idea at a higher level is to solve the constrained problem \ref{themodel}, but only on those dimensions that are free. The starting point for this new stage will be the previously found Cauchy point $x^c$, the \texttt{L-BFGS} algorithm provides a new search direction $\hat{d}^u$ that takes implicit advantage of second order approximations of the Hessian matrix.
+The idea at a higher level is to solve the constrained problem \eqref{themodel}, but only on those dimensions that are free. The starting point for this new stage will be the previously found Cauchy point $x^c$, the \texttt{L-BFGS} algorithm provides a new search direction $\hat{d}^u$ that takes implicit advantage of second order approximations of the Hessian matrix.
 
-The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ (the step length) is chosen so that the new point $\bar{x}_i$ satisfies Armijo and weak Wolfe descent\footnote{Armijo and weak Wolfe conditions will be explained on section \ref{Wolfeconditions}} and curvature conditions, A third restriction on the step length is added so that the next iteration stays feasible. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails, a new gradient projection and subspace minimization will be needed. If the termination condition is successful, the program exits with an appropriate exit message.
+The algorithm will move in the direction $\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ (the step length) is chosen so that the new point $\bar{x}_i$ satisfies Armijo and weak Wolfe descent\footnote{Armijo and weak Wolfe conditions will be explained on section \eqref{Wolfeconditions}} and curvature conditions, A third restriction on the step length is added so that the next iteration stays feasible. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails, a new gradient projection and subspace minimization will be needed. If the termination condition is successful, the program exits with an appropriate exit message.
 
 \chapter{Modifications to the L-BFGS-B algorithm}
 
@@ -148,7 +130,7 @@ Probably the most important change made to the original code was the change in t
   \end{aligned}
 \end{equation}
 
-where $0 < c_1 < 1$ is a constant usually $c_1 = 10^{-4}$\citep{nocedal}. This condition guarantees that the function continues decreasing and eventually reaches some optimum. It is possible to continue decreasing without ever reaching the optimum if the armijo condition is not required as is shown in figure~\ref{armijograph}
+where $0 < c_1 < 1$ is a constant usually $c_1 = 10^{-4}$ \citep{nocedal}. This condition guarantees that the function continues decreasing and eventually reaches some optimum. It is possible to continue decreasing without ever reaching the optimum if the armijo condition is not required as is shown in figure~\eqref{armijograph}
 
 \begin{figure} 
 \begin{center}
@@ -166,7 +148,7 @@ The other condition and the one that was actually changed, is the curvature cond
   \end{aligned}
 \end{equation}
 
-Where $d_k$ represents the search direction and $c_2$ is a constant such that $0 < c_1 < c_2 < 1$ and is usually $c_2 = 0.9$\citep{nocedal}. The strong Wolfe condition is a natural choice for optimization of smooth functions. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'' as illustrated in figure~\ref{Wolfefigure}, but the problem is that the condition as it is, does not work well for the Non-Smooth case. This is because near the minimal points there may be abrupt changes in the gradient. a good example of this problem is the function $f(x) = |x|$, where the slope never becomes flat near the optimal point.
+Where $d_k$ represents the search direction and $c_2$ is a constant such that $0 < c_1 < c_2 < 1$ and is usually $c_2 = 0.9$ \citep{nocedal}. The strong Wolfe condition is a natural choice for optimization of smooth functions. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'' as illustrated in figure~\eqref{Wolfefigure}, but the problem is that the condition as it is, does not work well for the Non-Smooth case. This is because near the minimal points there may be abrupt changes in the gradient. a good example of this problem is the function $f(x) = |x|$, where the slope never becomes flat near the optimal point.
 
 \begin{figure} 
 \begin{center}
@@ -186,9 +168,9 @@ The weak Wolfe condition defined as
 
 can be used in the Non-Smooth case. It is all that is needed to guarantee that the \texttt{BFGS} updated inverse Hessian approximation is positive definite \citep{overtonlewis}. This weak version is suited for the problems in this thesis and it was implemented as part of the line search algorithm explained in the next section.
 
-\section{The line search Methodology}
+\section{The Line Search Methodology}
 
-The original \textsc{FORTRAN} software\citep{lbfgsbsoftware} contains a line search subroutine. This subroutine originally consisted of three steps. A maximum length,a sufficient decrease and a curvature condition (the Armijo and Wolfe conditions from the previous section). This sub-procedure was partially changed for the purpose of this thesis. The old version of the code was not removed, it was left commented out and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \ref{ignoredcode} of \texttt{lbfgsbnomessages.f90} which is a file within the github repository\citep{lbfgsbNS}.
+The original \textsc{FORTRAN} software \citep{lbfgsbsoftware} contains a line search subroutine. This subroutine originally consisted of three steps. A maximum length,a sufficient decrease and a curvature condition (the Armijo and Wolfe conditions from the previous section). This sub-procedure was partially changed for the purpose of this thesis. The old version of the code was not removed, it was left commented out and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \eqref{ignoredcode} of \texttt{lbfgsbnomessages.f90} which is a file within the github repository \citep{lbfgsbNS}.
 
 \begin{enumerate}
 \item[1^{st}] The line search requires a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$, as such, this is a unique feature of the bounded algorithm\texttt{L-BFGS-B}. In the original \textsc{FORTRAN} code, this part of the line search was not changed.
@@ -201,21 +183,21 @@ The original \textsc{FORTRAN} software\citep{lbfgsbsoftware} contains a line sea
   \end{aligned}
 \end{equation} 
 
- which is nothing but a modification of the Armijo condition \ref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ on appendix \ref{stage2}.
+ which is nothing but a modification of the Armijo condition \eqref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ on appendix \eqref{stage2}.
 
-\item[3^{rd}] This stage is very similar to the typical line search\citep{nocedal}. It was called on line $3713$ of \texttt{lbfgsbnomessages.f90} and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function $f$. Both steps 2 and step 3 are called on the subroutine $dcstep$. The subroutine still exists on file \texttt{lbfgsbnomessages.f90} for illustration. Although it is only commented out and never called in this thesis.
+\item[3^{rd}] This stage is very similar to the typical line search \citep{nocedal}. It was called on line $3713$ of \texttt{lbfgsbnomessages.f90} and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function $f$. Both steps 2 and step 3 are called on the subroutine $dcstep$. The subroutine still exists on file \texttt{lbfgsbnomessages.f90} for illustration. Although it is only commented out and never called in this thesis.
 
 \end{enumerate}
 
-Those three steps make up the original subroutine. But there is a problem with the function $dcstep$ on the third step as it concerns this thesis. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The algorithm takes advantage of quadratic and cubic approximations to the function in order to calculate step lengths that satisfy Armijo and Wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it is. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of appendix \ref{nsnowork} of \texttt{lbfgsbnomessages.f90}.
+Those three steps make up the original subroutine. But there is a problem with the function $dcstep$ on the third step as it concerns this thesis. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The algorithm takes advantage of quadratic and cubic approximations to the function in order to calculate step lengths that satisfy Armijo and Wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it is. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of appendix \eqref{nsnowork} of \texttt{lbfgsbnomessages.f90}.
 
-The solution to this particular issue is to use a line search similar to the one implemented in hanso\citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated. And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times\footnote{for all practical purposes this is considered a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution (the maximum established in the first step of the original line search). This version of the bisection and expansion is found in between lines $4425$ and $4456$ of \texttt{lbfgsbnomessages.f90} in appendix \ref{linesearchww} 
+The solution to this particular issue is to use a line search similar to the one implemented in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated. And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times\footnote{for all practical purposes this is considered a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution (the maximum established in the first step of the original line search). This version of the bisection and expansion is found in between lines $4425$ and $4456$ of \texttt{lbfgsbnomessages.f90} in appendix \eqref{linesearchww} 
 
 \section{The Termination Condition} \label{terminator}
 
-One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, \texttt{L-BFGS-B} checks whether the algorithm has converged, by means of the \emph{projected gradient}\footnote{Not to be confused with ``gradient projection'' from subsection \ref{gp}} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ in a direction $\vec{p}$, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from an opposite direction.
+One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, \texttt{L-BFGS-B} checks whether the algorithm has converged, by means of the \emph{projected gradient}\footnote{Not to be confused with ``gradient projection'' from subsection \eqref{gp}} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ in a direction $\vec{p}$, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from an opposite direction.
 
-Given this set of conditions, there is a need for particular rules to establish the finalization of the optimization, these rules have already been established in some works before\citep{overtonlewis, skajaa}.
+Given this set of conditions, there is a need for particular rules to establish the finalization of the optimization, these rules have already been established in some works before \citep{overtonlewis, skajaa}.
 
 \subsection{Termination Condition Sub-algorithm}
 %Warning review
@@ -242,9 +224,9 @@ The solution to this problem $z^*$ has the associated vector $Gz^*$. And if $||G
 
 \subsection{The Solution of the Quadratic Program}
 
-The solution of equation \ref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa\citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming.
+The solution of equation \eqref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming.
 
-This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions. The $KKT$ is a system of equations whose solution characterizes the solution of the original optimization problem in equation \ref{quadraticproblem}, the Karush-Kuhn-Tucker equations are:
+This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions. The $KKT$ is a system of equations whose solution characterizes the solution of the original optimization problem in equation \eqref{quadraticproblem}, the Karush-Kuhn-Tucker equations are:
 
 \begin{equation} \label{kkt}
   \begin{aligned}
@@ -259,11 +241,11 @@ This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions.
 
 Where $s$ is the variable that represents the dual associated problem.
 
-In order to solve this system of equations a variant of Newton's method is used. The method provides a search direction and as usual for this type of methods, it  requires a corresponding step length. Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.  In the best of cases, it would be nice to approach the solution through a \emph{central path} defined as third equation in \ref{kkt} is allowed to take more relaxed values $z_is_i = \tau$, where $\tau \geq 0$. If the solution is approached through this \emph{central path}. The convergence will require fewer iterations\footnote{The reason why the central path is so convenient is more thoroughly explained in Nocedal's text chapter $14$\citep{nocedal}}. The logic is that by being central, it is kept away from the borders.
+In order to solve this system of equations a variant of Newton's method is used. The method provides a search direction and as usual for this type of methods, it  requires a corresponding step length. Since this is an interior point method, it approaches the solution following a path inside the convex interior of the feasible set.  In the best of cases, it would be nice to approach the solution through a \emph{central path} defined as third equation in \eqref{kkt} is allowed to take more relaxed values $z_is_i = \tau$, where $\tau \geq 0$. If the solution is approached through this \emph{central path}. The convergence will require fewer iterations\footnote{The reason why the central path is so convenient is more thoroughly explained in Nocedal's text chapter $14$ \citep{nocedal}}. The logic is that by being central, it is kept away from the borders.
 
 The problem with a pure Newton's method is that it's solution is not close to this \emph{central path}. The step length is usually very small because of the nature of the third and fourth equations. For this reason, if the step length is too large, either the condition of $z > 0$ or $s > 0$ will be violated. Unfortunately the pure method this way, does not allow reasonable step sizes in practice. The method approaches the solution very close to the boundaries of the feasible set and far away from the \emph{central path} where the step lengths could be larger and the convergence therefore would be faster. It is for this reason that a \emph{centering} of the path is performed. This first step is known as the ``predictor'' step.
 
-Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the solution even closer to the \emph{central path} by taking into account its curvature. This second stage is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage\footnote{These are some parameters that calibrate the speed at which the tangent path is pushed into the central path. This is also explained in chapter $14$\citep{nocedal}}. The second stage is similar to the first stage in that it requires the solution of a new system of equations.
+Besides the centering; Mehrotra proposed a ``correction'' stage which pushes the solution even closer to the \emph{central path} by taking into account its curvature. This second stage is also used to calibrate some of the parameters used during the centering in the ``predictor'' stage\footnote{These are some parameters that calibrate the speed at which the tangent path is pushed into the central path. This is also explained in chapter $14$ \citep{nocedal}}. The second stage is similar to the first stage in that it requires the solution of a new system of equations.
 
 \begin{figure}
 \begin{center}
@@ -276,7 +258,7 @@ And this is very important, because both steps require a solution of a system of
 
 \chapter{Solution Tests}
 
-The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for Portable Batch System. This is a software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created} using the PBS generator script on appendix \ref{pbsgenerator}. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands. In this case, the program execution of the original \texttt{L-BFGS-B} software and \texttt{L-BFGS-B-NS}}. One of them is available on appendix \ref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original \texttt{L-BFGS-B} optimizer displays different messages depending on the initial condition that triggered the exit.  
+The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for Portable Batch System. This is a software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created} using the PBS generator script on appendix \eqref{pbsgenerator}. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands. In this case, the program execution of the original \texttt{L-BFGS-B} software and \texttt{L-BFGS-B-NS}}. One of them is available on appendix \eqref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original \texttt{L-BFGS-B} optimizer displays different messages depending on the initial condition that triggered the exit.  
 
 \section{Exit Messages}
 
@@ -286,7 +268,7 @@ The following is a list of some of the other most common exit messages in the or
 
 \item ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' This message means that there was a problem and the program's exit was premature. It is typically found in Non-Smooth functions where the cubic interpolation is impossible. But the message is also symptomatic of other problems.
 
-\item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for Non-Smooth functions involving the convex hull instead as explained in section \ref{terminator}.
+\item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for Non-Smooth functions involving the convex hull instead as explained in section \eqref{terminator}.
 \item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times machine $\epsilon$. This exit message does not apply to \texttt{L-BFGS-B-NS} either.
 
 \item ``ERROR: N .LE. 0": This is one of many error checks performed at the beginning of the execution. This one in particulars tests positivity of the dimensionality of the problem.
@@ -300,18 +282,18 @@ The following is a list of some of the other most common exit messages in the or
 on top of these messages, \texttt{L-BFGS-B-NS} introduced a new message for a successful exit from its termination condition.
 
 \begin{itemize}
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" What this means is that all termination conditions established on section \ref{terminator} were satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to finish the execution of the algorithm}.
+\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" What this means is that all termination conditions established on section \eqref{terminator} were satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to finish the execution of the algorithm}.
 \end{itemize}
 
 \section{Modified Rosenbrock Function} \label{ros}
 
-With those tools in hand, it is possible to run a few tests of the algorithm. Several functions were evaluated. One of them is a modified version of the Rosenbrock function problem\citep{rosenbrock}:
+With those tools in hand, it is possible to run a few tests of the algorithm. Several functions were evaluated. One of them is a modified version of the Rosenbrock function problem \citep{rosenbrock}:
 
 \begin{equation} \label{modifiedrosenbrock}
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
 \end{equation}
 
-Here, the properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function would have a value of $p = 2$ and the second term is multiplied by $100$}. This function can be proven to be locally lipschitz continuous whenever $p \geq 1$. In particular it is Locally Lipschitz continuous if restricted to a finite domain of the type $l$, $u$, similar to the one defined on equation \ref{mainproblem}.
+Here, the properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function would have a value of $p = 2$ and the second term is multiplied by $100$}. This function can be proven to be locally lipschitz continuous whenever $p \geq 1$. In particular it is Locally Lipschitz continuous if restricted to a finite domain of the type $l$, $u$, similar to the one defined on equation \eqref{mainproblem}.
 
 The region to be tested is defined by the ``box'' with boundaries
 
@@ -345,7 +327,7 @@ The problem is smooth for values of $p$ close to $2$, but as the values of $p$ a
 \end{figure}
 
 
-For a value of $p = 2$, the original \texttt{L-BFGS-B} optimizer does not have too many problems and it yields good results as seen on the resulting table \ref{pequal2}.
+For a value of $p = 2$, the original \texttt{L-BFGS-B} optimizer does not have too many problems and it yields good results as seen on the resulting table \eqref{pequal2}.
 
 \subsection{Performance of \texttt{L-BFGS-B}}
 
@@ -353,13 +335,13 @@ This exercise tested three different values of $m$, where $m$ stands for the ste
 
 In all cases the projected gradient has a very small norm. When this norm is tiniest the convergence is achieved because the norm of the projected gradient is smaller than the threshold. In other cases, the program exits successfully after a relative reduction in the size of the function. In other cases, an abnormal termination message is sent to the output.
 
-Notice that in \ref{pequal2} the program sometimes sends an ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' warning message even though the function has converged to a value that is very close to the optimal expected value.  This is because the original Rosenbrock function is designed to be very difficult to solve.  Its minimum is located in the middle of a banana shaped valley. This valley is very flat and is designed to be a test problem that causes trouble to even the best optimizers as. The shape of the original Rosenbrock function can be seen in figure \ref{dualgraph}. The shape of this region is perhaps easier to see on the contour plot \ref{contourbanana}. The minimum is locate at the point ($1$, $1$) on one of the corners.
+Notice that in \eqref{pequal2} the program sometimes sends an ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' warning message even though the function has converged to a value that is very close to the optimal expected value.  This is because the original Rosenbrock function is designed to be very difficult to solve.  Its minimum is located in the middle of a banana shaped valley. This valley is very flat and is designed to be a test problem that causes trouble to even the best optimizers as. The shape of the original Rosenbrock function can be seen in figure \eqref{dualgraph}. The shape of this region is perhaps easier to see on the contour plot \eqref{contourbanana}. The minimum is locate at the point ($1$, $1$) on one of the corners.
 
 \begin{figure}
 \centering
 \mbox{\subfigure{\includegraphics[scale = 0.4]{Figures/rosenbrock.PNG}} \quad
 \subfigure{\includegraphics[scale = 0.4]{Figures/FlatBottom.PNG} }}
-\caption[Original Rosenbrock Function Mesh]{The original Rosenbrock function $f(x,y) = (1 - x)^2 + 100(y - x^2)^2$ is designed to be a very difficult function to optimize. The global minimum is located along the very narrow, flat banana shaped valley\citep{rosenbrock}}
+\caption[Original Rosenbrock Function Mesh]{The original Rosenbrock function $f(x,y) = (1 - x)^2 + 100(y - x^2)^2$ is designed to be a very difficult function to optimize. The global minimum is located along the very narrow, flat banana shaped valley \citep{rosenbrock}}
 \label{dualgraph}
 \end{figure}
 
@@ -371,7 +353,7 @@ Notice that in \ref{pequal2} the program sometimes sends an ``ABNORMAL\_TERMINAT
 \end{center}
 \end{figure}
 
-The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well, for the smooth modified Rosenbrock case\footnote{The original algorithm solves a modified version of this function \ref{modifiedrosenbrock} with parameter $p = 2$, so it is to be expected that the performance is good}.
+The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well, for the smooth modified Rosenbrock case\footnote{The original algorithm solves a modified version of this function \eqref{modifiedrosenbrock} with parameter $p = 2$, so it is to be expected that the performance is good}.
 
 \begin{figure}
 \begin{center}
@@ -381,15 +363,15 @@ The overall conclusion from this exercise is that the original \texttt{L-BFGS-B}
 \end{center}
 \end{figure}
 
-On the other hand, the value of $p = 1$ has an abnormal line search termination in most of the cases presented. The projected gradient values are always far away from zero see table \ref{pequal1}. 
+On the other hand, the value of $p = 1$ has an abnormal line search termination in most of the cases presented. The projected gradient values are always far away from zero see table \eqref{pequal1}. 
 
 In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases crashed before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same in this table.
 
-But an analysis of only the values $p = 1$ and $p = 2$ would not be enough. And therefore several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ are the most difficult to solve for the original algorithm. When $p=1$ the algorithm does not work as seen in \ref{pequal1}\footnote{This is expected because the algorithm is originally designed to handle only smooth functions}. It is important to point out that the two dimensional case is successful because in this particular case the function is smooth inside its bounding box.
+But an analysis of only the values $p = 1$ and $p = 2$ would not be enough. And therefore several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ are the most difficult to solve for the original algorithm. When $p=1$ the algorithm does not work as seen in \eqref{pequal1}\footnote{This is expected because the algorithm is originally designed to handle only smooth functions}. It is important to point out that the two dimensional case is successful because in this particular case the function is smooth inside its bounding box.
 
 \subsection{Performance of \texttt{L-BFGS-B-NS}}
 
-For intermediate values, the new changes seem to provide better values of $f$. Here is a simple comparison of the algorithm running on $m = 5,10$ for selected values of $p$ \ref{pcomp}
+For intermediate values, the new changes seem to provide better values of $f$. Here is a simple comparison of the algorithm running on $m = 5,10$ for selected values of $p$ \eqref{pcomp}
 
 \begin{figure}
 \begin{center}
@@ -401,22 +383,22 @@ For intermediate values, the new changes seem to provide better values of $f$. H
 
 These are typical values of optimizations for intermediate values of $p$. In the bar graph it is possible to see that values generated via \texttt{L-BFGS-B-NS} are a little better for values of $p$ closer to $1$. 
 
-The test performed is represented in a table with the number of iterations performed sliced by $p$ and $m$ \ref{pmtableiter}. And just as it would be expected, the number of evaluations required is higher for values of $p$ close to $1$.
+The test performed is represented in a table with the number of iterations performed sliced by $p$ and $m$ \eqref{pmtableiter}. And just as it would be expected, the number of evaluations required is higher for values of $p$ close to $1$.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.55]{Figures/Niterations.PNG}
-\caption[Number of function iterations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of iterations for different values of $p$ and $m$. Blank values converged using other stopping criteria besides the termination condition on \ref{terminator}}
+\caption[Number of function iterations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of iterations for different values of $p$ and $m$. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
 \label{pmtableiter}
 \end{center}
 \end{figure}
 
-The same table is reported for the number of function evaluations (as opposed to number of iterations) required to achieve convergence on table \ref{pmtable}
+The same table is reported for the number of function evaluations (as opposed to number of iterations) required to achieve convergence on table \eqref{pmtable}
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.55]{Figures/Nevaluations.PNG}
-\caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of function evaluations for different values of $p$ and $m$. The number of function evaluations is a few times higher than the number of iterations because each iteration requires to evaluate the function a couple of times for the line search. Blank values converged using other stopping criteria besides the termination condition on \ref{terminator}}
+\caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of function evaluations for different values of $p$ and $m$. The number of function evaluations is a few times higher than the number of iterations because each iteration requires to evaluate the function a couple of times for the line search. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
 \label{pmtable}
 \end{center}
 \end{figure}
@@ -424,19 +406,19 @@ The same table is reported for the number of function evaluations (as opposed to
 The values on these tables should be compared with the much more difficult problem in the next section.
 
 \section{Nesterov's Chebyshev-Rosenbrock Modified function}
-The original \texttt{NCR-NS1} function was first introduced in the thesis by Kaku\citep{kaku}. It is a Non-Smooth variation of the \texttt{NCR} function. In this thesis there is yet a newer modification to this function and it is defined very similar to the function \ref{modifiedrosenbrock}. with the inclusion of a $p$ parameter.
+The original \texttt{NCR-NS1} function was first introduced in the thesis by Kaku \citep{kaku}. It is a Non-Smooth variation of the \texttt{NCR} function. In this thesis there is yet a newer modification to this function and it is defined very similar to the function \eqref{modifiedrosenbrock}. with the inclusion of a $p$ parameter.
 
 \begin{equation} \label{modifiedyurirosen}
     f(x) = \frac{(x_1 - 1)^2}{4} + \sum_{i = 1}^{n-1} |x_{i+1} - 2x_{i}^2 + 1|^p
 \end{equation}
 
-And just like in equation \ref{modifiedrosenbrock} $p$ is also assigned as a control variable for the Lipschitz Continuity of the function. The problem as stated in Kaku's thesis, is that the manifold defined by the term inside the sum,
+And just like in equation \eqref{modifiedrosenbrock} $p$ is also assigned as a control variable for the Lipschitz Continuity of the function. The problem as stated in Kaku's thesis, is that the manifold defined by the term inside the sum,
 
 \begin{equation} \label{kakumanifold}
     M = \{x: x_{i+1} - 2x_i^2 + 1 = 0, i = 1, \hdots, n-1 \}
 \end{equation}
 
-is highly oscillatory in nature, and therefore \texttt{BFGS} type of methods require many iterations to converge. In particular, table \ref{yuripn} tries to slice the number of iterations required to finish the algorithm given different combinations of $p$ and $n$, the number of dimensions. See table \ref{yuripn}.
+is highly oscillatory in nature, and therefore \texttt{BFGS} type of methods require many iterations to converge. In particular, table \eqref{yuripn} tries to slice the number of iterations required to finish the algorithm given different combinations of $p$ and $n$, the number of dimensions. See table \eqref{yuripn}.
 
 \begin{figure}
 \begin{center}
@@ -446,9 +428,9 @@ is highly oscillatory in nature, and therefore \texttt{BFGS} type of methods req
 \end{center}
 \end{figure} 
 
-The results show that the number of iterations increases significantly with smaller values of $p$ and with larger values of the dimension $n$. Also, the number of iterations is a lot larger than for the previous case on section \ref{ros}. 
+The results show that the number of iterations increases significantly with smaller values of $p$ and with larger values of the dimension $n$. Also, the number of iterations is a lot larger than for the previous case on section \eqref{ros}. 
 
-This table was also pivoted with parameters $n$ and $m$ in table \ref{yurimn}. And again you can see that the complexity of the problems grows with variable $n$, but there is no clear trend on the influence of $m$ in the speed of convergence.
+This table was also pivoted with parameters $n$ and $m$ in table \eqref{yurimn}. And again you can see that the complexity of the problems grows with variable $n$, but there is no clear trend on the influence of $m$ in the speed of convergence.
 
 \begin{figure}
 \begin{center}
@@ -473,5 +455,5 @@ After running the algorithm it seems like there is not a good rule to choose the
 
 Another conclusion, quite obvious, is that larger problems involve a greater number of resources
 
-Future steps suggest the investigation of limited-memory bundled methods $LMBM$, how it compares with \texttt{L-BFGS-B-NS} and how one could benefit from the other. Also, the study of the impact of the Lipschitz constant on the convergence of the \texttt{L-BFGS-B-NS} algorithm\citep{QJ:QJ935}. This line of research opened up as we were already finishing this thesis.
+Future steps suggest the investigation of limited-memory bundled methods $LMBM$, how it compares with \texttt{L-BFGS-B-NS} and how one could benefit from the other. Also, the study of the impact of the Lipschitz constant on the convergence of the \texttt{L-BFGS-B-NS} algorithm \citep{QJ:QJ935}. This line of research opened up as we were already finishing this thesis.
 

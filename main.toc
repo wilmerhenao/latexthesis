@@ -16,7 +16,7 @@
 \contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.23}
 \contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B algorithm}{7}{chapter.25}
 \contentsline {section}{\numberline {3.1}The Armijo and Wolfe conditions}{7}{section.26}
-\contentsline {section}{\numberline {3.2}The line search Methodology}{8}{section.32}
+\contentsline {section}{\numberline {3.2}The Line Search Methodology}{8}{section.32}
 \contentsline {section}{\numberline {3.3}The Termination Condition}{10}{section.35}
 \contentsline {subsection}{\numberline {3.3.1}Termination Condition Sub-algorithm}{11}{subsection.38}
 \contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{12}{subsection.40}
