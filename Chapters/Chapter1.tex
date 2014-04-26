@@ -166,43 +166,44 @@ can be used in the Non-Smooth case. It is all that is needed to guarantee that t
 
 \section{The Line Search Methodology}
 
-The original \textsc{FORTRAN} software \citep{lbfgsbsoftware} contains a line search subroutine. It was partially changed for the purpose of this thesis. The old version of the code was not removed, it was left commented out and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \eqref{ignoredcode} of \texttt{lbfgsbnomessages.f90} which is a file within the github repository \citep{lbfgsbNS}.
+The original \textsc{FORTRAN} software \citep{lbfgsbsoftware} contains a line search subroutine. It was partially changed for the purpose of this thesis. The old version of the code was not removed, it was left commented out. 
+%and is only explained here with the purpose of showing why it needed to be modified. It was called on line $2662$ \eqref{ignoredcode} of \texttt{lbfgsbnomessages.f90} which is a file within the github repository \citep{lbfgsbNS}.
 
-\begin{enumerate}
-\item[1^{st}] The line search requires a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$, as such, this is a unique feature of the bounded algorithm \texttt{L-BFGS-B}. This part of the line search was not changed.
+%\begin{enumerate}
+%\item[1^{st}] The line search requires a maximum step. This maximum step is such that it guarantees that the step length stays within the bounding box delimited by $l$ and $u$, as such, this is a unique feature of the bounded algorithm \texttt{L-BFGS-B}. This part of the line search was not changed.
 
-\item[2^{nd}] An interval for $\alpha_k$ is chosen so that it contains a minimizer of the modified function,
+%\item[2^{nd}] An interval for $\alpha_k$ is chosen so that it contains a minimizer of the modified function,
 
-\begin{equation} \label{armijomod}
-  \begin{aligned}
-    \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - c_1 \alpha_k d_k^T  \nabla f(x_k)
-  \end{aligned}
-\end{equation} 
+%\begin{equation} \label{armijomod}
+%  \begin{aligned}
+%    \Psi(\alpha_k) = f(x_k + \alpha_k d_k) - f(x_k) - c_1 \alpha_k d_k^T  \nabla f(x_k)
+%  \end{aligned}
+%\end{equation} 
 
- which is nothing but a modification of the Armijo condition \eqref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ on appendix \eqref{stage2}.
+% which is nothing but a modification of the Armijo condition \eqref{armijocondition}. If $\Psi(\alpha_k) < 0$ and $\alpha_k d_k^T \nabla f(x_k) > 0$. The interval contains a minimizer of $f$ and the subroutine can continue to the next step. This first stage took place in the subroutine $dcsrch$; specifically on lines $3687$ and $3709$ on appendix \eqref{stage2}.
 
-\item[3^{rd}] This stage is very similar to the typical line search \citep{nocedal}. It was called on line $3713$ of \texttt{lbfgsbnomessages.f90} and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function $f$. Both steps 2 and step 3 are called on the subroutine $dcstep$. The subroutine still exists on file \texttt{lbfgsbnomessages.f90} for illustration. Although it is only commented out and never called in this thesis.
+%\item[3^{rd}] This stage is very similar to the typical line search \citep{nocedal}. It was called on line $3713$ of \texttt{lbfgsbnomessages.f90} and its mission was to find the step that satisfied Armijo and ``Strong'' Wolfe conditions on the original function $f$. Both steps 2 and step 3 are called on the subroutine $dcstep$. The subroutine still exists on file \texttt{lbfgsbnomessages.f90} for illustration. Although it is only commented out and never called in this thesis.
 
-\end{enumerate}
+%\end{enumerate}
 
-Those three steps make up the original subroutine. But there is a problem with the function $dcstep$ on the third step as it concerns this thesis. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The algorithm takes advantage of quadratic and cubic approximations to the function in order to calculate step lengths that satisfy Armijo and Wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it is. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of appendix \eqref{nsnowork} of \texttt{lbfgsbnomessages.f90}.
+The old version has a problem with the function $dcstep$ as it concerns this thesis. It turns out that function $dcstep$ was designed to work only with smooth functions in mind. The algorithm takes advantage of quadratic and cubic approximations to the function in order to calculate step lengths that satisfy Armijo and Wolfe conditions. Unfortunately, these second and third order approximations do not work in the Non-Smooth case, and the optimizer crashes under the line search as it is. Function $dcstep$ starts on line $3779$ and a sample of the approximations is shown in between lines $3881$ and $3902$ of appendix \eqref{nsnowork} of \texttt{lbfgsbnomessages.f90}.
 
-The solution to this particular issue is to use a line search similar to the one implemented in hanso \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated. And once the interval has been bracketed, to do a bisection until both Armijo and Wolfe conditions are satisfied. The only difference with the HANSO approach in this thesis is that the line search in HANSO can double its step length up to $30$ times\footnote{for all practical purposes this is considered a good limit of iterations}. Whereas in this thesis, the step length can double only as long as the step length is less than the maximum value that guarantees feasibility of the solution (the maximum established in the first step of the original line search). This version of the bisection and expansion is found in between lines $4425$ and $4456$ of \texttt{lbfgsbnomessages.f90} in appendix \eqref{linesearchww} 
+The solution to this particular issue is to use a line search similar to the one implemented in \citep{hanso}. The HANSO approach is to double the step length while the Armijo condition is violated, and once the interval has been bracketed, do bisection until both the Armijo and Wolfe conditions are satisfied. The only difference with the approach in this thesis is that the line search in HANSO can double its step length up to $30$ times, whereas in this thesis, the step length can double only as long as it is less than the maximum value that guarantees feasibility of the solution (the maximum established in the first step of the original line search). This version of the bisection and expansion is found in between lines $4425$ and $4456$ of \texttt{lbfgsbnomessages.f90} in appendix \eqref{linesearchww}. 
 
 \section{The Termination Condition} \label{terminator}
 
-One important requirement of an algorithm is that it ends in a finite time. In the case of smooth functions, \texttt{L-BFGS-B} checks whether the algorithm has converged, by means of the \emph{projected gradient}\footnote{Not to be confused with ``gradient projection'' from subsection \eqref{gp}} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm\footnote{smaller than some tiny $\epsilon > 0$} the algorithm has converged. In the case of Non-Smooth functions however, this is not necessarily true and the function at the minimum may have a wedge. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ in a direction $\vec{p}$, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from an opposite direction.
+In the case of smooth functions, \texttt{L-BFGS-B} checks whether the algorithm has converged by means of the \emph{projected gradient}\footnote{Not to be confused with ``gradient projection'' from subsection \eqref{gp}} which is nothing but the projection of the negative gradient onto the bounding box defined by $l$ and $u$. If this projected gradient has a small norm the algorithm converges. In the case of Non-Smooth functions however, the function at the minimum may have a ``wedge''. In this wedge the projected gradient may not vanish. Furthermore, if there is a sequence of points that approaches the optimum $x$ in a direction $\vec{p}$, the projected gradients corresponding to this sequence of points might be completely different from the projected gradients associated to a sequence of points that approach the optimum $x$ from an opposite direction.
 
 Given this set of conditions, there is a need for particular rules to establish the finalization of the optimization, these rules have already been established in some works before \citep{overtonlewis, skajaa}.
 
 \subsection{Termination Condition Sub-algorithm}
 %Warning review
-Overton and Lewis formulate an algorithm that gives a practical solution to this problem on section $6.3$ \citep{overtonlewis}
-The best practical methodology should be to calculate whether zero $0$ or a very small number is the norm of a vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$. The neighborhood is defined as those points with a distance to $x$ smaller than a small tolerance $\tau_x > 0$ and no more than $J \in \mathbb{N}$ iterations back in history. In order to make sure that the gradient zero $\vec{0}$ or a vector with a very small norm smaller than a very tiny tolerance $\tau_d > 0$ is part of the convex hull calculated near a neighbourhood of the optimum, the algorithm  keeps a record of the latest gradient vectors in this small neighbourhood of the point where the optimum is suspected to be located. This list of gradients is referred to as the set $\mathcal{G}$ \citep{overtonlewis}
+Lewis and Overton formulate an algorithm that gives a practical solution to this problem in section $6.3$ of \citep{overtonlewis}
+In the case of unconstrained Non-Smooth optimization, the suggest computing the norm of the smallest vector that is part of the convex hull of gradients evaluated at points near the optimum candidate $x$ and terminate if this is sufficiently small. The neighborhood is defined as those points at which the gradient has already been evaluated with a distance to $x$ smaller than a small tolerance $\tau_x > 0$ and no more than $J \in \mathbb{N}$ iterations back in history. This list of gradients is referred to as the set $\mathcal{G}$ \citep{overtonlewis}.
 
-With this list $\mathcal{G}$ of gradients at hand. The next step is to find the vector with the minimal norm contained in the convex hull of these gradients.  If the norm of this vector has a norm smaller than $\tau_d$ , the algorithm ends with a message of convergence success ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL''. If the minimum such norm is larger than the tolerance, the algorithm must continue to the following iteration and not terminate.
+With this list $\mathcal{G}$ of gradients at hand, the next step is to find the vector with the minimal norm contained in the convex hull of these gradients.  If the norm of this vector has a norm smaller than $\tau_d$ , the algorithm ends with a message of convergence success ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL''. If the minimum such norm is larger than the tolerance, the algorithm must continue to the next iteration and not terminate.
 
-In order to find this vector, there is the need to solve a quadratic problem. Every vector in the convex hull can be expressed as a non-negative linear combination $Gz$ of those vectors in $\mathcal{G}$. Where $G$ is the matrix with columns made up of gradients in $\mathcal{G}$; and $z$ is such that $\sum_{i=1}^n z_i = 1$ and $z_i \geq 0$.
+In order to find this vector, there is the need to solve a quadratic problem. Every vector in the convex hull can be expressed as a convex combination $Gz$ of those vectors in $\mathcal{G}$, where $G$ is the matrix with columns made up of gradients in $\mathcal{G}$ and $z$ is such that $\sum_{i=1}^n z_i = 1$ and $z_i \geq 0$.
 
 The objective is to find the right combination of $z$ that minimizes the norm $||Gz||_2$.  This is equivalent to solving the following optimization problem
 
@@ -216,7 +217,7 @@ The objective is to find the right combination of $z$ that minimizes the norm $|
   \end{aligned}
 \end{equation}
 
-The solution to this problem $z^*$ has the associated vector $Gz^*$. And if $||Gz^*||_2 < \tau_d$ the algorithm converges.
+The solution to this problem $z^*$ is the associated vector $Gz^*$, so if $||Gz^*||_2 < \tau_d$ the algorithm terminates.
 
 \subsection{The Solution of the Quadratic Program}
 
