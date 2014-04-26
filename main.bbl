@@ -100,10 +100,4 @@ Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
 \newblock Lbfgsb 3.0.
 \newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
 
-\bibitem{codepaper}
-Ciyou Zhu, Richard~H. Byrd, Peihuang Lu, and Jorge Nocedal.
-\newblock Algorithm 778: {L}-{BFGS}-{B}: {F}ortran subroutines for large-scale
-  bound-constrained optimization.
-\newblock {\em ACM Trans. Math. Software}, 23(4):550--560, 1997.
-
 \end{thebibliography}
