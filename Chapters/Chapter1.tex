@@ -221,7 +221,7 @@ The solution to this problem $z^*$ is the associated vector $Gz^*$, so if $||Gz^
 
 \subsection{The Solution of the Quadratic Program}
 
-The solution of equation \eqref{quadraticproblem} was implemented with a practical primal-dual methodology. This methodology is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming.
+The solution of the quadratic program \eqref{quadraticproblem} is obtained with a practical primal-dual methodology. This is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming. This algorithm is explained in chapter $16$ of \citep{nocedal}
 
 This algorithm initially tries to solve the Karush-Kuhn-Tucker $KKT$ conditions. The $KKT$ is a system of equations whose solution characterizes the solution of the original optimization problem in equation \eqref{quadraticproblem}, the Karush-Kuhn-Tucker equations are:
 
