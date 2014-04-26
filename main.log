@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  26 APR 2014 15:36
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  26 APR 2014 18:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -895,13 +895,9 @@ Chapter 2.
 ------------------------------------------------------------------------------
  2 L-BFGS-B
 ------------------------------------------------------------------------------
-
-LaTeX Warning: Reference `lbfgsbsoftware, codepaper' on page 3 undefined on inp
-ut line 52.
-
 [3
 
-] [4] <Figures/cajapresentation2.png, id=320, 903.375pt x 702.625pt>
+] [4] <Figures/cajapresentation2.png, id=321, 903.375pt x 702.625pt>
 File: Figures/cajapresentation2.png Graphic file (type png)
 
 <use Figures/cajapresentation2.png>
@@ -912,7 +908,7 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Modifications to the L-BFGS-B algorithm
 ------------------------------------------------------------------------------
-<Figures/armijo.png, id=343, 642.4pt x 401.5pt>
+<Figures/armijo.png, id=344, 642.4pt x 401.5pt>
 File: Figures/armijo.png Graphic file (type png)
  <use Figures/armijo.png>
 Package pdftex.def Info: Figures/armijo.png used on input line 133.
@@ -920,259 +916,139 @@ Package pdftex.def Info: Figures/armijo.png used on input line 133.
 
 [7
 
-] <Figures/wolfe.png, id=353, 482.80376pt x 362.35374pt>
+] <Figures/wolfe.png, id=354, 482.80376pt x 362.35374pt>
 File: Figures/wolfe.png Graphic file (type png)
 
 <use Figures/wolfe.png>
 Package pdftex.def Info: Figures/wolfe.png used on input line 151.
 (pdftex.def)             Requested size: 313.81873pt x 235.52715pt.
- [8 <./Figures/armijo.png>]
-! Missing $ inserted.
-<inserted text> 
-                $
-l.172 \item[1^{st}]
-                    The line search requires a maximum step. This maximum st...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-\llap #1->\hb@xt@ \z@ {\hss #1}
-                               
-l.172 \item[1^{st}]
-                    The line search requires a maximum step. This maximum st...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.172 \item[1^{st}]
-                    The line search requires a maximum step. This maximum st...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.172 \item[1^{st}]
-                    The line search requires a maximum step. This maximum st...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.174 \item[2^{nd}]
-                    An interval for $\alpha_k$ is chosen so that it contains...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-\llap #1->\hb@xt@ \z@ {\hss #1}
-                               
-l.174 \item[2^{nd}]
-                    An interval for $\alpha_k$ is chosen so that it contains...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.174 \item[2^{nd}]
-                    An interval for $\alpha_k$ is chosen so that it contains...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.174 \item[2^{nd}]
-                    An interval for $\alpha_k$ is chosen so that it contains...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 \item[3^{rd}]
-                    This stage is very similar to the typical line search \c...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Extra }, or forgotten $.
-\llap #1->\hb@xt@ \z@ {\hss #1}
-                               
-l.184 \item[3^{rd}]
-                    This stage is very similar to the typical line search \c...
-I've deleted a group-closing symbol because it seems to be
-spurious, as in `$x}$'. But perhaps the } is legitimate and
-you forgot something else, as in `\hbox{$x}'. In such cases
-the way to recover is to insert both the forgotten and the
-deleted material, e.g., by typing `I$}'.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.184 \item[3^{rd}]
-                    This stage is very similar to the typical line search \c...
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Missing } inserted.
-<inserted text> 
-                }
-l.184 \item[3^{rd}]
-                    This stage is very similar to the typical line search \c...
-I've inserted something that you may have forgotten.
-(See the <inserted text> above.)
-With luck, this will get me unwedged. But if you
-really didn't forget anything, try typing `2' now; then
-my insertion and my current dilemma will both disappear.
-
-[9 <./Figures/wolfe.png>] [10] [11] [12]
-<Figures/CentralPath.png, id=414, 844.15375pt x 514.92375pt>
-File: Figures/CentralPath.png Graphic file (type png)
-
-<use Figures/CentralPath.png>
-Package pdftex.def Info: Figures/CentralPath.png used on input line 248.
-(pdftex.def)             Requested size: 253.24808pt x 154.4783pt.
- [13 <./Figures/CentralPath.png (PNG copy)>]
+ [8 <./Figures/armijo.png> <./Figures/wolfe.png>]
+[9] [10] [11]
 Chapter 4.
 ------------------------------------------------------------------------------
  4 Solution Tests
 ------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 265.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 236.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 265.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 236.
 
-Overfull \hbox (4.63475pt too wide) in paragraph at lines 267--268
+Overfull \hbox (4.63475pt too wide) in paragraph at lines 238--239
 []\OT1/cmr/m/n/10.95 ``CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT[]PGTOL": 
 Means
  []
 
-[14
+[12
 
 ]
-Overfull \hbox (2.8097pt too wide) in paragraph at lines 268--269
+Overfull \hbox (2.8097pt too wide) in paragraph at lines 240--241
 []\OT1/cmr/m/n/10.95 ``CONVERGENCE: REL[]REDUCTION[]OF[]F[]LT[]FACTR*EPSMCH": T
 his con-
  []
 
-[15] <Figures/Nocedalp2.png, id=446, 747.79375pt x 687.56876pt>
+[13] <Figures/Nocedalp2.png, id=420, 747.79375pt x 687.56876pt>
 File: Figures/Nocedalp2.png Graphic file (type png)
 
 <use Figures/Nocedalp2.png>
-Package pdftex.def Info: Figures/Nocedalp2.png used on input line 319.
+Package pdftex.def Info: Figures/Nocedalp2.png used on input line 305.
 (pdftex.def)             Requested size: 433.72067pt x 398.79016pt.
 
-Overfull \hbox (16.2476pt too wide) in paragraph at lines 319--320
+Overfull \hbox (16.2476pt too wide) in paragraph at lines 305--306
  [] 
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 328.
-
-Overfull \hbox (56.2306pt too wide) in paragraph at lines 334--335
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 314.
+[14]
+Overfull \hbox (56.2306pt too wide) in paragraph at lines 320--321
 []\OT1/cmr/m/n/10.95 Notice that in [] the pro-gram some-times sends an ``AB-NO
 R-MAL[]TERMINATION[]IN[]LNSRCH''
  []
 
-[16] <Figures/rosenbrock.PNG, id=458, 504.38437pt x 452.4403pt>
+[15 <./Figures/Nocedalp2.png>]
+<Figures/rosenbrock.PNG, id=437, 504.38437pt x 452.4403pt>
 File: Figures/rosenbrock.PNG Graphic file (type png)
 
 <use Figures/rosenbrock.PNG>
-Package pdftex.def Info: Figures/rosenbrock.PNG used on input line 339.
+Package pdftex.def Info: Figures/rosenbrock.PNG used on input line 325.
 (pdftex.def)             Requested size: 201.75017pt x 180.97292pt.
 
-<Figures/FlatBottom.PNG, id=459, 502.87875pt x 454.69875pt>
+<Figures/FlatBottom.PNG, id=438, 502.87875pt x 454.69875pt>
 File: Figures/FlatBottom.PNG Graphic file (type png)
 
 <use Figures/FlatBottom.PNG>
-Package pdftex.def Info: Figures/FlatBottom.PNG used on input line 339.
+Package pdftex.def Info: Figures/FlatBottom.PNG used on input line 325.
 (pdftex.def)             Requested size: 201.14793pt x 181.87627pt.
 
-Overfull \hbox (3.67505pt too wide) in paragraph at lines 339--340
+Overfull \hbox (3.67505pt too wide) in paragraph at lines 325--326
  [][] 
  []
 
-<Figures/contour.PNG, id=462, 505.13719pt x 505.13719pt>
+<Figures/contour.PNG, id=441, 505.13719pt x 505.13719pt>
 File: Figures/contour.PNG Graphic file (type png)
 
 <use Figures/contour.PNG>
-Package pdftex.def Info: Figures/contour.PNG used on input line 346.
+Package pdftex.def Info: Figures/contour.PNG used on input line 332.
 (pdftex.def)             Requested size: 252.56798pt x 252.56798pt.
 
-<Figures/abnormalNocedal.png, id=465, 789.95125pt x 602.25pt>
+<Figures/abnormalNocedal.png, id=444, 789.95125pt x 602.25pt>
 File: Figures/abnormalNocedal.png Graphic file (type png)
 
 <use Figures/abnormalNocedal.png>
-Package pdftex.def Info: Figures/abnormalNocedal.png used on input line 356.
+Package pdftex.def Info: Figures/abnormalNocedal.png used on input line 342.
 (pdftex.def)             Requested size: 394.97466pt x 301.12425pt.
- [17 <./Figures/Nocedalp2.png>] [18 <./Figures/rosenbrock.PNG> <./Figures/FlatB
-ottom.PNG> <./Figures/contour.PNG>]
-<Figures/ComparisonNewOld.PNG, id=486, 552.56438pt x 374.90062pt>
+ [16 <./Figures/rosenbrock.PNG> <./Figures/FlatBottom.PNG>] [17 <./Figures/cont
+our.PNG> <./Figures/abnormalNocedal.png>]
+<Figures/ComparisonNewOld.PNG, id=466, 552.56438pt x 374.90062pt>
 File: Figures/ComparisonNewOld.PNG Graphic file (type png)
 
 <use Figures/ComparisonNewOld.PNG>
-Package pdftex.def Info: Figures/ComparisonNewOld.PNG used on input line 374.
+Package pdftex.def Info: Figures/ComparisonNewOld.PNG used on input line 360.
 (pdftex.def)             Requested size: 414.42226pt x 281.17477pt.
- [19 <./Figures/abnormalNocedal.png>]
-<Figures/Niterations.PNG, id=493, 648.92438pt x 249.18094pt>
+
+<Figures/Niterations.PNG, id=468, 648.92438pt x 249.18094pt>
 File: Figures/Niterations.PNG Graphic file (type png)
 
 <use Figures/Niterations.PNG>
-Package pdftex.def Info: Figures/Niterations.PNG used on input line 386.
+Package pdftex.def Info: Figures/Niterations.PNG used on input line 372.
 (pdftex.def)             Requested size: 356.9095pt x 137.04993pt.
 
-<Figures/Nevaluations.PNG, id=497, 648.17157pt x 249.93375pt>
+<Figures/Nevaluations.PNG, id=472, 648.17157pt x 249.93375pt>
 File: Figures/Nevaluations.PNG Graphic file (type png)
 
 <use Figures/Nevaluations.PNG>
-Package pdftex.def Info: Figures/Nevaluations.PNG used on input line 396.
+Package pdftex.def Info: Figures/Nevaluations.PNG used on input line 382.
 (pdftex.def)             Requested size: 356.49547pt x 137.46397pt.
- [20 <./Figures/ComparisonNewOld.PNG>] [21 <./Figures/Niterations.PNG> <./Figur
+ [18 <./Figures/ComparisonNewOld.PNG>] [19 <./Figures/Niterations.PNG> <./Figur
 es/Nevaluations.PNG>]
-<Figures/yurirosenpn.PNG, id=518, 707.64375pt x 178.41656pt>
+<Figures/yurirosenpn.PNG, id=494, 707.64375pt x 178.41656pt>
 File: Figures/yurirosenpn.PNG Graphic file (type png)
 
 <use Figures/yurirosenpn.PNG>
-Package pdftex.def Info: Figures/yurirosenpn.PNG used on input line 421.
+Package pdftex.def Info: Figures/yurirosenpn.PNG used on input line 407.
 (pdftex.def)             Requested size: 424.58952pt x 107.05075pt.
 
-Overfull \hbox (7.11646pt too wide) in paragraph at lines 421--422
+Overfull \hbox (7.11646pt too wide) in paragraph at lines 407--408
  [] 
  []
 
-<Figures/yurirosenmn.PNG, id=521, 312.41719pt x 173.89969pt>
+<Figures/yurirosenmn.PNG, id=497, 312.41719pt x 173.89969pt>
 File: Figures/yurirosenmn.PNG Graphic file (type png)
 
 <use Figures/yurirosenmn.PNG>
-Package pdftex.def Info: Figures/yurirosenmn.PNG used on input line 433.
+Package pdftex.def Info: Figures/yurirosenmn.PNG used on input line 419.
 (pdftex.def)             Requested size: 281.17285pt x 156.50826pt.
- [22 <./Figures/yurirosenpn.PNG> <./Figures/yurirosenmn.PNG>]
+ [20 <./Figures/yurirosenpn.PNG>] [21 <./Figures/yurirosenmn.PNG>]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions
 ------------------------------------------------------------------------------
-[23
+[22
 
-]) (./Appendices/AppendixA.tex [24]
+]) (./Appendices/AppendixA.tex [23]
 Appendix A.
 ------------------------------------------------------------------------------
  A Samples of Code
@@ -1185,48 +1061,41 @@ File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
-) [25
+) [24
 
-] [26]
-[27]
+] [25]
+[26]
 Appendix B.
 ------------------------------------------------------------------------------
  B Automation
 ------------------------------------------------------------------------------
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
-) [28
+) [27
 
-]) [29]
+]) [28]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./main.bbl [30
+(./main.bbl [29
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
- [31]
+ [30]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 35AC99E5572BF3F988C272D7C3A99896;6176.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: 3C2B26D25D509339C744F611CABAF7EB;6175.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
  ) 
 Here is how much of TeX's memory you used:
- 16072 strings out of 493307
- 221554 string characters out of 6139906
- 515691 words of memory out of 5000000
- 19026 multiletter control sequences out of 15000+600000
+ 16063 strings out of 493307
+ 221391 string characters out of 6139906
+ 515571 words of memory out of 5000000
+ 19023 multiletter control sequences out of 15000+600000
  18348 words of font info for 70 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,58p,1589b,1886s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1256,10 +1125,10 @@ cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (39 pages, 2065210 bytes).
+Output written on main.pdf (38 pages, 1952187 bytes).
 PDF statistics:
- 866 PDF objects out of 1000 (max. 8388607)
- 761 compressed objects within 8 object streams
- 270 named destinations out of 1000 (max. 500000)
- 343 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 846 PDF objects out of 1000 (max. 8388607)
+ 743 compressed objects within 8 object streams
+ 265 named destinations out of 1000 (max. 500000)
+ 338 words of extra memory for PDF output out of 10000 (max. 10000000)
 
