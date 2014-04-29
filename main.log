@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  26 APR 2014 18:52
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  29 APR 2014 00:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,7 +897,7 @@ Chapter 2.
 ------------------------------------------------------------------------------
 [3
 
-] [4] <Figures/cajapresentation2.png, id=321, 903.375pt x 702.625pt>
+] [4] <Figures/cajapresentation2.png, id=306, 903.375pt x 702.625pt>
 File: Figures/cajapresentation2.png Graphic file (type png)
 
 <use Figures/cajapresentation2.png>
@@ -908,7 +908,7 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Modifications to the L-BFGS-B algorithm
 ------------------------------------------------------------------------------
-<Figures/armijo.png, id=344, 642.4pt x 401.5pt>
+<Figures/armijo.png, id=329, 642.4pt x 401.5pt>
 File: Figures/armijo.png Graphic file (type png)
  <use Figures/armijo.png>
 Package pdftex.def Info: Figures/armijo.png used on input line 133.
@@ -916,7 +916,7 @@ Package pdftex.def Info: Figures/armijo.png used on input line 133.
 
 [7
 
-] <Figures/wolfe.png, id=354, 482.80376pt x 362.35374pt>
+] <Figures/wolfe.png, id=339, 482.80376pt x 362.35374pt>
 File: Figures/wolfe.png Graphic file (type png)
 
 <use Figures/wolfe.png>
@@ -949,106 +949,51 @@ Overfull \hbox (2.8097pt too wide) in paragraph at lines 240--241
 his con-
  []
 
-[13] <Figures/Nocedalp2.png, id=420, 747.79375pt x 687.56876pt>
+[13] <Figures/Nocedalp2.png, id=404, 845.1575pt x 503.8825pt>
 File: Figures/Nocedalp2.png Graphic file (type png)
 
 <use Figures/Nocedalp2.png>
 Package pdftex.def Info: Figures/Nocedalp2.png used on input line 305.
-(pdftex.def)             Requested size: 433.72067pt x 398.79016pt.
-
-Overfull \hbox (16.2476pt too wide) in paragraph at lines 305--306
- [] 
- []
-
+(pdftex.def)             Requested size: 405.67099pt x 241.86086pt.
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 314.
-[14]
-Overfull \hbox (56.2306pt too wide) in paragraph at lines 320--321
-[]\OT1/cmr/m/n/10.95 Notice that in [] the pro-gram some-times sends an ``AB-NO
-R-MAL[]TERMINATION[]IN[]LNSRCH''
- []
-
-[15 <./Figures/Nocedalp2.png>]
-<Figures/rosenbrock.PNG, id=437, 504.38437pt x 452.4403pt>
-File: Figures/rosenbrock.PNG Graphic file (type png)
-
-<use Figures/rosenbrock.PNG>
-Package pdftex.def Info: Figures/rosenbrock.PNG used on input line 325.
-(pdftex.def)             Requested size: 201.75017pt x 180.97292pt.
-
-<Figures/FlatBottom.PNG, id=438, 502.87875pt x 454.69875pt>
-File: Figures/FlatBottom.PNG Graphic file (type png)
-
-<use Figures/FlatBottom.PNG>
-Package pdftex.def Info: Figures/FlatBottom.PNG used on input line 325.
-(pdftex.def)             Requested size: 201.14793pt x 181.87627pt.
-
-Overfull \hbox (3.67505pt too wide) in paragraph at lines 325--326
- [][] 
- []
-
-<Figures/contour.PNG, id=441, 505.13719pt x 505.13719pt>
-File: Figures/contour.PNG Graphic file (type png)
-
-<use Figures/contour.PNG>
-Package pdftex.def Info: Figures/contour.PNG used on input line 332.
-(pdftex.def)             Requested size: 252.56798pt x 252.56798pt.
-
-<Figures/abnormalNocedal.png, id=444, 789.95125pt x 602.25pt>
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 311.
+ [14]
+<Figures/abnormalNocedal.png, id=416, 789.95125pt x 602.25pt>
 File: Figures/abnormalNocedal.png Graphic file (type png)
 
 <use Figures/abnormalNocedal.png>
-Package pdftex.def Info: Figures/abnormalNocedal.png used on input line 342.
+Package pdftex.def Info: Figures/abnormalNocedal.png used on input line 323.
 (pdftex.def)             Requested size: 394.97466pt x 301.12425pt.
- [16 <./Figures/rosenbrock.PNG> <./Figures/FlatBottom.PNG>] [17 <./Figures/cont
-our.PNG> <./Figures/abnormalNocedal.png>]
-<Figures/ComparisonNewOld.PNG, id=466, 552.56438pt x 374.90062pt>
-File: Figures/ComparisonNewOld.PNG Graphic file (type png)
+ [15 <./Figures/Nocedalp2.png>] [16 <./Figures/abnormalNocedal.png>]
+<Figures/ComparisonNewOld.png, id=433, 433.62pt x 259.97125pt>
+File: Figures/ComparisonNewOld.png Graphic file (type png)
 
-<use Figures/ComparisonNewOld.PNG>
-Package pdftex.def Info: Figures/ComparisonNewOld.PNG used on input line 360.
-(pdftex.def)             Requested size: 414.42226pt x 281.17477pt.
+<use Figures/ComparisonNewOld.png>
+Package pdftex.def Info: Figures/ComparisonNewOld.png used on input line 341.
+(pdftex.def)             Requested size: 325.2142pt x 194.97795pt.
 
-<Figures/Niterations.PNG, id=468, 648.92438pt x 249.18094pt>
+<Figures/Niterations.PNG, id=435, 648.92438pt x 249.18094pt>
 File: Figures/Niterations.PNG Graphic file (type png)
 
 <use Figures/Niterations.PNG>
-Package pdftex.def Info: Figures/Niterations.PNG used on input line 372.
-(pdftex.def)             Requested size: 356.9095pt x 137.04993pt.
+Package pdftex.def Info: Figures/Niterations.PNG used on input line 353.
+(pdftex.def)             Requested size: 162.2307pt x 62.29507pt.
 
-<Figures/Nevaluations.PNG, id=472, 648.17157pt x 249.93375pt>
-File: Figures/Nevaluations.PNG Graphic file (type png)
+<Figures/Nevaluations.png, id=439, 993.7125pt x 433.62pt>
+File: Figures/Nevaluations.png Graphic file (type png)
 
-<use Figures/Nevaluations.PNG>
-Package pdftex.def Info: Figures/Nevaluations.PNG used on input line 382.
-(pdftex.def)             Requested size: 356.49547pt x 137.46397pt.
- [18 <./Figures/ComparisonNewOld.PNG>] [19 <./Figures/Niterations.PNG> <./Figur
-es/Nevaluations.PNG>]
-<Figures/yurirosenpn.PNG, id=494, 707.64375pt x 178.41656pt>
-File: Figures/yurirosenpn.PNG Graphic file (type png)
-
-<use Figures/yurirosenpn.PNG>
-Package pdftex.def Info: Figures/yurirosenpn.PNG used on input line 407.
-(pdftex.def)             Requested size: 424.58952pt x 107.05075pt.
-
-Overfull \hbox (7.11646pt too wide) in paragraph at lines 407--408
- [] 
- []
-
-<Figures/yurirosenmn.PNG, id=497, 312.41719pt x 173.89969pt>
-File: Figures/yurirosenmn.PNG Graphic file (type png)
-
-<use Figures/yurirosenmn.PNG>
-Package pdftex.def Info: Figures/yurirosenmn.PNG used on input line 419.
-(pdftex.def)             Requested size: 281.17285pt x 156.50826pt.
- [20 <./Figures/yurirosenpn.PNG>] [21 <./Figures/yurirosenmn.PNG>]
+<use Figures/Nevaluations.png>
+Package pdftex.def Info: Figures/Nevaluations.png used on input line 363.
+(pdftex.def)             Requested size: 397.47795pt x 173.44492pt.
+ [17 <./Figures/ComparisonNewOld.png> <./Figures/Niterations.PNG>] [18 <./Figur
+es/Nevaluations.png>]
 Chapter 5.
 ------------------------------------------------------------------------------
  5 Conclusions
 ------------------------------------------------------------------------------
-[22
+[19
 
-]) (./Appendices/AppendixA.tex [23]
+]) (./Appendices/AppendixA.tex [20]
 Appendix A.
 ------------------------------------------------------------------------------
  A Samples of Code
@@ -1061,41 +1006,41 @@ File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
-) [24
+) [21
 
-] [25]
-[26]
+] [22]
+[23]
 Appendix B.
 ------------------------------------------------------------------------------
  B Automation
 ------------------------------------------------------------------------------
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2013/06/27 1.5pre1 listings language file
-) [27
+) [24
 
-]) [28]
+]) [25]
 ------------------------------------------------------------------------------
  Bibliography
 ------------------------------------------------------------------------------
-(./main.bbl [29
+(./main.bbl [26
 
 
 ])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
- [30]
+ [27]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
  (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 3C2B26D25D509339C744F611CABAF7EB;6175.
+(rerunfilecheck)             Checksum: 0F45BE0DEE804F9BDEFAF9763FB867FC;5843.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
  ) 
 Here is how much of TeX's memory you used:
- 16063 strings out of 493307
- 221391 string characters out of 6139906
- 515571 words of memory out of 5000000
- 19023 multiletter control sequences out of 15000+600000
+ 16015 strings out of 493307
+ 220505 string characters out of 6139906
+ 514542 words of memory out of 5000000
+ 18993 multiletter control sequences out of 15000+600000
  18348 words of font info for 70 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,58p,1589b,1886s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1110,25 +1055,24 @@ ts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmmi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
-10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (38 pages, 1952187 bytes).
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsl12.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+tt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pf
+b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (35 pages, 1658921 bytes).
 PDF statistics:
- 846 PDF objects out of 1000 (max. 8388607)
- 743 compressed objects within 8 object streams
- 265 named destinations out of 1000 (max. 500000)
- 338 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 778 PDF objects out of 1000 (max. 8388607)
+ 693 compressed objects within 7 object streams
+ 252 named destinations out of 1000 (max. 500000)
+ 305 words of extra memory for PDF output out of 10000 (max. 10000000)
 

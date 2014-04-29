@@ -32,13 +32,6 @@ Wilmer Henao.
 \newblock lbfgsbns.
 \newblock \url{https://github.com/wilmerhenao/lbfgsbNS}, 2014.
 
-\bibitem{kaku}
-Allan Kaku.
-\newblock Implementation of high-precision arithmetic in the bfgs method for
-  nonsmooth optimization.
-\newblock Master's thesis, New York University, Courant Institute of
-  Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2011.
-
 \bibitem{overtonlewis}
 Adrian~S. Lewis and Michael~L. Overton.
 \newblock Nonsmooth optimization via quasi-{N}ewton methods.

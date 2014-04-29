@@ -302,7 +302,7 @@ The problem is twice continuously differentiable for values of $p \geq 2$, but a
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.58]{Figures/Nocedalp2.png}
+\includegraphics[scale=0.48]{Figures/Nocedalp2.png}
 \caption[Modified Rosenbrock with $p = 2$]{Satisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 2$}
 \label{pequal2}
 \end{center}
@@ -315,8 +315,6 @@ For a value of $p = 2$, the original \texttt{L-BFGS-B} yields good results as se
 This exercise tested three different values of $m$, where $m$ stands for the memory of \texttt{L-BFGS}. The values that were tested are $5$, $10$ and $20$. The number of dimensions in this exercise in particular ranges from $2$ to $1000$. The column $nfg$ stands for the number of function and gradient evaluations taken in order to finish the algorithm and $f$ stands for the optimal value that was achieved during the optimization. The two last columns show the norm of the final projected gradient and the final message when the algorithm finished.
 
 In all cases the projected gradient has a very small norm. When this norm is sufficiently small the convergence is achieved because the norm of the projected gradient is smaller than the threshold. In other cases, the program exits successfully after a relative reduction in the size of the function. In other cases, an abnormal termination message is sent to the output.
-
-Notice that in \eqref{pequal2} the program sometimes sends an ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' warning message.
 
 The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well, for the smooth modified Rosenbrock case\footnote{The original algorithm solves a modified version of this function \eqref{modifiedrosenbrock} with parameter $p = 2$, so it is to be expected that the performance is good}.
 
@@ -340,7 +338,7 @@ For intermediate values, the new changes seem to provide better values of $f$. H
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.75]{Figures/ComparisonNewOld.PNG}
+\includegraphics[scale=0.75]{Figures/ComparisonNewOld.png}
 \caption[Comparison of selected values of the Modified Rosenbrock function]{Comparison of the performance of \texttt{L-BFGS-B-NS} vs. the Original version of \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with selected values of p in 1.000 dimensions}
 \label{pcomp}
 \end{center}
@@ -352,7 +350,7 @@ The test performed is represented in a table with the number of iterations perfo
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.55]{Figures/Niterations.PNG}
+\includegraphics[scale=0.25]{Figures/Niterations.PNG}
 \caption[Number of function iterations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of iterations for different values of $p$ and $m$. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
 \label{pmtableiter}
 \end{center}
@@ -362,7 +360,7 @@ The same table is reported for the number of function evaluations (as opposed to
 
 \begin{figure}
 \begin{center}
-\includegraphics[scale=0.55]{Figures/Nevaluations.PNG}
+\includegraphics[scale=0.40]{Figures/Nevaluations.png}
 \caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of function evaluations for different values of $p$ and $m$. The number of function evaluations is a few times higher than the number of iterations because each iteration requires to evaluate the function a couple of times for the line search. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
 \label{pmtable}
 \end{center}
