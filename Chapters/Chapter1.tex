@@ -260,15 +260,15 @@ Consider a modified version of the Rosenbrock function problem \citep{rosenbrock
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
 \end{equation}
 
-Now, if $\phi(t_i) = |t_i|^p$ where $t_i = x_i - x_{i - 1}^2$, we could study the properties of function $f$ based on the properties of $\phi(x)$. Here, the properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function had a value of $p = 2$ and the second term is multiplied by $100$.}. This function can be proven to be locally Lipschitz continuous whenever $p \geq 1$, but with a second derivative that blows up whenever $p < 2$. In particular it is locally Lipschitz continuous if restricted to a finite domain of the type $l$, $u$, similar to the one defined on equation \eqref{mainproblem}.
+We can study the properties of function $f$ based on the properties of $\phi(x)$. Considering $\phi(t_i) = |t_i|^p$ where $t_i = x_i - x_{i - 1}^2$. In this case, the properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function had a value of $p = 2$ and the second term is multiplied by $100$.}. This function can be proven to be locally Lipschitz continuous whenever $p \geq 1$. In particular, it is locally Lipschitz continuous if restricted to a finite domain of the type $l$, $u$, similar to the one defined on equation \eqref{mainproblem}. However, its second derivative blows up whenever $p < 2$.
 
-The results can be split into cases; Whenever $p > 1$, 
+The results can be split into cases; Whenever $p > 1$ the derivative can be represented as, 
 \begin{equation}\label{firstderiv}
   \frac{d}{dt} \phi(t) = p |t|^{p-1}
 \end{equation}
-and therefore, the limit of the derivative exists and is equal to zero near $t = 0$ \[ \lim_{t \to 0} \frac{d}{dt}\phi(t) = 0 \] and the function $f$ has a smooth first derivative.
+and therefore, the limit of the derivative exists and is equal to zero near $t = 0$ \[ \lim_{t \to 0} \frac{d}{dt}\phi(t) = 0 \]. The conclusion from the existence of this limit is that the function $f$ has a smooth first derivative.
 
-Now if $p = 1$, $\phi(t) = |t|$. In this case, $\phi(t)$ is Lipschitz continuous at $t = 0$ because the derivative's value is bounded between [-1, 1]. However, this function is not differentiable at $t = 0$.
+If $p = 1$, $\phi(t) = |t|$. In this case, $\phi(t)$ is Lipschitz continuous at $t = 0$ because the derivative's value is bounded. Its values are either $-1$ or $1$. This function is not differentiable at $t = 0$ though.
 
 The second derivative provides a bit more of information.
 
@@ -276,11 +276,9 @@ The second derivative provides a bit more of information.
   \frac{d^2}{dt^2} \phi(t) = p(p-1) |t|^{p-2}
 \end{equation}
 
-In this case, if $p \geq 2$ the function is smooth. However if $p < 2$, the second derivative becomes $\frac{p(p-1)}{|t|^{q}}$. Where $q = 2 - p > 0$. And this blows up as $|t| \to 0$
+In this case, if $p \geq 2$ the function is smooth. However if $p < 2$, the second derivative becomes $\frac{p(p-1)}{|t|^{q}}$. Where $q = 2 - p > 0$ and this second derivative blows up as $|t| \to 0$.
 
-
-
-The region to be tested is defined by the ``box'' with boundaries
+The next thing that needs to be defined is the region to be tested. In this case, the region was defined by the ``box'' with boundaries
 
 \begin{equation}
   \begin{aligned}
@@ -337,29 +335,17 @@ Several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$,
 
 \subsection{Performance of \texttt{L-BFGS-B-NS}}
 
-For intermediate values, the new changes seem to provide better values of $f$. Values generated via \texttt{L-BFGS-B-NS} are a little better for values of $p$ closer to $1$. 
+For intermediate values, the new changes seem to provide better values of $f$. Values generated via \texttt{L-BFGS-B-NS} are a little better for values of $p$ closer to $1$, since the function is ``less'' smooth.
 
-The test performed is represented in a table with the number of iterations performed sliced by $p$ and $m$ see figure \eqref{pmtableiter}. And just as it would be expected, the number of evaluations required is higher for values of $p$ close to $1$.
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.25]{Figures/Niterations.PNG}
-\caption[Number of function iterations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of iterations for different values of $p$ and $m$. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
-\label{pmtableiter}
-\end{center}
-\end{figure}
-
-The same table is reported for the number of function evaluations (as opposed to number of iterations) required to achieve convergence on table \eqref{pmtable}
+On table \eqref{pmtable}. It is possible to see that changing parameter $p$ all other things held constant, makes the problem more difficult to solve. Here the termination conditions is the one seen on \eqref{terminator}. Under this condition and for the same values of $tau_d$ The number of iterations taken in order to finish seems to grow until a certain point. 
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.40]{Figures/Nevaluations.png}
-\caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of function evaluations for different values of $p$ and $m$. The number of function evaluations is a few times higher than the number of iterations because each iteration requires to evaluate the function a couple of times for the line search. Blank values converged using other stopping criteria besides the termination condition on \eqref{terminator}}
+\caption[Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well.}
 \label{pmtable}
 \end{center}
 \end{figure}
-
-The values on these tables should be compared with the much more difficult problem in the next section.
 
 \chapter{Conclusions}
 \lhead{Chapter 5. \emph{Conclusions}}
