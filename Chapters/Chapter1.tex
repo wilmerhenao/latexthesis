@@ -47,6 +47,7 @@ We are grateful to Jorge Nocedal and his coauthors for allowing us
 to modify the L-BFGS-B code and post the modified version.  
 
 \chapter{L-BFGS-B}
+\lhead{Chapter 2. \emph{L-BFGS-B}}
 \label{ChapterConstraints} % For referencing the chapter elsewhere, use \eqref{ChapterConstraints} 
 
 This section is a description of the original \texttt{L-BFGS-B} code \citep{lbfgsbsoftware, codepaper} at a very high level. The original software is intended to find local minimizers of smooth functions. This thesis discusses how to modify the algorithm for Non-Smooth functions.
@@ -112,7 +113,8 @@ The problem with gradient projection is that its search direction does not take 
 
 The starting position for stage two will be the previously found Cauchy point and the goal is to find a new $\bar{x} = x^c + \alpha * \hat{d}$. The idea at a higher level is to solve the constrained problem \eqref{themodel}, but only on those dimensions that are free. First, the \texttt{L-BFGS} algorithm provides a new search direction $\hat{d}^u$ of the \emph{unconstrained} problem that takes implicit advantage of approximations of the Hessian matrix. After an unconstrained search direction has been found, the constraints are taken into account and the search direction is restricted to the $l$, $u$ bounding box via a step length factor $\alpha^*$. The new direction and step length produce$\hat{d}^* = \alpha^* \hat{d}^u$ where $\alpha^*$ (the step length) is also chosen so that the new point $\bar{x}$ satisfies Armijo and weak Wolfe\footnote{Armijo and weak Wolfe conditions will be explained on section \eqref{Wolfeconditions}} conditions if that is possible, under some circumstances it may be only possible to satisfy the Armijo but not the Wolfe condition due to the bounded nature of the problem. A third restriction on the step length is added so that the next iteration stays feasible. Once this step is finished, the next and final step will be the termination condition. If the termination condition fails, a new gradient projection and subspace minimization will be needed and the method repeats, if the termination condition is successful, the program exits with an appropriate exit message.
 
-\chapter{Modifications to the L-BFGS-B algorithm}
+\chapter{Modifications to the L-BFGS-B Algorithm}
+\lhead{Chapter 3. \emph{Modifications to the L-BFGS-B Algorithm}}
 
 We made three main changes to the original \texttt{L-BFGS-B} algorithm. They concern the line search Wolfe conditions, the line search methodology, and the termination condition.
 
@@ -224,6 +226,7 @@ The solution to this problem $z^*$ is the associated vector $Gz^*$, so if $||Gz^
 The solution of the quadratic program \eqref{quadraticproblem} is obtained with a practical primal-dual methodology. This is the same methodology implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis and is part of \texttt{lbfgsbnomessages.f90}. His algorithm solution is the well known Mehrotra's Predictor-Corrector algorithm implementation applied to quadratic programming. This algorithm is explained in chapter $16$ of \citep{nocedal}
 
 \chapter{Solution Tests}
+\lhead{Chapter 4. \emph{Solution Tests}}
 
 The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for Portable Batch System. This is a software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created} using the PBS generator script on appendix \eqref{pbsgenerator}. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands. In this case, the program execution of the original \texttt{L-BFGS-B} software and \texttt{L-BFGS-B-NS}}. One of them is available in appendix \eqref{pbsfile}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner. The original \texttt{L-BFGS-B} optimizer displays different messages depending on the condition that triggered the exit.  
 
@@ -330,21 +333,11 @@ On the other hand, the value of $p = 1$ has an abnormal line search termination 
 
 In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases crashed before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same in this table.
 
-Several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ are the most difficult to solve for the original algorithm. When $p=1$ the algorithm does not work as seen in \eqref{pequal1}\footnote{This is expected because the algorithm is originally designed to handle only smooth functions}. It is important to point out that the two dimensional case is successful because in this particular case the function is smooth inside its bounding box.
+Several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ are the most difficult to solve for the original algorithm. When $p=1$ the algorithm does not work. See \eqref{pequal1}\footnote{This is expected because the algorithm is originally designed to handle only smooth functions}. It is important to point out that the two dimensional case is successful because in this particular case the function is smooth inside its bounding box.
 
 \subsection{Performance of \texttt{L-BFGS-B-NS}}
 
-For intermediate values, the new changes seem to provide better values of $f$. Here is a simple comparison of the algorithm running on $m = 5,10$ for selected values of $p$ look at figure\eqref{pcomp}
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.75]{Figures/ComparisonNewOld.png}
-\caption[Comparison of selected values of the Modified Rosenbrock function]{Comparison of the performance of \texttt{L-BFGS-B-NS} vs. the Original version of \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with selected values of p in 1.000 dimensions}
-\label{pcomp}
-\end{center}
-\end{figure}
-
-These are typical values of optimizations for intermediate values of $p$. In the bar graph it is possible to see that values generated via \texttt{L-BFGS-B-NS} are a little better for values of $p$ closer to $1$. 
+For intermediate values, the new changes seem to provide better values of $f$. Values generated via \texttt{L-BFGS-B-NS} are a little better for values of $p$ closer to $1$. 
 
 The test performed is represented in a table with the number of iterations performed sliced by $p$ and $m$ see figure \eqref{pmtableiter}. And just as it would be expected, the number of evaluations required is higher for values of $p$ close to $1$.
 
@@ -369,7 +362,7 @@ The same table is reported for the number of function evaluations (as opposed to
 The values on these tables should be compared with the much more difficult problem in the next section.
 
 \chapter{Conclusions}
-
+\lhead{Chapter 5. \emph{Conclusions}}
 %-------------------------------------------------------------------------
 The need to build optimizers that work on a large number of variables quickly. Led us to the use of large scale quasi-Newton methodologies. These methodologies have been shown to work very well for smooth functions and several implementations have been suggested and made available already.
 

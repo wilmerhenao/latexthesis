@@ -25,15 +25,15 @@
 \contentsline {section}{\numberline {4.2}Modified Rosenbrock Function}{13}{section.41}
 \contentsline {subsection}{\numberline {4.2.1}Performance of \texttt {L-BFGS-B}}{15}{subsection.49}
 \contentsline {subsection}{\numberline {4.2.2}Performance of \texttt {L-BFGS-B-NS}}{17}{subsection.53}
-\contentsline {chapter}{\numberline {5}Conclusions}{19}{chapter.57}
+\contentsline {chapter}{\numberline {5}Conclusions}{18}{chapter.56}
 \vspace {2em}
-\contentsline {chapter}{\numberline {A}Samples of Code}{21}{appendix.58}
-\contentsline {section}{\numberline {A.1}Old Parts of the Code (Commented Out)}{21}{section.59}
-\contentsline {section}{\numberline {A.2}Stage 2 of the Line Search}{21}{section.65}
-\contentsline {section}{\numberline {A.3}Cubic and Quadratic Line Search Sample}{22}{section.90}
-\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{22}{section.114}
-\contentsline {chapter}{\numberline {B}Automation}{24}{appendix.148}
-\contentsline {section}{\numberline {B.1}Script Generator}{24}{section.149}
-\contentsline {section}{\numberline {B.2}PBS File Sample}{25}{section.178}
+\contentsline {chapter}{\numberline {A}Samples of Code}{20}{appendix.57}
+\contentsline {section}{\numberline {A.1}Old Parts of the Code (Commented Out)}{20}{section.58}
+\contentsline {section}{\numberline {A.2}Stage 2 of the Line Search}{20}{section.64}
+\contentsline {section}{\numberline {A.3}Cubic and Quadratic Line Search Sample}{21}{section.89}
+\contentsline {section}{\numberline {A.4}Line Search Enforcing Weak Wolfe Conditions}{21}{section.113}
+\contentsline {chapter}{\numberline {B}Automation}{23}{appendix.147}
+\contentsline {section}{\numberline {B.1}Script Generator}{23}{section.148}
+\contentsline {section}{\numberline {B.2}PBS File Sample}{24}{section.177}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{26}{dummy.202}
+\contentsline {chapter}{Bibliography}{25}{dummy.201}
