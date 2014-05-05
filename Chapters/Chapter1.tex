@@ -374,7 +374,7 @@ On table \eqref{pmtable}. The parameter $p$ changes and all other things are hel
     \label{pmtable}
     \begin{tabular}{|l|l|l|p{3.5cm}|p{6cm}|}
       \hline
-      p & Iterations & Value of f & Smallest norm of projected gradient & Final Message\\ \hline
+      p & Iterations & Value of f & Norm Smallest Vector in Convex Hull & Final Message\\ \hline
       2 & 8 & 41,116,905.61 & 1.88E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\
       1.1 & 24 & 764,853.32 & 1.72E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
       1.0001 & 27 & 484,394.49 & 1.91E-08 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
@@ -395,6 +395,23 @@ And the final table \eqref{sel}. Shows a collection of runs with very different 
 \end{center}
 \end{figure}
 
+\begin{center}
+  \begin{table}
+    \label{p1table}
+    \begin{tabular}{|l|l|l|l|l|p{3.5cm}|p{6cm}|}
+      \hline
+       m & n & p & nfg & f & Norm Smallest Vector in Convex Hull & Final message \\ \hline
+       10 & 2 & 1 & 3 & 81 & 0 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 4 & 1 & 93 & 177.8387115 & 4.77E-09 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 6 & 1 & 2015 & 280.7317034 & 7.67E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 8 & 1 & 170 & 377.8377547 & 9.72E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 10 & 1 & 233 & 474.6781431 & 3.05E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 200 & 1 & 589472 & 9765.891183 & 7.91E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
+       10 & 1000 & 1 & 403007 & 48501.06616 & 8.54E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\ \hline
+    \end{tabular}
+    \caption[Converging runs for $p = 1$]{This is the same table \ref{pequal1}, but with converging results using our algorithm}
+  \end{table}
+\end{center}
 
 \chapter{Conclusions}
 \lhead{Chapter 5. \emph{Conclusions}}
