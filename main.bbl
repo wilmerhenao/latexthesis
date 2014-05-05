@@ -1,102 +1,95 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{ZBNM11}
 
-\bibitem{Broyden}
+\bibitem[BLNZ95]{lbfgsboriginal}
+Richard~H. Byrd, Peihuang Lu, Jorge Nocedal, and Ci~You Zhu.
+\newblock A limited memory algorithm for bound constrained optimization.
+\newblock {\em SIAM J. Sci. Comput.}, 16(5):1190--1208, 1995.
+
+\bibitem[Bro70]{Broyden}
 C.~G. Broyden.
 \newblock The convergence of a class of double-rank minimization algorithms.
   {II}. {T}he new algorithm.
 \newblock {\em J. Inst. Math. Appl.}, 6:222--231, 1970.
 
-\bibitem{lbfgsboriginal}
-Richard~H. Byrd, Peihuang Lu, Jorge Nocedal, and Ci~You Zhu.
-\newblock A limited memory algorithm for bound constrained optimization.
-\newblock {\em SIAM J. Sci. Comput.}, 16(5):1190--1208, 1995.
-
-\bibitem{gradproj1}
+\bibitem[CGT88]{gradproj1}
 A.~R. Conn, N.~I.~M. Gould, and Ph.~L. Toint.
 \newblock Global convergence of a class of trust region algorithms for
   optimization with simple bounds.
 \newblock {\em SIAM J. Numer. Anal.}, 25(2):433--460, 1988.
 
-\bibitem{Fletcher}
+\bibitem[Fle70]{Fletcher}
 R.~Fletcher.
 \newblock A new approach to variable metric algorithms.
 \newblock {\em The Computer Journal}, 13(3):317--322, 1970.
 
-\bibitem{Goldfarb}
+\bibitem[Gol70]{Goldfarb}
 Donald Goldfarb.
 \newblock A family of variable-metric methods derived by variational means.
 \newblock {\em Math. Comp.}, 24:23--26, 1970.
 
-\bibitem{lbfgsbNS}
+\bibitem[Hen14]{lbfgsbNS}
 Wilmer Henao.
-\newblock lbfgsbns.
+\newblock {L-BFGS-B-NS}.
 \newblock \url{https://github.com/wilmerhenao/lbfgsbNS}, 2014.
 
-\bibitem{overtonlewis}
-Adrian~S. Lewis and Michael~L. Overton.
-\newblock Nonsmooth optimization via quasi-{N}ewton methods.
-\newblock {\em Math. Program.}, 141(1-2, Ser. A):135--163, 2013.
-
-\bibitem{MR1855221}
+\bibitem[LF01]{MR1855221}
 Dong-Hui Li and Masao Fukushima.
 \newblock On the global convergence of the {BFGS} method for nonconvex
   unconstrained optimization problems.
 \newblock {\em SIAM J. Optim.}, 11(4):1054--1064 (electronic), 2001.
 
-\bibitem{gradproj2}
+\bibitem[LO13]{overtonlewis}
+Adrian~S. Lewis and Michael~L. Overton.
+\newblock Nonsmooth optimization via quasi-{N}ewton methods.
+\newblock {\em Math. Program.}, 141(1-2, Ser. A):135--163, 2013.
+
+\bibitem[MT89]{gradproj2}
 Jorge~J. Mor{\'e} and Gerardo Toraldo.
 \newblock Algorithms for bound constrained quadratic programming problems.
 \newblock {\em Numer. Math.}, 55(4):377--400, 1989.
 
-\bibitem{MR572855}
+\bibitem[Noc80]{MR572855}
 Jorge Nocedal.
 \newblock Updating quasi-{N}ewton matrices with limited storage.
 \newblock {\em Math. Comp.}, 35(151):773--782, 1980.
 
-\bibitem{nocedal}
+\bibitem[NW99]{nocedal}
 Jorge Nocedal and Stephen~J. Wright.
 \newblock {\em Numerical optimization}.
 \newblock Springer Series in Operations Research. Springer-Verlag, New York,
   1999.
 
-\bibitem{hanso}
-Michael Overton, James Burke, and Anders Skajaa.
+\bibitem[OS12]{hanso}
+Michael Overton and Anders Skajaa.
 \newblock Hanso 2.02.
 \newblock \url{http://www.cs.nyu.edu/faculty/overton/software/hanso/}, 2012.
 
-\bibitem{rosenbrock}
+\bibitem[Ros61]{rosenbrock}
 H.~H. Rosenbrock.
 \newblock An automatic method for finding the greatest or least value of a
   function.
 \newblock {\em Comput. J.}, 3:175--184, 1960/1961.
 
-\bibitem{Shanno}
+\bibitem[Sha70]{Shanno}
 D.~F. Shanno.
 \newblock Conditioning of quasi-{N}ewton methods for function minimization.
 \newblock {\em Math. Comp.}, 24:647--656, 1970.
 
-\bibitem{skajaa}
+\bibitem[Ska10]{skajaa}
 Anders Skajaa.
-\newblock Limited memory bfgs for nonsmooth optimization.
+\newblock Limited memory {BFGS} for nonsmooth optimization.
 \newblock Master's thesis, New York University, Courant Institute of
   Mathematical Sciences, 251 Mercer Street, New York, NY 10012, 2010.
 
-\bibitem{QJ:QJ935}
-J.~L. Steward, I.~M. Navon, M.~Zupanski, and N.~Karmitsa.
-\newblock Impact of non-smooth observation operators on variational and
-  sequential data assimilation for a limited-area shallow-water equation model.
-\newblock {\em Quarterly Journal of the Royal Meteorological Society},
-  138(663):323--339, 2012.
-
-\bibitem{lbfgsbsoftware}
-Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
-\newblock Lbfgsb 3.0.
-\newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
-
-\bibitem{codepaper}
+\bibitem[ZBLN97]{codepaper}
 Ciyou Zhu, Richard~H. Byrd, Peihuang Lu, and Jorge Nocedal.
 \newblock Algorithm 778: {L}-{BFGS}-{B}: {F}ortran subroutines for large-scale
   bound-constrained optimization.
 \newblock {\em ACM Trans. Math. Software}, 23(4):550--560, 1997.
+
+\bibitem[ZBNM11]{lbfgsbsoftware}
+Ciyou Zhu, Richard Byrd, Jorge Nocedal, and Jose~Luis Morales.
+\newblock {L-BFGS-B} 3.0.
+\newblock \url{http://www.ece.northwestern.edu/~nocedal/lbfgsb.html}, 2011.
 
 \end{thebibliography}

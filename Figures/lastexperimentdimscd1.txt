@@ -1,0 +1,75 @@
+ final results rosenbrock (new) run:          10           2   1.0000000000000000                2           6   179.99974173553863       0.99999999999999989        1.0000000000000000        2.6500003878027201E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ mnp =           10           2   1.0000000000000000     
+ Value of f = (NEW CODE)   179.99974173553863     
+ Iterate            2
+ final results rosenbrock (new) run:          10           4   1.0000000000000000                2           6   290.52393608527223       0.99999999999999989        1.0000000000000000        2.1399999968707561E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ mnp =           10           4   1.0000000000000000     
+ Value of f = (NEW CODE)   290.52393608527223     
+ Iterate            2
+ final results rosenbrock (new) run:          10           6   1.0000000000000000               15      100039   393.15029752098968       0.99999999999999989        5.3245478241744966        4.2937371985753998      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ mnp =           10           6   1.0000000000000000     
+ Value of f = (NEW CODE)   393.15029752098968     
+ Iterate           15
+ final results rosenbrock (new) run:          10           8   1.0000000000000000               28      200094   496.89525495149883       0.99999999999999978        7.3245601749858373        8.6361447884701192      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ mnp =           10           8   1.0000000000000000     
+ Value of f = (NEW CODE)   496.89525495149883     
+ Iterate           28
+ final results rosenbrock (new) run:          10          10   1.0000000000000000               26       50068   600.09948784384596       0.99999999999999978        7.3245555927202135        2.2053299471735954      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ mnp =           10          10   1.0000000000000000     
+ Value of f = (NEW CODE)   600.09948784384596     
+ Iterate           26
+ final results rosenbrock (new) run:          10          20   1.0000000000000000              112         259   1115.9558482914201        6.9533377046355580E-310   7.3245553203371339        2.6022999081760645E-002 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ mnp =           10          20   1.0000000000000000     
+ Value of f = (NEW CODE)   1115.9558482914201     
+ Iterate          112
+ final results rosenbrock (new) run:          10          50   1.0000000000000000              229      250533   2663.4131345823876        6.9532227390474790E-310   7.3245553203370362        13.402204802958295      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ mnp =           10          50   1.0000000000000000     
+ Value of f = (NEW CODE)   2663.4131345823876     
+ Iterate          229
+ final results rosenbrock (new) run:          10         100   1.0000000000000000              297      200619   5242.4792386182116        6.9532543703791237E-310   7.3245553203387272        12.861463198787533      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ mnp =           10         100   1.0000000000000000     
+ Value of f = (NEW CODE)   5242.4792386182116     
+ Iterate          297
+ final results rosenbrock (new) run:          10         200   1.0000000000000000              295      150639   10400.626682783794        6.9531529214405646E-310   7.3245553207930723        13.242598578566685      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ mnp =           10         200   1.0000000000000000     
+ Value of f = (NEW CODE)   10400.626682783794     
+ Iterate          295
+ final results rosenbrock (new) run:          10        1000   1.0000000000000000               76      250259   51667.020297156763        6.9532321354582843E-310   7.3300134573723179        70.704921387252398      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL                                                                                    
+ mnp =           10        1000   1.0000000000000000     
+ Value of f = (NEW CODE)   51667.020297156763     
+ Iterate           76
+ final results rosenbrock (new) run:          10           2   1.0000000000000000                2           6   179.99974173553863       0.99999999999999989        1.0000000000000000        2.4299998767673969E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ mnp =           10           2   1.0000000000000000     
+ Value of f = (NEW CODE)   179.99974173553863     
+ Iterate            2
+ final results rosenbrock (new) run:          10           4   1.0000000000000000                2           6   290.52393608527223       0.99999999999999989        1.0000000000000000        2.0900007802993059E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ mnp =           10           4   1.0000000000000000     
+ Value of f = (NEW CODE)   290.52393608527223     
+ Iterate            2
+ final results rosenbrock (new) run:          10           6   1.0000000000000000               15      100039   393.15029752098968       0.99999999999999989        5.3245478241744966        4.3622332212980837      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ mnp =           10           6   1.0000000000000000     
+ Value of f = (NEW CODE)   393.15029752098968     
+ Iterate           15
+ final results rosenbrock (new) run:          10           8   1.0000000000000000               28      200094   496.89525495149883       0.99999999999999978        7.3245601749858373        8.7249787363689393      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ mnp =           10           8   1.0000000000000000     
+ Value of f = (NEW CODE)   496.89525495149883     
+ Iterate           28
+ final results rosenbrock (new) run:          10          10   1.0000000000000000               26       50068   600.09948784384596       0.99999999999999978        7.3245555927202135        2.2226480161771178      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ mnp =           10          10   1.0000000000000000     
+ Value of f = (NEW CODE)   600.09948784384596     
+ Iterate           26

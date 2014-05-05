@@ -5,9 +5,8 @@
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Representation of the Armijo Condition in a Nutshell}}{8}{figure.caption.26}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces The Idea behind the Wolfe Condition}}{8}{figure.caption.28}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Modified Rosenbrock with $p = 2$}}{15}{figure.caption.48}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Modified Rosenbrock with $p = 1$}}{16}{figure.caption.51}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Number of function evaluations for different values of $p$ and $m$ in the solution of Modified Rosenbrock}}{17}{figure.caption.54}
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Modified Rosenbrock with $p = 2$}}{15}{figure.caption.47}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Modified Rosenbrock with $p = 1$}}{16}{figure.caption.49}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Number of algorithm iterations changing $p$}}{17}{figure.caption.53}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Selected Runs changing dimensions using $m$ = 10}}{17}{figure.caption.54}
 \addvspace {10\p@ }

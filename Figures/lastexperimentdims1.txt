@@ -1,0 +1,40 @@
+ final results rosenbrock (new) run:          10           2   1.0000000000000000                2           6   179.99974173553863       0.99999999999999989        1.0000000000000000        8.5499999113380909E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          1                                                                
+ mnp =           10           2   1.0000000000000000     
+ Value of f = (NEW CODE)   179.99974173553863     
+ Iterate            2
+ final results rosenbrock (new) run:          10           4   1.0000000000000000                2           6   290.52393608527223       0.99999999999999989        1.0000000000000000        2.4999992456287146E-004 CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          2                                                                
+ mnp =           10           4   1.0000000000000000     
+ Value of f = (NEW CODE)   290.52393608527223     
+ Iterate            2
+ final results rosenbrock (new) run:          10           6   1.0000000000000000               15      100039   393.15029752098968       0.99999999999999989        5.3245478241744966        4.2757460151333362      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          3                                                                
+ mnp =           10           6   1.0000000000000000     
+ Value of f = (NEW CODE)   393.15029752098968     
+ Iterate           15
+ final results rosenbrock (new) run:          10           8   1.0000000000000000               28      200094   496.89525495149883       0.99999999999999978        7.3245601749858373        8.6555073371855542      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          4                                                                
+ mnp =           10           8   1.0000000000000000     
+ Value of f = (NEW CODE)   496.89525495149883     
+ Iterate           28
+ final results rosenbrock (new) run:          10          10   1.0000000000000000               26       50068   600.09948784384596       0.99999999999999978        7.3245555927202135        2.2324169732164592      CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ CONVERGENCE: ZERO_GRAD_IN_CONV_ HULL, nfree =          5                                                                
+ mnp =           10          10   1.0000000000000000     
+ Value of f = (NEW CODE)   600.09948784384596     
+ Iterate           26
+ final results rosenbrock (new) run:          10          20   1.0000000000000000            10000    10613966   1115.9558482914147        6.9531782540281036E-310   7.3245553203367599        493.76071171485819      STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ mnp =           10          20   1.0000000000000000     
+ Value of f = (NEW CODE)   1115.9558482914147     
+ Iterate        10000
+ final results rosenbrock (new) run:          10          50   1.0000000000000000            10000    10737260   2663.4131345823730        6.9532685091118366E-310   7.3245553203367688        576.87005003122613      STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ mnp =           10          50   1.0000000000000000     
+ Value of f = (NEW CODE)   2663.4131345823730     
+ Iterate        10000
+ final results rosenbrock (new) run:          10         100   1.0000000000000000            10000    10622321   5242.4792386171530        6.9532280967743930E-310   7.3245553203369838        701.48340928123798      STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ STOP: TOTAL NUMBER OF ITERATIONS REACHED 10000                                                                          
+ mnp =           10         100   1.0000000000000000     
+ Value of f = (NEW CODE)   5242.4792386171530     
+ Iterate        10000
