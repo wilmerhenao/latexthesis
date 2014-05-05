@@ -365,9 +365,9 @@ Several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$,
 
 \subsection{Performance of \texttt{L-BFGS-B-NS}}
 
-For intermediate values, the new changes seem to provide better values of $f$. Values generated via \texttt{L-BFGS-B-NS} are a little better whenever $p$ is closer to $1$, since the function is ``less'' smooth.
+Values generated via \texttt{L-BFGS-B-NS} are a little better whenever $p$ is closer to $1$, since the function is ``less'' smooth.
 
-On table \eqref{pmtable}. The parameter $p$ changes and all other things are held constant, this makes the problem more difficult to solve. Here the termination conditions is the one seen on \eqref{terminator}. Under this condition and for the same values of $tau_d$ The number of iterations taken in order to finish seems to grow until a certain point. Roughly the cases where $p$ is smaller than $1+10^{-8}$ look the same, this due to the effects of machine epsilon.
+In table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant.
 
 \begin{center}
   \begin{table}
@@ -385,7 +385,7 @@ On table \eqref{pmtable}. The parameter $p$ changes and all other things are hel
   \end{table}
 \end{center}
 
-And the final table \eqref{sel}. Shows a collection of runs with very different values for the dimension $n$. The software shows that it is possible to run Large Scale problems. In all cases the criterion for convergence used was the termination criterion outlined in section \eqref{terminator}
+The final table \ref{sel} shows a collection of runs with very large values for the dimension $n$. The results show that it is possible to run Large Scale problems.
 
 \begin{figure}
 \begin{center}
@@ -401,21 +401,14 @@ And the final table \eqref{sel}. Shows a collection of runs with very different 
     \begin{tabular}{|l|l|l|l|l|p{3.5cm}|p{6cm}|}
       \hline
        m & n & p & nfg & f & Norm Smallest Vector in Convex Hull & Final message \\ \hline
-       10 & 2 & 1 & 3 & 81 & 0 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 4 & 1 & 93 & 177.8387115 & 4.77E-09 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 6 & 1 & 2015 & 280.7317034 & 7.67E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 8 & 1 & 170 & 377.8377547 & 9.72E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 10 & 1 & 233 & 474.6781431 & 3.05E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 200 & 1 & 589472 & 9765.891183 & 7.91E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\
-       10 & 1000 & 1 & 403007 & 48501.06616 & 8.54E-03 & CONVERGENCE: ZERO_GRAD_IN_CONV_HULL \\ \hline
+       10 & 2 & 1 & 3 & 81 & 0 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 4 & 1 & 93 & 177.8387115 & 4.77E-09 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 6 & 1 & 2015 & 280.7317034 & 7.67E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 8 & 1 & 170 & 377.8377547 & 9.72E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 10 & 1 & 233 & 474.6781431 & 3.05E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 200 & 1 & 589472 & 9765.891183 & 7.91E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
+       10 & 1000 & 1 & 403007 & 48501.06616 & 8.54E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\ \hline
     \end{tabular}
     \caption[Converging runs for $p = 1$]{This is the same table \ref{pequal1}, but with converging results using our algorithm}
   \end{table}
 \end{center}
-
-\chapter{Conclusions}
-\lhead{Chapter 5. \emph{Conclusions}}
-%-------------------------------------------------------------------------
-In the case of Non-Smooth functions, a few changes were proposed in this thesis. Implementing the changes proposed to the original \texttt{L-BFGS-B} software provides the capability to run optimizations on Non-Smooth functions on simply restricted domains. With the new \texttt{L-BFGS-B-NS} tool, it is possible to run optimizations of problems in large dimensions for some complicated tests.
-
-The conclusion overall is that there is not a good rule of thumb to choose parameter $m$, and that the parameter $p$ in the Modified Rosenbrock test function has a big impact on the number of iterations that need to be performed in order to achieve convergence.
