@@ -337,22 +337,23 @@ On table \eqref{pmtable}. The parameter $p$ changes and all other things are hel
 
 \begin{center}
   \begin{table}
-   
     \begin{tabular}{|l|l|l|p{3.5cm}|p{6cm}|}
       \hline
       p & Iterations & Value of f & Smallest norm of projected gradient & Final Message\\ \hline
       2 & 8 & 41,116,905.61 & 1.88E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\
-      1.1 & 24 & 764,853.32 & 1.72E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ \hline
-      
+      1.1 & 24 & 764,853.32 & 1.72E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
+      1.0001 & 27 & 484,394.49 & 1.91E-08 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
+      1.00001 & 84 & 484,195.01 & 1.06E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
+      1.0000001 & 21 & 484,173.43 & 1.77E-08 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ \hline
     \end{tabular}
-    \caption[Table caption text]{Table taken from}
+    \caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise in particular was run with an $n = 10.000$, $m = 10$ and $\tau_d = 10^{-3}$}
   \end{table}
 \end{center}
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.40]{Figures/Nevaluations.png}
-\caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise in particular was run with an $n = 10.000$, $m = 10$ and $\tau_d = 10^{-3}$}
+\caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise was run with $n = 10,000$, $m = 10$ and $\tau_d = 10^{-3}$}
 \label{pmtable}
 \end{center}
 \end{figure}
