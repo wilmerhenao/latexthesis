@@ -315,13 +315,47 @@ In all cases this test was satisfied.
 
 The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well for the smooth modified Rosenbrock case.
 
-\begin{figure}
 \begin{center}
-\includegraphics[scale=0.5]{Figures/abnormalNocedal.png}
-\caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 1$, notice however that the two-dimensional case is successful.  This is because the function is smooth in this particular case.}
-\label{pequal1}
+  \begin{table}
+    \begin{tabular}{|l|l|l|l|p{3.5cm}|p{6cm}|}
+      \hline
+m & n & p & nfg & f & proj gradient & Final message \\ \hline
+5 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
+10 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
+20 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
+5 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+5 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+10 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+20 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
+  \hline
+    \end{tabular}
+    \caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 1$, notice however that the two-dimensional case is successful.  This is because the function is smooth in this particular case.}
+  \label{pequal1}
+  \end{table}
 \end{center}
-\end{figure}
 
 On the other hand, the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in most of the cases presented. This is to be expected as the function is non-smooth.
 
@@ -337,6 +371,7 @@ On table \eqref{pmtable}. The parameter $p$ changes and all other things are hel
 
 \begin{center}
   \begin{table}
+    \label{pmtable}
     \begin{tabular}{|l|l|l|p{3.5cm}|p{6cm}|}
       \hline
       p & Iterations & Value of f & Smallest norm of projected gradient & Final Message\\ \hline
@@ -349,14 +384,6 @@ On table \eqref{pmtable}. The parameter $p$ changes and all other things are hel
     \caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise in particular was run with an $n = 10.000$, $m = 10$ and $\tau_d = 10^{-3}$}
   \end{table}
 \end{center}
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.40]{Figures/Nevaluations.png}
-\caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise was run with $n = 10,000$, $m = 10$ and $\tau_d = 10^{-3}$}
-\label{pmtable}
-\end{center}
-\end{figure}
 
 And the final table \eqref{sel}. Shows a collection of runs with very different values for the dimension $n$. The software shows that it is possible to run Large Scale problems. In all cases the criterion for convergence used was the termination criterion outlined in section \eqref{terminator}
 
