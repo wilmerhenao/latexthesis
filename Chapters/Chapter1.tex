@@ -8,7 +8,7 @@
 
 %----------------------------------------------------------------------------------------
 %\DeclareMathOperator*{\Min}{Min}
-The problem addressed is to find a local minimizer of the Non-Smooth minimization problem
+The problem addressed is to find a local minimizer of the non-smooth minimization problem
 
 \begin{equation} \label{mainproblem}
   \begin{aligned}
@@ -38,7 +38,7 @@ at a high level and then we introduce a modified algorithm which
 is more suitable for functions $f$ which may not be
 differentiable at their local or global optimal points.  
 We call the new algorithm L-BFGS-B-NS where NS stands for
-Non-Smooth.  These changes were implemented in a modified version 
+non-smooth.  These changes were implemented in a modified version 
 of the FORTRAN code \citep{lbfgsbNS} which can be downloaded from a web repository.  We report on some numerical experiments 
 that strongly suggest that the new code should be useful for the
 non-smooth bound-constrained optimization problem (1.1).
@@ -146,7 +146,7 @@ The other condition, which is the one that was actually changed, is the curvatur
   \end{aligned}
 \end{equation}
 
-Here $d_k$ represents the search direction and $c_2$ is a constant such that $0 < c_1 < c_2 < 1$; often $c_2 = 0.9$ \citep{nocedal}. The strong Wolfe condition is a natural choice for optimization of smooth functions. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'' as illustrated in figure~\eqref{Wolfefigure}, but the problem is that the condition, as it is, does not work well for the non-smooth case. This is because near the minimal points there may be abrupt changes in the gradient. A good example of this problem is the function $f(x) = |x|$, where the slope never becomes flat near the optimal point.
+Here $d_k$ represents the search direction and $c_2$ is a constant such that $0 < c_1 < c_2 < 1$; often $c_2 = 0.9$ \citep{nocedal}. The strong Wolfe condition is a natural choice for optimization of smooth functions. Its goal is to find a step length long enough that the slope has been reduced ``sufficiently'' as illustrated in figure~\ref{Wolfefigure}, but the problem is that the condition, as it is, does not work well for the non-smooth case. This is because near the minimal points there may be abrupt changes in the gradient. A good example of this problem is the function $f(x) = |x|$, where the slope never becomes flat near the optimal point.
 
 \begin{figure} 
 \begin{center}
@@ -225,190 +225,3 @@ In this case, it is important to notice that instead of the gradient we have to 
 
 The solution of the quadratic program \eqref{quadraticproblem} is obtained using a practical primal-dual method. This is the same method implemented by Skajaa \citep{skajaa} in his thesis. His code \textsf{qpspecial} was implemented in \textsc{FORTRAN} for this thesis. The method is the well known Mehrotra's Predictor-Corrector algorithm applied to quadratic programming, as explained in chapter $16$ of \citep{nocedal}.
 
-\chapter{Solution Tests}
-\lhead{Chapter 4. \emph{Experimental Results}}
-
-The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for Portable Batch System. This is software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created} using a PBS generator script. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands, namely execution of the original \texttt{L-BFGS-B} software and the new code\texttt{L-BFGS-B-NS}}. Several of these shell scripts are available the the repository \citep{lbfgsbNS}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner.
-
-\section{Exit Messages}
-
-The original \texttt{L-BFGS-B} optimizer displays different messages depending on the condition that triggered the exit. The following is a list of some of the most common exit messages in the original \texttt{L-BFGS-B} optimizer.
-
-\begin{itemize}
-
-\item ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' This message means that there was a problem and the program's exit was premature. It is typically found for non-smooth functions where the line search breaks down. But the message could also be symptomatic of other problems.
-
-\item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients instead as explained in section \ref{terminator}. Instead it is replaced by
-
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed on section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to satisfy the termination condition.}.
-
-\item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times machine $\epsilon$. This exit message does not apply to \texttt{L-BFGS-B-NS} either. It was disabled by setting the factor ``FACTR'' to zero.
-
-\end{itemize}
-
-The limit on the number of iterations was set to $10,000$.
-
-\section{Modified Rosenbrock Function} \label{ros}
-
-Consider a modified version of the Rosenbrock function problem \citep{rosenbrock}:
-
-\begin{equation} \label{modifiedrosenbrock}
-    f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
-\end{equation}
-
-We can study the properties of function $f$ based on the properties of the function $\phi(t_i)$. Where $\phi(t_i) = |t_i|^p$ and $t_i = x_i - x_{i - 1}^2$. The properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function had a value of $p = 2$ and the second term is multiplied by $100$.}. This function can be proven to be locally Lipschitz continuous whenever $p \geq 1$. However, its second derivative blows up at zero whenever $p < 2$.
-
-The properties can be separated into different cases. Whenever $p > 1$ the derivative can be represented as:
-\begin{equation}\label{firstderiv}
-  \frac{d}{dt} \phi(t) = \pm p |t|^{p-1}
-\end{equation}
-and therefore, the limit of the derivative exists and is equal to zero near $t = 0$ \[ \lim_{t \to 0} \frac{d}{dt}\phi(t) = 0 \] From here we conclude that $f$ has a smooth first derivative.
-
-However, if $p = 1$, $\phi(t) = |t|$, and absolute value is not differentiable at $t = 0$. However, $\phi(t)$ is Lipschitz continuous at $t = 0$.
-
-The second derivative provides a bit more of information.
-
-\begin{equation}\label{secondderiv}
-  \frac{d^2}{dt^2} \phi(t) = p(p-1) |t|^{p-2}
-\end{equation}
-
-If $p \geq 2$ the function is smooth. However if $p < 2$, the second derivative becomes $\frac{p(p-1)}{|t|^{q}}$, where $q = 2 - p > 0$ and this second derivative blows up as $|t| \to 0$. The special case $p = 1$ has second derivative equal to zero since $p(p-1) = 0$ except at $t = 0$ where it is undefined.
-
-Having explained the characteristics of the function, the next thing that needs to be defined is the region to be tested. We chose the region to be defined by the ``box'' with boundaries
-
-\begin{equation}
-  \begin{aligned}
-    x_i = 
-    \begin{cases}
-      [-100, 100] & \text{if } i \in \text{ even numbers} \\
-      [10, 100] & \text{if } i \in \text{ odd numbers}
-    \end{cases}
-  \end{aligned}
-\end{equation}
-
-The initial point was chosen to be the midpoint of the box, plus a different small perturbation for each dimension, chosen so that the line search does not reach the boundary of several dimensions in one step.
-
-\begin{equation}
-  \begin{aligned}
-    x_i = \frac{u_i + l_i}{2} - \left(1 - 2^{1 - i}\right)
-  \end{aligned}
-\end{equation}
-
-The problem is twice continuously differentiable for values of $p \geq 2$, but as the values of $p$ approach $1$, the original \texttt{L-BFGS-B} optimizer should start to have problems We tested the original \texttt{L-BFGS-B} optimizer on the modified Rosenbrock function with $p$ varying between $2$ and $1$. 
-
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.48]{Figures/Nocedalp2.png}
-\caption[Modified Rosenbrock with $p = 2$]{Satisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 2$}
-\label{pequal2}
-\end{center}
-\end{figure}
-
-\subsection{Performance of \texttt{L-BFGS-B}}
-
-For a value of $p = 2$, the original \texttt{L-BFGS-B} yields good results as seen on the resulting table \ref{pequal2}.
-
-This exercise tested three different values of $m$, where $m$ stands for the memory of \texttt{L-BFGS}. The values that were tested are $5$, $10$ and $20$. The number of dimensions in this exercise ranges from $2$ to $1000$. The column $nfg$ stands for the number of function and gradient evaluations taken and $f$ stands for the optimal value that was achieved by the optimization. The last two columns show the norm of the final projected gradient and the final message when the algorithm finished. The termination tolerance for the projected gradients was $10^{-3}$
-
-In all cases this test was satisfied.
-
-The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well for the smooth modified Rosenbrock case.
-
-\begin{center}
-  \begin{table}
-    \begin{tabular}{|l|l|l|l|p{3.5cm}|p{6cm}|}
-      \hline
-m & n & p & nfg & f & proj gradient & Final message \\ \hline
-5 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
-10 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
-20 & 2 & 1 & 2 & 81.00 & 0.00 & CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_<=\_PGTOL \\
-5 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 4 & 1 & 68 & 274.68 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 6 & 1 & 57 & 371.80 & 96.81 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 8 & 1 & 59 & 468.38 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 10 & 1 & 59 & 565.28 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 20 & 1 & 69 & 1049.37 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 50 & 1 & 55 & 2502.10 & 96.84 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 100 & 1 & 55 & 4923.83 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 200 & 1 & 55 & 9767.31 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-5 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-10 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-20 & 1000 & 1 & 55 & 48515.21 & 96.83 & ABNORMAL\_TERMINATION\_IN\_LNSRCH \\
-  \hline
-    \end{tabular}
-    \caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 1$, notice however that the two-dimensional case is successful.  This is because the function is smooth in this particular case.}
-  \label{pequal1}
-  \end{table}
-\end{center}
-
-On the other hand, the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in most of the cases presented. This is to be expected as the function is non-smooth.
-
-In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases crashed before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same in this table.
-
-Several other values of $p$ were also tested, among others $1.5$, $1.1$, $1.01$, $1.001$, ... , $1.000000001$, $1$. As expected, those values where $p$ is closer to $1$ are the most difficult for the original algorithm. When $p=1$ the algorithm does not work\footnote{This is expected because the algorithm was originally designed to handle only smooth functions.}. It is important to point out that the two dimensional case is successful because in this particular case the function is smooth inside its bounding box.
-
-\subsection{Performance of \texttt{L-BFGS-B-NS}}
-
-Values generated via \texttt{L-BFGS-B-NS} are a little better whenever $p$ is closer to $1$, since the function is ``less'' smooth.
-
-In table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant.
-
-\begin{center}
-  \begin{table}
-    \label{pmtable}
-    \begin{tabular}{|l|l|l|p{3.5cm}|p{6cm}|}
-      \hline
-      p & Iterations & Value of f & Norm Smallest Vector in Convex Hull & Final Message\\ \hline
-      2 & 8 & 41,116,905.61 & 1.88E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\
-      1.1 & 24 & 764,853.32 & 1.72E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
-      1.0001 & 27 & 484,394.49 & 1.91E-08 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
-      1.00001 & 84 & 484,195.01 & 1.06E-06 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ 
-      1.0000001 & 21 & 484,173.43 & 1.77E-08 & CONVERGENCE: ZERO\_GRAD\_IN\_CONVEX\_HULL \\ \hline
-    \end{tabular}
-    \caption[Number of algorithm iterations changing $p$]{This is the number of algorithm iterations for different values of $p$. The value of the projected gradient is presented as well. This exercise in particular was run with an $n = 10.000$, $m = 10$ and $\tau_d = 10^{-3}$}
-  \end{table}
-\end{center}
-
-The final table \ref{sel} shows a collection of runs with very large values for the dimension $n$. The results show that it is possible to run Large Scale problems.
-
-\begin{figure}
-\begin{center}
-\includegraphics[scale=0.50]{Figures/SelectedRuns.png}
-\caption[Selected Runs changing dimensions using $m$ = 10]{This is a collection of selected runs that achieved convergence using the methodology from section \eqref{terminator} $m = 10$ and $\tau_d = 10^{-3}$}
-\label{sel}
-\end{center}
-\end{figure}
-
-\begin{center}
-  \begin{table}
-    \label{p1table}
-    \begin{tabular}{|l|l|l|l|l|p{3.5cm}|p{6cm}|}
-      \hline
-       m & n & p & nfg & f & Norm Smallest Vector in Convex Hull & Final message \\ \hline
-       10 & 2 & 1 & 3 & 81 & 0 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 4 & 1 & 93 & 177.8387115 & 4.77E-09 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 6 & 1 & 2015 & 280.7317034 & 7.67E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 8 & 1 & 170 & 377.8377547 & 9.72E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 10 & 1 & 233 & 474.6781431 & 3.05E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 200 & 1 & 589472 & 9765.891183 & 7.91E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\
-       10 & 1000 & 1 & 403007 & 48501.06616 & 8.54E-03 & CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL \\ \hline
-    \end{tabular}
-    \caption[Converging runs for $p = 1$]{This is the same table \ref{pequal1}, but with converging results using our algorithm}
-  \end{table}
-\end{center}

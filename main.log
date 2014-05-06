@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  5 MAY 2014 07:30
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2014.2.1)  6 MAY 2014 08:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -876,9 +876,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 136--136
 
 ]
 ------------------------------------------------------------------------------
+ List of Tables
+------------------------------------------------------------------------------
+(./main.lot)
+\tf@lot=\write6
+\openout6 = `main.lot'.
+
+ [6
+
+
+]
+------------------------------------------------------------------------------
  Dedicatory
 ------------------------------------------------------------------------------
-[6
+[7
 
 
 ] (./Chapters/Chapter1.tex
@@ -897,7 +908,7 @@ Chapter 2.
 ------------------------------------------------------------------------------
 [3
 
-] [4] <Figures/cajapresentation3.png, id=254, 903.375pt x 702.625pt>
+] [4] <Figures/cajapresentation3.png, id=261, 903.375pt x 702.625pt>
 File: Figures/cajapresentation3.png Graphic file (type png)
 
 <use Figures/cajapresentation3.png>
@@ -908,7 +919,7 @@ Chapter 3.
 ------------------------------------------------------------------------------
  3 Modifications to the L-BFGS-B Algorithm
 ------------------------------------------------------------------------------
-<Figures/armijo.png, id=275, 642.4pt x 401.5pt>
+<Figures/armijo.png, id=282, 642.4pt x 401.5pt>
 File: Figures/armijo.png Graphic file (type png)
  <use Figures/armijo.png>
 Package pdftex.def Info: Figures/armijo.png used on input line 135.
@@ -916,27 +927,26 @@ Package pdftex.def Info: Figures/armijo.png used on input line 135.
 
 [7
 
-] <Figures/wolfe.png, id=285, 482.80376pt x 362.35374pt>
+] <Figures/wolfe.png, id=292, 482.80376pt x 362.35374pt>
 File: Figures/wolfe.png Graphic file (type png)
 
 <use Figures/wolfe.png>
 Package pdftex.def Info: Figures/wolfe.png used on input line 153.
 (pdftex.def)             Requested size: 313.81873pt x 235.52715pt.
  [8 <./Figures/armijo.png> <./Figures/wolfe.png>]
-[9] [10] [11]
+[9] [10]) (./Chapters/Chapter4.tex [11]
 Chapter 4.
 ------------------------------------------------------------------------------
- 4 Solution Tests
+ 4 Experimental Results
 ------------------------------------------------------------------------------
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 239.
-
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 12.
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 239.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 12.
 
-Overfull \hbox (4.63475pt too wide) in paragraph at lines 241--242
+Overfull \hbox (4.63475pt too wide) in paragraph at lines 14--15
 []\OT1/cmr/m/n/10.95 ``CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT[]PGTOL": 
 Means
  []
@@ -944,73 +954,489 @@ Means
 [12
 
 ]
-Overfull \hbox (2.8097pt too wide) in paragraph at lines 245--246
+Overfull \hbox (2.8097pt too wide) in paragraph at lines 18--19
 []\OT1/cmr/m/n/10.95 ``CONVERGENCE: REL[]REDUCTION[]OF[]F[]LT[]FACTR*EPSMCH": T
 his con-
  []
 
-[13] <Figures/Nocedalp2.png, id=345, 845.1575pt x 503.8825pt>
-File: Figures/Nocedalp2.png Graphic file (type png)
-
-<use Figures/Nocedalp2.png>
-Package pdftex.def Info: Figures/Nocedalp2.png used on input line 302.
-(pdftex.def)             Requested size: 405.67099pt x 241.86086pt.
-LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
-(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 308.
- [14]
-<Figures/abnormalNocedal.png, id=355, 789.95125pt x 602.25pt>
-File: Figures/abnormalNocedal.png Graphic file (type png)
-
-<use Figures/abnormalNocedal.png>
-Package pdftex.def Info: Figures/abnormalNocedal.png used on input line 320.
-(pdftex.def)             Requested size: 394.97466pt x 301.12425pt.
- [15 <./Figures/Nocedalp2.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 343--343
-[]\OT1/cmr/m/n/10.95 Smallest norm of
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+[]\OT1/cmr/m/n/8 Norm.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
-[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+Underfull \hbox (badness 10000) in paragraph at lines 77--77
+\OT1/cmr/m/n/8 Proj.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 345--345
-[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 78--79
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
  []
 
 
-Overfull \hbox (36.71538pt too wide) in paragraph at lines 341--348
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 79--80
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 80--81
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 81--82
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 82--83
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 83--84
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 84--85
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 85--86
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 86--87
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 87--88
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 88--89
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 89--90
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 90--91
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 91--92
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 92--93
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 93--94
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 94--95
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 95--96
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 96--97
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 97--98
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 98--99
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 99--100
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 100--101
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 101--102
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 102--103
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 103--104
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 104--105
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 105--106
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 106--107
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (4.17308pt too wide) in paragraph at lines 107--108
+[]\OT1/cmr/m/n/8 CONVERGENCE: NORM[]OF[]PROJECTED[]GRADIENT[]LT| 
+ []
+
+
+Overfull \hbox (29.35995pt too wide) in paragraph at lines 75--110
 [][] 
  []
 
-<Figures/Nevaluations.png, id=364, 993.7125pt x 433.62pt>
-File: Figures/Nevaluations.png Graphic file (type png)
-
-<use Figures/Nevaluations.png>
-Package pdftex.def Info: Figures/Nevaluations.png used on input line 354.
-(pdftex.def)             Requested size: 397.47795pt x 173.44492pt.
-
-<Figures/SelectedRuns.png, id=367, 883.3pt x 134.5025pt>
-File: Figures/SelectedRuns.png Graphic file (type png)
-
-<use Figures/SelectedRuns.png>
-Package pdftex.def Info: Figures/SelectedRuns.png used on input line 364.
-(pdftex.def)             Requested size: 441.64893pt x 67.25107pt.
-
-Overfull \hbox (24.17586pt too wide) in paragraph at lines 364--365
- [] 
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <12> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 115.
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+[]\OT1/cmr/m/n/10.95 Norm
  []
 
-[16 <./Figures/abnormalNocedal.png>] [17 <./Figures/Nevaluations.png> <./Figure
-s/SelectedRuns.png>]
-Chapter 5.
-------------------------------------------------------------------------------
- 5 Conclusions
-------------------------------------------------------------------------------
-) (./main.bbl [18
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 127--127
+\OT1/cmr/m/n/10.95 Proj.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 128--129
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (1.65906pt too wide) in paragraph at lines 128--129
+\OT1/cmr/m/n/10.95 NORM[]OF[]PROJECTED[]GRADIENT[]LT[]PG| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 129--130
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (1.65906pt too wide) in paragraph at lines 129--130
+\OT1/cmr/m/n/10.95 NORM[]OF[]PROJECTED[]GRADIENT[]LT[]PG| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--131
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (1.65906pt too wide) in paragraph at lines 130--131
+\OT1/cmr/m/n/10.95 NORM[]OF[]PROJECTED[]GRADIENT[]LT[]PG| 
+ []
+
+
+Overfull \hbox (29.18701pt too wide) in paragraph at lines 125--160
+[][] 
+ []
+
+[15] [16]
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+[]\OT1/cmr/m/n/10.95 Norm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/10.95 Small-est
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 181--181
+\OT1/cmr/m/n/10.95 Con-vex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 183--184
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--185
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 185--186
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 186--186
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (15.50536pt too wide) in paragraph at lines 179--188
+[][] 
+ []
+
+
+Overfull \hbox (3.01169pt too wide) in paragraph at lines 200--200
+[]\OT1/cmr/m/n/9 Iter.| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+[]\OT1/cmr/m/n/9 Norm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+\OT1/cmr/m/n/9 Small-est
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 200--200
+\OT1/cmr/m/n/9 Con-vex
+ []
+
+
+Overfull \hbox (4.36047pt too wide) in paragraph at lines 201--201
+[]\OT1/cmr/m/n/9 0.00000017| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 201--202
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 202--203
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 202--203
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 203--204
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 203--204
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 204--205
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 204--205
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 205--206
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 205--206
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 206--207
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 207--208
+[]\OT1/cmr/m/n/9 CONVERGENCE:
+ []
+
+
+Overfull \hbox (4.3477pt too wide) in paragraph at lines 207--208
+\OT1/cmr/m/n/9 ZERO[]GRAD[]IN[]CONVEX[]HULL| 
+ []
+
+
+Overfull \hbox (13.65712pt too wide) in paragraph at lines 198--210
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+[]\OT1/cmr/m/n/10.95 Norm
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+\OT1/cmr/m/n/10.95 Small-est
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 221--221
+\OT1/cmr/m/n/10.95 Con-vex
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--223
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 222--223
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 223--224
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 223--224
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 224--225
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 224--225
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 225--226
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 225--226
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 226--227
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 226--227
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--228
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 227--228
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 228--229
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 228--229
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--230
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 229--230
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--231
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 230--231
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+
+Overfull \hbox (6.79214pt too wide) in paragraph at lines 231--231
+[]\OT1/cmr/m/n/10.95 0.00000017| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 231--231
+[]\OT1/cmr/m/n/10.95 CONVERGENCE:
+ []
+
+
+Overfull \hbox (3.74455pt too wide) in paragraph at lines 231--231
+\OT1/cmr/m/n/10.95 ZERO[]GRAD[]IN[]CONV[]HULL| 
+ []
+
+) [17] [18] (./main.bbl
 Underfull \hbox (badness 1281) in paragraph at lines 31--34
 []\OT1/cmr/m/n/10.95 Wilmer Henao.  L-BFGS-B-NS.  [][]$\OT1/cmtt/m/n/10.95 http
 s : / / github . com / wilmerhenao /
@@ -1019,25 +1445,25 @@ s : / / github . com / wilmerhenao /
 [19
 
 ])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 279.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 278.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 279.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 278.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 279.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 279.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 278.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 278.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9E5137CC6FDA0318B4F9BFECDAA5F46C;4057.
+(rerunfilecheck)             Checksum: 4B58028D647D2F9417B89CF864957BA9;4093.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 279.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 278.
  ) 
 Here is how much of TeX's memory you used:
- 15254 strings out of 493307
- 212356 string characters out of 6139906
- 317186 words of memory out of 5000000
- 18400 multiletter control sequences out of 15000+600000
+ 15241 strings out of 493307
+ 211897 string characters out of 6139906
+ 356257 words of memory out of 5000000
+ 18384 multiletter control sequences out of 15000+600000
  18180 words of font info for 69 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  49i,15n,45p,1525b,451s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1067,10 +1493,10 @@ m/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (27 pages, 1615283 bytes).
+Output written on main.pdf (28 pages, 1282005 bytes).
 PDF statistics:
- 512 PDF objects out of 1000 (max. 8388607)
- 439 compressed objects within 5 object streams
- 101 named destinations out of 1000 (max. 500000)
- 228 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 515 PDF objects out of 1000 (max. 8388607)
+ 444 compressed objects within 5 object streams
+ 102 named destinations out of 1000 (max. 500000)
+ 208 words of extra memory for PDF output out of 10000 (max. 10000000)
 

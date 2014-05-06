@@ -6,23 +6,23 @@
 \vspace {1em}
 \contentsline {chapter}{Contents}{iv}{dummy.4}
 \contentsline {chapter}{List of Figures}{v}{dummy.6}
+\contentsline {chapter}{List of Tables}{vi}{dummy.8}
 \vspace {2em}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.8}
-\contentsline {chapter}{\numberline {2}L-BFGS-B}{3}{chapter.10}
-\contentsline {section}{\numberline {2.1}BFGS}{3}{section.11}
-\contentsline {section}{\numberline {2.2}L-BFGS}{4}{section.14}
-\contentsline {section}{\numberline {2.3}L-BFGS-B}{4}{section.16}
-\contentsline {subsection}{\numberline {2.3.1}Gradient Projection}{4}{subsection.17}
-\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.21}
-\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B Algorithm}{7}{chapter.23}
-\contentsline {section}{\numberline {3.1}The Armijo and Wolfe conditions}{7}{section.24}
-\contentsline {section}{\numberline {3.2}The Line Search Methodology}{9}{section.30}
-\contentsline {section}{\numberline {3.3}The Termination Condition}{9}{section.31}
-\contentsline {subsection}{\numberline {3.3.1}Termination Condition Sub-algorithm}{10}{subsection.32}
-\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{11}{subsection.34}
-\contentsline {chapter}{\numberline {4}Solution Tests}{12}{chapter.35}
-\contentsline {section}{\numberline {4.1}Exit Messages}{12}{section.38}
-\contentsline {section}{\numberline {4.2}Modified Rosenbrock Function}{13}{section.40}
-\contentsline {subsection}{\numberline {4.2.1}Performance of \texttt {L-BFGS-B}}{14}{subsection.48}
-\contentsline {subsection}{\numberline {4.2.2}Performance of \texttt {L-BFGS-B-NS}}{16}{subsection.51}
-\contentsline {chapter}{\numberline {5}Conclusions}{18}{chapter.55}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.10}
+\contentsline {chapter}{\numberline {2}L-BFGS-B}{3}{chapter.12}
+\contentsline {section}{\numberline {2.1}BFGS}{3}{section.13}
+\contentsline {section}{\numberline {2.2}L-BFGS}{4}{section.16}
+\contentsline {section}{\numberline {2.3}L-BFGS-B}{4}{section.18}
+\contentsline {subsection}{\numberline {2.3.1}Gradient Projection}{4}{subsection.19}
+\contentsline {subsection}{\numberline {2.3.2}Subspace Minimization}{5}{subsection.23}
+\contentsline {chapter}{\numberline {3}Modifications to the L-BFGS-B Algorithm}{7}{chapter.25}
+\contentsline {section}{\numberline {3.1}The Armijo and Wolfe conditions}{7}{section.26}
+\contentsline {section}{\numberline {3.2}The Line Search Methodology}{9}{section.32}
+\contentsline {section}{\numberline {3.3}The Termination Condition}{9}{section.33}
+\contentsline {subsection}{\numberline {3.3.1}Termination Condition Sub-algorithm}{10}{subsection.34}
+\contentsline {subsection}{\numberline {3.3.2}The Solution of the Quadratic Program}{11}{subsection.36}
+\contentsline {chapter}{\numberline {4}Experimental Results}{12}{chapter.37}
+\contentsline {section}{\numberline {4.1}Exit Messages}{12}{section.40}
+\contentsline {section}{\numberline {4.2}Modified Rosenbrock Function}{13}{section.42}
+\contentsline {subsection}{\numberline {4.2.1}Performance of \texttt {L-BFGS-B}}{14}{subsection.50}
+\contentsline {subsection}{\numberline {4.2.2}Performance of \texttt {L-BFGS-B-NS}}{17}{subsection.52}
