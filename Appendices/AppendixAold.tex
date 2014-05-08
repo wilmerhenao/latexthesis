@@ -1,0 +1,212 @@
+% Appendix A
+
+\chapter{Samples of Code} % Main appendix title
+
+\label{AppendixA} % For referencing this appendix elsewhere, use \ref{AppendixA}
+
+\lhead{Appendix A. \emph{lbfgsbnomessages.f90 from lbfgsbNS repository}} % This is for the header on each page - perhaps a shortened title
+
+\lstset{language=[90]Fortran,
+  basicstyle=\ttfamily\scriptsize,
+  keywordstyle=\color{blue},
+  commentstyle=\color{magenta},
+  morecomment=[l]{!\ }% Comment only with space after !
+  backgroundcolor=\color{white},
+  numbers=left,
+  numbersep=5pt,                   % how far the line-numbers are from the code
+  breaklines=true,
+  firstnumber = 2607
+}
+\section{Old Parts of the Code (Commented Out)}
+All the code is available on \citep{lbfgsbNS} \label{ignoredcode}. The older version of the code was left untouched and simply was commented out. For example, in this section the new function lineww replaces the old function dcsrch
+\begin{lstlisting}
+
+!     call dcsrch(f,gd,stp,ftol,gtol,xtol,zero,stpmx,csave,isave,dsave)
+      call lineww(f,gd,stp,ftol,gtol,xtol,zero,stpmx,csave,isave,dsave)
+
+\end{lstlisting}
+
+\lstset{
+  escapeinside={\%*}{*)},
+  firstnumber = 3687
+}
+\section{Stage 2 of the Line Search}
+Stage 2 of the line search\citep{lbfgsbsoftware} \label{stage2}. This stage is not being run in lbfgsbNS. It is kept there for comparison. For the new line search that replaces it. You can look at appendix \ref{linesearchww}
+\begin{lstlisting}
+      if (stage .eq. 1 .and. f .le. fx .and. f .gt. ftest) then
+
+!  Here we define the modified function and derivative values.
+!  This line search will only aim to satisfy the condition in (3.3) modified Armijo
+         fm = f - stp*gtest
+         fxm = fx - stx*gtest
+         fym = fy - sty*gtest
+         gm = g - gtest
+         gxm = gx - gtest
+         gym = gy - gtest
+
+!  Call dcstep to update stx, sty, and to compute the new step.
+!
+         call dcstep(stx,fxm,gxm,sty,fym,gym,stp,fm,gm,brackt,stmin,stmax)
+
+!        Reset the function and derivative values for f
+
+         fx = fxm + stx*gtest
+         fy = fym + sty*gtest
+         gx = gxm + gtest
+         gy = gym + gtest
+
+      else
+\end{lstlisting}
+
+\section{Cubic and Quadratic Line Search Sample}
+This part of the code does not work in the case when the function is Non-Smooth \label{nsnowork}. For this reason it was eliminated from execution on lbfgsbNS and replaced with \ref{linesearchww}. stx in this case is a variable that represents the step with the minimum value so far.
+\lstset{
+  firstnumber = 3881
+}
+
+\begin{lstlisting}
+!     First case: A higher function value. The minimum is bracketed. 
+!     If the cubic step is closer to stx than the quadratic step, the 
+!     cubic step is taken, otherwise the average of the cubic and 
+!     quadratic steps is taken.
+  ! theta, three, gamma are parameters
+      if (fp .gt. fx) then
+         theta = three*(fx - fp)/(stp - stx) + dx + dp
+         s = max(abs(theta),abs(dx),abs(dp))
+         gamma = s*sqrt((theta/s)**2 - (dx/s)*(dp/s))
+         if (stp .lt. stx) gamma = -gamma
+         p = (gamma - dx) + theta
+         q = ((gamma - dx) + gamma) + dp
+         r = p/q
+         stpc = stx + r*(stp - stx) !quadratic step
+         stpq = stx + ((dx/((fx - fp)/(stp - stx) + dx))/two)* &
+                                                            (stp - stx) !The cubic step
+         if (abs(stpc-stx) .lt. abs(stpq-stx)) then
+            stpf = stpc
+         else
+            stpf = stpc + (stpq - stpc)/two
+         endif
+         brackt = .true.
+\end{lstlisting}
+
+\section{Line Search Enforcing Weak Wolfe Conditions}\label{linesearchww}
+This is the implementation of the line search that enforces the weak Wolfe conditions. Bisections and expansions (as long as it doesn't mean leaving the bounding box) of the step length. The purpose of this version is to be as similar as possible to the interior of the while loop in qpspecial.m at hanso \citep{hanso}
+\lstset{
+  firstnumber = 4425
+}
+
+\begin{lstlisting}
+      if (fp .ge. ftest) then 
+         sty = stp
+         fy = fp
+         dy = dp
+         brackt = .true.
+      else
+!     if second condition is violated not gone far enough (Wolfe)
+         if (-dp .ge. gtol*(-ginit)) then
+            stx = stp
+            fx = fp
+            dx = dp
+         else
+            return
+         endif
+      endif   
+      
+      !Bisection and expansion
+      if (brackt) then
+         stp = (sty + stx)/two
+      else
+         if (two * stp .le. stpmax) then !Remain within boundaries
+            ! Still in expansion mode
+            stp = two * stp
+         else
+            brackt = .true.
+            sty = stp
+            fy = fp
+            dy = dp
+         endif
+      endif
+      return
+      end
+\end{lstlisting}
+
+\chapter{Automation}
+
+This appendix includes some of the files that were used to run examples in parallel at the High Performance Clusters at NYU.  All of these files can be found in the repository \citep{lbfgsbNS}
+
+\section{Script Generator} \label{pbsgenerator}
+
+This is a sample of the script generator that creates pbs files to be sent to the High Performance Machines. The value ``i'' creates a different set of files when it varies between $0$ and $20$, in this case one file for each value of the parameter $p$ from \ref{modifiedrosenbrock} that we want to test. To see one of the files resulting from running this script look at appendix \ref{pbsfile}. 
+\lstset{
+  language=sh,
+  firstnumber = 1
+}
+
+\begin{lstlisting}
+#!/bin/bash
+
+for i in {0..20}
+do
+  cat > pbs.script.rosenbrock.$i <<EOF
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8,walltime=48:00:00
+#PBS -m abe
+#PBS -M weh227@nyu.edu
+#PBS -N rosenbrockHD$((i))
+
+module load gcc/4.7.3
+
+cd /scratch/weh227/rosenbrock/
+p=$(bc -l <<< "1+10 ^(-$((i)))")
+for n in 1000 100000 1000000 10000000 100000000
+do
+   echo 10 \$n \$p
+   ~/Documents/thesis/lbfgsfortran/./rosenbrockp 10 \$n \$p >> outputrosenbrock$((i)).txt
+done
+
+exit 0;
+
+EOF
+done
+
+\end{lstlisting}
+After they are created I could fire all of the runs at once by using the command 
+
+\label{qsubfire}
+\texttt{for i in {0..20}; do qsub pbs.script.rosenbrock.$\$i$ ; done}
+
+
+\section{PBS File Sample} \label{pbsfile}
+This is one of the sample files that were generated via the generator on appendix  \ref{pbsgenerator}. It runs a special value $p$.  These are the ones that get started with the the qsub command.
+
+Lines 4 to 5 provide the user with emails and critical information while running the process. Line 13 defines a run for different sizes of $n$. Line $16$ is the actual run that will be sent to an output file. In this case ``outputrosenbrock9.txt''
+\lstset{
+  language=sh,
+  firstnumber = 1
+}
+
+\begin{lstlisting}
+
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=8,walltime=48:00:00
+#PBS -m abe
+#PBS -M weh227@nyu.edu
+#PBS -N rosenbrockHD9
+
+module load gcc/4.7.3
+
+cd /scratch/weh227/rosenbrock/
+p=1.00000000100000000000
+for n in 1000 100000 1000000 10000000 100000000
+do
+   echo 10 $n $p
+   ~/Documents/thesis/lbfgsfortran/./rosenbrockp 10 $n $p >> outputrosenbrock9.txt
+done
+
+exit 0;
+
+
+
+\end{lstlisting}
