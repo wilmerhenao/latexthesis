@@ -5,21 +5,21 @@ The \texttt{L-BFGS-B} implementation was tested on the high performance cluster 
 
 \section{Exit Messages}
 
-The original \texttt{L-BFGS-B} optimizer displays different messages depending on the condition that triggered the exit. The following is a list of some of the most common exit messages in the original \texttt{L-BFGS-B} optimizer.
+The original \texttt{L-BFGS-B} optimizer displays different messages depending on the condition that triggered the exit. The following is a list of some of the most common exit messages in the original \texttt{L-BFGS-B} optimizer along with an explanation of how we generalized them in \texttt{L-BFGS-B-NS}.
 
 \begin{itemize}
 
-\item ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' This message means that there was a problem and the program's exit was premature. It is typically found for non-smooth functions where the line search breaks down. But the message could also be symptomatic of other problems.
+\item ``ABNORMAL\_TERMINATION\_IN\_LNSRCH'' This message means that there was a problem with the line search and the program's exit was premature. In \texttt{L-BFGS-B}, it typically occurs for non-smooth functions where the line search breaks down. In \texttt{L-BFGS-B-NS}, it typically occurs when the limit on the number of bisections in the line search ($30$) is exceeded.
 
-\item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients as explained in section \ref{terminator}. Instead it is replaced by
+\item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. We made just one change to the original \texttt{L-BFGS-B} code: in order to have results that are comparable with the results obtained with the new code, we terminated when the $2$-norm of the projected gradient was less than the tolerance $\tau =10^{-6}$, instead of the $\infty$-norm. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients as explained in section \ref{terminator}. Instead it is replaced by:
 
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to satisfy the termination condition.}.
+\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$ and $\tau_x = 10^{-3}$
 
 \item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times the machine precision $\epsilon$. This exit message does not apply to our tests. It was disabled by setting the factor ``FACTR'' to zero, both in our runs of \texttt{L-BFGS-B-NS} and our tests using the original code \texttt{L-BFGS-B}.
 
 \end{itemize}
 
-The limit on the number of iterations was set to $10,000$.
+The limit on the number of iterations was set to $10000$.
 
 \section{Modified Rosenbrock Function} \label{ros}
 
@@ -37,7 +37,7 @@ The properties of $\phi(t_i)$ can be separated into different cases. Whenever $p
 \end{equation}
 and therefore, the limit of the derivative exists and is equal to zero near $t = 0$: \[ \lim_{t \to 0} \frac{d}{dt}\phi(t) = 0 \] From this we conclude that $f$ has a smooth first derivative for $p > 1$.
 
-However, if $p = 1$, $\phi(t) = |t|$, and the absolute value function is not differentiable at $t = 0$. Note that, $\phi(t)$ is Lipschitz continuous at $t = 0$.
+However, if $p = 1$, $\phi(t) = |t|$, and the absolute value function is not differentiable at $t = 0$. Note that in this case, $\phi(t)$ is Lipschitz continuous at $t = 0$.
 
 The second derivative provides a bit more of information.
 
@@ -67,11 +67,11 @@ The initial point was chosen to be the midpoint of the box, plus a different sma
   \end{aligned}
 \end{equation}
 
-It is important to notice that this choice of initial point makes the problem more difficult to solve. Convergence is easiest if a midpoint is chosen.
+It is important to note that this choice of initial point makes the problem more difficult to solve. The problem is easier if the midpoint is chosen.
 
-The problem is twice continuously differentiable for values of $p \geq 2$, but as the values of $p$ approach $1$, the original \texttt{L-BFGS-B} optimizer \underline{should} start to have problems. We tested the original \texttt{L-BFGS-B} optimizer on the modified Rosenbrock function with $p$ varying between $2$ and $0.9$. 
+The problem is twice continuously differentiable for values of $p \geq 2$, but as the values of $p$ approach $1$, we expect the original \texttt{L-BFGS-B} optimizer to start to have difficulties. We tested both the original \texttt{L-BFGS-B} optimizer and the new code \texttt{L-BFGS-B-NS} on the modified Rosenbrock function with $p$ varying between $2$ and $0.9$ and $n$ varying between $100$ and $10000$, with the variable memory parameter $m$ set to $5$, $10$ and $20$.
 
-For a value of $p = 2$, the original \texttt{L-BFGS-B} yields good results as seen in Table \ref{pequal2}.
+For the value $p = 2$, the original \texttt{L-BFGS-B} yields good results as seen in Table \ref{pequal2}.
 
 \begin{center}
   \begin{table}
@@ -81,27 +81,6 @@ For a value of $p = 2$, the original \texttt{L-BFGS-B} yields good results as se
         \hline
       p &  n  &  m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
         & &  & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      2 &  2 & 5 & 1 & 2 & 81 & 0.00E+00 & 2 & 16 & 81 & 0.00E+00 \\
-      2 &  2 & 10 & 1 & 2 & 81 & 0.00E+00 & 2 & 16 & 81 & 0.00E+00\\
-      2 &  2 & 20 & 1 & 2 & 81 & 0.00E+00 & 2 & 16 & 81 & 0.00E+00\\
-     2 &   4 & 5 & 19 & 27 & 9305.933478101 & 2.14E-07 & 23 & 42 & 9305.933478101 & 7.40E-06\\
-      2 &  4 & 10 & 26 & 100 & 9305.933478101 & 2.34E-05 & 22 & 35 & 9305.933478101 & 1.01E-07\\
-      2 &  4 & 20 & 23 & 30 & 9305.933478101 & 2.17E-09 & 28 & 48 & 9305.933478101 & 1.52E-07\\
-      2 &  6 & 5 & 26 & 32 & 18531.143497015 & 1.93E-07 & 31 & 42 & 18531.143497015 & 1.73E-07\\
-      2 &  6 & 10 & 26 & 47 & 18531.143497015 & 7.83E-10 & 27 & 43 & 18531.143497015 & 2.29E-08\\
-      2 &  6 & 20 & 23 & 32 & 18531.143497015 & 1.63E-07 & 28 & 42 & 18531.1434970151 & 5.28E-07\\
-      2 &  8 & 5 & 31 & 37 & 27756.3535159291 & 6.88E-07 & 26 & 42 & 27756.3535159291 & 2.17E-08\\
-      2 &  8 & 10 & 26 & 34 & 27756.3535159291 & 5.63E-08 & 33 & 43 & 27756.3535159291 & 4.54E-07\\
-      2 &  8 & 20 & 10000 & 189502 & 27756.3535159291 & 2.05E-05 & 29 & 44 & 27756.3535159291 & 6.86E-07\\
-      2 &  10 & 5 & 30 & 40 & 36981.5635348431 & 2.64E-07 & 32 & 46 & 36981.5635348431 & 3.70E-07\\
-      2 &  10 & 10 & 29 & 41 & 36981.5635348431 & 6.74E-09 & 32 & 46 & 36981.5635348431 & 5.09E-09\\
-      2 &  10 & 20 & 27 & 35 & 36981.5635348431 & 6.36E-07 & 27 & 44 & 36981.5635348431 & 1.48E-07\\
-      2 &  20 & 5 & 31 & 35 & 83107.6136294132 & 1.48E-07 & 33 & 42 & 83107.6136294132 & 5.27E-07\\
-      2 &  20 & 10 & 28 & 39 & 83107.6136294132 & 1.99E-08 & 30 & 40 & 83107.6136294132 & 5.31E-07\\
-      2 &  20 & 20 & 27 & 36 & 83107.6136294132 & 6.06E-07 & 29 & 46 & 83107.6136294131 & 3.86E-06\\
-      2 &  50 & 5 & 29 & 84 & 221485.763913123 & 7.95E-05 & 32 & 55 & 221485.763913123 & 9.92E-07\\
-      2 &  50 & 10 & 25 & 28 & 221485.763913123 & 5.56E-07 & 35 & 122 & 221485.763913123 & 5.46E-06\\
-      2 &  50 & 20 & 27 & 88 & 221485.763913123 & 8.83E-05 & 31 & 45 & 221485.763913123 & 9.86E-07\\
       2 &  100 & 5 & 29 & 131 & 452116.014385974 & 2.92E-06 & 34 & 67 & 452116.014385974 & 1.46E-08\\
       2 &  100 & 10  & 25 & 67 & 452116.014385974 & 7.37E-05 & 32 & 45 & 452116.014385974 & 2.29E-07\\
       2 &  100 & 20  & 25 & 28 & 452116.014385974 & 8.97E-07 & 29 & 47 & 452116.014385974 & 1.20E-04\\
@@ -126,16 +105,11 @@ NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\ta
   \end{table}
 \end{center}
 
-\subsection{Performance of \texttt{L-BFGS-B} and  \texttt{L-BFGS-B} on Smooth and Non-smooth cases}
+\subsection{Performance of \texttt{L-BFGS-B} and \texttt{L-BFGS-B} on the Modified Rosenbrock Function}
 
-In order to compare the results of \texttt{L-BFGS-B} with the results of \texttt{L-BFGS-B-NS}, we changed the norm of the gradient in \texttt{L-BFGS-B} from the infinity to the euclidean norm, other than that \texttt{L-BFGS-B} is exactly the same version as the original. In order to keep magnitudes comparable, the tolerance of the euclidean norm of the projected gradient in \texttt{L-BFGS-B} and the limit of the $NSVCHPG$ $\tau_d$ from \texttt{L-BFGS-B-NS} were both set to $10^{-6}$.
+On the tables, iters shows the number of iterations, $\#fg$ shows the number of function and gradient evaluations taken, and $f$ shows the final computed function value that was achieved by the optimization. \emph{NPG} shows the norm of the projected gradient. The termination tolerance for the euclidean norm of the projected gradients was $10^{-6}$. In most cases this test was satisfied.
 
-The values of $m$ (the memory of \texttt{L-BFGS}) that were tested are $5$, $10$ and $20$. The number of dimensions in this exercise ranges from $2$ to $1,000$. The column $\#fg$ stands for the number of function and gradient evaluations taken, $f$ stands for the optimal value that was achieved by the optimization. $NPG$ shows the norm of the projected gradient. The termination tolerance for the euclidean norm of the projected gradients was $10^{-6}$. In most cases this test was satisfied. In the case where $n=8$, $m = 20$ the number of iterations reaches $10,000$ for \texttt{L-BFGS-B}. This is a particular case and this would not have happened if we had kept the infinity norm and if we had not removed one of the convergence criteria regarding proportional reduction of the objective function.
-
-In table \ref{pequal2} $NSVCHPG$ is the norm of the smallest vector in the convex hull of projected gradients. You can see that since this function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems solving the test and that \texttt{L-BFGS-B-NS} reaches exactly the same values.
-
-The overall conclusion from this exercise is that the original \texttt{L-BFGS-B} optimizer works well for the smooth modified Rosenbrock case and that \texttt{L-BFGS-B-NS} has a performance that can achieve a minimum that is just as good.
-
+In the case of \texttt{L-BFGS-B-NS} \emph{NSVCHPG} shows the norm of the smallest vector in the convex hull of projected gradients. We can see that since this function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems solving the test and that \texttt{L-BFGS-B-NS} reaches exactly the same values, although because of the line search changes, the number of iterations and function and gradient evaluations usually increases.
 
 \begin{table}
   \scriptsize
@@ -144,41 +118,20 @@ The overall conclusion from this exercise is that the original \texttt{L-BFGS-B}
       \hline
       p  &  n  &  m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
       & &  & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      1 & 2 & 5  & 1 & 21 & 5725.5 & 1.10E+02 & 98 & 393 & 81 & 2.24E+00 \\
-      1 &   2 & 10  & 1 & 21 & 5725.5 & 1.10E+02 & 98 & 393 & 81 & 2.24E+00\\
-      1 &   2 & 20 & 1 & 21 & 5725.5 & 1.10E+02 & 98 & 393 & 81 & 2.24E+00 \\
-      1 &   4 & 5 & 1 & 21 & 8723.4375 & 1.55E+02 & 11 & 228 & 185.800652425 & 2.24E+00\\
-      1 &   4 & 10 & 1 & 21 & 8723.4375 & 1.55E+02 & 11 & 228 & 185.8883208183 & 2.24E+00 \\
-      1 &  4 & 20 & 1 & 21 & 8723.4375 & 1.55E+02 & 11 & 228 & 185.8883208183 & 2.24E+00\\
-      1 &   6 & 5 & 1 & 21 & 11700.45703125 & 1.91E+02 & 21 & 303 & 274.6784915697 & 2.29E+01\\ 
-      1 &  6 & 10  & 1 & 21 & 11700.45703125 & 1.91E+02 & 24 & 113 & 274.6841504088 & 1.59E-07\\
-      1 &   6 & 20  & 1 & 21 & 11700.45703125 & 1.91E+02 & 24 & 113 & 274.684150471 & 1.59E-07\\
-      1 &   8 & 5 &  1 & 21 & 14672.2141113281 & 2.20E+02 & 13 & 117 & 371.5263455407 & 1.21E-08\\
-      1 &   8 & 10  & 1 & 21 & 14672.2141113281 & 2.20E+02 & 21 & 106 & 371.5155952286 & 2.42E-09\\
-      1 &  8 & 20  & 1 & 21 & 14672.2141113281 & 2.20E+02 & 21 & 106 & 371.5155952286 & 2.42E-09\\
-      1 &   10 & 5  & 1 & 21 & 17642.6535186768 & 2.46E+02 & 10000 & 274756 & 521.9962505588 & 1.90E+01 \\
-      1 &   10 & 10  & 1 & 21 & 17642.6535186768 & 2.46E+02 & 1207 & 33067 & 521.6424806845 & 1.90E+01\\
-      1 &  10 & 20  & 1 & 21 & 17642.6535186768 & 2.46E+02 & 1207 & 33067 & 521.6424806845 & 1.90E+01\\
-      1 &   20 & 5  & 1 & 21 & 32492.7998569489 & 3.48E+02 & 26 & 181 & 952.5523342616 & 2.17E-08\\
-      1 &  20 & 10  & 1 & 21 & 32492.7998569489 & 3.48E+02 & 21 & 187 & 952.5395063065 & 1.98E-08\\
-      1 &   20 & 20  & 1 & 21 & 32492.7998569489 & 3.48E+02 & 22 & 185 & 952.5402282145 & 3.28E-09\\
-      1 &   50 & 5  & 1 & 21 & 77042.8 & 5.51E+02 & 33 & 186 & 2405.1092001266 & 1.24E-07\\
-      1 &   50 & 10  & 1 & 21 & 77042.8 & 5.51E+02 & 38 & 288 & 2405.1306733153 & 1.07E-07\\
-      1 &  50 & 20  & 1 & 21 & 77042.8 & 5.51E+02 & 37 & 221 & 2405.1054163801 & 3.07E-07\\
-      1 &   100 & 5  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 130 & 4826.1066601788 & 1.34E-08\\
-      1 &  100 & 10  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 129 & 4826.1066352341 & 1.34E-08\\
-      1 &  100 & 20  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 129 & 4826.1066352341 & 1.34E-08\\
-      1 &  200 & 5  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522943829 & 1.82E-08\\
-      1 &  200 & 10  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522930362 & 1.82E-08\\
-      1 &  200 & 20  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 112 & 9667.9345180734 & 1.19E-07\\
-      1 &  1000 & 5  & 1 & 21 & 1487792.8 & 2.46E+03 & 23 & 193 & 48403.1390323475 & 5.72E-09\\
-      1 &  1000 & 10  & 1 & 21 & 1487792.8 & 2.46E+03 & 16 & 160 & 48403.3203939957 & 2.44E-08\\
-      1 &  1000 & 20  & 1 & 21 & 1487792.8 & 2.46E+03 & 16 & 160 & 48403.320394002 & 2.44E-08\\
+      1 & 100 & 5  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 130 & 4826.1066601788 & 1.34E-08\\
+      1 & 100 & 10  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 129 & 4826.1066352341 & 1.34E-08\\
+      1 & 100 & 20  & 1 & 21 & 151292.8 & 7.79E+02 & 15 & 129 & 4826.1066352341 & 1.34E-08\\
+      1 & 200 & 5  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522943829 & 1.82E-08\\
+      1 & 200 & 10  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522930362 & 1.82E-08\\
+      1 & 200 & 20  & 1 & 21 & 299792.8 & 1.10E+03 & 15 & 112 & 9667.9345180734 & 1.19E-07\\
+      1 & 1000 & 5  & 1 & 21 & 1487792.8 & 2.46E+03 & 23 & 193 & 48403.1390323475 & 5.72E-09\\
+      1 & 1000 & 10  & 1 & 21 & 1487792.8 & 2.46E+03 & 16 & 160 & 48403.3203939957 & 2.44E-08\\
+      1 & 1000 & 20  & 1 & 21 & 1487792.8 & 2.46E+03 & 16 & 160 & 48403.320394002 & 2.44E-08\\
       1 & 5000 & 5 & 1 & 21 & 7427792.8 & 5.51E+03 & 20 & 127 & 242078.712084738 & 1.26E-08\\
       1 & 5000 & 10 & 1 & 21 & 7427792.8 & 5.51E+03 & 56 & 339 & 242078.839910433 & 1.26E-08\\
       1 & 5000 & 20 & 1 & 21 & 7427792.8 & 5.51E+03 & 45 & 249 & 242078.560631846 & 7.84E-08\\
       1 & 10000 & 5 & 1 & 21 & 14852792.8 & 7.79E+03 & 18 & 148 & 484172.781463252 & 8.25E-08\\
-      1 & 10000 & 10 & 1 & 21 & 14852792.8 & 7.79E+03 & 10000 & 30391 & 484172.773976854 & 5.18E+02
+      1 & 10000 & 10 & 1 & 21 & 14852792.8 & 7.79E+03 & 10000 & 20019 & 484269.73074638832 & 3.76E+02 \\
       1 & 10000 & 20 & 1 & 21 & 14852792.8 & 7.79E+03 & 21 & 101 & 484172.918293261 & 1.77E-08\\
       \hline
     \end{tabular}
@@ -187,45 +140,43 @@ The overall conclusion from this exercise is that the original \texttt{L-BFGS-B}
   \end{center}
 \end{table}
 
-On the other hand, the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. See table \ref{pequal1merged} where the norm of the resulting projected gradient never approaches zero. In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases crashed before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same.
+On the other hand, the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. See table \ref{pequal1merged} where the norm of the resulting projected gradient never approaches zero. In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases terminated before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same.
 
-For all cases \texttt{L-BFGS-B} crashes in the first iteration with a value very distant from any local optimum.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
+In fact, for all cases \texttt{L-BFGS-B} crashes in the first iteration with a value very distant from any local optimum.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
 
-\subsection{Performance of \texttt{L-BFGS-B-NS}}
-
-Several other values of $p$ were also tested. In table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant, among others $1.1$, $1.01$, $1.001$, ... , $1.00001$, $1$. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always crashes as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
+Several other values of $p$ were also tested. In table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant, among others $1.1$, $1.01$, $1.001$, ... , $1.00001$, $1$. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
 
 \begin{table}
   \tiny
   \begin{center}
     \begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|}
       \hline
-      p & m & n  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
+      p & n & m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
       &  & & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      2 & 5 & 200 & 32 & 74 & 913376.515331672 & 1.97E-07 & 35 & 55 & 913376.515331676 & 3.19E-09\\
-      2 & 10 &  200 & 27 & 32 & 913376.515331672 & 5.26E-07 & 20 & 41 & 913376.515331677 & 3.98E-07\\
-      2 & 20 &  200 & 26 & 29 & 913376.515331672 & 5.80E-07 & 19 & 40 & 913376.515331672 & 8.03E-07\\
-      1.5 & 5 & 200 &  8 & 50 & 95144.1877450699 & 9.60E+02 & 29 & 68 & 94261.6310280216 & 7.52E-07\\
-      1.5 & 10 & 200 &  8 & 50 & 95095.5635531693 & 9.61E+02 & 30 & 59 & 94261.6310280212 & 9.69E-07\\
-      1.5 & 20 & 200 &   8 & 50 & 95095.5635531693 & 9.61E+02 & 26 & 66 & 94261.6310280211 & 9.95E-07\\
-      1.1 & 5 & 200 &  1 & 21 & 658485.96769483 & 1.10E+03 & 26 & 75 & 15226.525226329 & 4.24E-07\\
-      1.1 & 10 & 200 &  1 & 21 & 658485.96769483 & 1.10E+03 & 34 & 107 & 15226.5210644821 & 1.16E-07\\
-      1.1 & 20 & 200 &  1 & 21 & 658485.96769483 & 1.10E+03 & 38 & 99 & 15226.5209960549 & 1.73E-07\\
-      1.01 & 5 & 200 &  1 & 21 & 324235.017102379 & 1.10E+03 & 31 & 305 & 10218.0196721806 & 3.64E+01\\
-      1.01 & 10 & 200 &  1 & 21 & 324235.017102379 & 1.10E+03 & 47 & 151 & 10116.5275434197 & 7.29E-07\\
-      1.01 & 20 & 200 &  1 & 21 & 324235.017102379 & 1.10E+03 & 29 & 123 & 10116.5603888173 & 2.95E-09\\
-      1.001 & 5 & 200 &  1 & 21 & 302150.58179968 & 1.10E+03 & 36 & 111 & 9711.8763115237 & 5.70E-08\\
-      1.001 & 10 & 200 &  1 & 21 & 302150.58179968 & 1.10E+03 & 23 & 100 & 9711.8906439951 & 2.81E-09\\
-      1.001 & 20 & 200 &  1 & 21 & 302150.58179968 & 1.10E+03 & 39 & 164 & 9711.876311317 & 1.41E-07\\
-      1.0001 & 5 & 200 &  1 & 21 & 300027.736327598 & 1.10E+03 & 306 & 638 & 9672.3210642275 & 5.09E-07\\
-      1.0001 & 10 & 200 &  1 & 21 & 300027.736327598 & 1.10E+03 & 17 & 96 & 9672.3639815678 & 1.82E-08\\
-      1.0001 & 20 & 200 &  1 & 21 & 300027.736327598 & 1.10E+03 & 19 & 96 & 9672.3922445339 & 2.80E-09\\
-      1.00001 & 5 & 200 &  1 & 21 & 299816.285236336 & 1.10E+03 & 27 & 96 & 9668.3934739514 & 4.32E-07\\
-      1.00001 & 10 & 200 &  1 & 21 & 299816.285236336 & 1.10E+03 & 15 & 80 & 9668.373073478 & 2.80E-09\\
-      1.00001 & 20 & 200 &  1 & 21 & 299816.285236336 & 1.10E+03 & 15 & 80 & 9668.3730743134 & 2.80E-09\\
-      1 & 5 & 200 & 1 &  21  & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522943829 & 1.82E-08\\
-      1 & 10 & 200 & 1 &  21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522930362 & 1.82E-08\\
-      1 & 20 & 200 & 1 &  21 & 299792.8 & 1.10E+03 & 15 & 112 & 9667.9345180734 & 1.19E-07\\
+      2 & 200 & 5 & 32 & 74 & 913376.515331672 & 1.97E-07 & 35 & 55 & 913376.515331676 & 3.19E-09\\
+      2 & 200 & 10  & 27 & 32 & 913376.515331672 & 5.26E-07 & 20 & 41 & 913376.515331677 & 3.98E-07\\
+      2 & 200 & 20 & 26 & 29 & 913376.515331672 & 5.80E-07 & 19 & 40 & 913376.515331672 & 8.03E-07\\
+      1.5 & 200 & 5 &  8 & 50 & 95144.1877450699 & 9.60E+02 & 29 & 68 & 94261.6310280216 & 7.52E-07\\
+      1.5 & 200 & 10 &  8 & 50 & 95095.5635531693 & 9.61E+02 & 30 & 59 & 94261.6310280212 & 9.69E-07\\
+      1.5 & 200 & 20 &   8 & 50 & 95095.5635531693 & 9.61E+02 & 26 & 66 & 94261.6310280211 & 9.95E-07\\
+      1.1 & 200 & 5 &  1 & 21 & 658485.96769483 & 1.10E+03 & 26 & 75 & 15226.525226329 & 4.24E-07\\
+      1.1 & 200 & 10 &  1 & 21 & 658485.96769483 & 1.10E+03 & 34 & 107 & 15226.5210644821 & 1.16E-07\\
+      1.1 & 200 & 20 &  1 & 21 & 658485.96769483 & 1.10E+03 & 38 & 99 & 15226.5209960549 & 1.73E-07\\
+      1.01 & 200 & 5 &  1 & 21 & 324235.017102379 & 1.10E+03 & 31 & 305 & 10218.0196721806 & 3.64E+01\\
+      1.01 & 200 & 10 &  1 & 21 & 324235.017102379 & 1.10E+03 & 47 & 151 & 10116.5275434197 & 7.29E-07\\
+      1.01 & 200 & 20 &  1 & 21 & 324235.017102379 & 1.10E+03 & 29 & 123 & 10116.5603888173 & 2.95E-09\\
+      1.001 & 200 & 5 &  1 & 21 & 302150.58179968 & 1.10E+03 & 36 & 111 & 9711.8763115237 & 5.70E-08\\
+      1.001 & 200 & 10 &  1 & 21 & 302150.58179968 & 1.10E+03 & 23 & 100 & 9711.8906439951 & 2.81E-09\\
+      1.001 & 200 & 20 &  1 & 21 & 302150.58179968 & 1.10E+03 & 39 & 164 & 9711.876311317 & 1.41E-07\\
+      1.0001 & 200 & 5 &  1 & 21 & 300027.736327598 & 1.10E+03 & 306 & 638 & 9672.3210642275 & 5.09E-07\\
+      1.0001 & 200 & 10 &  1 & 21 & 300027.736327598 & 1.10E+03 & 17 & 96 & 9672.3639815678 & 1.82E-08\\
+      1.0001 & 200 & 20 &  1 & 21 & 300027.736327598 & 1.10E+03 & 19 & 96 & 9672.3922445339 & 2.80E-09\\
+      1.00001 & 200 & 5 &  1 & 21 & 299816.285236336 & 1.10E+03 & 27 & 96 & 9668.3934739514 & 4.32E-07\\
+      1.00001 & 200 & 10 &  1 & 21 & 299816.285236336 & 1.10E+03 & 15 & 80 & 9668.373073478 & 2.80E-09\\
+      1.00001 & 200 & 20 &  1 & 21 & 299816.285236336 & 1.10E+03 & 15 & 80 & 9668.3730743134 & 2.80E-09\\
+      1 & 200 & 5 & 1 &  21  & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522943829 & 1.82E-08\\
+      1 & 200 & 10 & 1 &  21 & 299792.8 & 1.10E+03 & 15 & 128 & 9668.0522930362 & 1.82E-08\\
+      1 & 200 & 20 & 1 &  21 & 299792.8 & 1.10E+03 & 15 & 112 & 9667.9345180734 & 1.19E-07\\
       \hline
     \end{tabular}
     \caption[Number of algorithm Iterations Changing $p$]{This is the number of algorithm iterations for different values of $p$. $n = 200$, $m = 10$ and $\tau_d = 10^{-6}, \tau_x = 10^{-3}$ and the tolerance of \texttt{L-BFGS-B} is $10^{-6}$ }
@@ -233,7 +184,7 @@ Several other values of $p$ were also tested. In table \ref{pmtable}, the parame
   \end{center}
 \end{table}
 
-Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can be seen, both algorithms crash, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario
+Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can be seen, both algorithms fail in the sense that the termination criteria are never met, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario
 
 \begin{table}
   \tiny
@@ -242,28 +193,30 @@ Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can b
       \hline
       p  & n & m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
       &  &  & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      0.999 & 100 & 5 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 30431 & 4900.9128213197 & 3.87E+01 \\
-      0.999 & 100 & 10 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 19999 & 4900.8936483149 & 3.78E+01 \\ 
-      0.999 & 100 & 20 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 20000 & 4899.8082590043 & 3.76E+01 \\
-      0.999 & 200 & 5 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 30429 & 9720.7074076621 & 5.50E+01 \\
-      0.999 & 200 & 10 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 19999 & 9720.7066330658 & 5.39E+01 \\
-      0.999 & 200 & 20 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 20000 & 9720.6846306824 & 5.37E+01 \\
-      0.999 & 1000 & 5 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 30413 & 48279.0637949643 & 1.68E+02 \\
-      0.999 & 1000 & 10 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 19999 & 48279.0637865814 & 1.22E+02 \\
-      0.999 & 1000 & 20 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 20000 & 48275.3237154601 & 1.21E+02 \\
-      0.999 & 5000 & 5 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 30437 & 241070.845631953 & 2.77E+02 \\
-      0.999 & 5000 & 10 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 30431 & 241070.845630621 & 2.76E+02 \\
-      0.999 & 5000 & 20 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 20005 & 241070.845176338 & 2.72E+02 \\
-      0.999 & 10000 & 5 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 30435 & 482060.572922137 & 5.31E+02 \\
-      0.999 & 10000 & 10 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 30419 & 482060.572921515 & 5.31E+02 \\
-      0.999 & 10000 & 20 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 20003 & 482060.570789708 & 5.25E+02 \\
+      0.999 & 100 & 5 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 20003 & 4900.9128213197 & 3.86E+01\\
+      0.999 & 100 & 10 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 19999 & 4900.9123782223 & 3.79E+01\\
+      0.999 & 100 & 20 & 1 & 21 & 150123.179035242 & 7.79E+02 & 10000 & 20000 & 4900.8873111184 & 3.78E+01\\
+      0.999 & 200 & 5 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 29971 & 9720.7074076621 & 5.50E+01\\
+      0.999 & 200 & 10 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 19999 & 9720.7073593488 & 5.41E+01\\
+      0.999 & 200 & 20 & 1 & 21 & 297453.671572579 & 1.10E+03 & 10000 & 20000 & 9720.7067337013 & 5.39E+01\\
+      0.999 & 1000 & 5 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 29961 & 48279.0637949643 & 9.94E-01\\
+      0.999 & 1000 & 10 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 20000 & 48279.0637881564 & 1.68E+02\\
+      0.999 & 1000 & 20 & 1 & 21 & 1476097.61187127 & 2.46E+03 & 10000 & 20000 & 48279.0637186514 & 1.66E+02\\
+      0.999 & 5000 & 5 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 29983 & 241070.845631957 & 9.94E-01\\
+      0.999 & 5000 & 10 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 29983 & 241070.845630635 & 9.94E-01\\
+      0.999 & 5000 & 20 & 1 & 21 & 7369317.31336543 & 5.51E+03 & 10000 & 20005 & 241070.845626631 & 2.73E+02\\
+      0.999 & 10000 & 5 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 29981 & 482060.572922137 & 3.89E+02\\
+      0.999 & 10000 & 10 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 29983 & 482060.572921515 & 9.94E-01\\
+      0.999 & 10000 & 20 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 20003 & 482060.572910768 & 5.28E+02\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.999$]{Not converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.999$.  and not converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.999$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.999$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
     \label{p0999}
   \end{center}
 \end{table}
 
+The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ on table \ref{p09}.
+
 \begin{table}
   \tiny
   \begin{center}
@@ -271,29 +224,28 @@ Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can b
       \hline
       p  & n & m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
       &  &  & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      0.99 & 100 & 5 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 20017 & 4706.5690750424 & 6.23E+01 \\
-      0.99 & 100 & 10 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 20018 & 4706.2984015014 & 5.54E+01\\
-      0.99 & 100 & 20 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 20018 & 4704.85232103 & 5.49E+01\\
-      0.99 & 200 & 5 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 30443 & 9332.0205531716 & 7.59E+01\\
-      0.99 & 200 & 10 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 20009 & 9332.0195592417 & 6.23E+01\\
-      0.99 & 200 & 20 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 20007 & 9331.7530278153 & 7.88E+01\\
-      0.99 & 1000 & 5 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 26 & 266 & 46335.6319950223 & 1.63E+02\\
-      0.99 & 1000 & 10 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 10000 & 20011 & 46335.6316276577 & 1.91E+02\\
-      0.99 & 1000 & 20 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 10000 & 20009 & 46335.6170263011 & 1.83E+02\\
-      0.99 & 5000 & 5 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 27 & 418 & 231353.689124954 & 3.63E+02\\
-      0.99 & 5000 & 10 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 22 & 266 & 231353.689124173 & 3.64E+02\\
-      0.99 & 5000 & 20 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 10000 & 20012 & 231353.688054351 & 3.26E+02\\
-      0.99 & 10000 & 5 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 26 & 415 & 462626.260533746 & 5.15E+02\\
-      0.99 & 10000 & 10 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 30441 & 462626.260533419 & 5.15E+02\\
-      0.99 & 10000 & 20 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 20013 & 462626.260190489 & 4.71E+02\\
+      0.99 & 100 & 5 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 29999 & 4706.5690751224 & 9.46E-01\\
+      0.99 & 100 & 10 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 29983 & 4706.5690446185 & 9.46E-01\\
+      0.99 & 100 & 20 & 1 & 21 & 140004.324489439 & 7.79E+02 & 10000 & 29989 & 4706.5690446185 & 9.46E-01\\
+      0.99 & 200 & 5 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 29985 & 9332.020553172 & 9.46E-01\\
+      0.99 & 200 & 10 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 20009 & 9332.0205286749 & 6.56E+01\\
+      0.99 & 200 & 20 & 1 & 21 & 277216.896653442 & 1.10E+03 & 10000 & 20007 & 9332.0182250141 & 8.21E+01\\
+      0.99 & 1000 & 5 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 10000 & 29993 & 46335.6319951054 & 9.46E-01\\
+      0.99 & 1000 & 10 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 10000 & 29993 & 46335.6319927555 & 9.46E-01\\
+      0.99 & 1000 & 20 & 1 & 21 & 1374917.47396547 & 2.46E+03 & 10000 & 20009 & 46335.6319815415 & 1.92E+02\\
+      0.99 & 5000 & 5 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 10000 & 29995 & 231353.689126569 & 9.46E-01\\
+      0.99 & 5000 & 10 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 10000 & 29995 & 231353.689125989 & 9.46E-01\\
+      0.99 & 5000 & 20 & 1 & 21 & 6863420.36052535 & 5.51E+03 & 10000 & 29995 & 231353.689125497 & 9.46E-01\\
+      0.99 & 10000 & 5 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 20013 & 462626.260534309 & 4.91E+02\\
+      0.99 & 10000 & 10 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 20013 & 462626.260533983 & 4.91E+02\\
+      0.99 & 10000 & 20 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 20013 & 462626.260533741 & 4.91E+02\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.99$]{Not converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.99$.  and not converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.99$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.99$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
     \label{p099}
   \end{center}
 \end{table}
 
-
 \begin{table}
   \tiny
   \begin{center}
@@ -301,24 +253,24 @@ Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can b
       \hline
       p  & n & m  & \multicolumn{4}{|c|}{\texttt{L-BFGS-B} results} & \multicolumn{4}{|c|}{\texttt{L-BFGS-B-NS} results} \\ \hline
       &  &  & iters. & \#fg & f & NPG & iters. & \#fg & f & NSVCHPG \\ \hline
-      5 & 100 & 0.9 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 30429 & 3145.9378051899 & 5.70E-01\\
-      10 & 100 & 0.9 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 20005 & 3145.9375865921 & 2.68E+02\\
-      20 & 100 & 0.9 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 20007 & 3145.8753404168 & 1.61E+02\\
-      5 & 200 & 0.9 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 30429 & 6210.7940850592 & 5.70E-01\\
-      10 & 200 & 0.9 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 20010 & 6210.7940839088 & 1.69E+03\\
-      20 & 200 & 0.9 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 20007 & 6210.7394172849 & 2.41E+02\\
-      5 & 1000 & 0.9 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 30443 & 30729.6443168679 & 5.70E-01\\
-      10 & 1000 & 0.9 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 30443 & 30729.6443166712 & 3.46E+02\\
-      20 & 1000 & 0.9 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 20013 & 30729.6441601442 & 9.04E+02\\
-      5 & 5000 & 0.9 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 10000 & 30439 & 153323.895471343 & 6.84E+02\\
-      10 & 5000 & 0.9 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 10000 & 10038 & 153323.895471311 & 5.70E-01\\
-      20 & 5000 & 0.9 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 23 & 112 & 153323.895471236 & 5.58E+02\\
-      5 & 10000 & 0.9 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 30445 & 306566.709414236 & 8.48E+02\\
-      10 & 10000 & 0.9 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 30445 & 306566.709414219 & 8.48E+02\\
-      20 & 10000 & 0.9 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 30443 & 306566.70941419 & 1.05E+04\\
+      0.9 & 100 & 5 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 29985 & 3145.9378051899 & 7.82E+01\\
+      0.9 & 100 & 10 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 20005 & 3145.9378011472 & 4.17E+02\\
+      0.9 & 100 & 20 & 1 & 21 & 70247.1102599127 & 7.79E+02 & 10000 & 20007 & 3145.9375231332 & 2.66E+02\\
+      0.9 & 200 & 5 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 29983 & 6210.7940850593 & 5.70E-01\\
+      0.9 & 200 & 10 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 29987 & 6210.7940839115 & 5.70E-01\\
+      0.9 & 200 & 20 & 1 & 21 & 137705.665344048 & 1.10E+03 & 10000 & 20007 & 6210.793392882 & 3.72E+02\\
+      0.9 & 1000 & 5 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 29997 & 30729.6443168733 & 2.49E+02\\
+      0.9 & 1000 & 10 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 29999 & 30729.6443166765 & 5.70E-01\\
+      0.9 & 1000 & 20 & 1 & 21 & 677374.106017129 & 2.46E+03 & 10000 & 20013 & 30729.6443164162 & 1.58E+03\\
+      0.9 & 5000 & 5 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 10000 & 29993 & 153323.895471387 & 5.70E-01\\
+      0.9 & 5000 & 10 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 10000 & 29993 & 153323.895471342 & 5.70E-01\\
+      0.9 & 5000 & 20 & 1 & 21 & 3375716.30938256 & 5.51E+03 & 10000 & 29993 & 153323.895471246 & 5.70E-01\\
+      0.9 & 10000 & 5 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 29999 & 306566.709414405 & 5.70E-01\\
+      0.9 & 10000 & 10 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 29999 & 306566.709414387 & 5.70E-01\\
+      0.9 & 10000 & 20 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 29999 & 306566.709414375 & 5.70E-01\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Not converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.9$.  and not converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.9$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
     \label{p09}
   \end{center}
 \end{table}
