@@ -12,15 +12,15 @@
   commentstyle=\color{magenta},
   morecomment=[l]{!\ }% Comment only with space after !
   backgroundcolor=\color{white},
-  numbers=left,
-  numbersep=5pt,                   % how far the line-numbers are from the code
+  %numbers=left,
+  %numbersep=5pt,                   % how far the line-numbers are from the code
   breaklines=true,
-  firstnumber = 2607
+  %firstnumber = 2607
 }
 
 \section{Running tests in local machines}
 
-Running the software requires getting a copy of the files. The easiest way to get a copy is downloading directly from the repository \citep{lbfgsbNS} and clicking on the \textup{download zip} link. Users of git can also clone the repository by issuing either the Hypertext Transfer Protocol Secure command \textup{git clone https://github.com/wilmerhenao/L-BFGS-B-NS.git} or the secure shell command \textup{git clone git@github.com:wilmerhenao/L-BFGS-B-NS.git}. Other requirements on the machine are a \texttt{FORTRAN} compiler and a \texttt{LAPACK} package.
+In order to run the software, a copy of the files is required. The easiest way to get a copy is downloading directly from the repository \citep{lbfgsbNS} and clicking on the \textup{download zip} link. Users of git can also clone the repository by issuing either the Hypertext Transfer Protocol Secure command \texttt{git clone https://github.com/wilmerhenao/L-BFGS-B-NS.git} or the secure shell command \texttt{git clone git@github.com:wilmerhenao/L-BFGS-B-NS.git}. Other requirements on the machine are a \texttt{FORTRAN} compiler and \texttt{LAPACK}.
 
 Once the user has obtained a local copy of the code. New executables need to be created. in order to do this, a simple \texttt{Makefile} has been provided, in order to ``make'' the executables and run a typical test with parameters $p = 1.1$, $n = 100$, $m = 5$ and $\tau_d = 10^{-6}$, the user should issue the following commands.
 
@@ -29,7 +29,7 @@ Once the user has obtained a local copy of the code. New executables need to be 
   $ ./rosenbrockp 1.1 100 5 1d-6
 \end{lstlisting}
 
-Output by default goes directly to the screen. The best way to capture the results in a text file is using the redirect operator >.
+Output by default goes directly to the screen. The best way to capture the results in a text file is using the redirection operator $>$.
 
 \begin{lstlisting}[language=bash]
   $ make
@@ -39,7 +39,7 @@ Output by default goes directly to the screen. The best way to capture the resul
 If the user is running several tests, a bash script might be necessary.
 
 \begin{lstlisting}[language=bash]{runbatch.sh}
-\#\!/bin/bash
+#!/bin/bash
 for ptol in 1d-6
 do
     for p in 2 1 1.5 1.1 1.01 1.001 1.0001 1.00001 0.99 0.9
@@ -58,7 +58,7 @@ done
 exit 0;
 \end{lstlisting}
 
-This bash script can be made executable and run directly on the user's machine. All the results from the runs will be located on file \texttt{OUTPUTS/resid6.txt}
+This bash script can be made executable and run directly on the user's machine. All the results from the runs will be located on file \texttt{OUTPUTS/resid6.txt} in this case.
 
 \begin{lstlisting}[language=bash]
   $ chmod +x runall.sh
@@ -88,8 +88,8 @@ The requirements are different on the high performance computing cluster, but th
 	do
 	    for m in 5 10 20
 	    do
-		echo \$ptol \$p \$n \$m
-		./rosenbrockp \$p \$n \$m \$ptol >> res1d6.txt
+		echo $ptol $p $n $m
+		./rosenbrockp $p $n $m $ptol >> res1d6.txt
 	    done
 	done
     done
@@ -98,14 +98,15 @@ The requirements are different on the high performance computing cluster, but th
   exit 0;
 \end{lstlisting}
 
-Typically the user logs into the clusters, runs the tests usign a software called \emph{qsub} specially for this task and picks up the results once the tests have finished. At NYU user log in to the hpc access cluster, followed by the bowery computer cluster.
+Typically the user logs into the clusters, runs the tests using a software called \emph{qsub} and picks up the results once the tests have finished. At NYU a user logs into the hpc access cluster, followed by the bowery computer cluster.
 
 \begin{lstlisting}
   $ ssh youremail@hpc.nyu.edu
   $ ssh bowery
   $ password: ********
   $ git clone https://www.github.com/wilmerhenao/L-BFGS-B-NS.git
+  $ cd L-BFGS-B-NS
   $ qsub -o precision1d6.log -j oe precision1d6.pbs
 \end{lstlisting}
 
-And of course it is possible to run several \emph{PBS} jobs at once. Your local High Performance Computer Cluster always has some documentation on how to create and use \emph{PBS} files. https://wikis.nyu.edu/display/NYUHPC/Tutorial+-+Submitting+a+job+using+qsub
+It is also possible to run several \emph{PBS} jobs simultaneously. Your local High Performance Computer Cluster always has some documentation on how to create and use \emph{PBS} files. https://wikis.nyu.edu/display/NYUHPC/Tutorial+-+Submitting+a+job+using+qsub
