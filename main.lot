@@ -5,4 +5,6 @@
 \contentsline {table}{\numberline {4.1}{\ignorespaces Modified Rosenbrock with $p = 2$}}{15}{table.caption.49}
 \contentsline {table}{\numberline {4.2}{\ignorespaces Modified Rosenbrock with $p = 1$}}{16}{table.caption.51}
 \contentsline {table}{\numberline {4.3}{\ignorespaces Number of algorithm Iterations Changing $p$}}{17}{table.caption.53}
-\contentsline {table}{\numberline {4.4}{\ignorespaces A value where \texttt {L-BFGS-B-NS} is supposed to fail. $p = 0.9$}}{18}{table.caption.54}
+\contentsline {table}{\numberline {4.4}{\ignorespaces A value where \texttt {L-BFGS-B-NS} is supposed to fail. $p = 0.999$}}{18}{table.caption.54}
+\contentsline {table}{\numberline {4.5}{\ignorespaces A value where \texttt {L-BFGS-B-NS} is supposed to fail. $p = 0.99$}}{18}{table.caption.55}
+\contentsline {table}{\numberline {4.6}{\ignorespaces A value where \texttt {L-BFGS-B-NS} is supposed to fail. $p = 0.9$}}{18}{table.caption.56}
