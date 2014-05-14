@@ -13,7 +13,7 @@ The original \texttt{L-BFGS-B} optimizer displays different messages depending o
 
 \item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. We made just one change to the original \texttt{L-BFGS-B} code: in order to have results that are comparable with the results obtained with the new code, we terminated when the $2$-norm of the projected gradient was less than the tolerance $\tau =10^{-6}$, instead of the $\infty$-norm. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients as explained in section \ref{terminator}. Instead it is replaced by:
 
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero $0$, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$ and $\tau_x = 10^{-3}$
+\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$ and $\tau_x = 10^{-3}$.
 
 \item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times the machine precision $\epsilon$. This exit message does not apply to our tests. It was disabled by setting the factor ``FACTR'' to zero, both in our runs of \texttt{L-BFGS-B-NS} and our tests using the original code \texttt{L-BFGS-B}.
 
@@ -45,7 +45,7 @@ The second derivative provides a bit more of information.
   \frac{d^2}{dt^2} \phi(t) = \pm p(p-1) |t|^{p-2}
 \end{equation}
 
-If $p \geq 2$ the function is twice continuously differentiable. However if $p < 2$, the second derivative becomes $\frac{p(p-1)}{|t|^{q}}$, where $q = 2 - p > 0$, and this second derivative blows up as $|t| \to 0$. The special case $p = 1$ has second derivative equal to zero since $p(p-1) = 0$ except at $t = 0$ where it is undefined. For $p < 1$, $\phi$ is not Lipschitz continuous at $t = 0$
+If $p \geq 2$ the function is twice continuously differentiable. However if $p < 2$, the second derivative becomes $\frac{p(p-1)}{|t|^{q}}$, where $q = 2 - p > 0$, and this second derivative blows up as $|t| \to 0$. The special case $p = 1$ has second derivative equal to zero since $p(p-1) = 0$ except at $t = 0$ where it is undefined. For $p < 1$, $\phi$ is not Lipschitz continuous at $t = 0$.
 
 Having explained the characteristics of the function, the next thing that needs to be defined is the region to be tested. We chose the region to be defined by the ``box'' with boundaries
 
@@ -69,9 +69,7 @@ The initial point was chosen to be the midpoint of the box, plus a different sma
 
 It is important to note that this choice of initial point makes the problem more difficult to solve. The problem is easier if the midpoint is chosen.
 
-The problem is twice continuously differentiable for values of $p \geq 2$, but as the values of $p$ approach $1$, we expect the original \texttt{L-BFGS-B} optimizer to start to have difficulties. We tested both the original \texttt{L-BFGS-B} optimizer and the new code \texttt{L-BFGS-B-NS} on the modified Rosenbrock function with $p$ varying between $2$ and $0.9$ and $n$ varying between $100$ and $10000$, with the variable memory parameter $m$ set to $5$, $10$ and $20$.
-
-For the value $p = 2$, the original \texttt{L-BFGS-B} yields good results as seen in Table \ref{pequal2}.
+We tested both the original \texttt{L-BFGS-B} optimizer and the new code \texttt{L-BFGS-B-NS} on the modified Rosenbrock function with $p$ varying between $2$ and $0.9$ and $n$ varying between $100$ and $10000$, with the variable memory parameter $m$ set to $5$, $10$ and $20$.
 
 \begin{center}
   \begin{table}
@@ -98,7 +96,7 @@ For the value $p = 2$, the original \texttt{L-BFGS-B} yields good results as see
       2 & 10000 & 20 & 28 & 73 & 46116905.608006 & 5.18E-06 & 18 & 297 & 46116905.6080044 & 3.66E-05\\
       \hline
       \end{tabular}
-      \caption[Modified Rosenbrock with $p = 2$]{Satisfactory results for the original algorithm \texttt{L-BFGS-B}  and for \texttt{L-BFGS-B-NS} applied to the Modified Rosenbrock function with $p = 2$. NPG: Norm of projected Gradient with tolerance $10^{-6}$. 
+      \caption[Modified Rosenbrock with $p = 2$]{Satisfactory results for the original algorithm \texttt{L-BFGS-B}  and for \texttt{L-BFGS-B-NS} applied to the Modified Rosenbrock function with $p = 2$. NPG: Norm of Projected Gradient with tolerance $10^{-6}$. 
 NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$}
       \label{pequal2}
     \end{center}
@@ -107,9 +105,9 @@ NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\ta
 
 \subsection{Performance of \texttt{L-BFGS-B} and \texttt{L-BFGS-B} on the Modified Rosenbrock Function}
 
-On the tables, iters shows the number of iterations, $\#fg$ shows the number of function and gradient evaluations taken, and $f$ shows the final computed function value that was achieved by the optimization. \emph{NPG} shows the norm of the projected gradient. The termination tolerance for the euclidean norm of the projected gradients was $10^{-6}$. In most cases this test was satisfied.
+In the tables, iters shows the number of iterations, $\#fg$ shows the number of function and gradient evaluations taken, and $f$ shows the final computed function value that was achieved by the optimization. In the case of \texttt{L-BFGS-B}, \emph{NPG} shows the $2$-norm of the projected gradient with termination tolerance $10^{-6}$. In the case of \texttt{L-BFGS-B-NS}, \emph{NSVCHPG} shows the norm of the smallest vector in the convex hull of projected gradients. 
 
-In the case of \texttt{L-BFGS-B-NS} \emph{NSVCHPG} shows the norm of the smallest vector in the convex hull of projected gradients. We can see that since this function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems solving the test and that \texttt{L-BFGS-B-NS} reaches exactly the same values, although because of the line search changes, the number of iterations and function and gradient evaluations usually increases.
+In table \ref{pequal2} we can see that since the test function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems minimizing it and that \texttt{L-BFGS-B-NS} reaches exactly the same final values, although because of the line search changes, the number of iterations and function and gradient evaluations usually increase.
 
 \begin{table}
   \scriptsize
@@ -135,16 +133,14 @@ In the case of \texttt{L-BFGS-B-NS} \emph{NSVCHPG} shows the norm of the smalles
       1 & 10000 & 20 & 1 & 21 & 14852792.8 & 7.79E+03 & 21 & 101 & 484172.918293261 & 1.77E-08\\
       \hline
     \end{tabular}
-    \caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 1$. And converging results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$}
+    \caption[Modified Rosenbrock with $p = 1$]{Unsatisfactory results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 1$, but converging results for \texttt{L-BFGS-B-NS}. NPG: Norm of Projected Gradient with tolerance = $10^{-6}$. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$}
     \label{pequal1merged}
   \end{center}
 \end{table}
 
-On the other hand, the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. See table \ref{pequal1merged} where the norm of the resulting projected gradient never approaches zero. In this exercise, the memory length $m$ of \texttt{L-BFGS}, does not have an impact on the final value $f$ of the optimization, but this is because all cases terminated before the $5^{th}$ iteration and therefore all different cases of $m$ end up looking exactly the same.
+On the other hand, in table \ref{pequal1merged} we see that the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. In fact, for all cases \texttt{L-BFGS-B} terminates at the first iteration because of breakdown in the line search.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
 
-In fact, for all cases \texttt{L-BFGS-B} crashes in the first iteration with a value very distant from any local optimum.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
-
-Several other values of $p$ were also tested. In table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant, among others $1.1$, $1.01$, $1.001$, ... , $1.00001$, $1$. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
+Several other values of $p$ were also tested. In Table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
 
 \begin{table}
   \tiny
@@ -179,12 +175,12 @@ Several other values of $p$ were also tested. In table \ref{pmtable}, the parame
       1 & 200 & 20 & 1 &  21 & 299792.8 & 1.10E+03 & 15 & 112 & 9667.9345180734 & 1.19E-07\\
       \hline
     \end{tabular}
-    \caption[Number of algorithm Iterations Changing $p$]{This is the number of algorithm iterations for different values of $p$. $n = 200$, $m = 10$ and $\tau_d = 10^{-6}, \tau_x = 10^{-3}$ and the tolerance of \texttt{L-BFGS-B} is $10^{-6}$ }
+    \caption[Number of algorithm Iterations Changing $p$]{Results for different values of $p$, with $n = 200$.}
     \label{pmtable}
   \end{center}
 \end{table}
 
-Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can be seen, both algorithms fail in the sense that the termination criteria are never met, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario
+Some runs with a value of $p = 0.999$ are shown in Table \ref{p0999}. As can be seen, both algorithms fail in the sense that the termination criteria are never met, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario. The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ on table \ref{p09}.
 
 \begin{table}
   \tiny
@@ -210,12 +206,10 @@ Finally, some runs with a value of $p = 0.999$ on Table \ref{p0999}. As it can b
       0.999 & 10000 & 20 & 1 & 21 & 14735841.9402302 & 7.79E+03 & 10000 & 20003 & 482060.572910768 & 5.28E+02\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.999$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.999$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.999$]{Results for $p = 0.999$, and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of Projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
     \label{p0999}
   \end{center}
 \end{table}
-
-The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ on table \ref{p09}.
 
 \begin{table}
   \tiny
@@ -241,7 +235,7 @@ The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ 
       0.99 & 10000 & 20 & 1 & 21 & 13724048.9687287 & 7.79E+03 & 10000 & 20013 & 462626.260533741 & 4.91E+02\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.99$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.99$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.99$]{Results for $p = 0.99$; similar to table \ref{p0999}}
     \label{p099}
   \end{center}
 \end{table}
@@ -270,11 +264,14 @@ The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ 
       0.9 & 10000 & 20 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 29999 & 306566.709414375 & 5.70E-01\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Non-converging results for the original algorithm \texttt{L-BFGS-B} applied to the Modified Rosenbrock function with $p = 0.9$.  and non-converging but better results for \texttt{L-BFGS-B-NS}; NPG: Norm of projected Gradient with tolerance = $10^{-6}$, never satisfied. NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\tau_d = 10^{-6}, \tau_x = 10^{-3}$, also, never satisfied}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Results for $p = 0.9$; similar to table \ref{p0999}}
     \label{p09}
   \end{center}
 \end{table}
 
+\chapter{Conclusions}
+
+We conclude that the new code \texttt{L-BFGS-B-NS} works well on the modified Rosenbrock function, giving much better results than the original \texttt{L-BFGS-B} code for $p < 2$, when the function is not twice continuously differentiable, particularly for values of $p$ close to or equal to $1$. Even for $p < 1$, the computed function values seem reasonable, although we cannot verify this by \emph{NSVCHPG} condition since the gradients blow up when $f$ is not Lipschitz. We hope the new code will be useful to users who wish to solve large-scale non-smooth bound-constrained optimization problems.
 
 \pagebreak
 \pagebreak
