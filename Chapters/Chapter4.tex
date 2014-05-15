@@ -13,7 +13,7 @@ The original \texttt{L-BFGS-B} optimizer displays different messages depending o
 
 \item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. We made just one change to the original \texttt{L-BFGS-B} code: in order to have results that are comparable with the results obtained with the new code, we terminated when the $2$-norm of the projected gradient was less than the tolerance $\tau =10^{-6}$, instead of the $\infty$-norm. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients as explained in section \ref{terminator}. Instead it is replaced by:
 
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$ and $\tau_x = 10^{-3}$.
+\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$, $\tau_x = 10^{-3}$ and $J = 10$ the maximum number of gradients in the optimality check.
 
 \item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times the machine precision $\epsilon$. This exit message does not apply to our tests. It was disabled by setting the factor ``FACTR'' to zero, both in our runs of \texttt{L-BFGS-B-NS} and our tests using the original code \texttt{L-BFGS-B}.
 
@@ -29,7 +29,7 @@ Consider a modified version of the Rosenbrock function problem \citep{rosenbrock
     f(x) = (x_1 - 1)^2 + \sum_{i = 2}^n |x_i - x_{i - 1}^2|^p
 \end{equation}
 
-We can study the properties of function $f$ based on the properties of the function $\phi(t_i)$, where $\phi(t_i) = |t_i|^p$ and $t_i = x_i - x_{i - 1}^2$. The properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function had a value of $p = 2$ and the second term was multiplied by $100$.}. This function can be proven to be locally Lipschitz continuous whenever $p \geq 1$. However, its second derivative blows up at zero whenever $p < 2$. Note that although $\phi(t_i)$ is convex for $p \geq 1$, $f$ is not convex.
+We can study the properties of function $f$ based on the properties of the function $\phi(t_i)$, where $\phi(t_i) = |t_i|^p$ and $t_i = x_i - x_{i - 1}^2$. The properties of the function depend on the value of the $p$ parameter\footnote{The original Rosenbrock function had values of $p = 2$, $n = 2$ and the second term was multiplied by $100$.}. This function can be proven to be locally Lipschitz continuous whenever $p \geq 1$. However, its second derivative blows up at zero whenever $p < 2$. Note that although $\phi(t_i)$ is convex for $p \geq 1$, $f$ is not convex.
 
 The properties of $\phi(t_i)$ can be separated into different cases. Whenever $p > 1$ the derivative can be represented as:
 \begin{equation}\label{firstderiv}
@@ -140,7 +140,7 @@ In table \ref{pequal2} we can see that since the test function is smooth when $p
 
 On the other hand, in table \ref{pequal1merged} we see that the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. In fact, for all cases \texttt{L-BFGS-B} terminates at the first iteration because of breakdown in the line search.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
 
-Several other values of $p$ were also tested. In Table \ref{pmtable}, the parameter $p$ is varied and all other parameters are held constant. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
+Several other values of $p$ were also tested. In Table \ref{pmtable}, the parameter $p$ is varied and for fixed $n = 200$. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
 
 \begin{table}
   \tiny
@@ -269,9 +269,9 @@ Some runs with a value of $p = 0.999$ are shown in Table \ref{p0999}. As can be 
   \end{center}
 \end{table}
 
-\chapter{Conclusions}
+\chapter*{Conclusions}
 
-We conclude that the new code \texttt{L-BFGS-B-NS} works well on the modified Rosenbrock function, giving much better results than the original \texttt{L-BFGS-B} code for $p < 2$, when the function is not twice continuously differentiable, particularly for values of $p$ close to or equal to $1$. Even for $p < 1$, the computed function values seem reasonable, although we cannot verify this by \emph{NSVCHPG} condition since the gradients blow up when $f$ is not Lipschitz. We hope the new code will be useful to users who wish to solve large-scale non-smooth bound-constrained optimization problems.
+We conclude that the new code \texttt{L-BFGS-B-NS} works well on the modified Rosenbrock function, giving much better results than the original \texttt{L-BFGS-B} code for $p < 2$, when the function is not twice continuously differentiable, particularly for values of $p$ close to or equal to $1$. For $p \geq 1$, the algorithm typically terminates when the \emph{NSVCHPG} holds: this is an approximate first-order non-smooth optimality condition following a suggestion of \citep{overtonlewis}. Even for $p < 1$, the computed function values seem reasonable, although we cannot verify this by the \emph{NSVCHPG} condition since the gradients blow up when $f$ is not Lipschitz. We hope the new code will be useful to users who wish to solve large-scale non-smooth bound-constrained optimization problems.
 
 \pagebreak
 \pagebreak

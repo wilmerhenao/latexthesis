@@ -25,9 +25,9 @@
 \contentsline {section}{\numberline {4.1}Exit Messages}{12}{section.40}
 \contentsline {section}{\numberline {4.2}Modified Rosenbrock Function}{13}{section.42}
 \contentsline {subsection}{\numberline {4.2.1}Performance of \texttt {L-BFGS-B} and \texttt {L-BFGS-B} on the Modified Rosenbrock Function}{15}{subsection.50}
-\contentsline {chapter}{\numberline {5}Conclusions}{18}{chapter.56}
-\contentsline {chapter}{\numberline {6}Running \texttt {L-BFGS-B-NS}}{19}{chapter.57}
-\contentsline {section}{\numberline {6.1}Running tests in local machines}{19}{section.58}
-\contentsline {section}{\numberline {6.2}Running on High Performance Computer Clusters}{20}{section.86}
+\contentsline {chapter}{\numberline {A}Running \texttt {L-BFGS-B-NS}}{19}{appendix.57}
+\contentsline {section}{\numberline {A.1}Running tests in local machines}{19}{section.58}
+\contentsline {section}{\numberline {A.2}Running on High Performance Computer Clusters}{20}{section.86}
+\contentsline {section}{\numberline {A.3}Specifying the function and the Gradient}{21}{section.122}
 \vspace {2em}
-\contentsline {chapter}{Bibliography}{22}{dummy.121}
+\contentsline {chapter}{Bibliography}{22}{dummy.138}
