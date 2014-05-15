@@ -48,8 +48,8 @@ do
 	do
 	    for m in 5 10 20
 	    do
-		echo \$ptol \$p \$n \$m
-		./rosenbrockp \$p \$n \$m \$ptol >> OUTPUTS/res1d6.txt
+		echo $ptol $p $n $m
+		./rosenbrockp $p $n $m $ptol >> OUTPUTS/res1d6.txt
 	    done
 	done
     done
@@ -112,9 +112,9 @@ Typically the user logs into the clusters, runs the tests using a software calle
 
 It is also possible to run several \emph{PBS} jobs simultaneously. Your local High Performance Computer Cluster always has some documentation on how to create and use \emph{PBS} files. https://wikis.nyu.edu/display/NYUHPC/Tutorial+-+Submitting+a+job+using+qsub
 
-\section{Specifying the function and the Gradient}
+\section{Specifying the Function and the Gradient}
 
-The user can specify a new function and a its corresponding gradient. Just change lines $219$ to $232$ in file \texttt{DriverRosenbrockp.f90} 
+The user can specify a new function and its corresponding gradient. Just change lines $222$ to $234$ in file \texttt{DriverRosenbrockp.f90} 
 
 \lstset{language=[90]Fortran,
   basicstyle=\ttfamily\scriptsize,
@@ -125,7 +125,7 @@ The user can specify a new function and a its corresponding gradient. Just chang
   numbers=left,
   numbersep=5pt,                   % how far the line-numbers are from the code
   breaklines=true,
-  firstnumber = 219
+  firstnumber = 222
 }
 
 \begin{lstlisting}
@@ -135,7 +135,6 @@ The user can specify a new function and a its corresponding gradient. Just chang
   do 20 i=1, (n-1)
     z=x(i+1)-x(i)**2
     f=f+abs(z)**p
-    !r1=p*(z**2)**(p/2)/z
     r1=p * abs(z)**(p - 1)
     if (z < 0) then
       r1 = -r1
