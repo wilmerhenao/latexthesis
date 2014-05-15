@@ -1,7 +1,7 @@
 \chapter{Experimental Results}
 \lhead{Chapter 4. \emph{Experimental Results}}
 
-The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for Portable Batch System. This is software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created.} using a PBS generator script. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands, namely, execution of the original \texttt{L-BFGS-B} software and the new code \texttt{L-BFGS-B-NS}.}. Several of these shell scripts are available at the repository \citep{lbfgsbNS}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner.
+The \texttt{L-BFGS-B} implementation was tested on the high performance cluster machines at NYU. In order to run these tests it was necessary to create a series of PBS files\footnote{PBS stands for PorTable Batch System. This is software that performs job scheduling. It is used by High Performance Computing at NYU (and many other High Performance Computing Centers) to allocate computational tasks. In order to run jobs at the high performance clusters, a series of PBS batch files need to be created.} using a PBS generator script. This script generator created PBS files which in turn run bash shell scripts\footnote{Bash is a command processor. Each Bash script that was created includes a series of computer commands, namely, execution of the original \texttt{L-BFGS-B} software and the new code \texttt{L-BFGS-B-NS}.}. Several of these shell scripts are available at the repository \citep{lbfgsbNS}. The main reason to run scripts this way is because it achieves parallelism, and because the system sends confirmation e-mails and statistics about the different stages of the processes giving a lot of control to the practitioner.
 
 \section{Exit Messages}
 
@@ -13,7 +13,7 @@ The original \texttt{L-BFGS-B} optimizer displays different messages depending o
 
 \item ``CONVERGENCE: NORM\_OF\_PROJECTED\_GRADIENT\_LT\_PGTOL": Means that convergence was achieved because the norm of the projected gradient is small enough. We made just one change to the original \texttt{L-BFGS-B} code: in order to have results that are comparable with the results obtained with the new code, we terminated when the $2$-norm of the projected gradient was less than the tolerance $\tau =10^{-6}$, instead of the $\infty$-norm. Notice that this convergence message does not apply to \texttt{L-BFGS-B-NS} because of particular requirements for non-smooth functions involving the convex hull of projected gradients as explained in section \ref{terminator}. Instead it is replaced by:
 
-\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$, $\tau_x = 10^{-3}$ and $J = 10$ the maximum number of gradients in the optimality check.
+\item ``CONVERGENCE: ZERO\_GRAD\_IN\_CONV\_HULL" This means that the termination condition discussed in section \ref{terminator} was satisfied\footnote{This does not mean that the resulting vector is exactly equal to zero, but it is small enough to satisfy the termination condition.}. We set $\tau_d = 10^{-6}$, $\tau_x = 10^{-3}$ and $J = 10$ the (maximum number of gradients in the optimality check).
 
 \item ``CONVERGENCE: REL\_REDUCTION\_OF\_F\_LT\_FACTR*EPSMCH": This convergence condition is achieved whenever the relative reduction of the value of function $f$ is smaller than a predefined factor times the machine precision $\epsilon$. This exit message does not apply to our tests. It was disabled by setting the factor ``FACTR'' to zero, both in our runs of \texttt{L-BFGS-B-NS} and our tests using the original code \texttt{L-BFGS-B}.
 
@@ -107,7 +107,7 @@ NSVCHPG: Norm of Smallest Vector in Convex Hull of Projected Gradients with $\ta
 
 In the tables, iters shows the number of iterations, $\#fg$ shows the number of function and gradient evaluations taken, and $f$ shows the final computed function value that was achieved by the optimization. In the case of \texttt{L-BFGS-B}, \emph{NPG} shows the $2$-norm of the projected gradient with termination tolerance $10^{-6}$. In the case of \texttt{L-BFGS-B-NS}, \emph{NSVCHPG} shows the norm of the smallest vector in the convex hull of projected gradients. 
 
-In table \ref{pequal2} we can see that since the test function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems minimizing it and that \texttt{L-BFGS-B-NS} reaches exactly the same final values, although because of the line search changes, the number of iterations and function and gradient evaluations usually increase.
+In Table \ref{pequal2} we can see that since the test function is smooth when $p = 2$, \texttt{L-BFGS-B} has no problems minimizing it and that \texttt{L-BFGS-B-NS} reaches exactly the same final values, although because of the line search changes, the number of iterations and function and gradient evaluations usually increase.
 
 \begin{table}
   \scriptsize
@@ -138,7 +138,7 @@ In table \ref{pequal2} we can see that since the test function is smooth when $p
   \end{center}
 \end{table}
 
-On the other hand, in table \ref{pequal1merged} we see that the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. In fact, for all cases \texttt{L-BFGS-B} terminates at the first iteration because of breakdown in the line search.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
+On the other hand, in Table \ref{pequal1merged} we see that the value of $p = 1$ leads to an abnormal line search termination for \texttt{L-BFGS-B} in all of the cases presented. This is to be expected as the function is non-smooth. In fact, for all cases \texttt{L-BFGS-B} terminates at the first iteration because of breakdown in the line search.  \texttt{L-BFGS-B-NS} on the other hand is able to converge under most scenarios. In fact, it is possible to converge under all scenarios by tweaking the starting point of the optimization.
 
 Several other values of $p$ were also tested. In Table \ref{pmtable}, the parameter $p$ is varied and for fixed $n = 200$. With a tolerance of $10^{-6}$ \texttt{L-BFGS-B} always fails as expected, and those values where $p$ is closer to $1$ are the most difficult for the original algorithm to handle.  Values generated via \texttt{L-BFGS-B-NS} are comparatively better whenever $p < 2$, since the function is ``less'' smooth. Most runs of \texttt{L-BFGS-B-NS} converge using the termination condition from section \ref{terminator}.
 
@@ -180,7 +180,7 @@ Several other values of $p$ were also tested. In Table \ref{pmtable}, the parame
   \end{center}
 \end{table}
 
-Some runs with a value of $p = 0.999$ are shown in Table \ref{p0999}. As can be seen, both algorithms fail in the sense that the termination criteria are never met, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario. The same thing can be said for $p = 0.99$ on table \ref{p099} and for $p = 0.9$ on table \ref{p09}.
+Some runs with a value of $p = 0.999$ are shown in Table \ref{p0999}. As can be seen, both algorithms fail in the sense that the termination criteria are never met, but \texttt{L-BFGS-B-NS} reaches a better feasible solution in every scenario. The same thing can be said for $p = 0.99$ on Table \ref{p099} and for $p = 0.9$ on Table \ref{p09}.
 
 \begin{table}
   \tiny
@@ -264,14 +264,14 @@ Some runs with a value of $p = 0.999$ are shown in Table \ref{p0999}. As can be 
       0.9 & 10000 & 20 & 1 & 21 & 6748644.0635896 & 7.79E+03 & 10000 & 29999 & 306566.709414375 & 5.70E-01\\
       \hline
     \end{tabular}
-    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Results for $p = 0.9$; similar to table \ref{p0999}}
+    \caption[A value where \texttt{L-BFGS-B-NS} is supposed to fail. $p = 0.9$]{Results for $p = 0.9$; similar to Table \ref{p0999}}
     \label{p09}
   \end{center}
 \end{table}
 
 \chapter*{Conclusions}
 
-We conclude that the new code \texttt{L-BFGS-B-NS} works well on the modified Rosenbrock function, giving much better results than the original \texttt{L-BFGS-B} code for $p < 2$, when the function is not twice continuously differentiable, particularly for values of $p$ close to or equal to $1$. For $p \geq 1$, the algorithm typically terminates when the \emph{NSVCHPG} holds: this is an approximate first-order non-smooth optimality condition following a suggestion of \citep{overtonlewis}. Even for $p < 1$, the computed function values seem reasonable, although we cannot verify this by the \emph{NSVCHPG} condition since the gradients blow up when $f$ is not Lipschitz. We hope the new code will be useful to users who wish to solve large-scale non-smooth bound-constrained optimization problems.
+We conclude that the new code \texttt{L-BFGS-B-NS} works well on the modified Rosenbrock function, giving much better results than the original \texttt{L-BFGS-B} code for $p < 2$, when the function is not twice continuously differentiable, particularly for values of $p$ close to or equal to $1$. For $p \geq 1$, the algorithm typically terminates when the \emph{NSVCHPG} condition holds: this is an approximate first-order non-smooth optimality condition following a suggestion of \citep{overtonlewis}. Even for $p < 1$, the computed function values seem reasonable, although we cannot verify this by the \emph{NSVCHPG} condition since the gradients blow up when $f$ is not Lipschitz. We hope the new code will be useful to users who wish to solve large-scale non-smooth bound-constrained optimization problems.
 
 \pagebreak
 \pagebreak
